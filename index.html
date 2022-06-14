@@ -18,7 +18,7 @@
 <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Tyler</a>
+            <a href="#" class="nav__logo">Tyler O'Hare</a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
                     <li class="nav__item">
@@ -65,10 +65,11 @@
                 <div class="home__content">
 
                     <h1 class="home__title">Hi! I'm Tyler,</h1>
-                    <h3 class="home__subtitle">Full-Stack Engineer</h3>
+                    <h3 class="home__subtitle">​<span class="txt-type" data-wait="3000" data-words='["Cybersecurity Engineer","Full Stack Developer", "Seeking new opportunities!"]'></span>
+            </h3>
                     <div class="idx">
 
-                        <p class="home__description">A passionate engineer with skills in software development and cybersecurity. I develop powerful applications and websites that harness an array of technologies throughout the stack.</p>
+                        <p class="home__description">A passionate engineer with skills in software development and cybersecurity. I develop powerful applications that harness an array of technologies throughout the stack.</p>
 
                     </div>
 
@@ -81,9 +82,8 @@
                     </div>
 
                 </div>
-                <div class="home__content grid">
-
-                </div>
+                <!-- <div class="home__content grid">
+                </div> -->
 
                 <div class="home_scroll">
                     <a href="#skills" class="home__scroll-button button--flex">
@@ -201,7 +201,11 @@
                                         </li>
                                         <li class="services__modal-service">
                                             <i class="uil uil-check-circle services__modal-icon"></i>
-                                            <p>Wireless and Cellular Networks</p>
+                                            <p>Wireless and Cellular Networks</p> 
+                                        </li>
+                                        <li class="services__modal-service">
+                                            <i class="uil uil-check-circle services__modal-icon"></i>
+                                            <p>Tools: Nmap, Metasploit, Burp Suite, Wireshark, Aircrack Suite, Hashcat</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -318,6 +322,9 @@
             <span class="section__subtitle">Most Recent Work</span>
 
             <div class="portfolio__container container swiper-container">
+
+
+                <h3 class="services__title" style="text-align: center;"> Frontend Development</h3>
                 <div class="swiper-wrapper">
                     <!--======================== PORTFOLIO 1 =============-->
                     <div class="portfolio__content grid swiper-slide">
@@ -326,7 +333,7 @@
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">Finance Tracker</h3>
                             <p class="portfolio__description">
-                                Finance tracking app that helps breakdown the user's finances.
+                                Finance tracking app that helps breakdown the user's finances. Built using HTML, CSS, and Javascript & React.
                             </p>
                             <a href="https://financeapptyler.herokuapp.com/" class="button button--flex button--small portfolio__button">
                                 Demo
@@ -344,7 +351,7 @@
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">Note Fly</h3>
                             <p class="portfolio__description">
-                                React appication that quickly creates and manages notes on the fly.
+                                React appication that quickly creates and manages notes on the fly. Built using HTML, CSS, and Javascript & React.
                             </p>
                             <a href="https://noteflytyler.herokuapp.com/" class="button button--flex button--small portfolio__button">
                                 Demo
@@ -354,6 +361,55 @@
                             </a>
                         </div>
                     </div>
+
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/net.png" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Instuctional Dashboard</h3>
+                            <p class="portfolio__description">
+                                Dashboard for instructors that creates and visualizes learning networks using R, Shiny, SQL, and visNetwork.
+                            </p>
+                            <a href="https://youtu.be/4yoQoBPY6qk" class="button button--flex button--small portfolio__button">
+                                Demo
+                            </a>
+                            <a href="https://github.com/tyohare/Instructional-Dashboard" class="button button--flex button--small portfolio__button">
+                                Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/port.png" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Portfolio Website</h3>
+                            <p class="portfolio__description">
+                                The site you're on right now! Built with HTML, CSS, and Javascript.
+                            </p>
+                            <a href="https://github.com/tyohare/tyohare.github.io" class="button button--flex button--small portfolio__button">
+                                Code
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <!--============ Add Arrows =============-->
+                <div class="swiper-button-next">
+                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+                </div>
+
+                <!--============ Add Pagination =============-->
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="portfolio__container container swiper-container">
+                <h3 class="services__title" style="text-align: center;"><br /> <br /><br /> <br />Backend Development</h3>
+
+                <div class="swiper-wrapper">
 
                     <div class="portfolio__content grid swiper-slide">
                         <img src="assets/img/net.png" alt="" class="portfolio__img">
@@ -415,15 +471,81 @@
                     </div>
 
                     <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/port.png" alt="" class="portfolio__img">
+                        <img src="assets/img/money.jpg" alt="" class="portfolio__img">
 
                         <div class="portfolio__data">
-                            <h3 class="portfolio__title">Portfolio Website</h3>
+                            <h3 class="portfolio__title">Polar Insights - Currency Analysis Application</h3>
                             <p class="portfolio__description">
-                                The site you're on right now! Built with HTML, CSS, and Javascript.
+                                Jupyter Notebook application that analyzes foreign exchange currency crosses using Pandas, Numpy, and Python that computes and tracks a given currency's daily and weekly high and low statistics from time series CSV data.
                             </p>
-                            <a href="https://github.com/tyohare/tyohare.github.io" class="button button--flex button--small portfolio__button">
+                            <a href="https://github.com/tyohare/Polar-Insights" class="button button--flex button--small portfolio__button">
                                 Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--============ Add Arrows =============-->
+                <div class="swiper-button-next">
+                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+                </div>
+
+                <!--============ Add Pagination =============-->
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="portfolio__container container swiper-container">
+                <h3 class="services__title" style="text-align: center;"><br /> <br /><br /> <br />Cybersecurity</h3>
+
+                <div class="swiper-wrapper">
+
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/arp.png" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">WEP ARP Replay Simulated Attack</h3>
+                            <p class="portfolio__description">
+                                Simulated ARP Replay attack on a WEP network using the ORBIT network emulator.
+                            </p>
+                            <a href="https://youtu.be/Arj8RT-7aFw" class="button button--flex button--small portfolio__button">
+                                Demo
+                            </a>
+                            <a download="" href="assets/pdf/ARP.pdf" class="button button--flex button--small portfolio__button">
+                                Report
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/rest.png" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Machine Learning Spam Email Detector</h3>
+                            <p class="portfolio__description">
+                                A machine learning application created in Python that detects spam and phishing emails.
+                            </p>
+                            <a href="https://youtu.be/4yoQoBPY6qk" class="button button--flex button--small portfolio__button">
+                                Demo
+                            </a>
+                            <a href="https://github.com/tyohare/Instructional-Dashboard" class="button button--flex button--small portfolio__button">
+                                Code
+                            </a>
+                        </div>
+                    </div> -->
+                    
+
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/231.png" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Simulated Penetration Test</h3>
+                            <p class="portfolio__description">
+                                A Simulated Penetration test scenario conducted on Iowa State University's ISERink isolated network environment. <br><br> In this penetration test I demonstrate my skills with common penetration testing tools like NMap, Wireshark Metasploit and more.
+                            </p>
+                            <a download="" href="assets/pdf/pentestresults.pdf" class="button button--flex button--small portfolio__button">
+                                Report
                             </a>
                         </div>
                     </div>
@@ -455,7 +577,6 @@
             <div class="contact__container container grid">
                 <div>
 
-
                     <div class="contact__information">
                         <i class="uil uil-envelope contact__icon"></i>
 
@@ -465,14 +586,14 @@
                         </div>
                     </div>
 
-                    <div class="contact__information">
+                    <!-- <div class="contact__information">
                         <i class="uil uil-map-marker contact__icon"></i>
 
                         <div>
                             <h3 class="contact__title">Location</h3>
-                            <span class="contact__subtitle">Cedar Rapids, Iowa. United States</span>
+                            <span class="contact__subtitle"></span>
                         </div>
-                    </div>
+                    </div> -->
 
                     <form action="" class="contact__form grid">
                         <div class="contact__inputs grid">
@@ -508,13 +629,13 @@
         <div class="footer__bg">
             <div class="footer__container container grid">
                 <div>
-                    <h1 class="footer__title">Tyler</h1>
-                    <span class="footer__subtitle">Full-Stack Engineer</span>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
                 </div>
 
                 <ul class="footer__links">
                     <li>
-                        <a href="#services" class="footer__link">Services</a>
+                        <a href="#skills" class="footer__link">Skills</a>
                     </li>
 
                     <li>
