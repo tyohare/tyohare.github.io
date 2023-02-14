@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>WAF Bypass</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>LDAP</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -666,4 +666,11 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="1e04bb0b-0357-47f2-a816-aee1c6fdeac5" class="page sans"><header><h1 class="page-title">WAF Bypass</h1></header><div class="page-body"><p id="54ac7368-4334-420a-ae16-d7d3983fe163" class="">IP Spoofing:</p><p id="3c9f17e7-1256-429d-9fd4-2047407ff008" class="">BurpSuite → User Options → Socks _Proxy → use Socks proxy + add info</p><p id="424e1c48-c400-4d16-94b1-e11956f4e081" class=""><code>X-Forwarded-For: 10.3.3.88</code></p></div></article></body></html>
+</style></head><body><article id="3d98fbb5-fa78-495a-8ea2-a6ed8bf6ed40" class="page sans"><header><h1 class="page-title">LDAP</h1></header><div class="page-body"><p id="de39a662-4a1c-47ea-84fe-f9de1230adda" class="">
+</p><ul id="0dec1471-f0c8-456f-b7a4-1c0ead1e535a" class="bulleted-list"><li style="list-style-type:disc"><code>cn=admin,dc=example,dc=com</code></li></ul><p id="f07e6e32-9c49-4481-8528-2f71ecd30c21" class="">
+</p><pre id="c2a18d70-2cb9-4083-9310-5f9d3cb49331" class="code"><code>ldapsearch -x -h 0.0.0.0 -b &quot;dc=name1,dc=name2&quot;
+ldapsearch -h &lt;target_system&gt; -p &lt;ldap_port&gt; -b &quot;&lt;base_dn&gt;&quot; &quot;(&amp;(objectclass=*)(userPassword=*))&quot;
+ldapsearch -h &lt;target_system&gt; -p &lt;ldap_port&gt; -b &quot;&lt;base_dn&gt;&quot; -D &quot;&lt;dn&gt;&quot; -w &quot;&lt;password&gt;&quot; &quot;(&amp;(objectclass=*)(userPassword=*))&quot;
+ldapdomaindump -h &lt;target_system&gt; -p &lt;ldap_port&gt; -D &quot;&lt;bind_dn&gt;&quot; -w &quot;&lt;bind_password&gt;&quot; -b &quot;&lt;base_dn&gt;&quot;
+ldapsearch -h &lt;target_system&gt; -p &lt;ldap_port&gt; -b &quot;&lt;base_dn&gt;&quot;</code></pre><ul id="671b9617-cee6-4621-9637-e3651d4eafcd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap">https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap</a></li></ul><p id="82db4b82-d141-4af0-8546-1e415a1080bc" class="">
+</p></div></article></body></html>

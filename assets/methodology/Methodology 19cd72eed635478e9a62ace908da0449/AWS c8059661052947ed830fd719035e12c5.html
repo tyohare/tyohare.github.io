@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Flag Finding</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>AWS</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -666,24 +666,9 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="bcf87639-8885-40ec-b933-94c6ceaf0149" class="page sans"><header><h1 class="page-title">Flag Finding</h1></header><div class="page-body"><p id="3d095a02-3d11-4cf3-96a0-f605a20e1312" class="">Ways to hunt for flags on systems…</p><p id="5cc97f57-68f0-4c06-a86b-ee0d6882c7d9" class="">Flag names:</p><pre id="f78468a2-2bb9-424c-94a0-5618aa27c331" class="code"><code>proof.txt
-
-flag.txt
-
-local.txt
-
-root.txt
-
-flag.ps1</code></pre><p id="9820b394-ae96-4f53-b5a0-b7e107446c87" class="">
-</p><p id="3cff51b3-9423-4435-8505-cc2c834c77b6" class="">Windows:</p><p id="b7cd7c3e-d7d0-464c-81fe-6a7d3d37ffd4" class=""><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md#eop---looting-for-passwords">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology and Resources/Windows - Privilege Escalation.md#eop---looting-for-passwords</a></p><pre id="456a7221-fae4-4d1e-b807-4b551748a790" class="code"><code>dir proof.txt /s
-dir /s /p proof.txt
-dir /x 
-ipconfig /all
-</code></pre><p id="7f068d99-7afc-44e0-9010-41825bf87a46" class="">
-</p><pre id="a44b93e2-73d4-4627-9cbb-b771fe0997fb" class="code"><code>powershell -ep bypass
-tree /f | Select-String flag.ps1 -Context 7,7
-cd C:/ | gci -recurse | findstr /s flag.txt
-</code></pre><p id="2b4ea143-c117-4d50-babe-ed4f96c9d12e" class="">
-</p><p id="b87ffdea-274a-4246-bc29-53f5034e05e7" class="">Linux:</p><p id="5e2b0433-9c0b-46b2-be47-ee3090b9d6b2" class=""><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md#looting-for-passwords">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology and Resources/Linux - Privilege Escalation.md#looting-for-passwords</a></p><pre id="1b056c13-ad08-4baa-8bd6-eedfdad7995d" class="code"><code></code></pre><p id="2ea9b984-b005-45df-b051-464eec68a1a3" class="">
-</p><p id="2832a355-4804-4333-a11c-dc8e3f53d4b7" class="">
+</style></head><body><article id="c8059661-0529-47ed-830f-d719035e12c5" class="page sans"><header><h1 class="page-title">AWS</h1></header><div class="page-body"><p id="c24ad225-e58f-4c41-ab11-413492d17935" class="">IAM - who can access what - I</p><p id="09b34ff4-74a1-4dc1-907c-39add55311d4" class="">We create groups and IAM users instead of logging in to AWS directly with root email acct</p><p id="a1a7ea8c-5933-4659-ad84-7b36d154c925" class="">
+</p><p id="68ebf09d-4273-46b6-9c34-95b6dff2c727" class="">Entry points to AWS → Code repos, social engineering, regular hacking, AWS services (EC2 services, Lambas, S3 buckets)</p><p id="47df8208-69e8-46d8-b43f-18f06528692c" class="">
+</p><p id="ddca69bc-3aaa-4b34-a2e2-c64503f5ea62" class="">We create IAM roles to give specific permissions and to connect services</p><p id="84e3f97b-7c57-4ea1-a920-e31baaa36bb3" class="">
+</p><p id="d1dc57ec-ecd7-4eea-b842-6e18a90b7b38" class="">CLI login → User ID pw</p><p id="81378e47-c3b5-40e8-aaba-a1091124687e" class="">API login → secret key, API key</p><p id="adc50097-98e1-44d5-a56b-d93ea5742bf8" class="">
+</p><p id="1e96f1d9-c326-4ec5-8941-714f0a58ce66" class="">Trust policy → which principles can assume a AWS role</p><p id="10f43160-2c73-4cc5-9bf4-7417c11d9d85" class="">
 </p></div></article></body></html>

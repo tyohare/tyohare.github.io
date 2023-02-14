@@ -675,7 +675,9 @@ select database
 show tables;</code></pre><p id="d80aa64d-385e-4f2b-8b91-08773389408b" class="">
 </p><p id="0977126a-97e0-4ab9-b057-54e60a831670" class="">
 </p><p id="d08197bf-c419-4966-bc78-186171ecf413" class="">MSSQL:</p><p id="effbe580-920e-43d0-9232-4e7ab4c95bab" class="">
-</p><p id="16a541cf-7dc8-4afa-869b-7c3cae83419d" class=""><code>sqsh -S server_name -U username -P password</code></p><p id="1021e849-4c04-4890-822d-e5494de5730d" class=""><code>impacket-mssqlclient sa:password@0.0.0.0</code></p><pre id="caa80708-1ecb-4dc8-b019-80592bc7aca5" class="code"><code>SELECT name FROM sys.databases;
+</p><p id="16a541cf-7dc8-4afa-869b-7c3cae83419d" class=""><code>sqsh -S server_name -U username -P password</code></p><p id="1021e849-4c04-4890-822d-e5494de5730d" class=""><code>impacket-mssqlclient sa:password@0.0.0.0</code></p><p id="b740e164-39d5-4d2e-9ad6-6613bac4c4ad" class="">impacket-mssqlclient DOMAIN/user:’password’@0.0.0.0 -windows-auth</p><pre id="a5d0baff-47a5-48b1-b57d-459b6746e28c" class="code"><code>SQL&gt; enable_xp_cmdshell
+SQL&gt; xp_cmdshell &#x27;&lt;CMD&gt;&#x27;</code></pre><p id="ba48352c-ca08-4777-9435-29f9bf05e44a" class="">
+</p><pre id="caa80708-1ecb-4dc8-b019-80592bc7aca5" class="code"><code>SELECT name FROM sys.databases;
 
 use database;
 

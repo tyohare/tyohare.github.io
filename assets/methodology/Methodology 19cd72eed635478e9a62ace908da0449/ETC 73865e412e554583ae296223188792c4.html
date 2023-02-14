@@ -666,10 +666,38 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="73865e41-2e55-4583-ae29-6223188792c4" class="page sans"><header><h1 class="page-title">ETC</h1></header><div class="page-body"><p id="5dca78c3-7fb0-493c-92bd-0408f91eccec" class="">Random one off protocols and tools…</p><p id="73c81ae6-f0d3-4cd3-b1d9-81b46bb99b48" class="">
+</style></head><body><article id="73865e41-2e55-4583-ae29-6223188792c4" class="page sans"><header><h1 class="page-title">ETC</h1></header><div class="page-body"><p id="5dca78c3-7fb0-493c-92bd-0408f91eccec" class="">Random one off protocols, commands, and tools…</p><p id="a7b8ea5b-3260-436d-9925-5c59e1e4d4d3" class="">
 </p><p id="2f8531d4-6185-46e5-b6b1-54eb880496b9" class=""><strong>Useful Links:</strong></p><p id="bd73968b-f745-49a8-9b08-cc7338200ef2" class=""><a href="https://www.base64decode.org/">https://www.base64decode.org/</a></p><p id="c139a94e-ab35-4eb2-882f-b8b4ca1d594c" class=""><a href="https://cryptii.com/pipes/hex-decoder">https://cryptii.com/pipes/hex-decoder</a></p><p id="979582f2-2745-42f9-94e9-084a66ee42af" class=""><a href="https://hashes.com/en/tools/hash_identifier">https://hashes.com/en/tools/hash_identifier</a></p><p id="042ea591-f755-4a37-af7e-97a3f5d33d3e" class=""><a href="https://crackstation.net/">https://crackstation.net/</a></p><p id="e2bebc6d-ae0f-4273-a195-54b368765f67" class="">
+</p><p id="aa7b80f9-04cd-461e-86b4-2caa823b335d" class=""><strong>Upgrading Shells:</strong></p><pre id="08003e4c-2868-426e-8526-237299415c25" class="code"><code>python -c &#x27;import pty; pty.spawn(&quot;/bin/sh&quot;)&#x27;
+python3 -c &#x27;import pty; pty.spawn(&quot;/bin/sh&quot;)&#x27;
+
+--------------
+stty raw -echo: fg
+export TERM=xterm
+stty -a rows 52 cols 165</code></pre><p id="9eea3534-a6e0-46e8-93eb-5a82e9b40abf" class="">
+</p><p id="b43a4b6f-9cdb-4672-a115-39cadf1b7d0f" class=""><strong>Flag Hunting:</strong></p><p id="6088bd36-38c0-4889-acad-30318d3f40a0" class="">Flag names:</p><pre id="e183f99a-acf5-480d-8a3b-16b5f126a059" class="code"><code>proof.txt
+
+flag.txt
+
+local.txt
+
+root.txt
+
+flag.ps1</code></pre><p id="ad4b2582-c7ab-4c46-b933-4ff420583bbe" class="">
+</p><p id="390ba6b9-cc4c-402e-be3f-90359c17256e" class="">Windows commands:</p><p id="90a91f52-af01-473c-8150-da80719f3fff" class=""><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md#eop---looting-for-passwords">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology and Resources/Windows - Privilege Escalation.md#eop---looting-for-passwords</a></p><pre id="c0a0b574-b17d-4d29-84e8-ec81538f0d1b" class="code"><code>dir proof.txt /s
+dir /s /p proof.txt
+dir /x 
+ipconfig /all</code></pre><p id="ffb3088a-73cf-4a65-b6f4-9288040fed91" class="">
+</p><pre id="e6232002-dd51-46a2-9ad4-eb2ee73d6243" class="code"><code>powershell -ep bypass
+tree /f | Select-String flag.ps1 -Context 7,7
+cd C:/ | gci -recurse | findstr /s flag.txt</code></pre><p id="7a82918a-cee5-42b7-b6ae-f070fba54f90" class="">
+</p><p id="44077bf7-7595-4da6-a24a-fa2d9acbcc81" class="">Linux commands:</p><p id="76565e3b-0122-48ab-bda9-8928005af52c" class=""><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md#looting-for-passwords">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology and Resources/Linux - Privilege Escalation.md#looting-for-passwords</a></p><p id="4bf85444-e0dc-4449-a5e1-b9bca36f0ed4" class="">
 </p><p id="4d3f1064-10fe-44a0-b607-995c48b869fa" class=""><strong>Sunrpc</strong></p><pre id="2465b3c8-5045-4aa1-8642-7b1191431a6a" class="code"><code>rpcinfo -s 0.0.0.0</code></pre><p id="0be05399-5616-4c24-ba39-61a1f90950ea" class=""><strong>msrpc:</strong></p><pre id="d8d95311-841b-436e-a69c-917498cdc022" class="code"><code>rpcclient -U &#x27;uname%pass&#x27; (IP)
-check hacktricks</code></pre><p id="87d9b4ae-daf7-4d62-bdab-22e84e0e3a29" class=""><strong>NNTP (119):</strong></p><pre id="569a1499-f582-4664-9bef-6f18a0832201" class="code"><code>nc -nvC 0.0.0.0 119
+rpcclient -U &quot;&quot; -N -c &lt;command&gt; &lt;target_system&gt;
+rpcclient -U &lt;username&gt; &lt;target_system&gt;
+check hacktricks</code></pre><p id="87d9b4ae-daf7-4d62-bdab-22e84e0e3a29" class="">RPC:</p><pre id="e244385e-b0d0-41b3-a0c1-e70c605551cb" class="code"><code>rpcdump -s &lt;target_system&gt;
+rpcinfo -p &lt;target_system&gt;
+nmap -sV -p 111 &lt;target_system&gt;</code></pre><p id="c5c4ecd6-f620-449d-b4a9-a7c396700e66" class=""><strong>NNTP (119):</strong></p><pre id="569a1499-f582-4664-9bef-6f18a0832201" class="code"><code>nc -nvC 0.0.0.0 119
 HELP
 LIST</code></pre><p id="f86d245e-4969-4bbc-a010-a68fb248f532" class=""><strong>Finger:</strong></p><pre id="ec6e8473-db7a-43cf-a192-979ccad8f900" class="code"><code>#user enumeration
 finger @IP

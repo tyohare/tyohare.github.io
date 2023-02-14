@@ -672,7 +672,8 @@ smb &lt;Hostname&gt; -u &#x27;guest&#x27; -p &#x27;&#x27;</code></pre><p id="1fe
 #Get all usernames on box. Read acces to IPC$ share 
 crackmapexec　smb &lt;Hostname&gt; -u &#x27;guest&#x27; -p &#x27;&#x27; --rid-brute 
 crackmapexec smb 0.0.0.0 -u &#x27;guest&#x27; -p &#x27;&#x27; --users
-smbmap -H &lt;IP&gt;
+#download all files in share
+smbmap -H 0.0.0.0 -R -A .
 enum4linux-ng &lt;IP&gt;</code></pre><pre id="417750c5-5328-4a72-be02-92dba3e6df4f" class="code"><code>smbclient //&lt;IP&gt;/&lt;share&gt; -U &lt;user&gt;
 smb: \&gt; dir #view files
 mget *</code></pre><pre id="ee824afc-d2c2-4b14-b0a9-d49e79f00e16" class="code"><code>crackmapexec --spider-crawl?
@@ -680,5 +681,6 @@ mget *</code></pre><pre id="ee824afc-d2c2-4b14-b0a9-d49e79f00e16" class="code"><
 </p><p id="278979d2-0d1b-4c17-bb49-46c10a06b45a" class="">
 </p><p id="0e7aac10-aae5-423d-8d3f-b6068d42719b" class="">nmap</p><pre id="f04e1d40-cde0-4461-8e42-ec2af9cad0f0" class="code"><code>ls -1 /usr/share/nmap/scripts/smb*
 nmap -v -p 139, 445 --script=smb-os-discovery 0.0.0.0
-nmap -v -p 139,445 --script=smb-vuln-ms08-067 --script-args=unsafe=1 0.0.0.0</code></pre><p id="b16783b3-acc0-40ba-9c32-de6b83fc9265" class="">
+nmap -v -p 139,445 --script=smb-vuln-ms08-067 --script-args=unsafe=1 0.0.0.0
+nmap --script=smb-* &lt;target&gt;</code></pre><p id="b16783b3-acc0-40ba-9c32-de6b83fc9265" class="">
 </p></div></article></body></html>

