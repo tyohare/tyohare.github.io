@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/method-styles.css">
+
+    <title>TITLE</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="bb69aa1d-3f94-4e2b-87c1-2524556b9606" class="page sans"><header><h1 class="page-title">Information Gathering</h1></header><div class="page-body"><p id="8b84f56e-5a78-4fb5-97a7-44149588539a" class="">
+</p><ol type="1" id="b1dcc2a5-e325-4692-bc0c-2a7b6ee929b9" class="numbered-list" start="1"><li>Identify the target: find the scope of target</li></ol><ol type="1" id="7a00fe80-1225-479e-b7b6-859db4ff1a52" class="numbered-list" start="2"><li>EMail address gathering with hunter.io<ol type="a" id="3a39b7f6-39c8-4c2e-a727-214ce317d6a6" class="numbered-list" start="1"><li>insert targets email</li></ol><ol type="a" id="fa7371f8-a20a-4abb-ab9f-b79e3df152cf" class="numbered-list" start="2"><li>pulls names and emails related to organization</li></ol></li></ol><ol type="1" id="e6098220-93ea-4684-8953-8ff0e1c2b6f7" class="numbered-list" start="3"><li>Gather credentials with breach-parse<ol type="a" id="dbbabf64-6859-4df4-a5ff-303c9f83c33e" class="numbered-list" start="1"><li>Can search thru 44g of breached credentials and try to find people</li></ol><ol type="a" id="3061f692-fcf0-4e07-9b6a-700e71cef5a8" class="numbered-list" start="2"><li>credential stuffing: known passwords and various formattings for them</li></ol></li></ol><ol type="1" id="6981a4fe-8f78-43e8-80e7-1e634b29630a" class="numbered-list" start="4"><li>Hunting subdomains:<ol type="a" id="45d2cdf7-a4f2-4899-bb1c-af58616690be" class="numbered-list" start="1"><li>The harvester?</li></ol><ol type="a" id="81133d5c-ac05-40a1-b398-00c4e7897ff0" class="numbered-list" start="2"><li><a href="http://crt.sh">crt.sh</a> (_website)</li></ol><ol type="a" id="0bfacc88-9f51-4ca8-a23b-5508fb057b00" class="numbered-list" start="3"><li>Sublister<ol type="i" id="acfc8c53-0056-4a24-ad48-ceb7cc1532ca" class="numbered-list" start="1"><li>apt install sublist3r</li></ol></li></ol><ol type="a" id="b6dd71ec-a2ae-41d4-a4c3-13bf7166742f" class="numbered-list" start="4"><li>http probe on found subdomains to see if theyre alive.</li></ol><ol type="a" id="444e6b49-bee6-49d7-88eb-22f48f33766e" class="numbered-list" start="5"><li><a href="http://builtwith.com">builtwith.com</a> to see what a website is built with. Can also use Wappalyzer.<ol type="a" id="9f4d2547-97c7-46ab-ba13-593fa4c8445f" class="numbered-list" start="1"><li>can determine vulns with whats running on it.</li></ol></li></ol><ol type="a" id="7509a946-7028-4d0f-a1fe-f94227cf3cb3" class="numbered-list" start="6"><li>whatweb &lt;website&gt;</li></ol><p id="17668a81-88f4-44dd-bb37-746e4cc468ae" class="">5. Burp Suite</p><ol type="1" id="53b41314-34c6-49f8-9a62-28152f6ebfa0" class="numbered-list" start="1"><li>Burp is a web proxy (intercepts web requests)</li></ol><ol type="a" id="10bcc40a-6440-4483-9853-bc8943f08636" class="numbered-list" start="2"><li>https://burp</li></ol><ol type="a" id="846c715d-eca7-47d3-bec5-62a841d490ef" class="numbered-list" start="3"><li>import certificate to firefox</li></ol><ol type="a" id="5ca7e491-f65d-4fee-8ba7-1730e23f311a" class="numbered-list" start="4"><li>load website and head to burps proxy tab</li></ol><ol type="a" id="97fdf2c5-036f-4063-bd85-982d404fd4d9" class="numbered-list" start="5"><li>you can inspect and modify traffic</li></ol><ol type="a" id="3bacce66-eb36-4790-a20c-1a5113020513" class="numbered-list" start="6"><li>We can get a lot of information about services from reading response requests.</li></ol></li></ol><p id="587eb637-8405-4eeb-8aeb-2b810ca7729b" class="">6. google fu<div class="indented"><ol type="1" id="cfccb0ca-911f-43d1-aea0-752b72378545" class="numbered-list" start="1"><li>site:tesla.com -www -ir</li></ol><ol type="1" id="f3f17873-050e-4ede-afb3-29a0bad03ed5" class="numbered-list" start="2"><li>filetype: pdf, docx, csv, etc</li></ol></div></p><ol type="1" id="1d08428a-d147-4b74-916e-d54375a5cc21" class="numbered-list" start="7"><li>Social media<ol type="a" id="95fa3d78-73e4-401c-bc5d-421f5fe290d8" class="numbered-list" start="1"><li>Looking through social medias</li></ol><ol type="a" id="b0f0c299-e600-49d5-b669-6a2b07660ecf" class="numbered-list" start="2"><li>Look at company photos and SM<ol type="i" id="59519aea-96e4-4014-b466-3a7f15607090" class="numbered-list" start="1"><li>you can find badges etc</li></ol><ol type="i" id="c2d2b033-0150-48c8-bdda-75eec4f38074" class="numbered-list" start="2"><li>Can also use twitter or LI</li></ol><ol type="i" id="e08ca10c-cef5-4f05-8a22-e7dba66b4952" class="numbered-list" start="3"><li>looking for people who work there</li></ol><ol type="i" id="0020fbeb-93bd-4faa-8976-ce9c9cfd32cf" class="numbered-list" start="4"><li>create custom wordlists, emails etc from this information to gather credentials</li></ol><p id="887e84d5-ab3d-4306-a07e-0f5ee9c5e7bc" class="">
+</p></li></ol></li></ol></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

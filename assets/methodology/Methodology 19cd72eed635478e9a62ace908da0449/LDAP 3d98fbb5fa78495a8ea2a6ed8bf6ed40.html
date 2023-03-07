@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/method-styles.css">
+
+    <title>TITLE</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="3d98fbb5-fa78-495a-8ea2-a6ed8bf6ed40" class="page sans"><header><h1 class="page-title">LDAP</h1></header><div class="page-body"><p id="de39a662-4a1c-47ea-84fe-f9de1230adda" class="">
+</p><ul id="671b9617-cee6-4621-9637-e3651d4eafcd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap">https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap</a></li></ul><ul id="0dec1471-f0c8-456f-b7a4-1c0ead1e535a" class="bulleted-list"><li style="list-style-type:disc"><code>cn=admin,dc=example,dc=com</code></li></ul><pre id="c2a18d70-2cb9-4083-9310-5f9d3cb49331" class="code"><code>#new syntax
+ldapsearch -x -H ldap://0.0.0.0 -b &quot;dc=name1,dc=name2&quot;
+#Old syntax
+ldapsearch -h &lt;target_system&gt; -p &lt;ldap_port&gt; -b &quot;&lt;base_dn&gt;&quot; &quot;(&amp;(objectclass=*)(userPassword=*))&quot;
+ldapsearch -h &lt;target_system&gt; -p &lt;ldap_port&gt; -b &quot;&lt;base_dn&gt;&quot; -D &quot;&lt;dn&gt;&quot; -w &quot;&lt;password&gt;&quot; &quot;(&amp;(objectclass=*)(userPassword=*))&quot;
+ldapsearch -h &lt;target_system&gt; -p &lt;ldap_port&gt; -b &quot;&lt;base_dn&gt;&quot;
+#Uses anonymous credentials
+#nmap ldap enumeration
+nmap -n -sV --script &quot;ldap* and not brute&quot; 0.0.0.0 
+#ldapdomaindump
+ldapdomaindump -h &lt;target_system&gt; -p &lt;ldap_port&gt; -D &quot;&lt;bind_dn&gt;&quot; -w &quot;&lt;bind_password&gt;&quot; -b &quot;&lt;base_dn&gt;&quot;</code></pre><p id="82db4b82-d141-4af0-8546-1e415a1080bc" class="">
+</p></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

