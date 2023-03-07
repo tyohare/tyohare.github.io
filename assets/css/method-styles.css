@@ -71,6 +71,7 @@
 /*START DUMMY code*/
 main *{
     padding-left: 1rem;
+    padding-right: 1rem;
 }
 main html {
 	-webkit-print-color-adjust: exact;
