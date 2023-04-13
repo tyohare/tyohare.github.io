@@ -72,7 +72,14 @@ aireplay-ng deauth attack
 Capture handshake
 
 Crack handshake with hashcat or aircrack-ng</code></pre><p id="b002888a-4cae-4d61-b48a-72c0fc7d3536" class="">
-</p></div></article></main></main>
+</p><p id="afcb3174-07a7-4401-92c1-9db767a7d01e" class="">
+</p><p id="5f0bdade-a652-4ec5-97e0-56aaab75e355" class=""><strong>Capture Wireless passwords stored on Windows:</strong></p><pre id="50f0dcee-4b43-43ae-b8bc-dfab16b75fb2" class="code"><code>#List:
+netsh wlan show profiles
+#Extract password:
+netsh wlan show profile name=&quot;WiFi&quot; key=clear
+#Export profile:
+hetsh wlan export profile name= &quot;Wireless&quot; folder=c:\temp
+</code></pre></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

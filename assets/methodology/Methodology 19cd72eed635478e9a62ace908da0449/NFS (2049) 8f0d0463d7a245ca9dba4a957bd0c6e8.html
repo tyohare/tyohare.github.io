@@ -64,22 +64,19 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="10a9a63d-669b-46d6-b7e6-598b0ffcacae" class="page sans"><header><h1 class="page-title">DNS</h1></header><div class="page-body"><p id="5fb6671c-8e9a-4d55-a25f-7bfce00d3c0c" class="">Forward Lookup:</p><pre id="e17c4422-3f84-45df-9cc5-0085078392d3" class="code"><code>for ip in $(cat list.txt); do host $ip.megacorpone.com; done</code></pre><p id="c0b45fed-bb7e-4d47-9a06-651f2aca11ea" class="">
-</p><p id="f30dd267-eaae-4b8d-b552-4c28125e0eb7" class="">Reverse Lookup:</p><pre id="d7765285-3c3b-48c9-b6cb-b7bfdef58d67" class="code"><code>for ip in $(seq 50 100); do host 0.0.0.$ip; done | grep -v &quot;not found”
-for ip in $(seq 1 225); do host -l 0.0.0.0 0.0.0.$ip; done | grep -v &quot;failed:”</code></pre><p id="eb3d0164-da9a-4138-b412-3ddeb303eaad" class="">
-</p><p id="c588f47b-c480-4386-9faa-ef71765d91a2" class="">Others:</p><pre id="cd353ef4-6c73-4d5b-996f-c2b95a721a1d" class="code"><code>host -l [test.com](http://test.com/) [ns1.test.com](http://ns1.test.com/)
-
-host -t ns [test.com](http://test.com/) | cut -d &quot; &quot; -f 4
-
-dnsrecon -d [test.com](http://test.com/) -t axfr
-
-dnsenum [zonetransfer.me](http://zonetransfer.me/)
-
-dig -axfr IP</code></pre><p id="6cfd038a-d405-4167-b7cd-9ecfc8ca4e19" class="">
-</p><p id="f23e70b8-9f9d-4cdf-975b-e2d6e6c6460e" class="">Example:</p><p id="82cd0c5e-78cb-44d6-8e72-1c4df83775cb" class="">First</p><pre id="300bf879-86fd-4db3-819c-1cf6ac704a30" class="code"><code>$ nslookup 10.10.10.13 10.10.10.13
-13.10.10.10.in-addr.arpa	name = ns1.cronos.htb.</code></pre><p id="5b097800-882a-4323-a2e5-a25247935ca7" class="">Then:</p><pre id="63caa8fd-e379-458d-bdf8-b220c0b5ab71" class="code"><code>dig axfr cronos.htb @10.10.10.13</code></pre><p id="0dda8eab-d921-401e-a238-c80176be15ea" class="">We find additional domains to add to /etc/hosts</p><p id="4d7a1891-5186-46eb-bc6d-3a02c87eb0ad" class="">
-</p><p id="f5ff1e61-b298-4b08-9351-15fe16f885ff" class="">Subdomain Enumeration:</p><p id="f0f06184-0c2a-47cb-9914-4774f0389c01" class="">
-</p><ul id="684d9962-074d-463c-9cc9-932e8595cf91" class="bulleted-list"><li style="list-style-type:disc">We can enumerate for subdomains by viewing the sites SSL certificate.</li></ul><ul id="859a60a0-a608-46b8-a697-f05a7177a9f0" class="bulleted-list"><li style="list-style-type:disc">—append-domain gobuster</li></ul><pre id="5fe86c98-94b6-4600-bb04-c395ae702944" class="code"><code></code></pre></div></article></main></main>
+    <main class="main"><article id="8f0d0463-d7a2-45ca-9dba-4a957bd0c6e8" class="page sans"><header><h1 class="page-title">NFS (2049)</h1></header><div class="page-body"><p id="bab0292a-17cf-44cf-881a-6251d9023f45" class="">Basic Enumeration</p><pre id="d875db73-854c-4a08-a783-7d941a735f17" class="code"><code>showmount -e &lt;ip&gt;
+sudo mkdir /mnt/&lt;mntDirectory&gt;
+sudo mount -t nfs &lt;ip&gt;:&lt;/share&gt; /mnt/&lt;mntDirectory&gt;
+showmount -d &lt;ip&gt;
+#-o nolock
+mount -o rw,vers=2 &lt;IP&gt;:&lt;share&gt; &lt;local_directory&gt;
+#unmount
+sudo umount /mnt/&lt;mntDirectory&gt;</code></pre><pre id="e1269cce-43c2-487a-8b6b-9d13521d3855" class="code"><code>nc -nv &lt;ip&gt; 2049
+telnet &lt;ip&gt; 2049
+mountd</code></pre><p id="90106ae6-374e-4d5f-9922-13c0934d9137" class="">
+</p><p id="662dd4b3-66d9-4ca8-958e-966c963265cc" class="">nmap</p><pre id="8a83548a-5317-48c4-b4c0-12d1c73386b9" class="code"><code>nmap -p 111 --script nfs* 0.0.0.0
+nmap -sV --script=nfs-showmount 0.0.0.0</code></pre><p id="b686d23e-4e10-4000-82cf-d0bb15802c18" class="">
+</p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

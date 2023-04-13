@@ -64,19 +64,10 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="3d98fbb5-fa78-495a-8ea2-a6ed8bf6ed40" class="page sans"><header><h1 class="page-title">LDAP</h1></header><div class="page-body"><p id="de39a662-4a1c-47ea-84fe-f9de1230adda" class="">
-</p><ul id="671b9617-cee6-4621-9637-e3651d4eafcd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap">https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap</a></li></ul><ul id="0dec1471-f0c8-456f-b7a4-1c0ead1e535a" class="bulleted-list"><li style="list-style-type:disc"><code>cn=admin,dc=example,dc=com</code></li></ul><pre id="c2a18d70-2cb9-4083-9310-5f9d3cb49331" class="code"><code>#new syntax
-ldapsearch -x -H ldap://0.0.0.0 -b &quot;dc=name1,dc=name2&quot;
-#Old syntax
-ldapsearch -h &lt;target_system&gt; -p &lt;ldap_port&gt; -b &quot;&lt;base_dn&gt;&quot; &quot;(&amp;(objectclass=*)(userPassword=*))&quot;
-ldapsearch -h &lt;target_system&gt; -p &lt;ldap_port&gt; -b &quot;&lt;base_dn&gt;&quot; -D &quot;&lt;dn&gt;&quot; -w &quot;&lt;password&gt;&quot; &quot;(&amp;(objectclass=*)(userPassword=*))&quot;
-ldapsearch -h &lt;target_system&gt; -p &lt;ldap_port&gt; -b &quot;&lt;base_dn&gt;&quot;
-#Uses anonymous credentials
-#nmap ldap enumeration
-nmap -n -sV --script &quot;ldap* and not brute&quot; 0.0.0.0 
-#ldapdomaindump
-ldapdomaindump -h &lt;target_system&gt; -p &lt;ldap_port&gt; -D &quot;&lt;bind_dn&gt;&quot; -w &quot;&lt;bind_password&gt;&quot; -b &quot;&lt;base_dn&gt;&quot;</code></pre><p id="82db4b82-d141-4af0-8546-1e415a1080bc" class="">
-</p></div></article></main></main>
+    <main class="main"><article id="d996df4f-065d-438a-bdb0-aa4a1c1849f0" class="page sans"><header><h1 class="page-title">Enumerating APIs</h1></header><div class="page-body"><p id="b5844568-4273-457f-9628-014c567c914d" class="">
+</p><h2 id="2d14b11b-fe19-46a4-81ff-3b015ecc6689" class="">Fuzzing APIs:</h2><ul id="f74e6eb0-e00e-4b0b-9700-1cdd52aeb532" class="bulleted-list"><li style="list-style-type:disc">We can fuzz APIs using Burp Suite Intruder or wfuzz.</li></ul><pre id="59573e78-01ac-42a0-8ba0-3262ef306bc2" class="code"><code>wfuzz -c -z file,/usr/share/wordlists/dirb/common.txt --sc 200 &#x27;http://0.0.0.0:5000/api/v1/resources/books?show=FUZZ&#x27; </code></pre><p id="92f3a186-624d-42c0-a41a-102bf956a599" class="">
+</p><h2 id="7b8e1d28-d0b8-4a24-9f2e-1b3f0289e82a" class=""><strong>Discovery via Source Code:</strong></h2><p id="fabf4e36-36ff-44a0-8358-926ebac7aa18" class="">
+</p><ul id="5391a11f-7865-46ac-a65b-a3aa8fc6ba60" class="bulleted-list"><li style="list-style-type:disc">we can run through the application using Burp and capture requests for all the functionality</li></ul><ul id="39636de9-add5-4337-9a07-776294f4a8f9" class="bulleted-list"><li style="list-style-type:disc">View JS files in the website. (Use JS formatter to make the code look pretty).</li></ul></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

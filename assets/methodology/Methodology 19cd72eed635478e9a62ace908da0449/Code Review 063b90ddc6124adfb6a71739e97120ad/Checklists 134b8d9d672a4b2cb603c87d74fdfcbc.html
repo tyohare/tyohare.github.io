@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="134b8d9d-672a-4b2c-b603-c87d74fdfcbc" class="page sans"><header><h1 class="page-title">Checklists</h1></header><div class="page-body"><p id="b06178aa-6f2b-44cf-b70c-387afe55911c" class="">
+</p><p id="cc4d9eca-bc26-4fe9-96c4-bdf56a2c1535" class=""><strong>JavaScript Checklist:</strong></p><ol type="1" id="885903b8-8c3c-4dab-8dc5-d4b288489077" class="numbered-list" start="1"><li>Validate and sanitize user input:<ul id="b6328300-81fa-4756-a880-1598478f57c4" class="bulleted-list"><li style="list-style-type:disc">Check for proper validation using regex or dedicated validation libraries like Validator.js</li></ul><ul id="a433881d-2fe8-408f-a29a-1e524044f975" class="bulleted-list"><li style="list-style-type:disc">Check for proper sanitization using libraries like DOMPurify or using built-in encoding functions (e.g., <code>encodeURIComponent</code>)</li></ul></li></ol><ol type="1" id="4f76ad3c-87ef-4ce3-8e67-67a4be208260" class="numbered-list" start="2"><li>Protect against Cross-Site Scripting (XSS) vulnerabilities:<ul id="c77c21df-9248-401e-843b-424569dfcea1" class="bulleted-list"><li style="list-style-type:disc">Look for <code>innerHTML</code> or <code>document.write</code> usage, which may insert untrusted data into the DOM</li></ul><ul id="62bc8aac-351d-49e9-b094-4c0143fd1732" class="bulleted-list"><li style="list-style-type:disc">Check for proper output encoding when inserting user data into the DOM</li></ul></li></ol><ol type="1" id="466ae5f8-3251-4e14-9e12-92510cd01be8" class="numbered-list" start="3"><li>Secure AJAX and API calls:<ul id="819c2a9c-949c-41e3-bb84-7f9afac6717a" class="bulleted-list"><li style="list-style-type:disc">Verify usage of HTTPS for all API calls</li></ul><ul id="5aae73c3-7c0b-4b93-811b-c0693c0d23f8" class="bulleted-list"><li style="list-style-type:disc">Check for proper authentication and authorization in API requests</li></ul><ul id="a6bea6d7-0922-457f-8541-3c9a9e1a72f6" class="bulleted-list"><li style="list-style-type:disc">Look for Cross-Origin Resource Sharing (CORS) configurations and ensure they are restrictive</li></ul></li></ol><ol type="1" id="52cfdd6f-cd60-41b0-8531-b418e01acce7" class="numbered-list" start="4"><li>Avoid using <code>eval()</code> and other unsafe functions:<ul id="87c286e2-9ed5-4bc3-8bfb-48f23a09685f" class="bulleted-list"><li style="list-style-type:disc">Check for usage of <code>eval()</code>, <code>setTimeout</code>, and <code>setInterval</code> with string arguments</li></ul><ul id="eb2279dd-978b-4209-a198-e7d266cd4879" class="bulleted-list"><li style="list-style-type:disc">Recommend safer alternatives like <code>JSON.parse()</code> or using a proper parser for the given data format</li></ul></li></ol><ol type="1" id="1b11c618-640f-43d3-ac55-1541b9266d15" class="numbered-list" start="5"><li>Protect sensitive data (API keys, tokens, etc.):<ul id="322b1ae5-02b5-49a0-843c-41018482756a" class="bulleted-list"><li style="list-style-type:disc">Search for hardcoded secrets (API keys, tokens, passwords) and recommend storing them securely</li></ul><ul id="2a01bd59-af8b-4b17-bf3e-5fb7b79a3a20" class="bulleted-list"><li style="list-style-type:disc">Ensure secure handling of authentication tokens (e.g., HttpOnly cookies or secure JWT storage)</li></ul></li></ol><ol type="1" id="9f0e9250-86c2-4ed2-8d2d-bee4a4ff2400" class="numbered-list" start="6"><li>Implement proper error handling:<ul id="67a6c738-63c4-4f03-867e-5bd3045efd4d" class="bulleted-list"><li style="list-style-type:disc">Check for proper error handling using try-catch blocks</li></ul><ul id="2d2c6a47-6ddd-4ace-92f0-b55d012e8652" class="bulleted-list"><li style="list-style-type:disc">Ensure user-facing error messages do not expose sensitive information</li></ul></li></ol><ol type="1" id="5607048f-1af8-4ed7-9f0c-04cd01fb0f61" class="numbered-list" start="7"><li>Follow secure coding practices for cookies and localStorage:<ul id="482f25f8-54ee-4f40-8411-71a9eb73947c" class="bulleted-list"><li style="list-style-type:disc">Check for proper cookie flags (Secure, HttpOnly, SameSite)</li></ul><ul id="5bfda1f8-2dd3-4944-92e4-3d9db04c7354" class="bulleted-list"><li style="list-style-type:disc">Avoid storing sensitive data in localStorage or implement proper encryption</li></ul></li></ol><p id="8a33b517-87ec-4db6-aece-6ed6b41f5c42" class="">
+</p><p id="fcce92b9-f25c-4ac8-aaef-049c874d5422" class=""><strong>Java Checklist:</strong></p><ol type="1" id="0d5ba3dc-941a-4381-b1c3-33c1ddcc3232" class="numbered-list" start="1"><li>Validate and sanitize user input:<ul id="8ad03c3a-82cb-492a-8d63-ff5ab9ed71d2" class="bulleted-list"><li style="list-style-type:disc">Check for proper validation using regex or dedicated validation libraries like Apache Commons Validator</li></ul><ul id="35227aa0-8a75-48e6-8373-fa3b82127c3d" class="bulleted-list"><li style="list-style-type:disc">Check for proper sanitization using libraries like OWASP Java HTML Sanitizer or encoding functions (e.g., <code>URLEncoder.encode</code>)</li></ul></li></ol><ol type="1" id="fde757f0-8dd8-4b71-9a05-4f5d60754089" class="numbered-list" start="2"><li>Protect against SQL Injection:<ul id="58b7f181-2a16-4652-8d94-fec9c0eca244" class="bulleted-list"><li style="list-style-type:disc">Look for proper usage of prepared statements or parameterized queries</li></ul><ul id="31349220-5245-4230-a6b8-8f8ea1134ff6" class="bulleted-list"><li style="list-style-type:disc">Avoid string concatenation when building SQL queries</li></ul></li></ol><ol type="1" id="b7025af3-042f-4f6d-af80-3822465f7532" class="numbered-list" start="3"><li>Safeguard sensitive data (encryption, secure storage):<ul id="2a796967-f9ec-4152-a6fa-d27331a83696" class="bulleted-list"><li style="list-style-type:disc">Check for proper encryption algorithms (e.g., AES) and key management</li></ul><ul id="1cb0c24a-6961-4abe-9634-13c43450a41c" class="bulleted-list"><li style="list-style-type:disc">Ensure secure storage of sensitive data (e.g., using encrypted databases or secure system properties)</li></ul></li></ol><ol type="1" id="c1486a98-ad59-4670-8257-c916f261204a" class="numbered-list" start="4"><li>Implement proper error handling:<ul id="562f209f-95ad-4e78-8824-b106519147dc" class="bulleted-list"><li style="list-style-type:disc">Check for proper error handling using try-catch blocks</li></ul><ul id="1de04372-3f00-4705-ae7c-991dff73db14" class="bulleted-list"><li style="list-style-type:disc">Ensure user-facing error messages do not expose sensitive information</li></ul></li></ol><ol type="1" id="74fcf061-572a-4425-bf33-d158035d140e" class="numbered-list" start="5"><li>Follow secure coding practices for authentication and authorization:<ul id="72fbf15b-5242-4c51-ab33-838717b62da5" class="bulleted-list"><li style="list-style-type:disc">Verify proper password hashing (e.g., using bcrypt or Argon2)</li></ul><ul id="e38c3881-fb8b-45a9-a5e9-865f8747f4f2" class="bulleted-list"><li style="list-style-type:disc">Check for secure session management (e.g., secure cookies, session timeouts)</li></ul></li></ol><ol type="1" id="ae568d35-a4da-42c4-8908-b38b1192c885" class="numbered-list" start="6"><li>Safeguard against insecure deserialization:<ul id="88c842a2-0f59-4c4a-bf2b-07d06318bc16" class="bulleted-list"><li style="list-style-type:disc">Check for proper validation and filtering when deserializing data</li></ul><ul id="eb215451-f95a-4d1c-8988-26c40e186df5" class="bulleted-list"><li style="list-style-type:disc">Avoid usage of insecure deserialization libraries or functions (e.g., <code>ObjectInputStream</code>)</li></ul></li></ol><ol type="1" id="96fb90a5-7d0d-4abb-9964-9546c5d1e1b3" class="numbered-list" start="7"><li>Secure network communications (SSL/TLS):<ul id="7fa23aeb-7ceb-4c38-882f-44c54b232f92" class="bulleted-list"><li style="list-style-type:disc">Verify usage of HTTPS for all network communications</li></ul><ul id="63008afa-2546-4f05-97c0-bc36659e8414" class="bulleted-list"><li style="list-style-type:disc">Check for proper SSL/TLS configurations (e.g., hostname verification, secure cipher suites)</li></ul></li></ol><p id="d63e584f-d647-4b04-a1e1-77ee69e12aac" class="">
+</p><p id="c35031df-365b-4c5e-b694-3493937e05b4" class=""><strong>Android Checklist:</strong></p><ol type="1" id="0a735104-a37a-42cb-824a-3cc6e720a385" class="numbered-list" start="1"><li>Validate and sanitize user input:<ul id="4b2fabac-116a-4eec-89b2-b1930489d1ce" class="bulleted-list"><li style="list-style-type:disc">Check for proper validation using regex or dedicated validation libraries like Android Saripaar</li></ul><ul id="52662d9d-b79c-4b4f-b622-5e9846e18cef" class="bulleted-list"><li style="list-style-type:disc">Check for proper sanitization using libraries like Jsoup or encoding functions (e.g., <code>URLEncoder.encode</code>)</li></ul></li></ol><ol type="1" id="7ef80af2-a90a-458c-b327-c28c040776c5" class="numbered-list" start="2"><li>Protect against insecure data storage (SharedPreferences, etc.):<ul id="e7caa7b0-ccb7-4189-be66-c6adbcbc5007" class="bulleted-list"><li style="list-style-type:disc">Look for sensitive data stored in SharedPreferences, unprotected databases, or internal storage</li></ul><ul id="aa5afee5-827d-4fdb-9556-32c755ff4810" class="bulleted-list"><li style="list-style-type:disc">Recommend secure alternatives like EncryptedSharedPreferences, encrypted databases (e.g., SQLCipher), or Android Keystore</li></ul></li></ol><ol type="1" id="26f081a1-b3b0-4c9b-9fa1-d7a610cc5676" class="numbered-list" start="3"><li>Secure network communications (SSL/TLS):<ul id="09bba200-addc-4150-adf2-d681c9d23d3f" class="bulleted-list"><li style="list-style-type:disc">Verify usage of HTTPS for all network communications</li></ul><ul id="ac72079d-81d3-4f27-acfb-485178ceff98" class="bulleted-list"><li style="list-style-type:disc">Check for proper SSL/TLS configurations (e.g., hostname verification, secure cipher suites)</li></ul><ul id="25162a15-4ce3-453f-b82b-e2997ca5cfda" class="bulleted-list"><li style="list-style-type:disc">Look for possible certificate pinning implementation</li></ul></li></ol><ol type="1" id="51a5b1c6-af6e-4ceb-8b20-d223040dfddb" class="numbered-list" start="4"><li>Safeguard sensitive data (encryption, secure storage):<ul id="208be59a-5a36-42c3-9f6a-c01b09bb52fb" class="bulleted-list"><li style="list-style-type:disc">Check for proper encryption algorithms (e.g., AES) and key management</li></ul><ul id="f67fd5f8-2a19-40a0-aea7-eccaba431617" class="bulleted-list"><li style="list-style-type:disc">Ensure secure storage of sensitive data (e.g., using Android Keystore or encrypted databases)</li></ul></li></ol><ol type="1" id="c419d46c-8e33-4070-8537-71ec0665df1a" class="numbered-list" start="5"><li>Follow secure coding practices for Intents and exported components:<ul id="3008f027-819a-4055-9f6f-05bda8dc9513" class="bulleted-list"><li style="list-style-type:disc">Check for proper protection of exported components (e.g., Activities, Services, BroadcastReceivers) using permissions or Intent filters</li></ul><ul id="aa87acd8-695b-45a6-a018-f22da4a58c0b" class="bulleted-list"><li style="list-style-type:disc">Verify secure usage of Intents, avoiding data leakage or unauthorized access</li></ul></li></ol><ol type="1" id="1ab2f729-8a48-43ce-89a4-9435e743fbd1" class="numbered-list" start="6"><li>Implement proper error handling:<ul id="f081a9de-fe28-4f63-abfc-0e62f458e4f0" class="bulleted-list"><li style="list-style-type:disc">Check for proper error handling using try-catch blocks</li></ul><ul id="f767ccd6-db24-45a4-815d-a5e308af5779" class="bulleted-list"><li style="list-style-type:disc">Ensure user-facing error messages do not expose sensitive information</li></ul></li></ol><ol type="1" id="948d7ab7-cad5-4861-b285-275937012317" class="numbered-list" start="7"><li>Protect against insecure WebView usage:<ul id="fdc01faf-830a-4d07-b50f-4ecda94f14fa" class="bulleted-list"><li style="list-style-type:disc">Look for WebView configurations that enable JavaScript or allow mixed content</li></ul><ul id="e615f911-4a2c-48da-9651-f3b9ffdd90ac" class="bulleted-list"><li style="list-style-type:disc">Verify that the WebView does not load untrusted content, and check for proper URL validation</li></ul><ul id="2d73904a-0a81-445b-ad9f-93b2d054f4de" class="bulleted-list"><li style="list-style-type:disc">Check for secure implementation of JavaScript interfaces and ensure they don&#x27;t expose sensitive data or functionality</li></ul><p id="3c71f7a5-c6e4-4b4a-a7e6-a28a6e8398e4" class="">
+</p><p id="c092958c-2133-4bb6-9960-1e008eadc706" class="">
+</p><p id="db98a4db-746d-46a0-a9c4-0430089cf0b1" class="">ETC:</p><ul id="348d03f8-8cec-4dfe-b9cb-12f8a3cad98e" class="bulleted-list"><li style="list-style-type:disc">CSRF?</li></ul><ul id="0224a67a-41c2-4405-9fa0-912cb4888d73" class="bulleted-list"><li style="list-style-type:disc">XXE</li></ul><ul id="ce8ade7a-9b1c-4a45-87fd-3c121e6650e2" class="bulleted-list"><li style="list-style-type:disc">SQL</li></ul><ul id="03b40a84-f8e0-4219-8922-a0249c107645" class="bulleted-list"><li style="list-style-type:disc">BAC - (admin page bypass, redirect bypasses)</li></ul><ul id="318c40a0-87bf-4931-a36c-68069211b5fa" class="bulleted-list"><li style="list-style-type:disc">Authorization broken? (uprgade to admin priv via changing req?)</li></ul><ul id="3cd64fd3-88e9-4f91-8891-3a6316d1a57d" class="bulleted-list"><li style="list-style-type:disc"></li></ul></li></ol></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+</body>
+</html>

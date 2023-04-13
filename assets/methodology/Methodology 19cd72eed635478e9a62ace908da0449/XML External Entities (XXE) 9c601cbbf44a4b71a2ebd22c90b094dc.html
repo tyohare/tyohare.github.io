@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="9c601cbb-f44a-4b71-a2eb-d22c90b094dc" class="page sans"><header><h1 class="page-title">XML External Entities (XXE)</h1></header><div class="page-body"><ul id="0c6fff36-47d0-4ab6-a373-3c8f906a477b" class="bulleted-list"><li style="list-style-type:disc">Attacking systems that parse XML input</li></ul><ul id="725d3bd7-2996-480d-96a3-9d6b55dca6fd" class="bulleted-list"><li style="list-style-type:disc">Dos, LFI, RCE etc.</li></ul><ul id="fde60ac8-c63f-4ad6-99b3-fe4d4e577fed" class="bulleted-list"><li style="list-style-type:disc">XML basics</li></ul><pre id="ce93efdc-73b9-48d6-8a24-a17ed208608b" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISOBLAH&quot;
+&lt;!DOCTYPE gift [
+	&lt;!ENTITY from &quot;C:/Heath&amp;Amber&quot;&gt;
+]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;Frnak&lt;/To&gt;
+	&lt;From&gt;&amp;from;&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><ul id="c1879d70-c474-4b2d-8f8a-a995c02ea54e" class="bulleted-list"><li style="list-style-type:disc">google XXE Payloads<ul id="f00c5a09-3357-4c5d-9535-77fd19a8116d" class="bulleted-list"><li style="list-style-type:circle">Payloads all the things</li></ul></li></ul><ul id="73daf752-9e6d-4b99-97a3-d26f55128cde" class="bulleted-list"><li style="list-style-type:disc">We can put malicious characters in our entities that are banned in normal use</li></ul><ul id="3b60ec3f-6ffc-4636-8791-1e52da8ffbf4" class="bulleted-list"><li style="list-style-type:disc">File upload features</li></ul><ul id="101d7e97-2966-44c5-86b3-a23744ba4cbd" class="bulleted-list"><li style="list-style-type:disc">Bypassing whitelisted extensions</li></ul><p id="35437130-0aec-44dd-881b-72cbc7f2efe9" class="">
+</p><p id="9f3a7bfa-34ce-4e61-98e2-618a4d7ca1ba" class="">Prevention:</p><h3 id="2fe1cff9-09b3-4024-8372-0380eede6729" class="">Disable XML External Entities</h3><p id="8168c846-bfc1-48ec-b9cf-f1ebd5eed12f" class="">This secure coding practice blocks <strong>XML External Entity attacks</strong></p><p id="1d67df55-e57c-4295-becf-16000bfe420b" class="">Unfortunately Java EE applications have a real problem with disabling XML External Entities. 
+They are turned on by default in the default DocumentBuilder and all other XML related capabilities: schema verification, transformation, etc.</p><p id="7f7dc43e-c582-455c-af70-1dec6308c82d" class="">There is also a multitude of open source parsers which have different configuration settings for turning off entities. 
+These parsers may be required by other open source components.</p><p id="4e57dbe4-eb33-48ff-9138-0dc5c89064eb" class="">Best approach is to disable all known resolving properties as seen below
+ . The project should have a single XML DocumentBuilder constructor that
+ turns off XXE and gets used everywhere.</p><pre id="5d7c40f5-74f4-4c96-9f07-9c68860965b0" class="code code-wrap"><code>
+public static final Collection XML_FEATURES_TO_DISABLE = Collections.unmodifiableList(Arrays.asList(
+    XMLConstants.ACCESS_EXTERNAL_DTD,
+    XMLConstants.ACCESS_EXTERNAL_SCHEMA,
+    XMLConstants.ACCESS_EXTERNAL_STYLESHEET,
+    // https://xerces.apache.org/xerces-j/features.html
+    &quot;http://xml.org/sax/features/external-general-entities&quot;,
+    &quot;http://xml.org/sax/features/external-parameter-entities&quot;,
+    &quot;http://apache.org/xml/features/validation/schema&quot;,
+    &quot;http://apache.org/xml/features/nonvalidating/load-dtd-grammar&quot;,
+    &quot;http://apache.org/xml/features/nonvalidating/load-external-dtd&quot;,
+    // https://xerces.apache.org/xerces2-j/features.html
+    &quot;http://apache.org/xml/features/xinclude/fixup-base-uris&quot;
+));
+
+factory.setExpandEntityReferences(false);
+
+// Set the validating off because it can be mis-used to pull a validation document
+// that is malicious or from the local machine
+factory.setValidating(false);
+
+factory.setXIncludeAware(false);
+try {
+    factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+} catch (ParserConfigurationException e) {
+    throw new IllegalStateException(&quot;Could not set secure processing feature&quot;, e);
+}
+
+for (String feature : XML_FEATURES_TO_DISABLE) {
+    try {
+        factory.setFeature(feature, false);
+    } catch (ParserConfigurationException e) {
+        log.debug(&quot;Could not disable processing feature &quot; + feature);
+    }
+}
+
+if (!allowDTD) {
+    try {
+        factory.setFeature(&quot;http://apache.org/xml/features/disallow-doctype-decl&quot;, true);
+    } catch (ParserConfigurationException e) {
+        log.debug(&quot;Could not disallow doctype declaration&quot;, e);
+    }
+}
+
+// Next create a new document builder
+DocumentBuilder db;
+try {
+    db = factory.newDocumentBuilder();
+} catch (ParserConfigurationException e) {
+    // this represents a fatal programming error in the code above
+    throw new IllegalStateException(e);
+}
+
+// Overwrite the entity resolver. This prevents injection from local machine like:
+
+db.setEntityResolver(new NoOpEntityResolver());
+
+</code></pre><h3 id="9c772f50-b877-45cf-a557-54704fbf8c95" class="">Principle of Least Privilege</h3><p id="57e401d9-f273-461a-9967-044b969e6039" class="">This code block protects against software weaknesses such as <strong>Execution with Unnecessary Privileges</strong>,
+<strong>Incorrect Permission Assignment for Critical Resource</strong>
+ and <strong>Incorrect Authorization</strong></p><p id="fc471710-289c-4f68-9af1-de88170677db" class="">The principle of least privilege says that users in a system should only
+ be given neccesary access or roles to complete their function.</p><p id="9cbf700d-8c69-45ef-96e3-5363db036b17" class="">Giving the user higher privileges by default exposes the application to 
+logical attacks where the application fails to reach the block of 
+code that drops privileges and the privileges remain elevated.</p><p id="1922d37b-cfb1-44b3-ae26-cecf01cfc8af" class="">Examples of such incorrect behavior are running processes as root/system
+ or giving a user admin roles by default before performing an 
+authorization check.</p><p id="288017a5-0048-444c-9244-b034df5fed58" class="">Execution with Unnecessary Privileges and Incorrect Permission Assignment for Critical Resource <em>add insult to injury</em> when another security flaw exists:</p><ul id="b2c6cf72-979a-4874-a958-9815bd33f939" class="bulleted-list"><li style="list-style-type:disc">Path Traversal and XML External Entity<ul id="b810be87-2f5d-4331-985b-74e096af764c" class="bulleted-list"><li style="list-style-type:circle">read system files:<p id="5313e455-f8a7-4fe2-84a1-1016c3e6b9d7" class="">/etc/shadow</p></li></ul></li></ul><ul id="1d96909f-7255-40bf-83e5-bee36e4bfa8d" class="bulleted-list"><li style="list-style-type:disc">OS Command Injection<ul id="a502989a-7e64-4587-895a-52c8a3ed89b2" class="bulleted-list"><li style="list-style-type:circle">from significant to total access to the system</li></ul></li></ul><p id="7d4cd265-704b-47bf-ac40-b8e581cfe887" class="">Even when software is not running as root if the user is given sudo rights it&#x27;s just the same.</p><p id="fb8a477c-a35c-4427-ad59-a989a7b60b3d" class=""><strong>Note:</strong> The principle of least privilege will not prevent authorization attacks if authorization decisions are not carefully reviewed.
+The principle of least privilege will also not prevent horizontal privilege escalation attacks where a user attacks another.</p></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+</body>
+</html>

@@ -64,7 +64,32 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="21458bca-8dc5-4dd5-b3b6-706465b2b09f" class="page sans"><header><h1 class="page-title">BAC</h1></header><div class="page-body"></div></article></main></main>
+    <main class="main"><article id="f890bd1b-fa94-48c9-9149-d54c351f230c" class="page sans"><header><h1 class="page-title">SMTP (25)</h1></header><div class="page-body"><p id="83faae72-cf8d-4ae3-958e-482f1676a0ea" class="">Verifying usernames:</p><pre id="118943b1-8a33-482e-87a6-e87556b24f79" class="code"><code>nc -nv &lt;IP&gt; 25
+EXPN
+VRFY root
+VRFY &lt;machine name&gt;
+VRFY &lt;other prev users?&gt;</code></pre><p id="62fb7cb0-5fa1-4229-81c9-98d9825e72e8" class="">
+</p><p id="50d5837a-ce61-49af-9c7a-625fea3bd82b" class="">Try accessing using telnet client:</p><pre id="dfa315ae-88d3-4342-98f2-fd41e87bc856" class="code"><code>telnet &lt;IP&gt; 25</code></pre><p id="30b29516-7af0-421e-9a42-73b7f3c696ff" class="">nmap enumeration:</p><pre id="9040279a-25cc-4c7b-846a-0aa549695a66" class="code"><code>nmap &lt;IP&gt; -p 25 --script=smtp-*</code></pre><p id="5bb0a582-d631-4fcf-b262-322b788517ec" class="">Wireshark:</p><pre id="1ed58062-e8c5-4987-9907-502f362905fc" class="code"><code>try capturing port 25 wireshark</code></pre><p id="739b8820-f1e5-47fc-8a60-f4c84f05bdce" class="">Client side email examples:</p><pre id="8b38b08a-d7ba-4a99-9517-878f8ad2e36a" class="code"><code>MAIL FROM:&lt;test@victim&gt;
+RCPT TO:&lt;test2@victim&gt;
+
+DATA
+
+urgent
+http://192.168.119.137/fp/shell.exe
+.</code></pre><p id="b2bbbf1f-dde2-48a6-859b-c3dc3d974e9b" class="">
+</p><pre id="69bfc7f6-2bfd-46ab-b95c-321afd605f4a" class="code"><code>From: [me] &lt;test&gt;
+To: &lt;[victim@victim](mailto:test2@victim)&gt;
+Date: Fri, 27 Oct 2022 06:14:11 +0000
+Subject: job application
+Mime-Version: 1.0;
+charset=&quot;ISO-8859-1&quot;;
+Content-Transfer-Encoding: 7bit;
+&lt;html&gt;
+&lt;body&gt;
+job application
+[http://127.0.0.1/fp/index.html](http://127.0.0.1/fp/index.html)
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

@@ -64,18 +64,12 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="8f0d0463-d7a2-45ca-9dba-4a957bd0c6e8" class="page sans"><header><h1 class="page-title">NFS</h1></header><div class="page-body"><p id="bab0292a-17cf-44cf-881a-6251d9023f45" class="">Basic Enumeration</p><pre id="d875db73-854c-4a08-a783-7d941a735f17" class="code"><code>showmount -e &lt;ip&gt;
-sudo mkdir /mnt/&lt;mntDirectory&gt;
-sudo mount -t nfs &lt;ip&gt;:&lt;/share&gt; /mnt/&lt;mntDirectory&gt;
-showmount -d &lt;ip&gt;
-#-o nolock
-mount -o rw,vers=2 &lt;IP&gt;:&lt;share&gt; &lt;local_directory&gt;
-#unmount
-sudo umount /mnt/&lt;mntDirectory&gt;</code></pre><pre id="e1269cce-43c2-487a-8b6b-9d13521d3855" class="code"><code>nc -nv &lt;ip&gt; 2049
-telnet &lt;ip&gt; 2049
-mountd</code></pre><p id="90106ae6-374e-4d5f-9922-13c0934d9137" class="">
-</p><p id="662dd4b3-66d9-4ca8-958e-966c963265cc" class="">nmap</p><pre id="8a83548a-5317-48c4-b4c0-12d1c73386b9" class="code"><code>nmap -p 111 --script nfs* 0.0.0.0
-nmap -sV --script=nfs-showmount 0.0.0.0</code></pre><p id="b686d23e-4e10-4000-82cf-d0bb15802c18" class="">
+    <main class="main"><article id="3a50f261-a9c6-4e2b-8184-ff4f2491aa37" class="page sans"><header><h1 class="page-title">POP3 (110)</h1></header><div class="page-body"><pre id="77d1c348-2430-4fe4-9144-8d8be0f1a6e1" class="code"><code>nc -nvC 10.11.1.72 110
+
+USER root
+
+PASS password</code></pre><p id="e639e512-0a09-4510-af2d-25bd5ac99071" class="">
+</p><p id="d14e63d6-acc2-46d2-b1d6-9e718921ee7b" class="">
 </p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->

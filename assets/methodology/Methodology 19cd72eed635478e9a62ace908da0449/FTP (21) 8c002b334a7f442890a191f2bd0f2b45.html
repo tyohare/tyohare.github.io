@@ -64,7 +64,22 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="cfed72aa-195b-4455-91d8-136e77639136" class="page sans"><header><h1 class="page-title">CSRF</h1></header><div class="page-body"></div></article></main></main>
+    <main class="main"><article id="8c002b33-4a7f-4428-90a1-91f2bd0f2b45" class="page sans"><header><h1 class="page-title">FTP (21)</h1></header><div class="page-body"><pre id="02f0f9bb-2457-4326-a5e6-ef491bd152ae" class="code"><code>ftp &lt;IP&gt;
+ftp &lt;IP&gt; -A
+---
+binary - binary encoding
+active - active mode
+get &lt;file&gt;
+put &lt;file&gt;
+mget *?
+
+---
+anonymous login: username: anonymous password &lt;blank&gt;
+
+Is the FTP share reflected to a webserver?</code></pre><p id="f1add1ff-0a7a-4a97-9a5d-1edc97db78de" class="">
+</p><p id="4312ae56-e7f8-4984-9cd3-922326410113" class="">Download all FTP files without seeing them with wget:</p><pre id="d9670cb1-05e5-4e2a-8b2e-208feafd5580" class="code"><code>wget -m ftp://user:password@IP
+
+wget -m --user=username --password=password ftp://ip.of.old.host</code></pre><ul id="f0e11f7b-b22b-4004-87db-620eb9de9d57" class="bulleted-list"><li style="list-style-type:disc">Is the version of ftp vulnerable?</li></ul></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

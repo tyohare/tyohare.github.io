@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="67cf8e59-c603-478c-9a9b-0498748a0ff7" class="page sans"><header><h1 class="page-title">MITRE</h1></header><div class="page-body"><h3 id="216093b6-8576-4480-8839-6c73408dffb2" class="">Resource Separation and Access Control</h3><p id="ddacaf2c-01b7-4d9a-a90e-ab9a5db7f324" class="">This code block protects against software weaknesses such as <strong>Missing/Incorrect Authorization</strong></p><p id="fb240a49-d9e2-478e-9a75-fcce83585fc4" class="">Resource separation/segmentation minimizes the impact of an unauthorized
+ access by limiting the resources that a certain user or role has access
+ to.</p><p id="1f29bd41-cc78-46f3-98be-cd3b9cb0b795" class="">Resources can be network resources such as LANs or data resources such as different customer databases used in a SaaS offering.</p><p id="38f571a0-44ee-4d97-a3c8-06a034ae3df9" class="">If an attacker obtains access to the account of an administrator for one
+ of the resources they do not have access to the other resources in the 
+system.</p><p id="dda8d5c6-0ead-4176-b4e1-fff1ae6f5b54" class="">Same approach can be applied to software development where URLs and other server resources can be segmented based on access.</p><p id="73f33e1c-8bea-411e-99de-62c7d7d941f9" class="">This approach also avoids logical attacks. For example if an application
+ defines a class of servlets that can only be accessed by 
+administrators, 
+this reduces the risk of logical flaws being introduced because the 
+authorization logic can be simplified and declared in a base class.</p><blockquote id="8d5f1d1e-aa8f-459a-a8a0-10a459c187e5" class="">&quot;Divide the software into anonymous, normal, privileged, and 
+administrative areas. Reduce the attack surface by carefully mapping 
+roles with data and functionality. 
+        Use role-based access control (RBAC) [R.862.1] to enforce the 
+roles at the appropriate boundaries.
+Note that this approach may not protect against horizontal 
+authorization, i.e., it will not protect a user from attacking others 
+with the same role.&quot;<p id="379d44c0-edf7-4247-8543-fcac0dada86c" class="">From MITRE <a href="https://cwe.mitre.org/data/definitions/862.html">CWE 862</a></p></blockquote><p id="a2da9038-20b0-46d0-a9aa-d97918aad0fa" class="">
+</p><p id="233c9d37-6354-4800-82f2-cf357de932e4" class="">
+</p><h3 id="49531431-ef67-4301-9d0a-9e0c6076b1c2" class="">Authenticated by Default</h3><p id="c16de10a-eaba-4203-9393-3cbdfa1b6ae8" class="">In order to avoid mistakes the software should be designed in such a way that new fuctionality is 
+    automatically protected by authentication.</p><p id="6bb6f521-d673-4896-bd1c-d87b4b5ef1c1" class="">Framework or server provided authentication should be used where possible while custom authentication should be avoided.</p><p id="9cc28ed1-55f6-4109-8089-c924f2d766f3" class="">In Java EE application configurations it is possible to protect 
+resources using URL regular expression patterns by defining a 
+&lt;security-constraint&gt; in the web.xml file. 
+When this approach is taken you should be careful to not place any 
+sensitive resources outside the protected folders.</p><p id="7f8baad1-3ac2-44a1-847e-a0412196acd3" class="">Another approach in Java EE is to use request filters which allow 
+processing authentication on every single request. 
+When implementing an authentication filter everything should be 
+authenticated by default and authentication logic should only be ignored
+ on exception.
+This will ensure that when a new resource is added it should benefit 
+from authentication by default.
+
+<strong>Example authentication filter</strong></p><pre id="d1be7119-b131-4afe-9b91-83a8dd9ed351" class="code code-wrap"><code>
+/**
+web.xml definition
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;AuthenticationFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+*/
+
+public class AuthenticationFilter implements Filter {
+	/* (non-Java-doc)
+	 * @see java.lang.Object#Object()
+	 */
+	public AuthenticationFilter() {
+		super();
+	}
+
+	/* (non-Java-doc)
+	 * @see javax.servlet.Filter#init(FilterConfig arg0)
+	 */
+	public void init(FilterConfig arg0) throws ServletException {
+		// TODO Auto-generated method stub
+	}
+
+	/* (non-Java-doc)
+	 * @see javax.servlet.Filter#doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2)
+	 */
+	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
+        if (req instanceof HttpServletRequest){
+            HttpServletRequest request = (HttpServletRequest)req;
+
+            if(isPublic(request)==false){ //isPublic runs the current request against a list of requests paths where authentication doesn&#x27;t need to occur
+                String authToken = (String) request.getSession().getAttribute(&quot;authToken&quot;);
+                //do some cookie validation here
+                Cookie[] cookies = request.getCookies();
+                boolean loggedIn = false;
+                if(cookies != null) {
+                    for (int i = 0; i &lt; cookies.length; i++) {
+                        Cookie cookie=cookies[i];
+                        String cookieName = cookie.getName();
+                        String cookieValue = cookie.getValue();
+                        if(cookieName.equals(&quot;authToken&quot;) &amp;&amp; cookieValue.equals(authToken)) loggedIn = true;
+                    }
+                }
+
+                if (!loggedIn){
+                    ((HttpServletResponse)resp).sendRedirect(request.getContextPath()+&quot;/login.jsp&quot;);
+                    return;
+                }
+            }
+        }
+        chain.doFilter(req, resp);
+	}
+
+	/* (non-Java-doc)
+	 * @see javax.servlet.Filter#destroy()
+	 */
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
+
+}
+</code></pre><p id="c7602b1c-7864-48d9-985c-0959afd927d5" class="">If neither of the options above can be implemented resources such as 
+Servlet classes should inherit from an AuthenticatedServlet class which 
+contains the authentication logic
+and executes it on every single request. This is more error prone but 
+still better than performing authentication logic within the code for 
+each individual resource.</p><p id="8a3a5174-f91c-4c36-b51e-804d34f45491" class="">
+</p><p id="dcf24b83-93ba-436c-9da7-318aeb8269fb" class="">
+</p><h3 id="4eefcfcc-8c43-4da5-99a0-d8c174661904" class="">Use Strong Data Encryption</h3><p id="2070e55d-94d0-46ba-80e9-977026be79e5" class="">This code block protects against software weaknesses such as</p><ul id="819b9792-948e-436c-b30f-2962fed47d27" class="bulleted-list"><li style="list-style-type:disc">Missing Encryption of Sensitive Data</li></ul><ul id="1a80ba1b-54f0-46e9-857e-b75cc13cb634" class="bulleted-list"><li style="list-style-type:disc">Use of a Broken or Risky Cryptographic Algorithm</li></ul><ul id="929e5532-4a7b-47b0-b43e-de22d3b3c08d" class="bulleted-list"><li style="list-style-type:disc">Use of a One-Way Hash without a Salt</li></ul><blockquote id="b88e08a8-0183-4826-b77b-eaab6bf33e07" class="">&quot;When there is a need to store or transmit
+ sensitive data, use strong, up-to-date cryptographic algorithms to 
+encrypt that data. 
+       Select a well-vetted algorithm that is currently considered to be
+ strong by experts in the field, and use well-tested implementations. 
+       
+       ...
+       
+        Do not develop custom or private cryptographic algorithms. They 
+will likely be exposed to attacks that are well-understood by 
+cryptographers. 
+        Reverse engineering techniques are mature. If the algorithm can 
+be compromised if attackers find out how it works, then it is especially
+ weak.
+        Periodically ensure that the cryptography has not become 
+obsolete. Some older algorithms, once thought to require a billion years
+ of computing time, can now be broken in days or hours. 
+        This includes MD4, MD5, SHA1, DES, and other algorithms that 
+were once regarded as strong.&quot;<p id="e5a1a517-f734-4213-af20-731de56e581c" class="">From MITRE <a href="https://cwe.mitre.org/data/definitions/327.html">CWE 327</a></p></blockquote><h3 id="88afe72d-2a60-421c-a344-ed179d98cb4c" class="">Encryption of data at rest</h3><p id="2e3c54f2-7a32-446e-8f4c-4e0fddff2375" class="">Sensitive data stored locally should be encrypted to prevent both 
+against physical theft and data leakage attacks. Sensitive data includes
+ but not limited to: personally identifiable information (PII),
+passwords, confidential business information.</p><p id="8a9291f7-e19c-4ef3-9f34-d12545ce161e" class="">The industry standard is to consider all passwords and encryption keys sensitive data. 
+User passwords should stored irreversible and be hashed using a salted adaptive algorithm.</p><p id="ea65764f-7921-4fe8-9d4a-48a5da8112fd" class="">System passwords such as passwords to a database or LDAP server should 
+be encrypted with a strong cryptographic algorithm and using a 
+dynamically generated key or a key obtained from a Hardware Security 
+Module.
+Same approach should be taken for other data such as PII or confidential
+ information.</p><p id="7805f6d1-d4e3-4fd1-a064-b1ccf49e157e" class="">The table below lists approved algorithms for various types of data</p><table id="dd5852dd-5eef-40b7-a99a-6cdb94948432" class="simple-table"><tbody><tr id="b0302d41-9e23-44f4-aeb5-5f5ea024e377"><td id="JaV?" class="">Type of data</td><td id="@:GR" class="">Approved algorithm</td><td id="G@qz" class="">Preferred algorithm</td><td id="KR[|" class="">DO NOT USE</td></tr><tr id="b9a36700-72ba-4a8e-9437-f3402f21eeca"><td id="JaV?" class="">User passwords</td><td id="@:GR" class="">Salted SHA-2 class (SHA256 and up)</td><td id="G@qz" class="">Salted PBKDF2 with large number of rounds</td><td id="KR[|" class="">MD5, SHA1, Unsalted</td></tr><tr id="41218c22-0e91-4e92-adcc-407cc8d25792"><td id="JaV?" class="">Reversible sensitive data</td><td id="@:GR" class="">Symmetric - AES256 CBC with dynamic key/iv (HSM), Asymmetric - RSA 2048 -- RSA claims that 1024 bit keys, no longer safe</td><td id="G@qz" class="">Symmetric - AES256 CTR or stronger with dynamic key (HSM), Asymmetric - RSA 4096</td><td id="KR[|" class="">{xor},DES,AES 256 ECB for large data, hardcoded keys</td></tr></tbody></table><p id="a85ec23e-84f7-42e2-9f97-6515bca0d36d" class="">Sample hashing of a password using PBKDF2</p><pre id="2c9e4843-ab33-4fd9-a2db-a00f9a56ee26" class="code code-wrap"><code>/**
+* Generates the PBKDF hash for the string
+* @param password The password to be hashed
+* @param salt The salt used to make the password unknown to password cracking dictionaries
+* @param iterations The number of times to repeat the hashing algorithm on the resulting digest. Used to increase the time required to crack a passwords. The higher the number the longer the time required to crack.
+* @param derivedKeyLength The length of the resulting hash for example 64
+* @return
+* @throws NoSuchAlgorithmException
+* @throws InvalidKeySpecException
+*/
+public static String getEncryptedPassword(String password, byte[] salt,  int iterations,  int derivedKeyLength) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, iterations, derivedKeyLength * 8);
+
+    SecretKeyFactory f = SecretKeyFactory.getInstance(&quot;PBKDF2WithHmacSHA256&quot;);
+
+    byte[] hashBytes f.generateSecret(spec).getEncoded();
+
+    return Base64.getEncoder().encodeToString(hashBytes);
+}
+</code></pre><h3 id="16287560-c677-45bf-ab00-454b9be2dac3" class="">Encryption of data in transit</h3><p id="a9f3d34e-a15f-4d3c-a40c-201c07d78682" class="">It has become an industry standard to secure all communications. It is 
+considered a vulnerability to send data in clear text (like in the case 
+of the http:// urls). Other vulnerabilities
+include using flawed protocols or ciphers in the communication.
+
+It is also a vulnerability to ignore invalid server certificates.
+
+Here is a list of the few notable vulnerablity disclosures in SSL/TLS 
+protocols and ciphers over the past few years.</p><table id="536a5f90-b1ef-4ab9-bb2b-63a0e74a5801" class="simple-table"><tbody><tr id="b41eb6db-ed12-4f8b-90ec-3e84c592d532"><td id="UoiY" class="">Bacronym</td><td id="rb\v" class="">Vulnerable Protocol or Cipher</td><td id="syt:" class="">Reference</td></tr><tr id="8a581309-fb19-4170-a6b7-6b9f03616db6"><td id="UoiY" class="">POODLE</td><td id="rb\v" class="">SSLv3</td><td id="syt:" class=""><a href="https://en.wikipedia.org/wiki/POODLE">Wikipedia article</a></td></tr><tr id="0678e723-2360-42c8-977d-dbb26cce5a05"><td id="UoiY" class="">FREAK</td><td id="rb\v" class="">RSA_EXPORT keys</td><td id="syt:" class=""><a href="https://en.wikipedia.org/wiki/FREAK">Wikipedia article</a></td></tr><tr id="3afb88f3-984f-457f-832f-497419875ee4"><td id="UoiY" class="">Logjam</td><td id="rb\v" class="">Diffie-Hellman key exchange</td><td id="syt:" class=""><a href="https://en.wikipedia.org/wiki/Logjam_(computer_security)">Wikipedia article</a></td></tr></tbody></table><p id="f0bb44a4-d3e6-4e19-aea3-719797aea9e6" class="">Protocol and cipher issues are addressed in the server configuration and the configuration of communication clients.
+
+The public site</p><p id="a50d6cea-19a5-4540-abc5-fbf2d538c47a" class=""><a href="https://www.ssllabs.com/ssltest/">SSLLabs</a></p><p id="1e38dfe5-bc58-4d4b-bcea-a41535ed0b3e" class="">allows users to test any public server for secure communication issues.</p><p id="b0dfb328-ddab-402d-8266-f2d206ec216f" class="">
+</p><h3 id="58fee12a-d19d-4877-bac5-dd89ceb61a0d" class="">Strong Login Verification</h3><p id="2662a13f-fc2c-4763-8449-db80637c7fa6" class="">These code blocks protect against software weaknesses such as <strong>Improper Restriction of Excessive Authentication Attempts</strong></p><h3 id="e3bc6cac-5b3f-4c3e-bab9-e1512ade144c" class="">Two Factor Authentication (2FA)</h3><p id="17a0029c-fd62-41c0-94c8-3fdd86aa2abc" class="">Using a secondary authentication mechanism such as an RSA ID or mobile 
+token prevents a wide range of login attacks from Spoofing and Brute 
+Force categories .</p><h3 id="5f1c83dd-3371-46b4-bd95-eb82d769cd7f" class="">Account Lockout</h3><p id="7fa2c12a-29b9-4374-b513-cf20cad0dbc4" class="">The user account should become locked after more than 10 invalid login attempts at a minimum. 
+The event should be logged and the user should be automatically notified by e-mail of invalid activity to their account.</p><h3 id="b567a64e-52a5-46e0-b8e8-ba90ba51ed96" class="">Strong Passwords Requirements</h3><p id="49fd6c16-221d-4d54-937d-ac25a4c605cf" class="">Weak passwords such as <code>admin</code> or <code>123456</code> should 
+not be allowed. Passwords should have a good amount of complexity. 
+Password meters should be used to guide users on how to generate a good 
+password during registration.
+
+Long passwords that are made up of random words like 
+&quot;BlueBananaSubwayMeter&quot; are more secure than passwords with high 
+character complexity such as &quot;P@ssw0rd&quot; which are easily guessed.
+
+However note that compliance standards such as PCI specifically require a
+ password makeup that includes both letters and numbers.</p><h3 id="56619f68-e43d-40fa-aee3-fc4acb436c9c" class="">Password Expiry</h3><p id="3b2251d5-36c9-4d1d-9706-4656561dcfe1" class="">Passwords should expire after less than three months to limit the amount
+ of time they could be brute forced through an online brute force or 
+offline cracking.</p><h3 id="863d7a5b-ff37-4aef-aa20-10790ea5933a" class="">Never hard-code passwords</h3><p id="da6610a9-bd79-4d9f-ba42-d7cef7471aad" class="">A hard-coded password cannot benefit from expiry, reset or lockout.</p><p id="f8eeb3a4-c7d4-4c2d-8f38-38173afea239" class="">
+</p><p id="a22a5445-1f7e-4c59-afca-83f7182de93e" class="">
+</p><h3 id="9d12330b-fd42-4780-ba94-0cdc43d1a476" class="">Check Boundaries</h3><p id="c6a88448-302d-48a7-8d3b-18da76e1b34a" class="">This secure coding practice prevents overflow attacks such as:</p><ul id="5f42c36f-fc05-49c6-8b7e-65df9b7acc67" class="bulleted-list"><li style="list-style-type:disc">Integer Overflow or Wraparound</li></ul><ul id="7a320731-85b8-40f4-95f7-2dd42b5a74ef" class="bulleted-list"><li style="list-style-type:disc">Buffer Copy without Checking Size of Input (&#x27;Classic Buffer Overflow&#x27;)</li></ul><ul id="198db3db-a71a-4afd-81d6-8e96f864f44c" class="bulleted-list"><li style="list-style-type:disc">Incorrect Calculation of Buffer Size</li></ul><p id="aa06f126-6d66-4306-8b92-dcf94e439ae6" class="">Whenever user input is received developers should check that the input 
+cannot be used to influence overflows on boundaries, whether it is 
+MAX_INT or whether it is the maximum size allocated for a buffer.</p><p id="05c6ea62-85cb-460d-a144-a0b551bc9aae" class="">A simple comparison against a known limit constant can go a long way to prevent serious logical attacks.</p><p id="f3fd10cd-8123-418b-b8a8-bb91a8b2274f" class="">Interesting fact, Boeing had to fix a Integer 
+Overflow in the 787 Dreamliner which could cause it&#x27;s electrical system 
+to fail according to 
+    <a href="https://www.engadget.com/2015/05/01/boeing-787-dreamliner-software-bug/">Engadget</a>.</p><p id="6c9ef857-b5ff-4892-bc5c-168f31c77299" class="">
+</p><p id="d0c9c844-826f-41af-9771-beb67fc59ce6" class="">
+</p><h3 id="6d452385-0712-443b-b277-0fa9c2007d9a" class="">Integrity Verification</h3><p id="d922d2e6-f384-400f-894c-fc4c91d0f890" class="">This code block protects against software weaknesses such as <strong>Download of Code without Integrity Check</strong></p><p id="0afdbe96-2e97-438f-ac3a-61f6915908d2" class="">Most communication protocols have some level of integrity checks built 
+in, primarily to account for data degradation or corruption. 
+These mechanisms vary from simple checksums, to MD5 or SHA digests. Git,
+ for example, implements a SHA-1 mechanism to identify commits.</p><p id="18323ad5-86e5-4e9c-9310-90bc2fe082ee" class="">When security is involved developers should be concerned with attackers 
+potentially intercepting update packages and replacing them with 
+malware. 
+This should be an expecially high concern for security software which 
+are used to fight malware. The absence of integrity checks allows the 
+manipulation of update packages.</p><p id="a5df6ad1-ba4d-480b-b13e-4530911829d5" class="">Simple checksums and digests can be bypassed through collisions. MD5 collisions can be identified in 1 day while 
+SHA-1 collisions can be identified in 1 year <a href="http://shattered.io/">as disclosed by Google researchers in 2017</a>.</p><p id="f1364ea4-7575-4a4f-b111-d2ceb4244a53" class="">The importance of the Google discovery is significant since many SSL 
+certificates are signed with SHA-1 hashes for integrity. 
+This means that man-in-the-middle attackers with sufficient computing 
+power could potentially create fake SSL certificates using a different 
+public key and break secure communications.</p><p id="64ea8b3e-3ab0-4bd1-a326-1c8829cc3b29" class="">Algorithms in the <strong>SHA-2</strong> class such as SHA-256 still 
+remain safe until more computing power can break them. 
+However even with SHA-256 there still remains the problem of 
+transmitting the hashes to the receiving party. If the hashes are 
+transmitted through a separate channel this channel should be secure.</p><p id="cfb2ee12-13c8-4701-a81c-27170582344c" class="">An approach that attempts to resolve this problem is using RSA 
+signatures in a similar way TLS communication works. Here is the process
+ at a high level:</p><ul id="0ebb7a17-0719-489d-821f-f904e4fed86e" class="bulleted-list"><li style="list-style-type:disc">The software update site provides a certificate which can be verified by a public authority such as Verisign</li></ul><ul id="f0ff0895-737b-425d-ad7e-ba57117cfe0d" class="bulleted-list"><li style="list-style-type:disc">The private key for this certificate is closely guarded and never shared with consumers of the software</li></ul><ul id="f6925494-a651-46b5-b074-21fa332070b0" class="bulleted-list"><li style="list-style-type:disc">When new software is released the update package is hashed using a strong algorithm (SHA-256+)</li></ul><ul id="810d6e49-3b3d-4928-8eac-d1a85ea84b10" class="bulleted-list"><li style="list-style-type:disc">The hash is in turn signed with the private key that only the software provider knows</li></ul><ul id="eb9120fc-544c-4d6f-8baa-6b20342dae11" class="bulleted-list"><li style="list-style-type:disc">The software signing certificate containing the public key is packaged along with the software and the signed hash</li></ul><ul id="7e936f68-fbc4-44f9-a750-413bf72765a2" class="bulleted-list"><li style="list-style-type:disc">When the software consumer downloads the package it first
+checks that the certificate is valid (using the trusted Certificate
+authority)</li></ul><ul id="eb7c5324-8d15-4d17-b0e1-ca4df5e0dd9d" class="bulleted-list"><li style="list-style-type:disc">Next the consumer uses the certificate public key to verify the signature and verifies the hash matches the update contents.</li></ul><p id="078f9c5a-f47c-4c70-889f-64661195e06d" class="">The following tutorial covers digital signatures in Java: <a href="https://docs.oracle.com/javase/tutorial/security/apisign/">Generating and Verifying Signatures</a></p><p id="0a5ece48-2100-40f4-be76-f76de52530bf" class="">
+</p><h3 id="c8ccc422-00b5-400c-b0c8-a527a4d5f2bf" class="">Input Allow Listing</h3><p id="bc8aa7ac-3843-4b4d-b796-039540f3da28" class=""><strong>Input Allow Listing</strong> also known as Input Validation or Input Sanitization is a tenet of application security. 
+    It is the single most important countermeasure that will prevent a large amount of attacks.</p><p id="85219b94-a77f-47ca-9b88-39cdf5ab971f" class="">Here are a few of the SANS 25 that are prevented or at least 
+mitigated through Input Allow Listing. 
+    Even if allow listing cannot be employed in some cases, if used for 
+most inputs it reduces the attack surface and the risk to the 
+application.</p><ul id="543075fa-5fd0-4dbd-ad2b-bc0d288576ff" class="bulleted-list"><li style="list-style-type:disc">URL Redirection to Untrusted Site (&#x27;Open Redirect&#x27;)<p id="429f7d9e-5c27-4642-a045-23fa61d60984" class="">-- allow only specified urls</p></li></ul><ul id="cc4332ff-550c-42f8-a0e3-47aacd82e8cf" class="bulleted-list"><li style="list-style-type:disc">Improper Neutralization of Input During Web Page Generation (&#x27;Cross-site Scripting&#x27;)<p id="88ce2f54-7fc3-4815-a76e-87e5b98050cb" class="">-- allow only alphanumeric</p></li></ul><ul id="701f2aef-e29e-4c4f-bd24-b5584a4b1a7c" class="bulleted-list"><li style="list-style-type:disc">Improper Limitation of a Pathname to a Restricted Directory (&#x27;Path Traversal&#x27;) <p id="bf622c36-db7e-42dc-ba71-9295b5765bc2" class="">-- allow only alphanumeric or allow only specified files</p></li></ul><ul id="6f918ef6-31c6-4041-88e9-3eaad87ba432" class="bulleted-list"><li style="list-style-type:disc">Unrestricted Upload of File with Dangerous Type<p id="04effce8-b56f-4078-9189-468f550de3da" class="">-- allow only safe file extensions</p></li></ul><ul id="d620e452-f45d-4d99-a287-60d33de84e86" class="bulleted-list"><li style="list-style-type:disc">Improper Neutralization of Special Elements used in an SQL Command (&#x27;SQL Injection&#x27;)<p id="cb723284-b373-4095-970f-db63221e1a8c" class="">-- allow only alphanumeric</p></li></ul><ul id="a3e375de-d722-4956-a1c4-056aff0c692f" class="bulleted-list"><li style="list-style-type:disc">Improper Neutralization of Special Elements used in an OS Command (&#x27;OS Command Injection&#x27;)<p id="0f429c72-7f78-4f86-807b-70f11f45ca02" class="">-- allow only alphanumeric</p></li></ul><ul id="12678d81-61c7-44f9-9074-e767d55d5250" class="bulleted-list"><li style="list-style-type:disc">Buffer Copy without Checking Size of Input (&#x27;Classic Buffer Overflow&#x27;)<p id="56bdb02c-108f-4397-981b-05d18dc059a1" class="">-- limit size</p></li></ul><h3 id="5476ad7a-3860-4f33-be0b-78ce52eb9827" class="">Input Allow Listing vs. Input Block Listing</h3><p id="a0926462-2257-4242-866e-7fdeff535076" class="">The choice of using the term &#x27;Allow Listing&#x27; instead of &#x27;Validation&#x27;
+ or &#x27;Sanitization&#x27; was made to differentiate from the bad kind of 
+validation: &#x27;Block Listing&#x27;.</p><p id="2b54192c-da97-4fe2-8ffd-4d9e659215b6" class="">Block listing involves blocking certain strings or characters. It 
+can almost always be defeated by skilled attackers. 
+    You&#x27;d think it&#x27;s better than nothing but you&#x27;d be wrong. Block 
+listing masks vulnerabilities for automated tools and testers that are 
+less skilled.</p><p id="6c316b3e-da43-4a16-b7c0-e8f3bc1d61ab" class="">The example below tries to prevent a command injection attack (inspired from a real life scenario, the <a href="https://imagetragick.com/">ImageTragik bug</a> - translated to Java from C++)</p><pre id="789f54b5-05fb-460c-baad-cf918c417c56" class="code code-wrap"><code>    String location=request.getParameter(&quot;location&quot;);
+    if(location.indexOf(&quot;;&quot;)!=-1){
+        throw new Exception(&quot;Invalid character in location&quot;); //prevent adding commands to wget using the ; character: location=www.google.com;ls -la
+    }
+    else{
+        Runtime.getRuntime().exec(&quot;/bin/sh -c &#x27;wget &quot;+location+&quot;&#x27;&quot;);
+    }
+</code></pre><p id="8dce4f8e-1bc6-4395-967a-5e467977e5d4" class="">The attacker can still inject commands without the ; symbol, for example they can use the ` character: <code>location=www.google.com`ls -la`</code></p><h3 id="30262995-7c0b-4f81-b4dd-b3861168d755" class="">Input Allow Listing Rules</h3><p id="961eead3-1b0e-4336-973a-71defc194507" class="">All user input should be considered unsafe by default.</p><p id="c7b8458e-1f2d-4c8d-b30f-ca74840f4dc3" class="">The majority of input used in an application ends up being numeric or alphanumeric strings. 
+    Even when other characters are required they are usually part of a limited set. 
+    So only alphanumeric characters should be allowed by default while other can be added on exception.</p><p id="767956ab-2bd5-4dfd-9f6f-ae869f5dc8ef" class="">The example below implements input allow listing</p><pre id="8d24ce84-1fda-4a3a-9c4b-a9eb35a3f9e1" class="code code-wrap"><code>    public static boolean isAlphanumOrExcepted(in maxSize, String val, char ... excepted){
+        boolean result = true;
+        int count = val.length();
+        if(count&gt;maxSize) return false;
+
+        for(int i=0;i&lt;count;i++){
+        	char c = val.charAt(i);
+        	boolean isOk = false;
+        	//if  alphabetic turns true , this works for Unicode chars
+        	isOk = isOk | Character.isAlphabetic(c);
+        	//if it&#x27;s a digit turns true, this works for Unicode chars
+        	isOk = isOk | Character.isDigit(c);
+        	//if it&#x27;s in the list of exceptions turns true
+        	for(char ex : excepted){
+        		isOk = isOk | ex==c;
+        	}
+
+        	if(isOk == false){ //if the character didn&#x27;t meet the requirements return false
+        		return false;
+        	}
+        }
+        return result;
+    }
+    //...
+    String location=request.getParameter(&quot;location&quot;);
+    if(isAlphanumOrException(32, location,&#x27;:&#x27;,&#x27;/&#x27;,&#x27;?&#x27;)){
+        Runtime.getRuntime().exec(&quot;/bin/sh -c &#x27;wget &quot;+location+&quot;&#x27;&quot;); //btw there is a better way to call shell commands which reduces the risk of command injection, see parameterized commands code block
+    }
+    else{
+        throw new Exception(&quot;Invalid character in location&quot;); //only allow a limited set of valid url characters
+    }
+</code></pre><p id="9bcb6ce1-7570-4d06-a945-3eedf0a0b2be" class="">In Node.js there&#x27;s a handy validator package containing various validation techniques</p><h3 id="7a4ce8e1-5545-411b-9068-7fade40d343c" class="">Input Allow Listing as a Framework</h3><p id="e1c6cb69-90d1-4e04-bb7a-db4e73882342" class="">If possible allow listing should be built into the 
+API or Framework. 
+    Ideally a new developer writing a new REST API should automatically 
+benefit from allow listing and only add extra characters or symbols as 
+needed.</p><p id="29f9ef06-5d53-47ad-ad71-540fcb45da42" class="">This can be done by introducing allow listing as part of the default
+ data processing routines. 
+    At a minimum a common validation class should be made available and 
+used every time user input is accepted and be enforced as part of coding
+ guidelines.</p><p id="a644ccf0-0844-4b4d-bbb4-d5a360854ae7" class="">The example below shows the implementation of a &#x27;SafeGetParameter&#x27; function that can be reused to ensure validation</p><pre id="63ba843a-1b95-454b-89da-d555a346427f" class="code code-wrap"><code>     String userId=Util.SafeGetParameter(32,request,&quot;userId&quot;,ValidatorConstants.ALPHA_NUM);
+</code></pre><h3 id="6499e062-1038-4a2a-bc48-541e86a96380" class="">Indirect Object References</h3><p id="6c54f405-8aba-4d08-b882-8ca56631bf61" class="">This code block can prevent several issues from the MITRE Top 25 list.</p><ul id="5c748109-67bf-48fc-b6f4-b8ef526017fd" class="bulleted-list"><li style="list-style-type:disc">URL Redirection to Untrusted Site (&#x27;Open Redirect&#x27;)</li></ul><ul id="6a4a299b-1702-46e2-872f-33d9f2a9ce5a" class="bulleted-list"><li style="list-style-type:disc">Unrestricted Upload of File with Dangerous Type</li></ul><ul id="ecc98e91-9804-4aeb-b910-ad40ea7c6343" class="bulleted-list"><li style="list-style-type:disc">Improper Limitation of a Pathname to a Restricted Directory (&#x27;Path Traversal&#x27;)</li></ul><p id="ba92e1f0-1804-4216-91ff-8e9bf890e5de" class="">Using <strong>indirect object references</strong> 
+(as opposed to direct object references) means that the user input is 
+manipulated
+on the server side and compared to a list or a hashmap. The example 
+below shows a hashmap of file resources for a server containing 
+documents.</p><table id="d8a3cba1-2b07-4682-a7cc-0255e3be1a84" class="simple-table"><tbody><tr id="36dcb299-3e8f-466f-a22c-95dc4bc5dcba"><td id="{RHa" class="">Resource ID</td><td id="EKLK" class="">File Name</td></tr><tr id="a2b63fad-aacb-4ddf-8bba-ef78b39015c2"><td id="{RHa" class="">2543626326753473534754334347753434573</td><td id="EKLK" class="">/var/www/myapp/files/docs/accounts.xls</td></tr><tr id="ca8da391-4a23-45b6-bc8d-991fc639d3df"><td id="{RHa" class="">9789694693274976937629462958605603862</td><td id="EKLK" class="">/var/www/myappfiles/docs/proposal.doc</td></tr></tbody></table><p id="728b5959-c373-4bb7-b470-95c20352dd8a" class="">When the application retrieves the file rather than using the actual 
+file name, it uses the resource id and keeps the actual file location 
+secret and immutable.
+If the user attempts to manipulate the resource id it will have no 
+effect.</p><pre id="fe07db0a-71a7-4ce0-bf1a-6da9fa8cff46" class="code code-wrap"><code>    String resourceId = Util.SafeGetParameter(request,&quot;resourceId&quot;,ValidatorConstant.NUMERIC);
+    if(resourceId!=null){
+        BufferedReader fileReader = FileManager.mapResourceIdToFile(resourceId);
+    }
+</code></pre><p id="95c5f025-c678-44e1-b770-eded546be1aa" class="">During file upload, the application should ignore the file name provided by the user and replace it with a GUID. 
+    This mitigates against both Path Traversal and Upload of Dangerous File Types.</p><p id="a650000d-ca72-45a0-b527-6d529db295fc" class="">If the user provided file name must be maintained, like in the case of unzipping, 
+    then the application should validate that the absolute file name resolves to an allowed directory.</p><p id="740e8c8f-16ae-456f-8fe5-fcffb99ddaa4" class="">In a similar way indirect object references can be used for URL 
+redirects either by maintaining a hashmap or by manipulation on the 
+server side that will neutralize
+    any non relative URLs.</p><p id="896ae5c6-711b-4f07-ba9b-faf7378b8d72" class="">
+</p><p id="5c50df8c-315b-4ed5-ada4-40592eb55fea" class="">
+</p><h3 id="3a24fb65-4d62-4b1f-b9dc-f9185f08469f" class="">Forgery Prevention Token</h3><p id="ad5361e7-9522-48df-a188-f702e1325338" class="">This countermeasure primarily prevents <strong>Cross-Site Request Forgery</strong> attacks but can also mitigate several other client side attacks.</p><ul id="4ec6d2ea-17e8-43d4-9df7-f56f71befc38" class="bulleted-list"><li style="list-style-type:disc">Open Redirect</li></ul><ul id="4624d96b-7ea1-4915-87e5-1750949e160d" class="bulleted-list"><li style="list-style-type:disc">&quot;Reflected&quot; XSS</li></ul><ul id="6207c1ea-da89-425b-becb-6d6b2b8610fa" class="bulleted-list"><li style="list-style-type:disc">Clickjacking</li></ul><p id="d81ef431-c7c4-4d65-90ed-539daced92d8" class="">The primary goal of the software defense is to cause the http requests to become unique to the user. 
+    This is usually done through a request authentication token separate from cookies and platform authentication headers.</p><p id="9797f78e-2ff8-41c6-9841-5962b6e54a7f" class="">The example below shows an HTTP request protected against CSRF. It is one of the requests from this site.</p><pre id="b1e8571c-5419-4e01-b48b-512e604c1728" class="code code-wrap"><code>GET /api/teams HTTP/1.1
+Host: localhost:8081
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:53.0) Gecko/20100101 Firefox/53.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://localhost:8081/main
+xsrfToken: EITPDAj48qzt2z5J6wE4uPn6iC3ggw8imBdIeeBwknWybC-SnPCmlTdmDIPM1XRJjgXv9Gfd1RSV1RbDkaRU1w
+Cookie: connect.sid=s%3AieghQmy09PUrMqYqMBlfKSW5cA4RRsLE.90RDCtrG6aJoFC74R4OfuJYXKPiZEVLtHpfP6dMNQXs
+Connection: keep-alive
+
+</code></pre><p id="f4dee587-fbab-499b-9f04-49df2cff4393" class="">The xsrfToken will be different for each user and an attacker will not 
+be able to store the request in an external site because they won&#x27;t know
+ it.
+Even if they knew the token they could only target a single user and the
+ request would expire with the session limiting the ammount of time for 
+the attack.</p><p id="dc5083bc-ad7b-4c92-8146-800d6de822c1" class="">The countermeasure works for any other attacks where the attacker 
+would have to manipulate a request and e-mail it to a victim or store a 
+request in an external site.</p><p id="9bf554c5-79bc-455e-8635-30894067f50e" class="">A few CSRF token best practices:</p><ul id="bcbff28f-e6c9-42ed-8a2c-3acdb44bbddb" class="bulleted-list"><li style="list-style-type:disc">The token should be sufficiently long and unpredictable.</li></ul><ul id="d756c71e-a690-43b4-8b2c-7143cea0676d" class="bulleted-list"><li style="list-style-type:disc">It should not be transmitted as a query parameter. It&#x27;s a bad practice to send tokens in the URL.</li></ul><ul id="34fc1f9a-9271-43b5-95ef-ebe07c9a6213" class="bulleted-list"><li style="list-style-type:disc">It&#x27;s best for the token to be different than the value of the cookies.</li></ul><ul id="7db9c3c8-fdf1-43e8-b45c-93d6c26d266d" class="bulleted-list"><li style="list-style-type:disc">Best location is as an extra header. This way all API requests (GET|POST|PUT|DELETE) can benefit from it.</li></ul></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+</body>
+</html>
