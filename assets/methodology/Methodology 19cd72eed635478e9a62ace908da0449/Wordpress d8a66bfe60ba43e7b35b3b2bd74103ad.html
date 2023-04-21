@@ -65,7 +65,6 @@
 
 <!--==================== MAIN ====================-->
     <main class="main"><article id="d8a66bfe-60ba-43e7-b35b-3b2bd74103ad" class="page sans"><header><h1 class="page-title">Wordpress</h1></header><div class="page-body"><p id="a3184cb7-d85f-4c5c-83d6-4d34a4b61c89" class="">
-</p><p id="08aa3834-5d77-49d8-adba-763b42d51eb8" class="">
 </p><p id="0de8aa76-6e93-4a31-9eb7-20948f1e1bad" class="">WPSCAN brute force</p><pre id="7250735e-3e92-4a51-8bde-5b95d6527218" class="code"><code>proxychains wpscan --url http://localhost --wp-content-dir wp-admin --passwords /usr/share/seclists/Passwords/Common-Credentials/10k-most-common.txt --usernames offsec -t 100</code></pre><p id="4cc5b3d2-9747-46ba-8055-087ea7e474c0" class="">
 </p><p id="62805756-24f9-4f96-b15f-fd09590929fe" class="">Wordpress:</p><ul id="4ef13051-fc15-4b11-8aa1-260ed6aa39ef" class="bulleted-list"><li style="list-style-type:disc">wp_config.php → credentials<ul id="e7e24a74-f644-47b0-b7c5-0f0963b06f96" class="bulleted-list"><li style="list-style-type:circle">usually var/www/ or var/www/wordpress</li></ul></li></ul><ul id="db8bd306-c140-4ddf-90c0-ae9037136cc0" class="bulleted-list"><li style="list-style-type:disc">robots.txt</li></ul><p id="c03b76cd-bf80-446f-bf39-f3bc454a3d59" class="">wpscan:</p><pre id="42bad23d-40c9-4c87-8c59-c9037c004e2e" class="code"><code>#enumrate users and vulnerable plugins
 wpscan --url &lt;url&gt; --api-token &lt;token&gt; -e u,vp

