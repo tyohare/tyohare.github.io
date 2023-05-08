@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    fetch('indexed2.json')
+    fetch('../../../../../../assets/json/indexed2.json')
       .then(function(response) {
         return response.json();
       })
