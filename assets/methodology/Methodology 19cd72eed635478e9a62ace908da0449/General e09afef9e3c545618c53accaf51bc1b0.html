@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
 
     <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+    <link rel="stylesheet" type="text/css" href="search.css">
+    <!-- <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css"> -->
+
+    <link rel="stylesheet" href="method-styles.css">
+
+
 
     <title>Methodology</title>
 </head>
@@ -19,6 +24,15 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
                     <li class="nav__item">
@@ -149,5 +163,8 @@ kali@kali:~/git-server$</code></pre><p id="608c6d98-c498-49ab-9615-873e4fe68470"
 
     <!--==================== MAIN JS ====================-->
     <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
 </body>
 </html>
