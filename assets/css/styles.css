@@ -750,6 +750,11 @@ img{
     visibility: visible;
 }
 
+.mymodel{
+    max-height: 200px;
+    max-width: 200px;
+}
+
 /*==================== PORTFOLIO ====================*/
 .portfolio__container{
     overflow: initial;

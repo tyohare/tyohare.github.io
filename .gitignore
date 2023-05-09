@@ -3,7 +3,6 @@ test.html
 test.html
 test2.html
 package.json
-package-lock.json
 node_modules/*
-/assets/js/vox-bear.js
-/assets/js/model.js
+package-lock.json
+stuff.html
