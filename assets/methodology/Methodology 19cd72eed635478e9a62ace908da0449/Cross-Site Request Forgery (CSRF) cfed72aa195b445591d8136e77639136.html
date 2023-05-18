@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -77,10 +77,17 @@
 
 <!--==================== MAIN ====================-->
     <main class="main"><article id="cfed72aa-195b-4455-91d8-136e77639136" class="page sans"><header><h1 class="page-title">Cross-Site Request Forgery (CSRF)</h1></header><div class="page-body"><p id="b0d95bbd-8b80-457d-a57b-0883593d8755" class="">
-</p><p id="743750ac-5319-452b-9c8d-86949c6d4c84" class="">For CSRF to be possible we need:</p><ul id="b5d643eb-b800-4157-8258-69e0e2236b58" class="bulleted-list"><li style="list-style-type:disc">A relevant action</li></ul><ul id="7066a731-074e-4430-b020-ceefb22e817d" class="bulleted-list"><li style="list-style-type:disc">Cookie-based session handling</li></ul><ul id="ad307242-f6d0-4fba-81df-6a275135f969" class="bulleted-list"><li style="list-style-type:disc">No unpredictable request parameters</li></ul><p id="132ded32-b530-40bc-8177-79e337a8fecf" class="">
+</p><p id="743750ac-5319-452b-9c8d-86949c6d4c84" class="">For CSRF to be possible we need:</p><ul id="b5d643eb-b800-4157-8258-69e0e2236b58" class="bulleted-list"><li style="list-style-type:disc">A relevant privileged action</li></ul><ul id="7066a731-074e-4430-b020-ceefb22e817d" class="bulleted-list"><li style="list-style-type:disc">Cookie-based session handling</li></ul><ul id="ad307242-f6d0-4fba-81df-6a275135f969" class="bulleted-list"><li style="list-style-type:disc">No unpredictable request parameters</li></ul><p id="132ded32-b530-40bc-8177-79e337a8fecf" class="">
 </p><figure id="867db314-5845-4577-9087-d9f94050e8ed" class="image"><a href="Cross-Site%20Request%20Forgery%20(CSRF)%20cfed72aa195b445591d8136e77639136/Untitled.png"><img style="width:1916px" src="Cross-Site%20Request%20Forgery%20(CSRF)%20cfed72aa195b445591d8136e77639136/Untitled.png"/></a></figure><p id="912b9744-ae98-4752-9cec-a80539ca216f" class="">
-</p><p id="3472c3d4-bb98-460f-b00c-e675578d4c73" class="">The attacker forces the victim to perform an action unintentionally while the victim is authenticated.</p><p id="3384bd22-5f26-4450-8891-4fdab8e310ed" class="">
-</p></div></article></main></main>
+</p><p id="3472c3d4-bb98-460f-b00c-e675578d4c73" class="">The attacker forces the victim to perform an action unintentionally while the victim is authenticated.</p><p id="0cee587d-67bb-4ea8-8e25-159aaa507d3b" class="">
+</p><p id="ccdb9e59-3a44-499e-b63f-2ea996cf7291" class="">CSRF Tools:</p><ul id="737a8e28-0905-4188-b8b5-0a4cd5839d03" class="bulleted-list"><li style="list-style-type:disc">Burp CSRF PoC generator</li></ul><ul id="7a5b3f7b-3050-4f41-9fb3-af7792fae7cd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/merttasci/csrf-poc-generator">https://github.com/merttasci/csrf-poc-generator</a></li></ul><p id="3384bd22-5f26-4450-8891-4fdab8e310ed" class="">
+</p><p id="723ebaec-37a0-4e90-8d67-6b7632a80270" class="">Try:</p><ul id="a3ecd7a2-ff07-41e4-8b16-90546138e32e" class="bulleted-list"><li style="list-style-type:disc">Removing CSRF parameter</li></ul><ul id="0524e304-13bf-4338-bc56-8eb63436d654" class="bulleted-list"><li style="list-style-type:disc">Changing CSRF value</li></ul><ul id="907cad66-8816-4c8a-82d3-3ed7ec5110a2" class="bulleted-list"><li style="list-style-type:disc">Predicting CSRF value</li></ul><ul id="f6adf175-df37-4d30-ae9d-34e98d42f48c" class="bulleted-list"><li style="list-style-type:disc">Use same CSRF value</li></ul><ul id="d752486a-c86b-4e9b-a878-124dc6af47f1" class="bulleted-list"><li style="list-style-type:disc">Change request method</li></ul><p id="c5409798-f724-4b8e-a47d-cbd2898d7445" class="">
+</p><p id="7e2a0e76-d5e9-45c5-a61c-f8a1ca2da1c6" class="">Changing request to load an img payload</p><p id="99f69320-2f91-44ac-ab78-63261e8043e9" class="">
+</p><p id="54e26ca2-e034-4764-aec5-624edbc14410" class="">
+</p><p id="a81e385a-e678-4101-a3a2-cc85dd91af11" class=""><strong>CSRF protection in browsers:</strong></p><ul id="6ec8421c-9b34-4f51-bc0f-60befedb0343" class="bulleted-list"><li style="list-style-type:disc">Samesite -Lax, Strict - Only give the cookie when request is from the same domain</li></ul><ul id="b65333f3-11e6-456c-b285-4ad319728755" class="bulleted-list"><li style="list-style-type:disc">HTTPOnly - True - means only share cookie with HTML and not JS files</li></ul><ul id="e785e669-02ba-4eea-b1f8-e38325b01fec" class="bulleted-list"><li style="list-style-type:disc">Secure - True - Means only use HTTPS</li></ul><p id="a548f5d4-316c-4f22-ba7a-52747fe8cc5c" class="">
+</p><p id="b46b1543-fbce-4d49-bdc0-924599a25c89" class=""><strong>When CSRF is not tied to a users session:</strong></p><ul id="ce69fc57-b849-4666-9ce8-7cd3cf52ef11" class="bulleted-list"><li style="list-style-type:disc">Get a CSRF token in burp → drop the request before it hits website → reuse the CSRF token in your payload request.</li></ul><p id="72096cde-c46a-46bd-87b8-561c615c75ef" class="">
+</p><p id="f4ec5abb-201a-4b9b-b696-97f6c0321981" class=""><strong>CSRF with a JSON POST body:</strong></p><p id="4e02e995-a12b-499d-933a-5a379a724baf" class="">Is the application verifying the content-type header?</p><ul id="338ae012-8560-42c8-ba86-a343540e1463" class="bulleted-list"><li style="list-style-type:disc">we can create a text/plain for with some valid JSON</li></ul><ul id="e8d7f021-d3e0-40bc-9ba3-d586d932512c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><p id="75663b76-c9af-435b-a609-9b5a251e3647" class="">
+</p><p id="5994b2d4-3233-45cb-8107-c7ad71e5e0e2" class="">Referer based CSRF:</p><ul id="4c7b98b7-72c1-4bd4-9852-9b77682e8417" class="bulleted-list"><li style="list-style-type:disc">Can we change the referer header / manipulation it and append our evil server?<ul id="8286653a-dc19-4fbf-ba52-47a0d8b5b42a" class="bulleted-list"><li style="list-style-type:circle">ex: attacker.site/?=VulnerableSiteReferer</li></ul></li></ul></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

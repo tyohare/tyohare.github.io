@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -103,8 +103,14 @@ tree /f | Select-String flag.ps1 -Context 7,7
 cd C:/ | gci -recurse | findstr /s flag.txt</code></pre><p id="7a82918a-cee5-42b7-b6ae-f070fba54f90" class="">
 </p><p id="44077bf7-7595-4da6-a24a-fa2d9acbcc81" class="">Linux commands:</p><p id="76565e3b-0122-48ab-bda9-8928005af52c" class=""><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md#looting-for-passwords">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology and Resources/Linux - Privilege Escalation.md#looting-for-passwords</a></p><p id="4bf85444-e0dc-4449-a5e1-b9bca36f0ed4" class="">
 </p><p id="4d3f1064-10fe-44a0-b607-995c48b869fa" class=""><strong>Sunrpc</strong></p><pre id="2465b3c8-5045-4aa1-8642-7b1191431a6a" class="code"><code>rpcinfo -s 0.0.0.0</code></pre><p id="0be05399-5616-4c24-ba39-61a1f90950ea" class=""><strong>msrpc:</strong></p><pre id="d8d95311-841b-436e-a69c-917498cdc022" class="code"><code>rpcclient -U &#x27;uname%pass&#x27; (IP)
-rpcclient -U &quot;&quot; -N -c &lt;command&gt; &lt;target_system&gt;
+#null session
+rpcclient -U &quot;&quot; -N 0.0.0.0
 rpcclient -U &lt;username&gt; &lt;target_system&gt;
+
+#enumerate users (After above)
+enumdomusers
+
+rpcclient -U &quot;&quot; -N -c &lt;command&gt; &lt;target_system&gt;
 check hacktricks</code></pre><p id="87d9b4ae-daf7-4d62-bdab-22e84e0e3a29" class="">RPC: (111)</p><pre id="e244385e-b0d0-41b3-a0c1-e70c605551cb" class="code"><code>rpcdump -s &lt;target_system&gt;
 rpcinfo -p &lt;target_system&gt;
 nmap -sV -p 111 &lt;target_system&gt;</code></pre><p id="c5c4ecd6-f620-449d-b4a9-a7c396700e66" class=""><strong>NNTP (119):</strong></p><pre id="569a1499-f582-4664-9bef-6f18a0832201" class="code"><code>nc -nvC 0.0.0.0 119

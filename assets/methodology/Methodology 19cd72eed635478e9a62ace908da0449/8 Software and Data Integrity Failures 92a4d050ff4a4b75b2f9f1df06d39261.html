@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -76,8 +76,8 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="92a4d050-ff4a-4b75-b2f9-f1df06d39261" class="page sans"><header><h1 class="page-title">8. Software and Data Integrity Failures</h1></header><div class="page-body"><p id="c0224e9c-bcbf-42fd-a6c3-7b312edbc614" class=""><a href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/">https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/</a></p><p id="ed7f3bc5-4442-4d8f-96c7-0a133d1e2832" class="">
-</p><p id="8f471c6f-ca4f-4abe-8258-d58a28487376" class="">Examples:</p><p id="f204d941-c0bb-4ada-bfcd-779f1e142a3e" class=""><strong>Scenario #1 Update without signing:</strong> Many home routers, set-top
+    <main class="main"><article id="92a4d050-ff4a-4b75-b2f9-f1df06d39261" class="page sans"><header><h1 class="page-title">8. Software and Data Integrity Failures</h1></header><div class="page-body"><p id="c0224e9c-bcbf-42fd-a6c3-7b312edbc614" class=""><a href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/">https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/</a></p><ul id="ed7f3bc5-4442-4d8f-96c7-0a133d1e2832" class="bulleted-list"><li style="list-style-type:disc">See Insecure Deserialization page</li></ul><p id="8f471c6f-ca4f-4abe-8258-d58a28487376" class="">
+</p><p id="061e7124-17f1-4721-9342-341d03997efa" class="">Examples:</p><p id="f204d941-c0bb-4ada-bfcd-779f1e142a3e" class=""><strong>Scenario #1 Update without signing:</strong> Many home routers, set-top
 boxes, device firmware, and others do not verify updates via signed
 firmware. Unsigned firmware is a growing target for attackers and is
 expected to only get worse. This is a major concern as many times there
@@ -97,7 +97,8 @@ tried to ensure that their code is immutable. The solution they came up
 with is serializing the user state and passing it back and forth with
 each request. An attacker notices the &quot;rO0&quot; Java object signature (in base64) and
 uses the Java Serial Killer tool to gain remote code execution on the
-application server.</p><p id="b221ec91-6d94-410d-afb8-604030c6fd23" class=""><strong>Prevention:</strong></p><ul id="2beb49a4-e501-4d94-830c-6ab98fee377d" class="bulleted-list"><li style="list-style-type:disc">Ensure libraries and dependencies are using trusted sources</li></ul><ul id="57ce78fe-b7c7-44e9-b823-59b7ceb06d8f" class="bulleted-list"><li style="list-style-type:disc">implement software supply chain security tool</li></ul><p id="c852d433-81c7-4683-9c52-694ce1a31b03" class="">
+application server.</p><p id="e57275d9-ec87-4bf5-bae2-eddd894da10f" class="">
+</p><p id="b221ec91-6d94-410d-afb8-604030c6fd23" class=""><strong>Prevention:</strong></p><ul id="2beb49a4-e501-4d94-830c-6ab98fee377d" class="bulleted-list"><li style="list-style-type:disc">Ensure libraries and dependencies are using trusted sources</li></ul><ul id="57ce78fe-b7c7-44e9-b823-59b7ceb06d8f" class="bulleted-list"><li style="list-style-type:disc">implement software supply chain security tool</li></ul><p id="c852d433-81c7-4683-9c52-694ce1a31b03" class="">
 </p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->

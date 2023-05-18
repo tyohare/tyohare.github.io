@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -76,8 +76,11 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="9b5b8477-b2d4-424d-866b-934aa7614047" class="page sans"><header><h1 class="page-title">SUID Escalations</h1></header><div class="page-body"><h3 id="44382a93-8b33-4888-843a-ce15e05bcfc1" class="">SUID Vulnerabilities:</h3><pre id="3511a98d-6799-4fe0-a3aa-498c1cb355aa" class="code code-wrap"><code>find / -perm -u=s -type f 2&gt;/dev/null
-# ls -la the results</code></pre><p id="fe8766c8-846d-43d2-b36f-0050e9a13bb7" class="">GTFObin -&gt; SUID look through them</p><p id="f27d9305-4149-47cd-93af-59092098450b" class=""><a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a></p><h3 id="7b27c77b-74f6-487b-8344-d7254c526f99" class="">Other SUID Escalations</h3><p id="11afc55f-82e6-421b-a7bc-6758a06d8d77" class=""><strong>Shared object Injection:</strong> </p><ul id="ac964fd1-1f35-4877-a0df-3dc03e13ac39" class="bulleted-list"><li style="list-style-type:disc">Looking for -so files?</li></ul><p id="ec31e6c6-fa4b-44ec-8be6-8e7b06e96333" class="">Strace -&gt; monitor and tamper kernel processes</p><pre id="7b9a4f65-6216-4643-b728-c0f8d285fe23" class="code code-wrap"><code>find / -perm -u=s -type f 2&gt;/dev/null
+    <main class="main"><article id="9b5b8477-b2d4-424d-866b-934aa7614047" class="page sans"><header><h1 class="page-title">SUID Escalations</h1></header><div class="page-body"><h3 id="44382a93-8b33-4888-843a-ce15e05bcfc1" class="">SUID Vulnerabilities:</h3><pre id="3511a98d-6799-4fe0-a3aa-498c1cb355aa" class="code code-wrap"><code>#Find files with SUID bit set
+find / -perm -u=s -type f 2&gt;/dev/null
+#OR
+find / -type f -perm -04000 -ls 2&gt;/dev/null
+# ls -la the results</code></pre><p id="fe8766c8-846d-43d2-b36f-0050e9a13bb7" class="">GTFObin -&gt; SUID look through them</p><p id="f27d9305-4149-47cd-93af-59092098450b" class=""><a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a></p><h3 id="7b27c77b-74f6-487b-8344-d7254c526f99" class="">Other SUID Escalations</h3><p id="11afc55f-82e6-421b-a7bc-6758a06d8d77" class=""><strong>Shared object Injection:</strong></p><ul id="ac964fd1-1f35-4877-a0df-3dc03e13ac39" class="bulleted-list"><li style="list-style-type:disc">Looking for -so files?</li></ul><p id="ec31e6c6-fa4b-44ec-8be6-8e7b06e96333" class="">Strace -&gt; monitor and tamper kernel processes</p><pre id="7b9a4f65-6216-4643-b728-c0f8d285fe23" class="code code-wrap"><code>find / -perm -u=s -type f 2&gt;/dev/null
 strace /user/local/bin/suid-so 2&gt;&amp;1
 # Look for no such file or dierctory...
 strace /user/local/bin/suid-so 2&gt;&amp;1 | grep -i -E &quot;open|access|no such file&quot;</code></pre><p id="8c6b41e5-8d89-4ae4-9c13-1bb293856921" class="">Create a file to overwrite the found dependent files...</p><p id="b3875892-2bdc-4d36-8eb0-3504fbb509f0" class="">libcalc.c</p><pre id="502c69e8-ca7b-4bbf-9671-27db04aba1a3" class="code code-wrap"><code>#include stdio.h

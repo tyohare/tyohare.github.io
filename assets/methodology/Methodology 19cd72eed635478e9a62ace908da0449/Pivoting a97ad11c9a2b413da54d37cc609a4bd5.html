@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -76,7 +76,7 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="a97ad11c-9a2b-413d-a54d-37cc609a4bd5" class="page sans"><header><h1 class="page-title">Pivoting</h1></header><div class="page-body"><p id="015a067d-f6eb-4ff2-9504-61d5cbdf01d3" class=""><a href="https://pentest.coffee/pivoting-and-tunneling-for-oscp-and-beyond-cheat-sheet-3435d1d6022?gi=73e6ec6b1702">https://pentest.coffee/pivoting-and-tunneling-for-oscp-and-beyond-cheat-sheet-3435d1d6022?gi=73e6ec6b1702</a></p><p id="4fb8ff9b-b3bd-4a9d-8212-e6ed4740e59b" class=""><strong>Pivot Tools:</strong></p><p id="3d2b4d7c-ea2b-47ec-8ad5-ca7b1be446d3" class="">ssh:</p><pre id="c5f6476d-b1a7-45fa-86b2-c0d3222ed3ef" class="code"><code>ssh -N -D 80 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no user@0.0.0.0 -p 22</code></pre><pre id="7038a924-add6-4b42-8f65-38d00baf88d7" class="code"><code>ssh -N -D 80 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no user@0.0.0.0 -p 22 -o KexAlgorithms=diffie-hellman-group14-sha1 -oHostKeyAlgorithms=+ssh-rsa</code></pre><p id="f6f9f200-524c-40f9-acb2-6963355b217b" class=""><strong>reverse</strong>:</p><pre id="fc42c9ef-d699-49ab-b0ca-a06fb467766d" class="code"><code> sudo ssh -o &quot;UserKnownHostsFile=/dev/null&quot; -o &quot;StrictHostKeyChecking=no&quot; -N -R 5555:127.0.0.1:5555 user@0.0.0.0 -p 2222</code></pre><p id="2426bd32-ebbf-445b-9a59-bc594785921b" class="">
+    <main class="main"><article id="a97ad11c-9a2b-413d-a54d-37cc609a4bd5" class="page sans"><header><h1 class="page-title">Pivoting</h1></header><div class="page-body"><ul id="015a067d-f6eb-4ff2-9504-61d5cbdf01d3" class="bulleted-list"><li style="list-style-type:disc"><a href="https://pentest.coffee/pivoting-and-tunneling-for-oscp-and-beyond-cheat-sheet-3435d1d6022?gi=73e6ec6b1702">https://pentest.coffee/pivoting-and-tunneling-for-oscp-and-beyond-cheat-sheet-3435d1d6022?gi=73e6ec6b1702</a></li></ul><p id="4fb8ff9b-b3bd-4a9d-8212-e6ed4740e59b" class=""><strong>Pivot Tools:</strong></p><p id="3d2b4d7c-ea2b-47ec-8ad5-ca7b1be446d3" class="">ssh:</p><pre id="c5f6476d-b1a7-45fa-86b2-c0d3222ed3ef" class="code"><code>ssh -N -D 80 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no user@0.0.0.0 -p 22</code></pre><pre id="7038a924-add6-4b42-8f65-38d00baf88d7" class="code"><code>ssh -N -D 80 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no user@0.0.0.0 -p 22 -o KexAlgorithms=diffie-hellman-group14-sha1 -oHostKeyAlgorithms=+ssh-rsa</code></pre><p id="f6f9f200-524c-40f9-acb2-6963355b217b" class=""><strong>reverse</strong>:</p><pre id="fc42c9ef-d699-49ab-b0ca-a06fb467766d" class="code"><code> sudo ssh -o &quot;UserKnownHostsFile=/dev/null&quot; -o &quot;StrictHostKeyChecking=no&quot; -N -R 5555:127.0.0.1:5555 user@0.0.0.0 -p 2222</code></pre><p id="2426bd32-ebbf-445b-9a59-bc594785921b" class="">
 </p><p id="08d0b212-361d-4219-8199-9eb9c98d8f63" class="">local port forward:</p><ul id="dfea964a-d434-4d39-a3db-2bba27e7048f" class="bulleted-list"><li style="list-style-type:disc">forward an internal process (website?) running on a victim machine to be accessible to our kali machine.</li></ul><pre id="a43d2719-6951-46e9-ba8c-58d5aae8f6b6" class="code"><code>sudo ssh -o &quot;UserKnownHostsFile=/dev/null&quot; -o &quot;StrictHostKeyChecking=no&quot; -N -L 9001:127.0.0.1:34023 user@0.0.0.0 -p 22
 ssh -L 2375:localhost:2375 user@0.0.0.0 </code></pre><p id="f38179d0-32a6-4c38-b487-735f390833c0" class="">Dynamic:</p><pre id="7b2a0d0f-09e1-4b93-9acf-8efadc939d86" class="code"><code>sudo ssh -o &quot;UserKnownHostsFile=/dev/null&quot; -o &quot;StrictHostKeyChecking=no&quot; -N -D 8080 user@0.0.0.0 -p 2222</code></pre><p id="c3e3b8da-0495-4163-bfd7-a7145b96619f" class="">
 </p><p id="3bbe64b9-1b0d-4e58-8c91-b6e3a05dd693" class="">
@@ -97,10 +97,10 @@ socks5 127.0.0.1 8000
 proxychains4 nmap-sT &lt;ip&gt;
 
 ---
-./chisel32 client 192.168.119.248:80 R:sock:22000
+./chisel32 client 192.168.0.0:80 R:sock:22000
 sudo ./chiselarm64 server -p 80 --reverse</code></pre><p id="33d528bc-f326-4d07-9a60-f04d9bd54bb6" class="">
 </p><p id="15d8b4e6-0a29-47d5-b7a0-6891dc3f622e" class=""><strong>Scanning &amp; Enum:</strong></p><p id="f5ba0150-472f-4cf6-b350-56c3b5e18ca1" class="">
-</p><p id="95a8ff66-a0ff-466f-8175-6c29a150d834" class=""><strong>NMAP scanning:</strong></p><pre id="c6893110-acc7-4a9d-847e-1af27ae23567" class="code"><code>proxychains4 -q nmap -sC -sV -T5 -sT -Pn 10.1.1.68</code></pre><p id="d151cb09-aaeb-4be6-83aa-f680732973a1" class="">Alternatively:</p><ul id="02fd73b6-8651-4bd4-8c55-d525a9150d5a" class="bulleted-list"><li style="list-style-type:disc">upload binaries to the pivot point</li></ul><ul id="944ced8e-a13a-423d-8f66-0cab7c59b932" class="bulleted-list"><li style="list-style-type:disc">nc port scan</li></ul><ul id="50d2cec3-0f4e-4ee6-ab5b-9f24bf0c608b" class="bulleted-list"><li style="list-style-type:disc">pingsweep programs for host discovery</li></ul><p id="cc83acb5-c9f3-4cf1-aa7b-ff44be116bce" class="">
+</p><p id="95a8ff66-a0ff-466f-8175-6c29a150d834" class=""><strong>NMAP scanning:</strong></p><pre id="c6893110-acc7-4a9d-847e-1af27ae23567" class="code"><code>proxychains4 -q nmap -sC -sV -T5 -sT -Pn 10.0.0.0</code></pre><p id="d151cb09-aaeb-4be6-83aa-f680732973a1" class="">Alternatively:</p><ul id="02fd73b6-8651-4bd4-8c55-d525a9150d5a" class="bulleted-list"><li style="list-style-type:disc">upload binaries to the pivot point</li></ul><ul id="944ced8e-a13a-423d-8f66-0cab7c59b932" class="bulleted-list"><li style="list-style-type:disc">nc port scan</li></ul><ul id="50d2cec3-0f4e-4ee6-ab5b-9f24bf0c608b" class="bulleted-list"><li style="list-style-type:disc">pingsweep programs for host discovery</li></ul><p id="cc83acb5-c9f3-4cf1-aa7b-ff44be116bce" class="">
 </p><p id="d5355b6d-5cfb-409d-a150-841256eea95d" class=""><strong>Gobuster proxy:</strong></p><pre id="2049f512-d920-4439-b863-499301215ca0" class="code"><code>sudo proxychains4 gobuster dir -u http://0.0.0.0/ --proxy socks5://127.0.0.1:80 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30</code></pre><p id="32105c38-a652-431c-98f2-67831b1c1b1c" class="">
 </p><p id="c0ee1aac-4d1d-4217-811a-00dbf05a539b" class="">Burp Suite:</p><pre id="34c3089f-5607-4720-9585-ab004f58c951" class="code"><code>#TODO</code></pre><p id="c3197820-3c5a-442e-9282-fc62d9dbdf7c" class="">
 </p><pre id="ebcb7667-095b-4396-aaa9-805071621a5c" class="code"><code>Tunneling 

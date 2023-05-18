@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -76,7 +76,8 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="4a98f418-9c3e-472e-a504-f8050998e697" class="page sans"><header><h1 class="page-title">API Security Basics </h1></header><div class="page-body"><p id="7933322b-d769-403c-ac88-bf30c610d570" class=""><strong>Headers:</strong></p><p id="41916f6f-1fe9-47de-98d0-6720e0cb78e0" class=""><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers</a></p><p id="c47e0185-a406-4410-b88a-5c1221264f9b" class="">
+    <main class="main"><article id="4a98f418-9c3e-472e-a504-f8050998e697" class="page sans"><header><h1 class="page-title">API Security Basics </h1></header><div class="page-body"><p id="7933322b-d769-403c-ac88-bf30c610d570" class=""><strong>Checklist:</strong></p><ul id="9a823489-be13-4fc1-9e93-d5ceebc58d3b" class="bulleted-list"><li style="list-style-type:disc">IDORS/BOLA</li></ul><ul id="c2de7bb5-edf6-445a-9caa-4f87a0a21ff6" class="bulleted-list"><li style="list-style-type:disc">BFLA</li></ul><ul id="26fc8e0a-8986-4e38-979a-d6fb09892e4f" class="bulleted-list"><li style="list-style-type:disc">Mass Assignment</li></ul><ul id="095dacde-0aca-437d-8026-c28645eadf2f" class="bulleted-list"><li style="list-style-type:disc">SSRF</li></ul><ul id="865dfd32-8134-40ae-8f2c-6939c63b2ed5" class="bulleted-list"><li style="list-style-type:disc">SQLi, Cmdi</li></ul><ul id="233bb0cb-5749-44b2-afbc-a8b54cfecb67" class="bulleted-list"><li style="list-style-type:disc">Token attacks</li></ul><p id="cfa558c1-13b7-4ea8-81c0-733362659c76" class="">
+</p><p id="a9d62c0f-390b-486b-a629-cbc5dc8e9912" class=""><strong>Headers:</strong></p><p id="41916f6f-1fe9-47de-98d0-6720e0cb78e0" class=""><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers</a></p><p id="c47e0185-a406-4410-b88a-5c1221264f9b" class="">
 </p><p id="77edb73d-f235-44c6-99b4-581736ff6c40" class=""><strong>Information Disclosure:</strong></p><ul id="ff4d810c-529a-4a20-8b96-886d81cfca64" class="bulleted-list"><li style="list-style-type:disc">Information may be disclosed in API responses or public sources such as
 code repositories, search results, news, social media, the target’s website,
 and public API directories.</li></ul><p id="3d49af06-7a24-4af9-8c84-edfc9096e8b5" class="">
@@ -115,7 +116,9 @@ assignment, and you could use the updated request to create an admin
 account. On the backend, the vulnerable web app will add the key/value
 attribute, {&quot;isAdmin&quot;:&quot;true&quot;}, to the user object and make the user the equivalent of an administrator.</p><p id="2ada183d-685a-4976-a2e1-107d3d6cc20f" class="">
 </p><p id="a85ccfd0-6501-4aba-99e1-dca8f0df6646" class=""><strong>Security Misconfigurations</strong></p><p id="e57bcc12-ab80-48e9-959f-4a5087033699" class="">
-</p></div></article></main></main>
+</p><p id="a0820d48-a899-43e5-8047-abc63f0bdd01" class="">
+</p><p id="274d6cf7-aae3-40c3-883e-0ac1f1e71f98" class="">NoSQLi</p><pre id="4c991a6d-39f7-40af-a703-0181d412658b" class="code"><code>/login?username=admin&amp;password[$ne]=asdasd</code></pre><p id="4e5270c9-e44f-4bae-9c32-801cfcde60b4" class="">
+</p><pre id="f8945791-5144-4f8e-859f-66caf73d19b5" class="code"><code>ffuf -u &#x27;http: //localhost/v1/001.php?roast=FUZZ&#x27; -w /usr/share/seclists/Fuzzing/SOLi/</code></pre></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

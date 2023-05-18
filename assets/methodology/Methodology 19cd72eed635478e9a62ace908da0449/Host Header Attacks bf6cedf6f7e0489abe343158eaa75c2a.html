@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -76,14 +76,9 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="508f4686-dbc0-4a6c-a1ee-3e51082e0ad0" class="page sans"><header><h1 class="page-title">Tools</h1></header><div class="page-body"><p id="4e3dff6d-7c72-46e3-94bc-7d6588ce5ddb" class="">
-</p><ul id="3a5ee920-f540-49a2-b8a7-c1a2a60def80" class="bulleted-list"><li style="list-style-type:disc">winpeas → powerup → windows exploit suggester → metasploit suggester</li></ul><p id="e881ffb9-04a2-400d-a5e3-a3a4a50903bb" class="">
-</p><ul id="036d8af0-7611-4add-ba95-051b65c2c6ff" class="bulleted-list"><li style="list-style-type:disc">WinPEAS - <a href="https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS">https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS</a><pre id="2ebe7881-9ad7-4584-95e1-df8ea91f9603" class="code"><code>#enable winpeas CMD termninal color
-reg add HKCU/console /v VirtualTerminalLevel /t REG_DWORD /d 1</code></pre></li></ul><ul id="68f43a2a-e293-4833-9f07-ba5546a1c41f" class="bulleted-list"><li style="list-style-type:disc">Windows PrivEsc Checklist - <a href="https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation">https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation</a></li></ul><ul id="bc07c7ee-e40b-49f1-bd3c-7386fd19671d" class="bulleted-list"><li style="list-style-type:disc">Sherlock - <a href="https://github.com/rasta-mouse/Sherlock">https://github.com/rasta-mouse/Sherlock</a></li></ul><ul id="053711b1-614e-4bf3-a222-2377e096c7e6" class="bulleted-list"><li style="list-style-type:disc">Watson - <a href="https://github.com/rasta-mouse/Watson">https://github.com/rasta-mouse/Watson</a></li></ul><ul id="3ed95ea3-cfcc-4598-992b-32f49be02f45" class="bulleted-list"><li style="list-style-type:disc">PowerUp - <a href="https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc">https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc</a></li></ul><ul id="a458f417-c4b9-4120-baab-7b0b8bc724ab" class="bulleted-list"><li style="list-style-type:disc">JAWS - <a href="https://github.com/411Hall/JAWS">https://github.com/411Hall/JAWS</a></li></ul><ul id="fcf3b98f-c647-43d8-b2d4-f27b63ef427b" class="bulleted-list"><li style="list-style-type:disc">Windows Exploit Suggester - <a href="https://github.com/AonCyberLabs/Windows-Exploit-Suggester">https://github.com/AonCyberLabs/Windows-Exploit-Suggester</a></li></ul><ul id="f3c04040-dce1-41a3-9dad-28a4dcbaa10f" class="bulleted-list"><li style="list-style-type:disc">Metasploit Local Exploit Suggester - <a href="https://blog.rapid7.com/2015/08/11/metasploit-local-exploit-suggester-do-less-get-more/">https://blog.rapid7.com/2015/08/11/metasploit-local-exploit-suggester-do-less-get-more/</a></li></ul><ul id="ca1c8d90-02bb-44f4-97d2-7bfe38f81069" class="bulleted-list"><li style="list-style-type:disc">Seatbelt - <a href="https://github.com/GhostPack/Seatbelt">https://github.com/GhostPack/Seatbelt</a></li></ul><ul id="cc10a5b1-21dd-4e57-a869-e89766559d13" class="bulleted-list"><li style="list-style-type:disc">SharpUp - <a href="https://github.com/GhostPack/SharpUp">https://github.com/GhostPack/SharpUp</a></li></ul><p id="5d70b490-d4b1-4214-a06d-512b08635918" class="">
-</p><p id="55af8bf9-31a2-4d8d-917c-51f4cac5158e" class="">
-</p><p id="956849db-50cc-4ef1-b27e-919b6847aed2" class=""><strong>Metasploit:</strong></p><pre id="c862a66a-4ebb-4036-9b1a-25b37e2b2190" class="code"><code>run post/multi/recon/local_exploit_suggester</code></pre><p id="43a933dd-47f3-4174-805a-cbe21df5d8a5" class=""><strong>Windows exploit suggester:</strong></p><pre id="5ee89910-48ba-44a1-af08-d8e8028b999d" class="code"><code>./windows-exploit-suggester.py --update
-pip install xlrd --upgrade
-./windows-exploit-suggester.py --database &lt;db&gt; --systeminfo sysinfo.txt</code></pre><p id="c56bebb8-3b56-46f5-a436-856e7cc914e8" class="">Install pip:</p><pre id="e5d27774-8e88-4329-8647-2edebed5718c" class="code"><code>curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py; python get-pip.py</code></pre><p id="4bf8ea29-1d0a-45a0-bed5-48e5cca08f14" class="">Windows Privesc Check:</p><pre id="05650bd9-aa50-4c56-b1cb-ce3750be4cf7" class="code"><code>windows-privesc-check2.exe --dump -G</code></pre></div></article></main></main>
+    <main class="main"><article id="bf6cedf6-f7e0-489a-be34-3158eaa75c2a" class="page sans"><header><h1 class="page-title">Host Header Attacks</h1></header><div class="page-body"><ul id="a0defcd8-c6f2-4b80-a5ad-ca54a01605d8" class="bulleted-list"><li style="list-style-type:disc">Change the host header, does the application behavior change?</li></ul><ul id="4382aebf-f84e-4387-9b19-410eac65a1d2" class="bulleted-list"><li style="list-style-type:disc">If not, see what changing the host header affects</li></ul><p id="09069e2d-f958-4780-ab63-d7fc9d662117" class="">
+</p><p id="f968a5b6-4738-44ab-a65f-c1222249b3c1" class="">
+</p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

