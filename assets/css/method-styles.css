@@ -491,7 +491,7 @@ main .code-wrap {
 }
 
 main .code > code {
-	background: rgba(135, 131, 120, 0.15);
+	background: none;
 	padding: 0;
 	font-size: 100%;
 	color: inherit;
@@ -1950,4 +1950,24 @@ img{
       font-size: 1.5rem;
     }
 }
+}
+
+.code.language-Java,
+.code.language-JavaScript,
+.code.language-PHP,
+.code.language-BASH,
+.code.language-Python,
+.code.language-XML,
+.code.language-Plain{
+    background: #a22525;
+}
+
+.language-Java,
+.language-JavaScript,
+.language-PHP,
+.language-BASH,
+.language-Python,
+.language-XML,
+.language-Plain{
+    background: #a22525;
 }
