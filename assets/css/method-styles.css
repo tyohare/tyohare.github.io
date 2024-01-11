@@ -1952,22 +1952,22 @@ img{
 }
 }
 
-.code.language-Java,
-.code.language-JavaScript,
-.code.language-PHP,
-.code.language-BASH,
-.code.language-Python,
-.code.language-XML,
-.code.language-Plain{
+code.language-Java,
+code.language-JavaScript,
+code.language-PHP,
+code.language-BASH,
+code.language-Python,
+code.language-XML,
+code.language-Plain{
     background: #ffffff;
 }
 
-.language-Java,
-.language-JavaScript,
-.language-PHP,
-.language-BASH,
-.language-Python,
-.language-XML,
-.language-Plain{
+language-Java,
+language-JavaScript,
+language-PHP,
+language-BASH,
+language-Python,
+language-XML,
+language-Plain{
     background: #ffffff;
 }
