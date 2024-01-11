@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="6062e98e-2179-4dc1-872b-e1fb0085376c" class="page sans"><header><h1 class="page-title">Insecure Deserialization</h1><p class="page-description"></p></header><div class="page-body"><p id="4652760c-4a4b-4780-a12d-68dcab24fcb2" class="">
+</p><p id="9c6794ea-f5df-4ed7-9d2d-69385374c0a6" class="">How to identify:</p><ul id="4b4b6fdc-e4aa-4dff-9327-3e46b4e353f2" class="bulleted-list"><li style="list-style-type:disc">Verbose errors</li></ul><ul id="de8cb5a7-c9d2-4e6e-b064-6f8695ca3ab3" class="bulleted-list"><li style="list-style-type:disc">files on the application</li></ul><ul id="53945f77-81a5-48e7-9c6a-82889959a97c" class="bulleted-list"><li style="list-style-type:disc">Verbose headers</li></ul><ul id="fd77b0a8-4286-4e0e-be4e-ec37a31e39ff" class="bulleted-list"><li style="list-style-type:disc">Obvious serialized data (JSON, XML)</li></ul><ul id="81b44310-f250-4ee3-96ae-801e45988383" class="bulleted-list"><li style="list-style-type:disc">Decoding</li></ul><ul id="fb445b0d-d8eb-47cc-a8b8-9877b7e62eb3" class="bulleted-list"><li style="list-style-type:disc">Tool output</li></ul><p id="7e0eb14a-053a-49a6-963a-ed5e9f21da89" class="">PHP</p><ul id="ed51559a-30e0-4c28-ab0b-9b0875388f61" class="bulleted-list"><li style="list-style-type:disc">Serialized inhuman readable string format</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b0457d26-7b81-4944-85b5-5b8308541ffe" class="code"><code class="language-XML"></code></pre><p id="cfcfa6c9-6902-4905-bfa4-ec2b0b9959bf" class="">
+</p><ul id="8f900e4c-273c-498a-9d0b-e365758df4a6" class="bulleted-list"><li style="list-style-type:disc">Look for serialize() and unserialize()</li></ul><p id="b0437bbf-6e97-4257-a419-84426d8c5c29" class="">Java:</p><ul id="c9d0ba81-c779-430c-bcbc-ca0799496d35" class="bulleted-list"><li style="list-style-type:disc">Often binary serialized</li></ul><ul id="533d20d2-a3df-48ad-bad1-96bf14700c71" class="bulleted-list"><li style="list-style-type:disc">Usually start with the same bytes (AC ED for hexadecimal, rO0 in Base64)</li></ul><ul id="48441d7e-a078-4720-829b-ac6b205b6d1d" class="bulleted-list"><li style="list-style-type:disc">Look for Java.io.serialize, ReadObject(), and InputStream</li></ul><ul id="41550a1c-cd36-4c57-af09-95943ca06136" class="bulleted-list"><li style="list-style-type:disc"></li></ul><p id="c35a450f-756b-4ec7-ac4d-1fd48fbbc3dc" class="">
+</p><p id="913e1ce4-8a81-43c5-9067-b2a3644a3cc3" class=""> Methods of exploitation:</p><ul id="d3bf361f-e5f8-4eb8-ae6b-4cf6c815b83e" class="bulleted-list"><li style="list-style-type:disc">Directly modifying human readable strings</li></ul><ul id="a2e847e9-41d2-455e-bb8e-047fba186713" class="bulleted-list"><li style="list-style-type:disc">serializing our own object for binary serialized objects (ysoserial, PHPGCC)</li></ul><ul id="2911b723-e983-4e94-a676-dc9dc4fc1df3" class="bulleted-list"><li style="list-style-type:disc">Create a gadget chain from scratch</li></ul><p id="c5b0bf21-7988-48d0-80b0-da2a9df0678f" class="">
+</p><p id="7d28712d-f5b1-49a0-9ddb-07a40a7a6cde" class=""><strong>Gadget Chains</strong></p><p id="09b03270-75f4-4435-b4e3-63354aaf5f88" class="">Publicly documented exploit chains</p><p id="a0b17c4a-dbdd-432b-84d0-a32403e08172" class="">
+</p><p id="53877862-b5f8-4bc3-9a6d-6b621812a1f3" class="">Prevention</p><ul id="975cf301-5e31-48c5-ba27-75d43ac579f3" class="bulleted-list"><li style="list-style-type:disc">Don’t deserialize user provided input</li></ul><ul id="c5b7f994-817c-4684-86d8-3e996ebfb21f" class="bulleted-list"><li style="list-style-type:disc">If you have to deserialize, then implement robust input validation. Utilize digital signatures to ensure integrity of object.</li></ul><ul id="0006fa2e-2d9e-4452-8eae-637cc86f8f31" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

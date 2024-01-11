@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="8096ced3-96de-43fd-a560-4056dd7abfbd" class="page sans"><header><h1 class="page-title">Sessions</h1><p class="page-description"></p></header><div class="page-body"><p id="b30ce55f-544e-4647-b9c0-795ce3f52690" class="">Send authenticated request to burp repeater</p><p id="9fecb1f1-8055-4482-a67d-d3e50a4570b1" class="">delete cookies one by one until app no longer returns the authenticated responses.</p><p id="c2019efc-4251-400c-8fc2-b7455f15e099" class="">
+</p><p id="d537d74e-dcd7-4551-989c-ff92bd3faad9" class="">Set Cookie: header:</p><ul id="1b79e36a-4cb2-4fda-9218-48cc7f4f7269" class="bulleted-list"><li style="list-style-type:disc"><strong>HttpOnly</strong> <ul id="1e2b57de-f333-404e-8ba0-d1619efde8e3" class="bulleted-list"><li style="list-style-type:circle">prevents JS document.cookie web API from reading the cookie</li></ul><ul id="4abc0047-1d71-46bc-aaab-99b43a089ae4" class="bulleted-list"><li style="list-style-type:circle">Should be used on all cookies that contain sensitive information, especially session id cookies</li></ul><ul id="f30b2170-e5bd-45a2-848e-8105a26db4d8" class="bulleted-list"><li style="list-style-type:circle">Can be exploited by leveraging XSS  to read cookie, then the attack sets the cookie in their browser…</li></ul><p id="f5eaf944-6888-4775-bd53-22858e4cec54" class="">
+</p></li></ul><ul id="ae7b9472-43dc-4ce8-954d-e53cb246c0a0" class="bulleted-list"><li style="list-style-type:disc">Secure<ul id="1d29cbac-ba46-4c43-aabb-1d4f4f9be2fe" class="bulleted-list"><li style="list-style-type:circle">Prevents the browser from sending a cookie in an unencrypted HTTP request</li></ul><ul id="2a747f16-02d2-461c-8c0c-a4cb04903fe2" class="bulleted-list"><li style="list-style-type:circle">Can be exploited in MITM attacks to identify cookie</li></ul><p id="0a5dd422-9ada-4632-8a27-e620060e5694" class="">
+</p></li></ul><ul id="072d946f-1f22-437b-bd49-3d7123b7adc0" class="bulleted-list"><li style="list-style-type:disc">SameSite<ul id="f694dc58-8412-451f-8e8e-d63a596c249e" class="bulleted-list"><li style="list-style-type:circle">Prevents browser from automatically sending a cookie to a site in requests that originate from another site<ul id="ac4a3644-66a3-43a2-b4b8-144aa0d28e0e" class="bulleted-list"><li style="list-style-type:square">Strict - only permits same-site cookies be sent</li></ul><ul id="aad82149-60ab-47dc-9f94-e646d8bc3b18" class="bulleted-list"><li style="list-style-type:square">Lax - same as strict, but permits cross-site cookies to be sent in GET requests when triggered by a top-level navigation action (Like clicking a link), not via POST or cross-origin frames</li></ul><ul id="2da72b21-6836-4755-bfc4-a1eded902d5c" class="bulleted-list"><li style="list-style-type:square">None - Cookies always sent cross-site</li></ul></li></ul><p id="88755384-c654-4eaf-a3c5-8e63417a78cc" class="">
+</p></li></ul><p id="fb60ec85-aa49-4365-bab8-72dfb76c0c09" class="">Alternatives to Sessions:</p><ul id="3ab79354-be40-42e5-bfbd-73376c908a0c" class="bulleted-list"><li style="list-style-type:disc">WWW-Authenticate response header (Basic, NTLM, Negotiate)</li></ul><ul id="941533d6-b3c3-4fe8-b507-b054d9da0d1d" class="bulleted-list"><li style="list-style-type:disc">State mechanisms - <a href="http://ASP.NET">ASP.NET</a> ViewState</li></ul><ul id="ca29c710-1090-459d-92fd-8dd5f9f1c4ef" class="bulleted-list"><li style="list-style-type:disc">JWTs</li></ul><p id="8491dd02-20f5-43df-a5da-ad7308da142d" class="">
+</p><p id="c4f26013-632a-4a7a-ad43-416d8b514a6c" class="">
+</p><p id="fc042d52-a19b-4093-adf2-5ac09a02ccd7" class="">Descriptive tokens (Could be changed…)</p><ul id="e5b9abd0-0f92-499d-830e-557895d4d078" class="bulleted-list"><li style="list-style-type:disc">PHP - PHPSESSID</li></ul><ul id="61db0426-62d4-46c2-8e37-60f5829d43b5" class="bulleted-list"><li style="list-style-type:disc">J2EE - JSESSIONID</li></ul><ul id="16d6ed6d-ef63-4e0a-a691-f3611bbb69f2" class="bulleted-list"><li style="list-style-type:disc">ColdFusion - CFID/CFTOKEN</li></ul><ul id="47f6aa84-a90c-4bc1-8599-db742de2ded2" class="bulleted-list"><li style="list-style-type:disc"><a href="http://ASP.NET">ASP.NET</a> - SessionId</li></ul><p id="45072c2e-2ec6-44b8-a83b-90e81a4554dc" class="">
+</p><p id="e49d40e4-163d-4dd8-a38e-5a44b06f5adf" class="">
+</p><p id="199f4390-898e-4d6c-957c-965938a90de7" class="">Session token disclosure vulnerabilities</p><ul id="a7448fdf-1208-4478-b6c6-fd0611eacb93" class="bulleted-list"><li style="list-style-type:disc">Network disclosure due to lack of HTTPS</li></ul><ul id="9d98b4f9-f4a5-4ddb-90af-8eac84832509" class="bulleted-list"><li style="list-style-type:disc">Log disclosure</li></ul><p id="08312b4e-6877-4acf-b0c6-03721334247b" class="">
+</p><p id="43937a95-58c8-476f-8f90-7c86d89fab50" class="">Token to session mapping vulnerabilities</p><ul id="15084344-939b-4ed2-83da-78ebacc0da1a" class="bulleted-list"><li style="list-style-type:disc">concurrent logins (multiple tokens)</li></ul><ul id="a939a587-a88d-414c-81ab-0336ca7454f9" class="bulleted-list"><li style="list-style-type:disc">Not checking the entire token is valid</li></ul><p id="06e29c39-be5c-4dae-93d3-4422b579c43e" class="">
+</p><h2 id="075a93e3-1737-4056-a071-90f36c8a76c5" class="">Session termination</h2><ul id="daa8a88e-a40e-4039-9f89-ec1a9cafbd05" class="bulleted-list"><li style="list-style-type:disc">15 min idle timeout recommended</li></ul><p id="413e2670-3dba-485d-9463-e1407915e906" class="">
+</p><h2 id="189175a4-ad7f-4d45-ad6e-5e84e6d83c4b" class="">Session Fixation</h2><ul id="b0342331-fa28-4770-8868-042b6973d9e1" class="bulleted-list"><li style="list-style-type:disc">Is the same cookie reused on re-authentication?</li></ul><ul id="d5f199cf-6e04-4d40-ae1b-587699e7887e" class="bulleted-list"><li style="list-style-type:disc">We can just set the cookie in the request to gain access to the account</li></ul><ul id="3b032e6f-850b-48e7-86fd-3bab1656dd7d" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

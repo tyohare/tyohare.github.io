@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="5b6809e8-a946-4e03-ad8f-20c8dc3bcff5" class="page sans"><header><h1 class="page-title">Broken Access Control / Authorization</h1><p class="page-description"></p></header><div class="page-body"><p id="7c513268-9a2c-4900-8c22-7ece1f0e5f81" class="">
+</p><p id="bc149db8-adf4-4fcf-8122-2f12b849d7c3" class="">Resources:</p><p id="5f0d2bac-ce6c-4f39-a911-260f86a3204b" class=""><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a></p><ul id="838e923b-e529-43f6-bcf0-add8f267fad8" class="bulleted-list"><li style="list-style-type:disc">A<strong>uthentication</strong> - A way to verify users are who they say they are</li></ul><ul id="508077a8-0b4f-4a5f-9d36-82672017ad1a" class="bulleted-list"><li style="list-style-type:disc"><strong>Session management</strong> - identifies which subsequent HTTP requests are being made by the user</li></ul><ul id="7fa72eb3-6948-45d5-bd64-c6a7fb6fe8eb" class="bulleted-list"><li style="list-style-type:disc"><strong>Access Control</strong> - determine if the user is allowed to carry out the action they are attempting to perform.<ul id="530b801b-13db-443f-89e0-326454cdb9fa" class="bulleted-list"><li style="list-style-type:circle">Vertical, horizontal, and context dependent (make sure things happen in the right order) access control rules exist in secure applications.</li></ul><ul id="a8670ad9-f081-45d6-85d8-5ca1eee80b44" class="bulleted-list"><li style="list-style-type:circle">BAC occurs when users are able to act outside of their intended permissions.</li></ul><ul id="0dd20b90-fae3-4e5d-8eb9-db311b85547d" class="bulleted-list"><li style="list-style-type:circle">vBAC allows for horizontal, vertical, and context dependent privilege escalation</li></ul></li></ul><p id="e317e859-db23-4299-9240-f0eb15809847" class="">
+</p><p id="8c1ed15a-42a8-41fb-9eaa-aadda105711d" class=""><strong>Ways to find URLs:</strong></p><ul id="d50e8c8a-4f2e-4693-ad4b-43084f5e7b99" class="bulleted-list"><li style="list-style-type:disc">References in code</li></ul><ul id="c547f0cc-db8d-47ee-95ec-16fcfa6c3908" class="bulleted-list"><li style="list-style-type:disc">Robots.txt</li></ul><ul id="d723293e-ddd9-4018-9101-4d7a4c3b7173" class="bulleted-list"><li style="list-style-type:disc">Sitemap - sitemap.xml</li></ul><ul id="080a2dbe-0455-4098-bde2-405e528e2e22" class="bulleted-list"><li style="list-style-type:disc">API documentation</li></ul><ul id="05ef2c2e-68b2-43bf-ae81-af3bf8f5f8e6" class="bulleted-list"><li style="list-style-type:disc">Technology or version information</li></ul><ul id="7103a881-a8a0-4e03-b9ef-1d76c4190561" class="bulleted-list"><li style="list-style-type:disc">Guessing</li></ul><ul id="0acda9e5-b322-4e35-8545-e5945c1d60f6" class="bulleted-list"><li style="list-style-type:disc">Google fu</li></ul><p id="78b645a3-8619-463d-87a9-34e1f0741eb3" class="">
+</p><p id="4d297a49-3378-4c05-80eb-344b46d10029" class=""><strong>URL Rewrite:</strong></p><ul id="8227f140-54f7-48ec-9e21-8d0eead42b74" class="bulleted-list"><li style="list-style-type:disc">X-Original-URL: /admin</li></ul><ul id="941627a1-2915-4144-a68e-a94073972701" class="bulleted-list"><li style="list-style-type:disc">X-Rewrite-URL: /admin</li></ul><p id="0fa29e01-073f-49ea-9313-ba07e4157c9e" class="">
+</p><p id="ddbfc20a-d54d-4ea2-8719-ad389352bcbc" class="">Bypass insecure AC</p><ul id="2532af5d-c60f-4edf-a0ef-4c3061036f0e" class="bulleted-list"><li style="list-style-type:disc">Parameters - ?admin=true, predictable IDs, logs, code</li></ul><ul id="5b7795ef-dc38-4319-9a4c-646ff75c3fe4" class="bulleted-list"><li style="list-style-type:disc">Referer header - alter</li></ul><ul id="c316bcbf-8416-46f1-a628-ae590385f52d" class="bulleted-list"><li style="list-style-type:disc">Location-based - Forwarded, X-Forwarded-For, X-Real-IP, X-Originating-IP, VPN, Proxy…</li></ul><p id="338d676e-5b9d-4ae5-bc01-0cfe93ef46bc" class="">
+</p><p id="00f207cc-bc8e-4f5e-a619-f600baee2ef3" class=""><strong>Examples:</strong></p><p id="160bb8a7-4e21-474b-a96e-5df34a040d1b" class="">Changing verbs - Changing POST to GET, POST/GET to HEAD, etc</p><p id="c9e7a281-c644-4f1e-bc72-664252e2c8f4" class="">
+</p><p id="71d87968-f2d5-42d0-b6c1-8dc987804366" class=""><strong><strong>Unprotected admin functionality:</strong></strong></p><ul id="c37e0e71-13d1-4d99-9b4f-331813bfa987" class="bulleted-list"><li style="list-style-type:disc">Fuzz the admin panel and having access as a normal user</li></ul><ul id="11ffe307-6ba2-4765-b196-8f1b14448847" class="bulleted-list"><li style="list-style-type:disc">Use common admin endpoints for frameworks etc.</li></ul><p id="6673b764-e745-4461-be5e-953885f9ed56" class="">
+</p><p id="5fe34488-b02a-448a-8cf8-e3cd22a0b765" class=""><strong><strong>Unprotected admin functionality with unpredictable URL:</strong></strong></p><ul id="18eaaf37-3d21-4a9a-ad5e-d661adc7632c" class="bulleted-list"><li style="list-style-type:disc">Admin endpoint can be disclosed in requests, HTML, Javascript, CSS files</li></ul><ul id="7d0de55d-c5b9-45e4-bb63-c4ec66afe5f3" class="bulleted-list"><li style="list-style-type:disc">Fuzzing can </li></ul><p id="c5def2de-a946-4a59-bd9b-820525b23e20" class="">
+</p><p id="379fc08b-d334-40bd-b93d-f828cb6fc2a9" class=""><strong>User role controlled by request parameter:</strong></p><ul id="b8645474-23af-4f6c-a179-f935e155d29f" class="bulleted-list"><li style="list-style-type:disc">We can set Admin=true in admin cookies or other parameters that contain the admin keyword</li></ul><p id="2704c23b-29ef-496e-9d84-f487f5441db1" class="">
+</p><p id="5f977f48-c3e1-45f8-a7d9-a46ca329ce32" class=""><strong>User role can be modified in user profile:</strong></p><ul id="387853f3-02e2-40c8-88f0-dc03e5f1c42f" class="bulleted-list"><li style="list-style-type:disc">We can change role parameters in requests that may be present in different user profile functionalities<ul id="6aae03a0-5a1f-44b5-842e-045e7ec50b33" class="bulleted-list"><li style="list-style-type:circle">such as changing emails, passwords, profile settings, etc</li></ul></li></ul><p id="38a86629-0898-4405-8242-278a59967237" class="">
+</p><p id="76a74cae-50a0-4483-8319-b22087402793" class=""><strong><strong>URL-based access control can be circumvented:</strong></strong></p><ul id="1391d373-a56e-4bc3-8e82-12a62cfdd64c" class="bulleted-list"><li style="list-style-type:disc">X-Original-URL Header:</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4df9acbc-0e52-4a3c-8724-cc5045b56929" class="code"><code class="language-PHP">X-Original-URL: doesnotexist.com</code></pre><ul id="fffb51c3-4208-4119-a354-b9f1122cca9e" class="bulleted-list"><li style="list-style-type:disc">Look for a not found response</li></ul><ul id="d68f38b2-4ec7-4822-9046-5ec86ade00df" class="bulleted-list"><li style="list-style-type:disc">Then change the URL to restricted admin endpoint</li></ul><p id="f7fb65b5-3fe7-4c2e-ba98-19494628e77e" class="">
+</p><p id="3be10b31-2d08-4fcf-bf04-2673a6904708" class=""><strong><strong>Method-based access control can be circumvented:</strong></strong></p><ul id="8003ac0e-305b-42ac-a884-15602bed82d6" class="bulleted-list"><li style="list-style-type:disc">We can change request methods from POST → GET, etc to gain admin functionality</li></ul><p id="cda1e9fa-0bb5-43ec-a530-bfe070f54b11" class="">
+</p><p id="82f93e30-66b0-4ebd-8865-445ca2d37cf5" class=""><strong>User ID controlled by request parameter:</strong></p><ul id="4fb4f6bb-68bd-4972-87e4-ddbe3ca6bd15" class="bulleted-list"><li style="list-style-type:disc">Changing id parameters to another valid user and see if any sensitive info is released in response</li></ul><p id="d0b20f31-b22d-47f2-8d56-a1daa168a701" class="">
+</p><p id="fafcfad2-2011-44d2-aae2-a92a0f95afe1" class=""><strong><strong>User ID controlled by request parameter, with unpredictable user IDs:</strong></strong></p><ul id="ab61f771-f35a-4e64-8a72-49d45b8d32b2" class="bulleted-list"><li style="list-style-type:disc">We can see userids from different profiles or blog posts and use this user id to login or change settings of the other user.</li></ul><p id="b10d60ab-81fe-490d-8475-b9846160c4e2" class="">
+</p><p id="38c1498a-0443-424e-9e6f-e0c3e58360ac" class=""><strong><strong>User ID controlled by request parameter with data leakage in redirect:</strong></strong></p><ul id="9eea1ec7-0790-483a-88e9-3f44c5c3a63f" class="bulleted-list"><li style="list-style-type:disc">Check login page redirect requests for any sensitive data leakage</li></ul><p id="f9604c7e-14f8-4071-94db-3a8816ca1f25" class="">
+</p><p id="0cea6bca-cca2-487a-b853-09545262bb69" class=""><strong><strong>User ID controlled by request parameter with password disclosure:</strong></strong></p><ul id="8dd94221-b6ec-4261-9054-7a2f84957bce" class="bulleted-list"><li style="list-style-type:disc">User passwords may be saved or hardcoded on pages where the user has access with their parameter in the request</li></ul><p id="86941a5a-925d-4c7a-8853-8a1c9e7fb159" class="">
+</p><p id="ee3c8c2d-0aba-4469-92db-ddd23aa96012" class=""><strong><strong>Insecure direct object references (IDOR):</strong></strong></p><ul id="af0a1264-ac53-4f61-b288-85609cb1c65d" class="bulleted-list"><li style="list-style-type:disc">Directly access different files you are not supposed to see by fuzzing the predictable parameters in the request</li></ul><ul id="c8d499b7-a94f-4740-aa4e-198fd20f514a" class="bulleted-list"><li style="list-style-type:disc">Think functionality that the user role has but maybe shouldn’t be able to do for other users (IE Changing username)</li></ul><p id="627a2c3f-c17a-4d84-a612-1dda2d59c4ed" class="">
+</p><p id="70eba089-9afc-4e45-83cb-82fb1577c361" class="">Missing Function Level Access Control (MFLAC):</p><ul id="4bfc7a08-84ea-42bf-b750-e0d4f6bb8ebc" class="bulleted-list"><li style="list-style-type:disc">Similar to IDOR but think more vertical privilege escalation. The attacker gains access to an elevated roles functionality outside the scope of their regular user role. (IE Banning accounts)</li></ul><p id="8eaf0977-680c-4693-b5d8-d83d82232a55" class="">
+</p><p id="fb9dd91e-b97b-41f8-83bb-871774d4f5ea" class=""><strong><strong>Multi-step process with no access control on one step:</strong></strong></p><ul id="892b549e-ca20-42e7-805c-5db9e4b5c9d9" class="bulleted-list"><li style="list-style-type:disc">A confirmation request does not implement AC even though the first request did</li></ul><ul id="56400489-a1e9-469f-9caa-70056dd947db" class="bulleted-list"><li style="list-style-type:disc">we can send the confirmation request from any user without authorization<ul id="085a0c7f-e659-488f-990f-5d6d79ecff7f" class="bulleted-list"><li style="list-style-type:circle">For example we can upgrade a user in the app by sending the request and never actually utilizing the admin dashboard.</li></ul></li></ul><p id="8b1761aa-04c2-4b30-b7db-a2b520ef892b" class="">
+</p><p id="d75c9f87-b9ad-4b1c-8819-09e79c78fd2a" class=""><strong>Referer-based access control:</strong></p><ul id="81fd00df-9cad-40c8-af34-6ee9770f8e22" class="bulleted-list"><li style="list-style-type:disc">We can change the referer header to bypass access control rules.</li></ul><ul id="c51c065e-58fa-46d1-bca4-a771f8683b89" class="bulleted-list"><li style="list-style-type:disc">Some applications use the referer header to confirm where a user came before allowing access.</li></ul></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="cfed72aa-195b-4455-91d8-136e77639136" class="page sans"><header><h1 class="page-title">Cross-Site Request Forgery (CSRF)</h1><p class="page-description"></p></header><div class="page-body"><p id="b0d95bbd-8b80-457d-a57b-0883593d8755" class="">
+</p><p id="743750ac-5319-452b-9c8d-86949c6d4c84" class="">For CSRF to be possible we need:</p><ul id="b5d643eb-b800-4157-8258-69e0e2236b58" class="bulleted-list"><li style="list-style-type:disc">A relevant privileged action</li></ul><ul id="7066a731-074e-4430-b020-ceefb22e817d" class="bulleted-list"><li style="list-style-type:disc">Cookie-based session handling</li></ul><ul id="ad307242-f6d0-4fba-81df-6a275135f969" class="bulleted-list"><li style="list-style-type:disc">No unpredictable request parameters</li></ul><p id="132ded32-b530-40bc-8177-79e337a8fecf" class="">
+</p><figure id="867db314-5845-4577-9087-d9f94050e8ed" class="image"><a href="Cross-Site%20Request%20Forgery%20(CSRF)%20cfed72aa195b445591d8136e77639136/Untitled.png"><img style="width:1916px" src="Cross-Site%20Request%20Forgery%20(CSRF)%20cfed72aa195b445591d8136e77639136/Untitled.png"/></a></figure><p id="912b9744-ae98-4752-9cec-a80539ca216f" class="">
+</p><p id="3472c3d4-bb98-460f-b00c-e675578d4c73" class="">The attacker forces the victim to perform an action unintentionally while the victim is authenticated.</p><p id="0cee587d-67bb-4ea8-8e25-159aaa507d3b" class="">
+</p><p id="ccdb9e59-3a44-499e-b63f-2ea996cf7291" class="">CSRF Tools:</p><ul id="737a8e28-0905-4188-b8b5-0a4cd5839d03" class="bulleted-list"><li style="list-style-type:disc">Burp CSRF PoC generator</li></ul><ul id="7a5b3f7b-3050-4f41-9fb3-af7792fae7cd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/merttasci/csrf-poc-generator">https://github.com/merttasci/csrf-poc-generator</a></li></ul><p id="3384bd22-5f26-4450-8891-4fdab8e310ed" class="">
+</p><p id="723ebaec-37a0-4e90-8d67-6b7632a80270" class="">Try:</p><ul id="a3ecd7a2-ff07-41e4-8b16-90546138e32e" class="bulleted-list"><li style="list-style-type:disc">Removing CSRF parameter</li></ul><ul id="0524e304-13bf-4338-bc56-8eb63436d654" class="bulleted-list"><li style="list-style-type:disc">Changing CSRF value</li></ul><ul id="907cad66-8816-4c8a-82d3-3ed7ec5110a2" class="bulleted-list"><li style="list-style-type:disc">Predicting CSRF value</li></ul><ul id="f6adf175-df37-4d30-ae9d-34e98d42f48c" class="bulleted-list"><li style="list-style-type:disc">Use same CSRF value</li></ul><ul id="d752486a-c86b-4e9b-a878-124dc6af47f1" class="bulleted-list"><li style="list-style-type:disc">Change request method</li></ul><p id="c5409798-f724-4b8e-a47d-cbd2898d7445" class="">Changing request to load an img payload</p><p id="54e26ca2-e034-4764-aec5-624edbc14410" class="">
+</p><p id="a81e385a-e678-4101-a3a2-cc85dd91af11" class=""><strong>CSRF protection in browsers:</strong></p><ul id="6ec8421c-9b34-4f51-bc0f-60befedb0343" class="bulleted-list"><li style="list-style-type:disc">SameSite<ul id="f22c0f8c-e2b3-4fb1-adc1-2b60b4b56b01" class="bulleted-list"><li style="list-style-type:circle"> Lax - Default if not set. Browser will send cookie in cross-site requests if conditions are met…<ul id="9c73c2f0-974d-4f8e-a855-ade4b0b5afb0" class="bulleted-list"><li style="list-style-type:square">The request uses a GET method</li></ul><ul id="e1c29046-c0a8-47aa-8181-fd3ba5065773" class="bulleted-list"><li style="list-style-type:square">The request resulted from top-level navigation by the user. (IE: Clicking a link)</li></ul></li></ul><ul id="6f09689e-d986-4d1a-aff3-0d7ca2a42dd2" class="bulleted-list"><li style="list-style-type:circle">Strict - Only give the cookie when request is from the same domain. No cross-site requests.</li></ul><ul id="9a82c5ed-737f-4812-8b04-f642d29f96f6" class="bulleted-list"><li style="list-style-type:circle">None - Essentially disables SameSite</li></ul></li></ul><ul id="b65333f3-11e6-456c-b285-4ad319728755" class="bulleted-list"><li style="list-style-type:disc">HTTPOnly - True - means only share cookie with HTML and not JS files (NOT for csrf)</li></ul><ul id="e785e669-02ba-4eea-b1f8-e38325b01fec" class="bulleted-list"><li style="list-style-type:disc">Secure - True - Means only use HTTPS (NOT for csrf)</li></ul><p id="a548f5d4-316c-4f22-ba7a-52747fe8cc5c" class="">
+</p><p id="b46b1543-fbce-4d49-bdc0-924599a25c89" class=""><strong>When CSRF is not tied to a users session:</strong></p><ul id="ce69fc57-b849-4666-9ce8-7cd3cf52ef11" class="bulleted-list"><li style="list-style-type:disc">Get a CSRF token in burp → drop the request before it hits website → reuse the CSRF token in your payload request.</li></ul><p id="72096cde-c46a-46bd-87b8-561c615c75ef" class="">
+</p><p id="f4ec5abb-201a-4b9b-b696-97f6c0321981" class=""><strong>CSRF with a JSON POST body:</strong></p><p id="4e02e995-a12b-499d-933a-5a379a724baf" class="">Is the application verifying the content-type header?</p><ul id="338ae012-8560-42c8-ba86-a343540e1463" class="bulleted-list"><li style="list-style-type:disc">we can create a text/plain for with some valid JSON</li></ul><ul id="e8d7f021-d3e0-40bc-9ba3-d586d932512c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><p id="75663b76-c9af-435b-a609-9b5a251e3647" class="">
+</p><p id="5994b2d4-3233-45cb-8107-c7ad71e5e0e2" class="">Referer based CSRF:</p><ul id="4c7b98b7-72c1-4bd4-9852-9b77682e8417" class="bulleted-list"><li style="list-style-type:disc">Can we change the referer header / manipulate it and append our evil server?<ul id="8286653a-dc19-4fbf-ba52-47a0d8b5b42a" class="bulleted-list"><li style="list-style-type:circle">If the vulnerable site is only looking for the domain to be present in or at the begining of the URL string???</li></ul><ul id="5d7e0ce7-92c7-4587-85d6-2f475f114e8a" class="bulleted-list"><li style="list-style-type:circle">ex: attacker.site/?=VulnerableSiteReferer</li></ul><ul id="efaa03b9-4979-4c23-ad68-f430cdff46d3" class="bulleted-list"><li style="list-style-type:circle">Can we remove the header?</li></ul><p id="7e09259c-4887-45cf-96c0-83bda1469af6" class="">
+</p><p id="4eea521d-5132-4005-bc66-c2dbe2cb15ec" class="">
+</p></li></ul><p id="22350c82-1f54-4463-8ed4-0267b60bec7a" class=""><strong>Bypassing SameSite restrictions:</strong></p><p id="35eec5c5-a7ec-4da8-b961-3b5655fd9f66" class=""><strong>Lax:</strong></p><ul id="cf706695-f988-41be-ab88-6399d8f42a1a" class="bulleted-list"><li style="list-style-type:disc">Try changing the request to a get request and making the user perform top-level navigation</li></ul><ul id="4dc3f46b-70e2-4b99-b388-0e280d57dee5" class="bulleted-list"><li style="list-style-type:disc">To avoid breaking SSO, some browsers will set SameSite Lax to cookies for first 2 minutes a cookie is issued. We can exploit this by forcing a cookie refresh.</li></ul><ul id="fb471123-849d-44da-b742-3c1ec7dcafb6" class="bulleted-list"><li style="list-style-type:disc">Method override. Change request to GET and append ‘&amp;_method=POST’ to the URL</li></ul><p id="9c080f35-19a2-40bc-8bea-fa880b8014a2" class=""><strong>Strict:</strong></p><ul id="3455ee10-ac11-49b2-b3b1-44bc41391628" class="bulleted-list"><li style="list-style-type:disc">Try finding a client-side redirect (website.com/id=../../account/change-email)<ul id="e02600d2-54ae-4808-a43d-07419d0e0505" class="bulleted-list"><li style="list-style-type:circle">Find a automatic redirection on the site and utilize this URL scheme to redirect use to this page…</li></ul><ul id="227e6da4-67b2-4c85-9b8e-e59142d3c232" class="bulleted-list"><li style="list-style-type:circle">We are using the redirect as a proxy to perform the email change</li></ul></li></ul><ul id="97f6d0e5-df30-49e9-afbe-1ba0e6ed77fe" class="bulleted-list"><li style="list-style-type:disc">Check for sibling domains<ul id="3ffcc1a9-b694-41d4-937f-35ad6632ccdb" class="bulleted-list"><li style="list-style-type:circle">If you can find a vulnerability in the sibling domain like reflected XSS, Try to chain it to create CSRF attack that will bypass samesite: Strict.</li></ul></li></ul><p id="68b6bfc2-95a2-40d5-b90a-d0d05861718b" class="">
+</p><p id="ee270837-b799-4d68-819f-3ce91c8f2a3e" class="">
+</p><p id="8edb0ce9-ff29-4629-af5f-0be2cce696de" class="">
+</p><p id="fa778b56-6d9b-4673-aea7-e40b658b34ad" class=""><strong>Mitigations:</strong></p><p id="4c17d1cd-a94f-46ab-b3bc-6116cb695e81" class="">
+</p><ul id="6b2b5b0a-e4a5-4978-a989-6a2189fa8929" class="bulleted-list"><li style="list-style-type:disc">Introducing randomness to requests via CSRF tokens</li></ul><ul id="a7f0746d-68fa-47f1-b66b-5fef19bc9c23" class="bulleted-list"><li style="list-style-type:disc">Samesite Strict</li></ul><p id="38979d65-2e81-41d8-9074-cb20547023f4" class="">
+</p></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

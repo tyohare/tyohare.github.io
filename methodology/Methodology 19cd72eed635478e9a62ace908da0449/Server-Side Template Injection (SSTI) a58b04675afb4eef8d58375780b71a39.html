@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="a58b0467-5afb-4eef-8d58-375780b71a39" class="page sans"><header><h1 class="page-title">Server-Side Template Injection (SSTI)</h1><p class="page-description"></p></header><div class="page-body"><p id="77302b83-7769-4cdd-aa44-34ec49e06b8d" class="">
+</p><p id="d57a2283-9681-4574-8cc8-091be6fd132c" class="">First discover SSTI:</p><ul id="d4531b4c-c651-4219-bb38-2cdc78a46266" class="bulleted-list"><li style="list-style-type:disc">We can see SSTI when our text is reflected back to us</li></ul><p id="cf71bbc3-030e-440b-838b-4d8238214374" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c5d958a0-fd89-4e8d-b583-2b061aff76a4" class="code"><code class="language-XML">$((&lt;%[%&#x27;&quot;}}%\</code></pre><ul id="ef1b9bd8-9628-4f04-931b-80f6c41660c0" class="bulleted-list"><li style="list-style-type:disc">Confirming the template engine can be done in two ways</li></ul><ol type="1" id="43bfc151-8216-4571-9ecc-3bead7131ab2" class="numbered-list" start="1"><li>Try to cause an error message.</li></ol><ol type="1" id="340d5b34-52ad-4274-87da-de4e97b5385b" class="numbered-list" start="2"><li>Attempt an engine-specific exploit.</li></ol><ul id="3ff538b3-7286-42eb-bd85-3a79058c3e50" class="bulleted-list"><li style="list-style-type:disc">Once we know the templating engine we will know the backend language…</li></ul><ul id="8c836d58-4d9e-4c8d-87cd-86c885e639f2" class="bulleted-list"><li style="list-style-type:disc">Then we can use the language and knowledge of the templating engine to build a payload (Reference the docs!)</li></ul><ul id="07812f11-7cf7-468a-a9bf-a6d050f954c8" class="bulleted-list"><li style="list-style-type:disc">Sometimes it depends on what libraries are in use</li></ul><ul id="6eeb36d0-9858-411b-b3ec-72f3e759b9b3" class="bulleted-list"><li style="list-style-type:disc">Additionally you can try to utilize the global object class and build from there</li></ul><p id="51262a4b-7fba-4c40-a194-98d97c14bc90" class="">Try the math equations to determine templating engine</p><p id="642e808c-4736-4b28-860a-53c3dcd46d81" class="">
+</p><p id="e7f752f2-b52c-44d6-b997-b66a9071eec7" class="">Run SSTI related commands?</p><p id="ba9ce1ae-a20c-4813-b885-b46abd9e02c5" class="">
+</p><figure id="b642e575-a709-4fcd-b377-1ea09e0534d0" class="image"><a href="Server-Side%20Template%20Injection%20(SSTI)%20a58b04675afb4eef8d58375780b71a39/Untitled.png"><img style="width:640px" src="Server-Side%20Template%20Injection%20(SSTI)%20a58b04675afb4eef8d58375780b71a39/Untitled.png"/></a></figure><p id="ac4e9396-bfbe-4281-a3ce-abd59b73947c" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3a9b5ce2-9811-49e5-85b2-17558b4cc350" class="code"><code class="language-Java">${{7*7}}  - Java, Expression Language
+${7*7} - Java, Expression Language, Freemarker, Groovy, Mako, Thymeleaf 
+{ {7*7} } - Jinja2, Pebble, Twig, Jinjava, HuBL, Nunjucks, Tornado 
+{7*7} - Smarty
+@(7*7) or @{7*7} - ASP.NET Razor
+__${7*7}__::.x - Spring View Manipulation (Java)
+__*{7*7}__::.x - Spring Framework (Java)
+#{7*7} - Expression Language, Freemarker, Ruby, Jade, Pug
+&lt;%= 7*7 %&gt; - Ruby
+#set($x=7*7)${x} - Velocity</code></pre><p id="e0f1da33-3ffe-49e8-977d-984a90d4ed87" class="">
+</p><p id="5cbf5a40-f1e3-4aaf-ac5c-502cfbda3c17" class=""><strong>Mitigation:</strong></p><ul id="1858cce0-c713-4c16-9566-f6af0fb15af8" class="bulleted-list"><li style="list-style-type:disc">Avoid passing unsanitized input to templates</li></ul><ul id="f8269ca4-14fe-4df1-af27-792c2176c1a4" class="bulleted-list"><li style="list-style-type:disc">Utilizing non-logic based templating engines</li></ul><ul id="5ed25e01-6fb3-4fb9-a1d1-ab126e303c65" class="bulleted-list"><li style="list-style-type:disc">Deploy applications in sandboxed environment to limit SSTI impact</li></ul><p id="f6a89ee9-5221-417d-883f-dce565d9d544" class="">
+</p><p id="6417e2cf-9e3c-4b1c-b8da-a9a6d8eca6fa" class="">
+</p><p id="49d75b36-fa34-48d7-aeb3-13c9279961e3" class="">Empty expressions: ${} /£} / {£}} etc.</p><p id="15b1d0d3-58e6-466b-a6a4-d8586de7949e" class="">Divide by zero: ${1/0} / {1/0} / {{1/0}} etc.</p><p id="91e98c80-58a3-452f-86a7-4923b1fa3c8c" class="">Invalid variable names: ${wrong} /{wrong} /{{wrong}} etc.</p><p id="59264ee9-fc62-4c36-a59c-81fe38da4a27" class="">
+</p></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

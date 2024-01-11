@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="a7b38732-493f-4548-b979-df78b879d3d3" class="page sans"><header><h1 class="page-title">Cryptographic Failures</h1><p class="page-description"></p></header><div class="page-body"><p id="eec13106-9d39-4c56-bfb2-b434a64f5df9" class=""><a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/">https://owasp.org/Top10/A02_2021-Cryptographic_Failures/</a></p><p id="a6e372b6-a737-41e9-be61-680d09fafe1b" class="">
+</p><p id="0e61087d-3ad8-4e34-9440-0a81b8493956" class=""><strong>Detection:</strong></p><ul id="3a6d4238-99b3-41b6-82b0-17b299d1949a" class="bulleted-list"><li style="list-style-type:disc">MD5, SHA1 or any weak cryptographic algorithm in use</li></ul><ul id="7f8b4fad-3cf6-405e-9031-fff98d487ddd" class="bulleted-list"><li style="list-style-type:disc">Is the received server certificate and the trust chain properly validated?</li></ul><ul id="ba509cb9-50b8-487f-97db-0a33eb1da5ce" class="bulleted-list"><li style="list-style-type:disc">Is encryption not enforced, e.g., are any HTTP headers (browser) security directives or headers missing?</li></ul><ul id="b2cdd124-aedd-452a-909f-7e459d15229a" class="bulleted-list"><li style="list-style-type:disc">Is any data transmitted in clear text? This concerns protocols such as HTTP, SMTP, FTP also using TLS upgrades like STARTTLS. External internet traffic is hazardous. Verify all internal traffic, e.g., between load balancers, web servers, or back-end systems.</li></ul><ul id="b84d72d6-5e10-46ca-9a85-2c12465c00ef" class="bulleted-list"><li style="list-style-type:disc">Are any old or weak cryptographic algorithms or protocols used either by default or in older code?</li></ul><ul id="ce96717a-bf35-4bd9-b3d2-902914c37b4f" class="bulleted-list"><li style="list-style-type:disc">Are default crypto keys in use, weak crypto keys generated or re-used, or is proper key management or rotation missing? Are crypto keys checked into source code repositories?</li></ul><p id="575d19f3-638f-4225-8964-0d1020ca1197" class="">
+</p><p id="9dd64c86-48bf-4df7-b742-f2990b255e0c" class="">
+</p><p id="13fc9573-9468-4ca6-87a1-9f3b86720110" class=""><strong>Prevention:</strong></p><ul id="a681e434-8d1a-4b43-a7d7-4f0619b50e5e" class="bulleted-list"><li style="list-style-type:disc">Classify data processed, stored, or transmitted by an application. Identify which data is sensitive according to privacy laws, regulatory requirements, or business needs.</li></ul><ul id="7ce7f84b-02de-48b3-9004-c262cd59b6ba" class="bulleted-list"><li style="list-style-type:disc">Don&#x27;t store sensitive data unnecessarily. Discard it as soon as possible or use PCI DSS compliant tokenization or even truncation. Data that is not retained cannot be stolen.</li></ul><ul id="4febd91c-5c7e-42d2-b0f9-e8cc29572e96" class="bulleted-list"><li style="list-style-type:disc">Make sure to encrypt all sensitive data at rest.</li></ul><ul id="5e5895e6-80e0-4ca0-9c2b-e8b447f906f8" class="bulleted-list"><li style="list-style-type:disc">Ensure up-to-date and strong standard algorithms, protocols, and keys are in place; use proper key management.</li></ul><ul id="5170e4c5-b010-4a80-ad23-0603f17d0790" class="bulleted-list"><li style="list-style-type:disc">Encrypt all data in transit with secure protocols such as TLS with forward secrecy (FS) ciphers, cipher prioritization by the server, and secure parameters. Enforce encryption using directives like HTTP Strict Transport Security (HSTS).</li></ul><ul id="63d05e98-e0ae-4933-b0e4-c3c281b7d2af" class="bulleted-list"><li style="list-style-type:disc">Disable caching for response that contain sensitive data.</li></ul><ul id="324b8da9-58f5-40d1-bc6c-64aca00d462a" class="bulleted-list"><li style="list-style-type:disc">Apply required security controls as per the data classification.</li></ul><ul id="039c0e1f-d83a-4722-8786-ccdc25e37399" class="bulleted-list"><li style="list-style-type:disc">Do not use legacy protocols such as FTP and SMTP for transporting sensitive data.</li></ul><p id="577331c0-4f87-461d-9d0c-22c5abf1e8e2" class="">
+</p><p id="0dbc2d7b-c4d5-4406-be57-90c6eb48d487" class="">
+</p><h2 id="763bdb3e-5203-4e28-80f2-e58dc54d87f1" class="">Weak TLS/SSL Cipher detection</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="dc73a89a-808d-4113-a43c-d326c811bd51" class="code"><code class="language-XML">nmap --script ssl-enum-ciphers -p 443 0.0.0.0</code></pre><p id="6f3e755c-007e-4013-bfe8-fdf41076d2c5" class="">
+</p><p id="992873d0-bef5-4d10-9d38-b4d91f78e455" class="">Weak encryption to be on the lookout for:</p><ul id="721695d1-e6b9-4484-bf01-3cefb4bf46ec" class="bulleted-list"><li style="list-style-type:disc">3DES</li></ul><ul id="e045eba4-fc96-445a-b284-10d8d12ec58a" class="bulleted-list"><li style="list-style-type:disc">SHA1/SHA</li></ul><ul id="7cccfeff-5528-47d5-aee8-608aab4cc193" class="bulleted-list"><li style="list-style-type:disc">CBC Ciphers</li></ul><ul id="502dfc41-7414-446e-84c6-a140703c3c28" class="bulleted-list"><li style="list-style-type:disc">RC4</li></ul><ul id="b2ed3ffd-30da-4528-a538-61f4d7c995fe" class="bulleted-list"><li style="list-style-type:disc">TLS Versions below 1.2</li></ul></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

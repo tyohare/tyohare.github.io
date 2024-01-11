@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="11509de6-9233-4371-8aa0-c39d13da6f90" class="page sans"><header><h1 class="page-title">Single Sign On (OAuth/SAML/OIDC)</h1><p class="page-description"></p></header><div class="page-body"><p id="577f7645-a123-4541-832b-22be40894e03" class="">
+</p><ul id="b7f48e13-289b-4c6d-88b7-c02929e67ff0" class="bulleted-list"><li style="list-style-type:disc">Created to share information between applications</li></ul><p id="a27baca8-f4df-454d-ba30-5f401a016580" class="">
+</p><p id="0541bd25-4f1a-4f57-b071-06c18d08133a" class="">OAuth grant types:</p><p id="fb4b883a-3169-45e4-8ff5-f89574ec4cfc" class="">
+</p><p id="b046df1a-c4be-48c0-a5b1-e4472a663082" class="">
+</p><p id="f0a26351-9aea-4756-82ca-fbf20c7815e6" class=""><strong>Authentication Bypass via OAuth Implicit Flow:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b3a9eff1-d7e2-42e0-a9fe-4c8c61e3695a" class="code"><code class="language-Python">- When we capture the SAML flow we may find authentication parameters provided to the server
+ after authenticating with the IDP.
+- We can edit these authentication parameters to the user we want to login as
+	and forwarding it to the server.</code></pre><p id="dce2b64e-8e2e-4ea4-b8bc-5c341858fa48" class="">
+</p><p id="a30b1c8b-dc93-4337-a3b5-ecd81e925e48" class="">
+</p><p id="66d1f3b2-46f2-441d-9769-a37c83731237" class=""><strong>OAuth account hijacking via redirect_uri:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="03dbf333-d49c-47e9-a969-5b1f73d401e4" class="code"><code class="language-Python">- If we send a malicious URL or IFrame payload to an admin user,
+- We edit the redirect URI variable to point to our malicious server where the admin users token can be leaked
+- From there we can take that token to and use it to hijack the admin account</code></pre><p id="887dfa37-55f9-43d2-bdc7-0fd225123fd0" class="">
+</p><p id="5bd705dc-000a-45a3-8bb2-ba5861aa453b" class="">
+</p><p id="5009bb8d-103c-4553-9fd2-7dd296a1853a" class=""><strong>SAML:</strong></p><p id="a0043a44-f7bf-4179-9dc3-39d69c58a93b" class="">Principle (user) → SP (service provider)</p><p id="902ba632-0dc6-4f3f-96d4-c444e194c912" class="">SP (Sends AuthnRequest ) - &gt; user</p><p id="1300409c-a24a-4748-8909-6311da492ffb" class="">user (AuthnRequest) → Idp (identity provider)</p><p id="2ce5f0c9-5b88-4d08-950b-0b9717fcd829" class="">User authenticates</p><p id="2c24ab94-44b4-4ed4-a24c-be370b336564" class="">IDP (SAML Response) → user</p><p id="4aa017bf-c099-4dcf-a080-0f61965f701f" class="">user (SAML Response) → SP</p><p id="8932223e-67a4-482b-b541-c874c1591c26" class="">User is redirected to page.</p><p id="9c7807b2-73e0-4312-bda0-f37c9fe81502" class="">
+</p><p id="93fa209a-b542-48e7-8e5b-7f2b6d26b08f" class="">We can manipulate the SAML response to the SP.</p><p id="e8b45b7f-3873-4876-9d79-0795eded45ce" class="">If we manipulate the AuthnRequest we are attacking the IDP.</p><p id="cfe2f9d2-6269-4f9e-864a-95dfae80902f" class="">Attack types include:</p><ul id="1db3e89d-e035-49de-abd6-a60352b7bf02" class="bulleted-list"><li style="list-style-type:disc">editing signature, assertion times, user data in SAML response.</li></ul><ul id="fe05e231-3b64-439b-93cd-584d425acb2c" class="bulleted-list"><li style="list-style-type:disc">Removing the signature from SAML response</li></ul><ul id="cd3d4f7b-bf0d-4e86-a9db-9633e069907a" class="bulleted-list"><li style="list-style-type:disc">Changing the assertion content</li></ul><ul id="8f1ecccc-df15-4ac5-9539-cb85fc5a57f7" class="bulleted-list"><li style="list-style-type:disc">SAML response signed with self-signed cert</li></ul><ul id="9764c5f4-4def-4521-bfe8-5fd260a5f337" class="bulleted-list"><li style="list-style-type:disc">SAML response should only be accepted one time (Replaying)<ul id="1b3a2332-6e64-4290-9214-054201d84290" class="bulleted-list"><li style="list-style-type:circle">Is it in the duration of NotBefore and NotOnOrAfter?</li></ul></li></ul><ul id="784c8d4d-a17d-4186-a240-87356484615c" class="bulleted-list"><li style="list-style-type:disc">SAML response passing…</li></ul><p id="672165fd-61d0-413c-a41b-8f36c3fcf3f0" class="">
+</p><p id="5adfe649-035e-45e2-b38d-ac70fa977338" class=""><strong>Open ID Connect:</strong></p><p id="0ff5c656-d847-4c63-af36-00dc193b4410" class="">user → server</p><p id="2e40afae-6d61-4bee-8b6c-2cb57757463e" class="">server (HTML sign in page) → user</p><p id="3dff23d5-690e-4d62-bb92-b21dfbc34a7c" class="">IDP → user authenticates and given id_token</p><p id="1fcd18ba-f03f-484b-ab7a-972f4d06dfbc" class="">User redirected .</p><p id="84ab9a84-762d-4f2b-a60b-2883454c7fb4" class="">user (sends token ) → server</p><p id="79a388cc-c635-4eed-874f-1d537e0aa876" class="">Authenticated!</p><p id="63fc13f0-7c78-494d-9233-7a333c2bc6ee" class="">
+</p><p id="e239e4a7-ae9c-422f-82a3-9d8013fd4299" class="">
+</p><p id="0ec736e7-23cb-4b6b-8521-8b14a2c3b778" class=""><strong>SAML, OAUTH, OpenID Connect:</strong></p><p id="cbe643a0-2a0f-45e8-8f0e-3813e332d96c" class="">Attacks:</p><ul id="2a3f5d6d-f39a-49af-a696-effe1101c8c5" class="bulleted-list"><li style="list-style-type:disc">Editing the saml response</li></ul><ul id="3aad529f-c02e-4425-a6a2-d1c1c4eb115e" class="bulleted-list"><li style="list-style-type:disc">Strip the status codes and signature</li></ul><ul id="4f8b20cb-e273-4110-a6fd-60cd01b14fb3" class="bulleted-list"><li style="list-style-type:disc">Edit the status codes</li></ul><ul id="feff2e2e-1d6c-4288-ad3f-66beeb038760" class="bulleted-list"><li style="list-style-type:disc">Messing with expiration times</li></ul><ul id="85cf2894-d7e0-43e5-9a0f-016409783a0d" class="bulleted-list"><li style="list-style-type:disc">Changing assertion content</li></ul><ul id="9f95015d-c999-43ac-9b6a-fedc1d78ee0a" class="bulleted-list"><li style="list-style-type:disc">Changing the signature</li></ul><ul id="cbe05cdd-349e-4303-805e-53189750c48d" class="bulleted-list"><li style="list-style-type:disc">Generating our own signature</li></ul><ul id="aafc4990-38e4-4854-b842-26ebafd09ea2" class="bulleted-list"><li style="list-style-type:disc">SAML response passing</li></ul><p id="2f1e5831-49c8-4b35-85e5-3ecdc669af85" class="">
+</p><p id="305b473d-b2cb-40fd-a590-12d8cd83833d" class="">OPEN ID CONNECT: Impicit flow</p><ul id="5ee81305-1a65-4f61-bf68-da98d6cab846" class="bulleted-list"><li style="list-style-type:disc"></li></ul><figure id="fedbea45-b742-482f-824c-e395cdc19ece" class="image"><a href="Single%20Sign%20On%20(OAuth%20SAML%20OIDC)%2011509de6923343718aa0c39d13da6f90/Untitled.png"><img style="width:800px" src="Single%20Sign%20On%20(OAuth%20SAML%20OIDC)%2011509de6923343718aa0c39d13da6f90/Untitled.png"/></a></figure><p id="70b69cf2-0506-4a5c-9df2-949d55d86a5c" class=""><strong>Third-party Identity providers: (SAML?)</strong></p><figure id="b19ba14a-2fed-4e91-aa23-ff5ecf10dd2e" class="image"><a href="Single%20Sign%20On%20(OAuth%20SAML%20OIDC)%2011509de6923343718aa0c39d13da6f90/Untitled%201.png"><img style="width:793px" src="Single%20Sign%20On%20(OAuth%20SAML%20OIDC)%2011509de6923343718aa0c39d13da6f90/Untitled%201.png"/></a></figure></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>

